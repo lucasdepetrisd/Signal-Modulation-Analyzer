@@ -17,11 +17,14 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplication, QCheckBox,
     QComboBox, QCommandLinkButton, QFrame, QGridLayout,
-    QHBoxLayout, QHeaderView, QLabel, QLineEdit,
-    QMainWindow, QPlainTextEdit, QPushButton, QRadioButton,
-    QScrollArea, QScrollBar, QSizePolicy, QSlider,
-    QStackedWidget, QTableWidget, QTableWidgetItem, QVBoxLayout,
-    QWidget)
+    QHBoxLayout, QHeaderView, QLabel, QLayout,
+    QLineEdit, QMainWindow, QPlainTextEdit, QPushButton,
+    QRadioButton, QScrollArea, QScrollBar, QSizePolicy,
+    QSlider, QSpinBox, QStackedWidget, QTableWidget,
+    QTableWidgetItem, QVBoxLayout, QWidget)
+
+from mplwidget import MplWidget
+from mplwidgetfsk import MplWidgetFSK
 import files_rc
 
 class Ui_MainWindow(object):
@@ -126,8 +129,9 @@ class Ui_MainWindow(object):
 #endif
         MainWindow.setPalette(palette)
         font = QFont()
-        font.setFamilies([u"Segoe UI"])
+        font.setFamilies([u"Satoshi Black"])
         font.setPointSize(10)
+        font.setBold(True)
         MainWindow.setFont(font)
         MainWindow.setStyleSheet(u"QMainWindow {background: transparent; }\n"
 "QToolTip {\n"
@@ -457,10 +461,15 @@ class Ui_MainWindow(object):
         self.label_title_bar_top = QLabel(self.frame_label_top_btns)
         self.label_title_bar_top.setObjectName(u"label_title_bar_top")
         font1 = QFont()
-        font1.setFamilies([u"SF Pro Display"])
-        font1.setPointSize(14)
+        font1.setFamilies([u"Satoshi Black"])
+        font1.setPointSize(16)
         font1.setBold(True)
+        font1.setItalic(False)
+        font1.setUnderline(False)
+        font1.setStrikeOut(False)
+        font1.setKerning(True)
         self.label_title_bar_top.setFont(font1)
+        self.label_title_bar_top.setCursor(QCursor(Qt.ArrowCursor))
         self.label_title_bar_top.setStyleSheet(u"background: transparent;\n"
 "")
 
@@ -538,7 +547,8 @@ class Ui_MainWindow(object):
 "	background-color: transparent;\n"
 "}\n"
 "QPushButton:hover {\n"
-"	background-color: rgb(52, 59, 72);\n"
+"	\n"
+"	background-color: rgb(189, 0, 0);\n"
 "}\n"
 "QPushButton:pressed {	\n"
 "	background-color: rgb(85, 170, 255);\n"
@@ -568,12 +578,8 @@ class Ui_MainWindow(object):
         self.label_top_info_1 = QLabel(self.frame_top_info)
         self.label_top_info_1.setObjectName(u"label_top_info_1")
         self.label_top_info_1.setMaximumSize(QSize(16777215, 15))
-        font2 = QFont()
-        font2.setFamilies([u"SF Pro Display"])
-        font2.setPointSize(10)
-        font2.setBold(True)
-        self.label_top_info_1.setFont(font2)
-        self.label_top_info_1.setStyleSheet(u"color: rgb(98, 103, 111); ")
+        self.label_top_info_1.setFont(font)
+        self.label_top_info_1.setStyleSheet(u"color: rgb(118, 125, 134)")
 
         self.horizontalLayout_8.addWidget(self.label_top_info_1)
 
@@ -581,7 +587,7 @@ class Ui_MainWindow(object):
         self.label_top_info_2.setObjectName(u"label_top_info_2")
         self.label_top_info_2.setMinimumSize(QSize(0, 0))
         self.label_top_info_2.setMaximumSize(QSize(250, 20))
-        self.label_top_info_2.setFont(font2)
+        self.label_top_info_2.setFont(font)
         self.label_top_info_2.setStyleSheet(u"color: rgb(98, 103, 111);")
         self.label_top_info_2.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
@@ -654,10 +660,10 @@ class Ui_MainWindow(object):
         self.label_user_icon.setSizePolicy(sizePolicy4)
         self.label_user_icon.setMinimumSize(QSize(60, 60))
         self.label_user_icon.setMaximumSize(QSize(60, 60))
-        font3 = QFont()
-        font3.setFamilies([u"Segoe UI"])
-        font3.setPointSize(12)
-        self.label_user_icon.setFont(font3)
+        font2 = QFont()
+        font2.setFamilies([u"Segoe UI"])
+        font2.setPointSize(12)
+        self.label_user_icon.setFont(font2)
         self.label_user_icon.setStyleSheet(u"QLabel {\n"
 "	border-radius: 30px;\n"
 "	background-color: rgb(44, 49, 60);\n"
@@ -691,7 +697,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_9 = QVBoxLayout(self.frame_content)
         self.verticalLayout_9.setSpacing(0)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.verticalLayout_9.setContentsMargins(5, 5, 5, 5)
+        self.verticalLayout_9.setSizeConstraint(QLayout.SetDefaultConstraint)
+        self.verticalLayout_9.setContentsMargins(3, 3, 3, 3)
         self.stackedWidget = QStackedWidget(self.frame_content)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.stackedWidget.setStyleSheet(u"background: transparent;")
@@ -701,10 +708,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
         self.label_6 = QLabel(self.page_home)
         self.label_6.setObjectName(u"label_6")
-        font4 = QFont()
-        font4.setFamilies([u"Segoe UI"])
-        font4.setPointSize(40)
-        self.label_6.setFont(font4)
+        font3 = QFont()
+        font3.setFamilies([u"Segoe UI"])
+        font3.setPointSize(40)
+        self.label_6.setFont(font3)
         self.label_6.setStyleSheet(u"")
         self.label_6.setAlignment(Qt.AlignCenter)
 
@@ -712,25 +719,1047 @@ class Ui_MainWindow(object):
 
         self.label = QLabel(self.page_home)
         self.label.setObjectName(u"label")
-        font5 = QFont()
-        font5.setFamilies([u"Segoe UI"])
-        font5.setPointSize(14)
-        self.label.setFont(font5)
+        font4 = QFont()
+        font4.setFamilies([u"Segoe UI"])
+        font4.setPointSize(14)
+        self.label.setFont(font4)
         self.label.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_10.addWidget(self.label)
 
         self.label_7 = QLabel(self.page_home)
         self.label_7.setObjectName(u"label_7")
-        font6 = QFont()
-        font6.setFamilies([u"Segoe UI"])
-        font6.setPointSize(15)
-        self.label_7.setFont(font6)
+        font5 = QFont()
+        font5.setFamilies([u"Segoe UI"])
+        font5.setPointSize(15)
+        self.label_7.setFont(font5)
         self.label_7.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_10.addWidget(self.label_7)
 
         self.stackedWidget.addWidget(self.page_home)
+        self.page_ask = QWidget()
+        self.page_ask.setObjectName(u"page_ask")
+        self.horizontalLayout_14 = QHBoxLayout(self.page_ask)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.horizontalLayout_14.setContentsMargins(6, 6, 6, 6)
+        self.frame_4 = QFrame(self.page_ask)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setMinimumSize(QSize(180, 0))
+        self.frame_4.setMaximumSize(QSize(300, 16777215))
+        self.frame_4.setStyleSheet(u"background-color: rgb(39, 44, 54);\n"
+"border-radius: 5px;")
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_12 = QVBoxLayout(self.frame_4)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.gridLayout_3 = QGridLayout()
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.messageInputASK = QLineEdit(self.frame_4)
+        self.messageInputASK.setObjectName(u"messageInputASK")
+        sizePolicy5 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.messageInputASK.sizePolicy().hasHeightForWidth())
+        self.messageInputASK.setSizePolicy(sizePolicy5)
+        self.messageInputASK.setMinimumSize(QSize(0, 40))
+        font6 = QFont()
+        font6.setFamilies([u"Satoshi Black"])
+        font6.setPointSize(10)
+        self.messageInputASK.setFont(font6)
+        self.messageInputASK.setToolTipDuration(-1)
+        self.messageInputASK.setAutoFillBackground(False)
+        self.messageInputASK.setStyleSheet(u"QLineEdit {\n"
+"	background-color: rgb(27, 29, 35);\n"
+"	border-radius: 5px;\n"
+"	border: 2px solid rgb(27, 29, 35);\n"
+"	padding-left: 10px;\n"
+"}\n"
+"QLineEdit:hover {\n"
+"	border: 2px solid rgb(64, 71, 88);\n"
+"}\n"
+"QLineEdit:focus {\n"
+"	border: 2px solid rgb(91, 101, 124);\n"
+"}\n"
+"\n"
+"QLineEdit::Text {\n"
+"width: parent.width\n"
+"height: parent.height\n"
+"font.pointSize: 100\n"
+"minimumPointSize: 10\n"
+"fontSizeMode: Text.Fit\n"
+"}")
+        self.messageInputASK.setInputMethodHints(Qt.ImhNone)
+        self.messageInputASK.setMaxLength(16)
+        self.messageInputASK.setFrame(True)
+        self.messageInputASK.setEchoMode(QLineEdit.Normal)
+
+        self.gridLayout_3.addWidget(self.messageInputASK, 3, 0, 1, 1)
+
+        self.frame_5 = QFrame(self.frame_4)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setMaximumSize(QSize(16777215, 150))
+        self.frame_5.setStyleSheet(u"background-color: rgb(23, 32, 77);\n"
+"border-radius: 5px;")
+        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_14 = QVBoxLayout(self.frame_5)
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.label_top_info_4 = QLabel(self.frame_5)
+        self.label_top_info_4.setObjectName(u"label_top_info_4")
+        self.label_top_info_4.setMinimumSize(QSize(0, 10))
+        self.label_top_info_4.setMaximumSize(QSize(16777215, 25))
+        font7 = QFont()
+        font7.setFamilies([u"Satoshi Black"])
+        font7.setPointSize(12)
+        font7.setBold(True)
+        self.label_top_info_4.setFont(font7)
+        self.label_top_info_4.setStyleSheet(u"QLabel{\n"
+"	background-color: rgb(33, 46, 112);\n"
+"	border: 0px solid ;\n"
+"	border-radius: 8px;\n"
+"}")
+        self.label_top_info_4.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_14.addWidget(self.label_top_info_4)
+
+        self.label_top_info_5 = QLabel(self.frame_5)
+        self.label_top_info_5.setObjectName(u"label_top_info_5")
+        self.label_top_info_5.setMinimumSize(QSize(0, 20))
+        self.label_top_info_5.setMaximumSize(QSize(16777215, 30))
+        font8 = QFont()
+        font8.setFamilies([u"Satoshi"])
+        font8.setPointSize(12)
+        font8.setBold(True)
+        self.label_top_info_5.setFont(font8)
+        self.label_top_info_5.setStyleSheet(u"color: rgb(191, 203, 217)")
+        self.label_top_info_5.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_14.addWidget(self.label_top_info_5)
+
+        self.carrierFreqInputASK = QSpinBox(self.frame_5)
+        self.carrierFreqInputASK.setObjectName(u"carrierFreqInputASK")
+        font9 = QFont()
+        font9.setFamilies([u"Satoshi"])
+        font9.setPointSize(10)
+        font9.setBold(True)
+        self.carrierFreqInputASK.setFont(font9)
+        self.carrierFreqInputASK.setStyleSheet(u"QSpinBox{\n"
+"	background-color: rgb(5, 7, 35);\n"
+"	border-radius: 5px;\n"
+"	border: 2px solid rgb(10, 11, 35);\n"
+"	padding: 5px;\n"
+"	padding-left: 10px;\n"
+"}\n"
+"QSpinBox:hover{\n"
+"	border: 2px solid rgb(0, 0, 127)\n"
+"}\n"
+"QSpinBox QAbstractItemView {\n"
+"	color: rgb(85, 170, 255);	\n"
+"	background-color: rgb(27, 29, 35);\n"
+"	padding: 10px;\n"
+"	selection-background-color: rgb(27, 29, 35);\n"
+"}\n"
+"/*\n"
+"rgb(27, 29, 35);\n"
+"rgb(13, 9, 59)\n"
+"*/\n"
+"\n"
+"QSpinBox::up-button{\n"
+"	width: 25px; \n"
+"	border-left-width: 3px;\n"
+"	border-left-color: rgba(39, 44, 54, 150);\n"
+"	border-left-style: solid;\n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;	\n"
+"	background-image: url(:/16x16/icons/16x16/cil-arrow-top.png);\n"
+"	background-position: center;\n"
+"	background-repeat: no-reperat;\n"
+"}\n"
+"\n"
+"QSpinBox::up-button:hover{\n"
+"	background-color: rgb(80, 80, 80)\n"
+"}\n"
+"\n"
+"QSpinBox::down-button:hover{\n"
+"	background-color: rgb(80, 80, 80)\n"
+"}\n"
+"\n"
+"QSpinBox::down-bu"
+                        "tton{\n"
+"	width: 25px; \n"
+"	border-left-width: 3px;\n"
+"	border-left-color: rgba(39, 44, 54, 150);\n"
+"	border-left-style: solid;\n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;	\n"
+"	background-image: url(:/16x16/icons/16x16/cil-arrow-bottom.png);\n"
+"	background-position: center;\n"
+"	background-repeat: no-reperat;\n"
+"}")
+        self.carrierFreqInputASK.setMinimum(1)
+        self.carrierFreqInputASK.setMaximum(200)
+
+        self.verticalLayout_14.addWidget(self.carrierFreqInputASK)
+
+        self.horizontalSlider_2 = QSlider(self.frame_5)
+        self.horizontalSlider_2.setObjectName(u"horizontalSlider_2")
+        self.horizontalSlider_2.setStyleSheet(u"QSlider::handle:horizontal{\n"
+"	background: rgb(33, 46, 112);\n"
+"}")
+        self.horizontalSlider_2.setMinimum(1)
+        self.horizontalSlider_2.setMaximum(200)
+        self.horizontalSlider_2.setOrientation(Qt.Horizontal)
+        self.horizontalSlider_2.setTickPosition(QSlider.NoTicks)
+
+        self.verticalLayout_14.addWidget(self.horizontalSlider_2)
+
+
+        self.gridLayout_3.addWidget(self.frame_5, 4, 0, 1, 1)
+
+        self.label_title_bar_top_2 = QLabel(self.frame_4)
+        self.label_title_bar_top_2.setObjectName(u"label_title_bar_top_2")
+        sizePolicy3.setHeightForWidth(self.label_title_bar_top_2.sizePolicy().hasHeightForWidth())
+        self.label_title_bar_top_2.setSizePolicy(sizePolicy3)
+        self.label_title_bar_top_2.setMaximumSize(QSize(16777215, 100))
+        font10 = QFont()
+        font10.setFamilies([u"Satoshi Black"])
+        font10.setPointSize(14)
+        font10.setBold(True)
+        font10.setItalic(False)
+        font10.setUnderline(False)
+        font10.setStrikeOut(False)
+        font10.setKerning(True)
+        self.label_title_bar_top_2.setFont(font10)
+        self.label_title_bar_top_2.setCursor(QCursor(Qt.ArrowCursor))
+        self.label_title_bar_top_2.setStyleSheet(u"QLabel{\n"
+"background-color: rgb(27, 29, 35);\n"
+"border: 0px solid ;\n"
+"border-radius: 8px;\n"
+"}")
+        self.label_title_bar_top_2.setScaledContents(True)
+        self.label_title_bar_top_2.setAlignment(Qt.AlignCenter)
+        self.label_title_bar_top_2.setWordWrap(False)
+
+        self.gridLayout_3.addWidget(self.label_title_bar_top_2, 0, 0, 1, 1)
+
+        self.label_top_info_3 = QLabel(self.frame_4)
+        self.label_top_info_3.setObjectName(u"label_top_info_3")
+        self.label_top_info_3.setMinimumSize(QSize(0, 25))
+        self.label_top_info_3.setMaximumSize(QSize(16777215, 80))
+        self.label_top_info_3.setFont(font8)
+        self.label_top_info_3.setStyleSheet(u"color: rgb(191, 203, 217)")
+        self.label_top_info_3.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_3.addWidget(self.label_top_info_3, 1, 0, 1, 1)
+
+        self.modulateBtnASK = QPushButton(self.frame_4)
+        self.modulateBtnASK.setObjectName(u"modulateBtnASK")
+        sizePolicy6 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.modulateBtnASK.sizePolicy().hasHeightForWidth())
+        self.modulateBtnASK.setSizePolicy(sizePolicy6)
+        self.modulateBtnASK.setMinimumSize(QSize(150, 30))
+        self.modulateBtnASK.setMaximumSize(QSize(16777215, 50))
+        font11 = QFont()
+        font11.setFamilies([u"Satoshi Black"])
+        font11.setPointSize(14)
+        font11.setBold(True)
+        self.modulateBtnASK.setFont(font11)
+        self.modulateBtnASK.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(56, 170, 72);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(63, 152, 90);\n"
+"}\n"
+"\n"
+"/* rgb(52, 59, 72)*/\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(60, 198, 84);\n"
+"	border: 2px solid rgb(60, 196, 72);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(37, 138, 26);\n"
+"	border: 2px solid rgb(60, 196, 72);\n"
+"}")
+        icon3 = QIcon()
+        icon3.addFile(u":/16x16/icons/16x16/cil-ask.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.modulateBtnASK.setIcon(icon3)
+
+        self.gridLayout_3.addWidget(self.modulateBtnASK, 5, 0, 1, 1)
+
+        self.clearBtnASK = QPushButton(self.frame_4)
+        self.clearBtnASK.setObjectName(u"clearBtnASK")
+        sizePolicy6.setHeightForWidth(self.clearBtnASK.sizePolicy().hasHeightForWidth())
+        self.clearBtnASK.setSizePolicy(sizePolicy6)
+        self.clearBtnASK.setMinimumSize(QSize(150, 30))
+        self.clearBtnASK.setMaximumSize(QSize(16777215, 50))
+        self.clearBtnASK.setFont(font11)
+        self.clearBtnASK.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(235, 59, 72);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(207, 59, 72);\n"
+"}\n"
+"\n"
+"/* rgb(52, 59, 72)*/\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(235, 67, 84);\n"
+"	border: 2px solid rgb(207, 59, 72);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(139, 37, 46);\n"
+"	border: 2px solid rgb(207, 59, 72);\n"
+"}")
+        icon4 = QIcon()
+        icon4.addFile(u":/16x16/icons/16x16/cil-remove.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.clearBtnASK.setIcon(icon4)
+
+        self.gridLayout_3.addWidget(self.clearBtnASK, 6, 0, 1, 1)
+
+
+        self.verticalLayout_12.addLayout(self.gridLayout_3)
+
+
+        self.horizontalLayout_14.addWidget(self.frame_4)
+
+        self.ASK_graph_layout = QFrame(self.page_ask)
+        self.ASK_graph_layout.setObjectName(u"ASK_graph_layout")
+        sizePolicy3.setHeightForWidth(self.ASK_graph_layout.sizePolicy().hasHeightForWidth())
+        self.ASK_graph_layout.setSizePolicy(sizePolicy3)
+        self.ASK_graph_layout.setMinimumSize(QSize(700, 585))
+        self.ASK_graph_layout.setStyleSheet(u"")
+        self.verticalLayout_13 = QVBoxLayout(self.ASK_graph_layout)
+        self.verticalLayout_13.setSpacing(0)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.MplWidgetASK = MplWidget(self.ASK_graph_layout)
+        self.MplWidgetASK.setObjectName(u"MplWidgetASK")
+        sizePolicy3.setHeightForWidth(self.MplWidgetASK.sizePolicy().hasHeightForWidth())
+        self.MplWidgetASK.setSizePolicy(sizePolicy3)
+        self.MplWidgetASK.setStyleSheet(u"background-color: rgba(0,0,0,0.7);\n"
+"border-radius: 5px;")
+
+        self.verticalLayout_13.addWidget(self.MplWidgetASK)
+
+
+        self.horizontalLayout_14.addWidget(self.ASK_graph_layout)
+
+        self.stackedWidget.addWidget(self.page_ask)
+        self.page_fsk = QWidget()
+        self.page_fsk.setObjectName(u"page_fsk")
+        self.horizontalLayout_13 = QHBoxLayout(self.page_fsk)
+        self.horizontalLayout_13.setSpacing(3)
+        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
+        self.horizontalLayout_13.setContentsMargins(1, 1, 1, 1)
+        self.frame_6 = QFrame(self.page_fsk)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setMinimumSize(QSize(180, 0))
+        self.frame_6.setMaximumSize(QSize(300, 16777215))
+        self.frame_6.setStyleSheet(u"background-color: rgb(39, 44, 54);\n"
+"border-radius: 5px;")
+        self.frame_6.setFrameShape(QFrame.StyledPanel)
+        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_17 = QVBoxLayout(self.frame_6)
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.gridLayout_4 = QGridLayout()
+        self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.gridLayout_4.setHorizontalSpacing(10)
+        self.frame_8 = QFrame(self.frame_6)
+        self.frame_8.setObjectName(u"frame_8")
+        sizePolicy7 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.frame_8.sizePolicy().hasHeightForWidth())
+        self.frame_8.setSizePolicy(sizePolicy7)
+        self.frame_8.setMaximumSize(QSize(16777215, 150))
+        self.frame_8.setStyleSheet(u"background-color: rgb(23, 32, 77);\n"
+"border-radius: 5px;")
+        self.frame_8.setFrameShape(QFrame.StyledPanel)
+        self.frame_8.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_19 = QVBoxLayout(self.frame_8)
+        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
+        self.label_top_info_9 = QLabel(self.frame_8)
+        self.label_top_info_9.setObjectName(u"label_top_info_9")
+        self.label_top_info_9.setMinimumSize(QSize(0, 20))
+        self.label_top_info_9.setMaximumSize(QSize(16777215, 25))
+        self.label_top_info_9.setFont(font7)
+        self.label_top_info_9.setStyleSheet(u"QLabel{\n"
+"	background-color: rgb(33, 46, 112);\n"
+"	border: 0px solid ;\n"
+"	border-radius: 8px;\n"
+"}")
+        self.label_top_info_9.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_19.addWidget(self.label_top_info_9)
+
+        self.label_top_info_10 = QLabel(self.frame_8)
+        self.label_top_info_10.setObjectName(u"label_top_info_10")
+        self.label_top_info_10.setMinimumSize(QSize(0, 20))
+        self.label_top_info_10.setMaximumSize(QSize(16777215, 30))
+        self.label_top_info_10.setFont(font8)
+        self.label_top_info_10.setStyleSheet(u"color: rgb(191, 203, 217)")
+        self.label_top_info_10.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_19.addWidget(self.label_top_info_10)
+
+        self.carrierFreq2InputFSK = QSpinBox(self.frame_8)
+        self.carrierFreq2InputFSK.setObjectName(u"carrierFreq2InputFSK")
+        self.carrierFreq2InputFSK.setFont(font9)
+        self.carrierFreq2InputFSK.setStyleSheet(u"QSpinBox{\n"
+"	background-color: rgb(5, 7, 35);\n"
+"	border-radius: 5px;\n"
+"	border: 2px solid rgb(10, 11, 35);\n"
+"	padding: 5px;\n"
+"	padding-left: 10px;\n"
+"}\n"
+"QSpinBox:hover{\n"
+"	border: 2px solid rgb(0, 0, 127)\n"
+"}\n"
+"QSpinBox QAbstractItemView {\n"
+"	color: rgb(85, 170, 255);	\n"
+"	background-color: rgb(27, 29, 35);\n"
+"	padding: 10px;\n"
+"	selection-background-color: rgb(27, 29, 35);\n"
+"}\n"
+"/*\n"
+"rgb(27, 29, 35);\n"
+"rgb(13, 9, 59)\n"
+"*/\n"
+"\n"
+"QSpinBox::up-button{\n"
+"	width: 25px; \n"
+"	border-left-width: 3px;\n"
+"	border-left-color: rgba(39, 44, 54, 150);\n"
+"	border-left-style: solid;\n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;	\n"
+"	background-image: url(:/16x16/icons/16x16/cil-arrow-top.png);\n"
+"	background-position: center;\n"
+"	background-repeat: no-reperat;\n"
+"}\n"
+"\n"
+"QSpinBox::up-button:hover{\n"
+"	background-color: rgb(80, 80, 80)\n"
+"}\n"
+"\n"
+"QSpinBox::down-button:hover{\n"
+"	background-color: rgb(80, 80, 80)\n"
+"}\n"
+"\n"
+"QSpinBox::down-bu"
+                        "tton{\n"
+"	width: 25px; \n"
+"	border-left-width: 3px;\n"
+"	border-left-color: rgba(39, 44, 54, 150);\n"
+"	border-left-style: solid;\n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;	\n"
+"	background-image: url(:/16x16/icons/16x16/cil-arrow-bottom.png);\n"
+"	background-position: center;\n"
+"	background-repeat: no-reperat;\n"
+"}")
+        self.carrierFreq2InputFSK.setMinimum(1)
+        self.carrierFreq2InputFSK.setMaximum(200)
+
+        self.verticalLayout_19.addWidget(self.carrierFreq2InputFSK)
+
+        self.horizontalSlider_4 = QSlider(self.frame_8)
+        self.horizontalSlider_4.setObjectName(u"horizontalSlider_4")
+        self.horizontalSlider_4.setStyleSheet(u"QSlider::handle:horizontal{\n"
+"	background: rgb(33, 46, 112);\n"
+"}")
+        self.horizontalSlider_4.setMinimum(1)
+        self.horizontalSlider_4.setMaximum(200)
+        self.horizontalSlider_4.setOrientation(Qt.Horizontal)
+        self.horizontalSlider_4.setTickPosition(QSlider.NoTicks)
+
+        self.verticalLayout_19.addWidget(self.horizontalSlider_4)
+
+
+        self.gridLayout_4.addWidget(self.frame_8, 4, 0, 1, 1)
+
+        self.clearBtnFSK = QPushButton(self.frame_6)
+        self.clearBtnFSK.setObjectName(u"clearBtnFSK")
+        sizePolicy6.setHeightForWidth(self.clearBtnFSK.sizePolicy().hasHeightForWidth())
+        self.clearBtnFSK.setSizePolicy(sizePolicy6)
+        self.clearBtnFSK.setMinimumSize(QSize(150, 30))
+        self.clearBtnFSK.setMaximumSize(QSize(16777215, 50))
+        self.clearBtnFSK.setFont(font11)
+        self.clearBtnFSK.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(235, 59, 72);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(207, 59, 72);\n"
+"}\n"
+"\n"
+"/* rgb(52, 59, 72)*/\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(235, 67, 84);\n"
+"	border: 2px solid rgb(207, 59, 72);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(139, 37, 46);\n"
+"	border: 2px solid rgb(207, 59, 72);\n"
+"}")
+        self.clearBtnFSK.setIcon(icon4)
+
+        self.gridLayout_4.addWidget(self.clearBtnFSK, 7, 0, 1, 1)
+
+        self.messageInputFSK = QLineEdit(self.frame_6)
+        self.messageInputFSK.setObjectName(u"messageInputFSK")
+        sizePolicy5.setHeightForWidth(self.messageInputFSK.sizePolicy().hasHeightForWidth())
+        self.messageInputFSK.setSizePolicy(sizePolicy5)
+        self.messageInputFSK.setMinimumSize(QSize(0, 40))
+        self.messageInputFSK.setFont(font6)
+        self.messageInputFSK.setToolTipDuration(-1)
+        self.messageInputFSK.setAutoFillBackground(False)
+        self.messageInputFSK.setStyleSheet(u"QLineEdit {\n"
+"	background-color: rgb(27, 29, 35);\n"
+"	border-radius: 5px;\n"
+"	border: 2px solid rgb(27, 29, 35);\n"
+"	padding-left: 10px;\n"
+"}\n"
+"QLineEdit:hover {\n"
+"	border: 2px solid rgb(64, 71, 88);\n"
+"}\n"
+"QLineEdit:focus {\n"
+"	border: 2px solid rgb(91, 101, 124);\n"
+"}\n"
+"\n"
+"QLineEdit::Text {\n"
+"width: parent.width\n"
+"height: parent.height\n"
+"font.pointSize: 100\n"
+"minimumPointSize: 10\n"
+"fontSizeMode: Text.Fit\n"
+"}")
+        self.messageInputFSK.setInputMethodHints(Qt.ImhNone)
+        self.messageInputFSK.setMaxLength(16)
+        self.messageInputFSK.setFrame(True)
+        self.messageInputFSK.setEchoMode(QLineEdit.Normal)
+
+        self.gridLayout_4.addWidget(self.messageInputFSK, 2, 0, 1, 1)
+
+        self.label_top_info_13 = QLabel(self.frame_6)
+        self.label_top_info_13.setObjectName(u"label_top_info_13")
+        self.label_top_info_13.setMinimumSize(QSize(0, 25))
+        self.label_top_info_13.setMaximumSize(QSize(16777215, 80))
+        self.label_top_info_13.setFont(font8)
+        self.label_top_info_13.setStyleSheet(u"color: rgb(191, 203, 217)")
+        self.label_top_info_13.setAlignment(Qt.AlignCenter)
+        self.label_top_info_13.setWordWrap(True)
+
+        self.gridLayout_4.addWidget(self.label_top_info_13, 1, 0, 1, 1)
+
+        self.modulateBtnFSK = QPushButton(self.frame_6)
+        self.modulateBtnFSK.setObjectName(u"modulateBtnFSK")
+        sizePolicy6.setHeightForWidth(self.modulateBtnFSK.sizePolicy().hasHeightForWidth())
+        self.modulateBtnFSK.setSizePolicy(sizePolicy6)
+        self.modulateBtnFSK.setMinimumSize(QSize(150, 30))
+        self.modulateBtnFSK.setMaximumSize(QSize(16777215, 50))
+        self.modulateBtnFSK.setFont(font11)
+        self.modulateBtnFSK.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(56, 170, 72);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(63, 152, 90);\n"
+"}\n"
+"\n"
+"/* rgb(52, 59, 72)*/\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(60, 198, 84);\n"
+"	border: 2px solid rgb(60, 196, 72);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(37, 138, 26);\n"
+"	border: 2px solid rgb(60, 196, 72);\n"
+"}")
+        self.modulateBtnFSK.setIcon(icon3)
+
+        self.gridLayout_4.addWidget(self.modulateBtnFSK, 6, 0, 1, 1)
+
+        self.label_title_bar_top_3 = QLabel(self.frame_6)
+        self.label_title_bar_top_3.setObjectName(u"label_title_bar_top_3")
+        sizePolicy3.setHeightForWidth(self.label_title_bar_top_3.sizePolicy().hasHeightForWidth())
+        self.label_title_bar_top_3.setSizePolicy(sizePolicy3)
+        self.label_title_bar_top_3.setMinimumSize(QSize(0, 25))
+        self.label_title_bar_top_3.setMaximumSize(QSize(16777215, 100))
+        self.label_title_bar_top_3.setFont(font10)
+        self.label_title_bar_top_3.setCursor(QCursor(Qt.ArrowCursor))
+        self.label_title_bar_top_3.setStyleSheet(u"QLabel{\n"
+"background-color: rgb(27, 29, 35);\n"
+"border: 0px solid ;\n"
+"border-radius: 8px;\n"
+"}")
+        self.label_title_bar_top_3.setScaledContents(True)
+        self.label_title_bar_top_3.setAlignment(Qt.AlignCenter)
+        self.label_title_bar_top_3.setWordWrap(True)
+
+        self.gridLayout_4.addWidget(self.label_title_bar_top_3, 0, 0, 1, 1)
+
+        self.frame_7 = QFrame(self.frame_6)
+        self.frame_7.setObjectName(u"frame_7")
+        sizePolicy7.setHeightForWidth(self.frame_7.sizePolicy().hasHeightForWidth())
+        self.frame_7.setSizePolicy(sizePolicy7)
+        self.frame_7.setMaximumSize(QSize(16777215, 150))
+        self.frame_7.setStyleSheet(u"background-color: rgb(23, 32, 77);\n"
+"border-radius: 5px;")
+        self.frame_7.setFrameShape(QFrame.StyledPanel)
+        self.frame_7.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_18 = QVBoxLayout(self.frame_7)
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.label_top_info_6 = QLabel(self.frame_7)
+        self.label_top_info_6.setObjectName(u"label_top_info_6")
+        self.label_top_info_6.setMinimumSize(QSize(0, 20))
+        self.label_top_info_6.setMaximumSize(QSize(16777215, 25))
+        self.label_top_info_6.setFont(font7)
+        self.label_top_info_6.setStyleSheet(u"QLabel{\n"
+"	background-color: rgb(33, 46, 112);\n"
+"	border: 0px solid ;\n"
+"	border-radius: 8px;\n"
+"}")
+        self.label_top_info_6.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_18.addWidget(self.label_top_info_6)
+
+        self.label_top_info_7 = QLabel(self.frame_7)
+        self.label_top_info_7.setObjectName(u"label_top_info_7")
+        self.label_top_info_7.setMinimumSize(QSize(0, 20))
+        self.label_top_info_7.setMaximumSize(QSize(16777215, 30))
+        self.label_top_info_7.setFont(font8)
+        self.label_top_info_7.setStyleSheet(u"color: rgb(191, 203, 217)")
+        self.label_top_info_7.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_18.addWidget(self.label_top_info_7)
+
+        self.carrierFreq1InputFSK = QSpinBox(self.frame_7)
+        self.carrierFreq1InputFSK.setObjectName(u"carrierFreq1InputFSK")
+        self.carrierFreq1InputFSK.setFont(font9)
+        self.carrierFreq1InputFSK.setStyleSheet(u"QSpinBox{\n"
+"	background-color: rgb(5, 7, 35);\n"
+"	border-radius: 5px;\n"
+"	border: 2px solid rgb(10, 11, 35);\n"
+"	padding: 5px;\n"
+"	padding-left: 10px;\n"
+"}\n"
+"QSpinBox:hover{\n"
+"	border: 2px solid rgb(0, 0, 127)\n"
+"}\n"
+"QSpinBox QAbstractItemView {\n"
+"	color: rgb(85, 170, 255);	\n"
+"	background-color: rgb(27, 29, 35);\n"
+"	padding: 10px;\n"
+"	selection-background-color: rgb(27, 29, 35);\n"
+"}\n"
+"/*\n"
+"rgb(27, 29, 35);\n"
+"rgb(13, 9, 59)\n"
+"*/\n"
+"\n"
+"QSpinBox::up-button{\n"
+"	width: 25px; \n"
+"	border-left-width: 3px;\n"
+"	border-left-color: rgba(39, 44, 54, 150);\n"
+"	border-left-style: solid;\n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;	\n"
+"	background-image: url(:/16x16/icons/16x16/cil-arrow-top.png);\n"
+"	background-position: center;\n"
+"	background-repeat: no-reperat;\n"
+"}\n"
+"\n"
+"QSpinBox::up-button:hover{\n"
+"	background-color: rgb(80, 80, 80)\n"
+"}\n"
+"\n"
+"QSpinBox::down-button:hover{\n"
+"	background-color: rgb(80, 80, 80)\n"
+"}\n"
+"\n"
+"QSpinBox::down-bu"
+                        "tton{\n"
+"	width: 25px; \n"
+"	border-left-width: 3px;\n"
+"	border-left-color: rgba(39, 44, 54, 150);\n"
+"	border-left-style: solid;\n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;	\n"
+"	background-image: url(:/16x16/icons/16x16/cil-arrow-bottom.png);\n"
+"	background-position: center;\n"
+"	background-repeat: no-reperat;\n"
+"}")
+        self.carrierFreq1InputFSK.setMinimum(1)
+        self.carrierFreq1InputFSK.setMaximum(200)
+
+        self.verticalLayout_18.addWidget(self.carrierFreq1InputFSK)
+
+        self.horizontalSlider_3 = QSlider(self.frame_7)
+        self.horizontalSlider_3.setObjectName(u"horizontalSlider_3")
+        self.horizontalSlider_3.setStyleSheet(u"QSlider::handle:horizontal{\n"
+"	background: rgb(33, 46, 112);\n"
+"}")
+        self.horizontalSlider_3.setMinimum(1)
+        self.horizontalSlider_3.setMaximum(200)
+        self.horizontalSlider_3.setOrientation(Qt.Horizontal)
+        self.horizontalSlider_3.setTickPosition(QSlider.NoTicks)
+
+        self.verticalLayout_18.addWidget(self.horizontalSlider_3)
+
+
+        self.gridLayout_4.addWidget(self.frame_7, 3, 0, 1, 1)
+
+        self.frame_9 = QFrame(self.frame_6)
+        self.frame_9.setObjectName(u"frame_9")
+        sizePolicy7.setHeightForWidth(self.frame_9.sizePolicy().hasHeightForWidth())
+        self.frame_9.setSizePolicy(sizePolicy7)
+        self.frame_9.setMaximumSize(QSize(16777215, 100))
+        self.frame_9.setStyleSheet(u"background-color: rgb(23, 32, 77);\n"
+"border-radius: 5px;")
+        self.frame_9.setFrameShape(QFrame.StyledPanel)
+        self.frame_9.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_20 = QVBoxLayout(self.frame_9)
+        self.verticalLayout_20.setObjectName(u"verticalLayout_20")
+        self.verticalLayout_20.setContentsMargins(9, -1, -1, -1)
+        self.label_top_info_11 = QLabel(self.frame_9)
+        self.label_top_info_11.setObjectName(u"label_top_info_11")
+        self.label_top_info_11.setMinimumSize(QSize(0, 20))
+        self.label_top_info_11.setMaximumSize(QSize(16777215, 25))
+        self.label_top_info_11.setFont(font7)
+        self.label_top_info_11.setStyleSheet(u"QLabel{\n"
+"	background-color: rgb(33, 46, 112);\n"
+"	border: 0px solid ;\n"
+"	border-radius: 8px;\n"
+"}")
+        self.label_top_info_11.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_20.addWidget(self.label_top_info_11)
+
+        self.frame_10 = QFrame(self.frame_9)
+        self.frame_10.setObjectName(u"frame_10")
+        self.frame_10.setFrameShape(QFrame.StyledPanel)
+        self.frame_10.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_15 = QHBoxLayout(self.frame_10)
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
+        self.label_top_info_12 = QLabel(self.frame_10)
+        self.label_top_info_12.setObjectName(u"label_top_info_12")
+        self.label_top_info_12.setMinimumSize(QSize(0, 20))
+        self.label_top_info_12.setMaximumSize(QSize(16777215, 30))
+        self.label_top_info_12.setFont(font8)
+        self.label_top_info_12.setStyleSheet(u"color: rgb(191, 203, 217)")
+        self.label_top_info_12.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_15.addWidget(self.label_top_info_12)
+
+        self.label_resultFSK = QLabel(self.frame_10)
+        self.label_resultFSK.setObjectName(u"label_resultFSK")
+        self.label_resultFSK.setMinimumSize(QSize(0, 20))
+        self.label_resultFSK.setMaximumSize(QSize(16777215, 30))
+        self.label_resultFSK.setFont(font8)
+        self.label_resultFSK.setStyleSheet(u"color: rgb(191, 203, 217)")
+        self.label_resultFSK.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_15.addWidget(self.label_resultFSK)
+
+
+        self.verticalLayout_20.addWidget(self.frame_10)
+
+
+        self.gridLayout_4.addWidget(self.frame_9, 5, 0, 1, 1)
+
+
+        self.verticalLayout_17.addLayout(self.gridLayout_4)
+
+
+        self.horizontalLayout_13.addWidget(self.frame_6)
+
+        self.FSK_graph_layout = QFrame(self.page_fsk)
+        self.FSK_graph_layout.setObjectName(u"FSK_graph_layout")
+        sizePolicy3.setHeightForWidth(self.FSK_graph_layout.sizePolicy().hasHeightForWidth())
+        self.FSK_graph_layout.setSizePolicy(sizePolicy3)
+        self.FSK_graph_layout.setMinimumSize(QSize(700, 585))
+        self.FSK_graph_layout.setStyleSheet(u"")
+        self.graph_layout_4 = QVBoxLayout(self.FSK_graph_layout)
+        self.graph_layout_4.setSpacing(0)
+        self.graph_layout_4.setObjectName(u"graph_layout_4")
+        self.graph_layout_4.setContentsMargins(0, 0, 0, 0)
+        self.MplWidgetFSK = MplWidgetFSK(self.FSK_graph_layout)
+        self.MplWidgetFSK.setObjectName(u"MplWidgetFSK")
+        sizePolicy3.setHeightForWidth(self.MplWidgetFSK.sizePolicy().hasHeightForWidth())
+        self.MplWidgetFSK.setSizePolicy(sizePolicy3)
+        self.MplWidgetFSK.setStyleSheet(u"background-color: rgba(0,0,0,0.7);\n"
+"border-radius: 5px;")
+
+        self.graph_layout_4.addWidget(self.MplWidgetFSK)
+
+
+        self.horizontalLayout_13.addWidget(self.FSK_graph_layout)
+
+        self.stackedWidget.addWidget(self.page_fsk)
+        self.page_psk = QWidget()
+        self.page_psk.setObjectName(u"page_psk")
+        self.horizontalLayout_16 = QHBoxLayout(self.page_psk)
+        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
+        self.frame_11 = QFrame(self.page_psk)
+        self.frame_11.setObjectName(u"frame_11")
+        self.frame_11.setMinimumSize(QSize(180, 0))
+        self.frame_11.setMaximumSize(QSize(300, 16777215))
+        self.frame_11.setStyleSheet(u"background-color: rgb(39, 44, 54);\n"
+"border-radius: 5px;")
+        self.frame_11.setFrameShape(QFrame.StyledPanel)
+        self.frame_11.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_21 = QVBoxLayout(self.frame_11)
+        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
+        self.gridLayout_5 = QGridLayout()
+        self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.messageInputPSK = QLineEdit(self.frame_11)
+        self.messageInputPSK.setObjectName(u"messageInputPSK")
+        sizePolicy5.setHeightForWidth(self.messageInputPSK.sizePolicy().hasHeightForWidth())
+        self.messageInputPSK.setSizePolicy(sizePolicy5)
+        self.messageInputPSK.setMinimumSize(QSize(0, 40))
+        self.messageInputPSK.setFont(font6)
+        self.messageInputPSK.setToolTipDuration(-1)
+        self.messageInputPSK.setAutoFillBackground(False)
+        self.messageInputPSK.setStyleSheet(u"QLineEdit {\n"
+"	background-color: rgb(27, 29, 35);\n"
+"	border-radius: 5px;\n"
+"	border: 2px solid rgb(27, 29, 35);\n"
+"	padding-left: 10px;\n"
+"}\n"
+"QLineEdit:hover {\n"
+"	border: 2px solid rgb(64, 71, 88);\n"
+"}\n"
+"QLineEdit:focus {\n"
+"	border: 2px solid rgb(91, 101, 124);\n"
+"}\n"
+"\n"
+"QLineEdit::Text {\n"
+"width: parent.width\n"
+"height: parent.height\n"
+"font.pointSize: 100\n"
+"minimumPointSize: 10\n"
+"fontSizeMode: Text.Fit\n"
+"}")
+        self.messageInputPSK.setInputMethodHints(Qt.ImhNone)
+        self.messageInputPSK.setMaxLength(16)
+        self.messageInputPSK.setFrame(True)
+        self.messageInputPSK.setEchoMode(QLineEdit.Normal)
+
+        self.gridLayout_5.addWidget(self.messageInputPSK, 3, 0, 1, 1)
+
+        self.frame_12 = QFrame(self.frame_11)
+        self.frame_12.setObjectName(u"frame_12")
+        self.frame_12.setMaximumSize(QSize(16777215, 150))
+        self.frame_12.setStyleSheet(u"background-color: rgb(23, 32, 77);\n"
+"border-radius: 5px;")
+        self.frame_12.setFrameShape(QFrame.StyledPanel)
+        self.frame_12.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_22 = QVBoxLayout(self.frame_12)
+        self.verticalLayout_22.setObjectName(u"verticalLayout_22")
+        self.label_top_info_8 = QLabel(self.frame_12)
+        self.label_top_info_8.setObjectName(u"label_top_info_8")
+        self.label_top_info_8.setMinimumSize(QSize(0, 10))
+        self.label_top_info_8.setMaximumSize(QSize(16777215, 25))
+        self.label_top_info_8.setFont(font7)
+        self.label_top_info_8.setStyleSheet(u"QLabel{\n"
+"	background-color: rgb(33, 46, 112);\n"
+"	border: 0px solid ;\n"
+"	border-radius: 8px;\n"
+"}")
+        self.label_top_info_8.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_22.addWidget(self.label_top_info_8)
+
+        self.label_top_info_14 = QLabel(self.frame_12)
+        self.label_top_info_14.setObjectName(u"label_top_info_14")
+        self.label_top_info_14.setMinimumSize(QSize(0, 20))
+        self.label_top_info_14.setMaximumSize(QSize(16777215, 30))
+        self.label_top_info_14.setFont(font8)
+        self.label_top_info_14.setStyleSheet(u"color: rgb(191, 203, 217)")
+        self.label_top_info_14.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_22.addWidget(self.label_top_info_14)
+
+        self.carrierFreqInputPSK = QSpinBox(self.frame_12)
+        self.carrierFreqInputPSK.setObjectName(u"carrierFreqInputPSK")
+        self.carrierFreqInputPSK.setFont(font9)
+        self.carrierFreqInputPSK.setStyleSheet(u"QSpinBox{\n"
+"	background-color: rgb(5, 7, 35);\n"
+"	border-radius: 5px;\n"
+"	border: 2px solid rgb(10, 11, 35);\n"
+"	padding: 5px;\n"
+"	padding-left: 10px;\n"
+"}\n"
+"QSpinBox:hover{\n"
+"	border: 2px solid rgb(0, 0, 127)\n"
+"}\n"
+"QSpinBox QAbstractItemView {\n"
+"	color: rgb(85, 170, 255);	\n"
+"	background-color: rgb(27, 29, 35);\n"
+"	padding: 10px;\n"
+"	selection-background-color: rgb(27, 29, 35);\n"
+"}\n"
+"/*\n"
+"rgb(27, 29, 35);\n"
+"rgb(13, 9, 59)\n"
+"*/\n"
+"\n"
+"QSpinBox::up-button{\n"
+"	width: 25px; \n"
+"	border-left-width: 3px;\n"
+"	border-left-color: rgba(39, 44, 54, 150);\n"
+"	border-left-style: solid;\n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;	\n"
+"	background-image: url(:/16x16/icons/16x16/cil-arrow-top.png);\n"
+"	background-position: center;\n"
+"	background-repeat: no-reperat;\n"
+"}\n"
+"\n"
+"QSpinBox::up-button:hover{\n"
+"	background-color: rgb(80, 80, 80)\n"
+"}\n"
+"\n"
+"QSpinBox::down-button:hover{\n"
+"	background-color: rgb(80, 80, 80)\n"
+"}\n"
+"\n"
+"QSpinBox::down-bu"
+                        "tton{\n"
+"	width: 25px; \n"
+"	border-left-width: 3px;\n"
+"	border-left-color: rgba(39, 44, 54, 150);\n"
+"	border-left-style: solid;\n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;	\n"
+"	background-image: url(:/16x16/icons/16x16/cil-arrow-bottom.png);\n"
+"	background-position: center;\n"
+"	background-repeat: no-reperat;\n"
+"}")
+        self.carrierFreqInputPSK.setMinimum(1)
+        self.carrierFreqInputPSK.setMaximum(200)
+
+        self.verticalLayout_22.addWidget(self.carrierFreqInputPSK)
+
+        self.horizontalSlider_5 = QSlider(self.frame_12)
+        self.horizontalSlider_5.setObjectName(u"horizontalSlider_5")
+        self.horizontalSlider_5.setStyleSheet(u"QSlider::handle:horizontal{\n"
+"	background: rgb(33, 46, 112);\n"
+"}")
+        self.horizontalSlider_5.setMinimum(1)
+        self.horizontalSlider_5.setMaximum(200)
+        self.horizontalSlider_5.setOrientation(Qt.Horizontal)
+        self.horizontalSlider_5.setTickPosition(QSlider.NoTicks)
+
+        self.verticalLayout_22.addWidget(self.horizontalSlider_5)
+
+
+        self.gridLayout_5.addWidget(self.frame_12, 4, 0, 1, 1)
+
+        self.label_title_bar_top_4 = QLabel(self.frame_11)
+        self.label_title_bar_top_4.setObjectName(u"label_title_bar_top_4")
+        sizePolicy3.setHeightForWidth(self.label_title_bar_top_4.sizePolicy().hasHeightForWidth())
+        self.label_title_bar_top_4.setSizePolicy(sizePolicy3)
+        self.label_title_bar_top_4.setMaximumSize(QSize(16777215, 100))
+        self.label_title_bar_top_4.setFont(font10)
+        self.label_title_bar_top_4.setCursor(QCursor(Qt.ArrowCursor))
+        self.label_title_bar_top_4.setStyleSheet(u"QLabel{\n"
+"background-color: rgb(27, 29, 35);\n"
+"border: 0px solid ;\n"
+"border-radius: 8px;\n"
+"}")
+        self.label_title_bar_top_4.setScaledContents(True)
+        self.label_title_bar_top_4.setAlignment(Qt.AlignCenter)
+        self.label_title_bar_top_4.setWordWrap(False)
+
+        self.gridLayout_5.addWidget(self.label_title_bar_top_4, 0, 0, 1, 1)
+
+        self.label_top_info_15 = QLabel(self.frame_11)
+        self.label_top_info_15.setObjectName(u"label_top_info_15")
+        self.label_top_info_15.setMinimumSize(QSize(0, 25))
+        self.label_top_info_15.setMaximumSize(QSize(16777215, 80))
+        self.label_top_info_15.setFont(font8)
+        self.label_top_info_15.setStyleSheet(u"color: rgb(191, 203, 217)")
+        self.label_top_info_15.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_5.addWidget(self.label_top_info_15, 1, 0, 1, 1)
+
+        self.modulateBtnPSK = QPushButton(self.frame_11)
+        self.modulateBtnPSK.setObjectName(u"modulateBtnPSK")
+        sizePolicy6.setHeightForWidth(self.modulateBtnPSK.sizePolicy().hasHeightForWidth())
+        self.modulateBtnPSK.setSizePolicy(sizePolicy6)
+        self.modulateBtnPSK.setMinimumSize(QSize(150, 30))
+        self.modulateBtnPSK.setMaximumSize(QSize(16777215, 50))
+        self.modulateBtnPSK.setFont(font11)
+        self.modulateBtnPSK.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(56, 170, 72);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(63, 152, 90);\n"
+"}\n"
+"\n"
+"/* rgb(52, 59, 72)*/\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(60, 198, 84);\n"
+"	border: 2px solid rgb(60, 196, 72);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(37, 138, 26);\n"
+"	border: 2px solid rgb(60, 196, 72);\n"
+"}")
+        self.modulateBtnPSK.setIcon(icon3)
+
+        self.gridLayout_5.addWidget(self.modulateBtnPSK, 5, 0, 1, 1)
+
+        self.clearBtnPSK = QPushButton(self.frame_11)
+        self.clearBtnPSK.setObjectName(u"clearBtnPSK")
+        sizePolicy6.setHeightForWidth(self.clearBtnPSK.sizePolicy().hasHeightForWidth())
+        self.clearBtnPSK.setSizePolicy(sizePolicy6)
+        self.clearBtnPSK.setMinimumSize(QSize(150, 30))
+        self.clearBtnPSK.setMaximumSize(QSize(16777215, 50))
+        self.clearBtnPSK.setFont(font11)
+        self.clearBtnPSK.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(235, 59, 72);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(207, 59, 72);\n"
+"}\n"
+"\n"
+"/* rgb(52, 59, 72)*/\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(235, 67, 84);\n"
+"	border: 2px solid rgb(207, 59, 72);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(139, 37, 46);\n"
+"	border: 2px solid rgb(207, 59, 72);\n"
+"}")
+        self.clearBtnPSK.setIcon(icon4)
+
+        self.gridLayout_5.addWidget(self.clearBtnPSK, 6, 0, 1, 1)
+
+
+        self.verticalLayout_21.addLayout(self.gridLayout_5)
+
+
+        self.horizontalLayout_16.addWidget(self.frame_11)
+
+        self.PSK_graph_layout = QFrame(self.page_psk)
+        self.PSK_graph_layout.setObjectName(u"PSK_graph_layout")
+        self.PSK_graph_layout.setMinimumSize(QSize(700, 585))
+        self.PSK_graph_layout.setStyleSheet(u"")
+        self.graph_layout_5 = QVBoxLayout(self.PSK_graph_layout)
+        self.graph_layout_5.setSpacing(0)
+        self.graph_layout_5.setObjectName(u"graph_layout_5")
+        self.graph_layout_5.setContentsMargins(0, 0, 0, 0)
+        self.MplWidgetPSK = MplWidget(self.PSK_graph_layout)
+        self.MplWidgetPSK.setObjectName(u"MplWidgetPSK")
+        sizePolicy3.setHeightForWidth(self.MplWidgetPSK.sizePolicy().hasHeightForWidth())
+        self.MplWidgetPSK.setSizePolicy(sizePolicy3)
+        self.MplWidgetPSK.setStyleSheet(u"background-color: rgba(0,0,0,0.7);\n"
+"border-radius: 5px;")
+
+        self.graph_layout_5.addWidget(self.MplWidgetPSK)
+
+
+        self.horizontalLayout_16.addWidget(self.PSK_graph_layout)
+
+        self.stackedWidget.addWidget(self.page_psk)
         self.page_widgets = QWidget()
         self.page_widgets.setObjectName(u"page_widgets")
         self.verticalLayout_6 = QVBoxLayout(self.page_widgets)
@@ -767,11 +1796,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.labelBoxBlenderInstalation = QLabel(self.frame_title_wid_1)
         self.labelBoxBlenderInstalation.setObjectName(u"labelBoxBlenderInstalation")
-        font7 = QFont()
-        font7.setFamilies([u"Segoe UI"])
-        font7.setPointSize(10)
-        font7.setBold(True)
-        self.labelBoxBlenderInstalation.setFont(font7)
+        font12 = QFont()
+        font12.setFamilies([u"Segoe UI"])
+        font12.setPointSize(10)
+        font12.setBold(True)
+        self.labelBoxBlenderInstalation.setFont(font12)
         self.labelBoxBlenderInstalation.setStyleSheet(u"")
 
         self.verticalLayout_8.addWidget(self.labelBoxBlenderInstalation)
@@ -809,10 +1838,10 @@ class Ui_MainWindow(object):
         self.pushButton = QPushButton(self.frame_content_wid_1)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setMinimumSize(QSize(150, 30))
-        font8 = QFont()
-        font8.setFamilies([u"Segoe UI"])
-        font8.setPointSize(9)
-        self.pushButton.setFont(font8)
+        font13 = QFont()
+        font13.setFamilies([u"Segoe UI"])
+        font13.setPointSize(9)
+        self.pushButton.setFont(font13)
         self.pushButton.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(52, 59, 72);\n"
 "	border-radius: 5px;	\n"
@@ -826,9 +1855,9 @@ class Ui_MainWindow(object):
 "	background-color: rgb(35, 40, 49);\n"
 "	border: 2px solid rgb(43, 50, 61);\n"
 "}")
-        icon3 = QIcon()
-        icon3.addFile(u":/16x16/icons/16x16/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton.setIcon(icon3)
+        icon5 = QIcon()
+        icon5.addFile(u":/16x16/icons/16x16/cil-folder-open.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton.setIcon(icon5)
 
         self.gridLayout.addWidget(self.pushButton, 0, 1, 1, 1)
 
@@ -923,7 +1952,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 274, 218))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 218, 218))
         self.horizontalLayout_11 = QHBoxLayout(self.scrollAreaWidgetContents)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
         self.plainTextEdit = QPlainTextEdit(self.scrollAreaWidgetContents)
@@ -952,7 +1981,7 @@ class Ui_MainWindow(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setFont(font8)
+        self.comboBox.setFont(font13)
         self.comboBox.setAutoFillBackground(False)
         self.comboBox.setStyleSheet(u"QComboBox{\n"
 "	background-color: rgb(27, 29, 35);\n"
@@ -977,9 +2006,6 @@ class Ui_MainWindow(object):
 
         self.horizontalScrollBar = QScrollBar(self.frame_2)
         self.horizontalScrollBar.setObjectName(u"horizontalScrollBar")
-        sizePolicy5 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
         sizePolicy5.setHeightForWidth(self.horizontalScrollBar.sizePolicy().hasHeightForWidth())
         self.horizontalScrollBar.setSizePolicy(sizePolicy5)
         self.horizontalScrollBar.setStyleSheet(u"QScrollBar:horizontal {\n"
@@ -1009,9 +2035,9 @@ class Ui_MainWindow(object):
 "	color: rgb(210, 210, 210);\n"
 "	background-color: rgb(52, 58, 71);\n"
 "}")
-        icon4 = QIcon()
-        icon4.addFile(u":/16x16/icons/16x16/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.commandLinkButton.setIcon(icon4)
+        icon6 = QIcon()
+        icon6.addFile(u":/16x16/icons/16x16/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.commandLinkButton.setIcon(icon6)
 
         self.gridLayout_2.addWidget(self.commandLinkButton, 1, 6, 1, 1)
 
@@ -1050,10 +2076,10 @@ class Ui_MainWindow(object):
         self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         if (self.tableWidget.rowCount() < 16):
             self.tableWidget.setRowCount(16)
-        font9 = QFont()
-        font9.setFamilies([u"Segoe UI"])
+        font14 = QFont()
+        font14.setFamilies([u"Segoe UI"])
         __qtablewidgetitem4 = QTableWidgetItem()
-        __qtablewidgetitem4.setFont(font9);
+        __qtablewidgetitem4.setFont(font14);
         self.tableWidget.setVerticalHeaderItem(0, __qtablewidgetitem4)
         __qtablewidgetitem5 = QTableWidgetItem()
         self.tableWidget.setVerticalHeaderItem(1, __qtablewidgetitem5)
@@ -1240,7 +2266,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7.setContentsMargins(10, 0, 10, 0)
         self.label_credits = QLabel(self.frame_label_bottom)
         self.label_credits.setObjectName(u"label_credits")
-        self.label_credits.setFont(font2)
+        self.label_credits.setFont(font)
         self.label_credits.setStyleSheet(u"color: rgb(98, 103, 111);")
 
         self.horizontalLayout_7.addWidget(self.label_credits)
@@ -1248,7 +2274,7 @@ class Ui_MainWindow(object):
         self.label_version = QLabel(self.frame_label_bottom)
         self.label_version.setObjectName(u"label_version")
         self.label_version.setMaximumSize(QSize(100, 16777215))
-        self.label_version.setFont(font2)
+        self.label_version.setFont(font)
         self.label_version.setStyleSheet(u"color: rgb(98, 103, 111);")
         self.label_version.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
@@ -1297,8 +2323,16 @@ class Ui_MainWindow(object):
         QWidget.setTabOrder(self.tableWidget, self.commandLinkButton)
 
         self.retranslateUi(MainWindow)
+        self.horizontalSlider_2.sliderMoved.connect(self.carrierFreqInputASK.setValue)
+        self.carrierFreqInputASK.valueChanged.connect(self.horizontalSlider_2.setValue)
+        self.carrierFreq1InputFSK.valueChanged.connect(self.horizontalSlider_3.setValue)
+        self.horizontalSlider_3.valueChanged.connect(self.carrierFreq1InputFSK.setValue)
+        self.carrierFreq2InputFSK.valueChanged.connect(self.horizontalSlider_4.setValue)
+        self.horizontalSlider_4.valueChanged.connect(self.carrierFreq2InputFSK.setValue)
+        self.carrierFreqInputPSK.valueChanged.connect(self.horizontalSlider_5.setValue)
+        self.horizontalSlider_5.valueChanged.connect(self.carrierFreqInputPSK.setValue)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1321,11 +2355,88 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_close.setText("")
         self.label_top_info_1.setText(QCoreApplication.translate("MainWindow", u"C:\\Program Files\\Blender Foundation\\Blender 2.82", None))
-        self.label_top_info_2.setText(QCoreApplication.translate("MainWindow", u"| HOME", None))
+        self.label_top_info_2.setText(QCoreApplication.translate("MainWindow", u"| INICIO", None))
         self.label_user_icon.setText(QCoreApplication.translate("MainWindow", u"LD", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"HOME", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Empyt Page - By: Wanderson M. Pimenta", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Page Index 0", None))
+#if QT_CONFIG(tooltip)
+        self.messageInputASK.setToolTip(QCoreApplication.translate("MainWindow", u"Ingrese cadenas de 2, 4, 8 o 16 bits", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(statustip)
+        self.messageInputASK.setStatusTip("")
+#endif // QT_CONFIG(statustip)
+#if QT_CONFIG(whatsthis)
+        self.messageInputASK.setWhatsThis("")
+#endif // QT_CONFIG(whatsthis)
+        self.messageInputASK.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese cadena de bits", None))
+        self.label_top_info_4.setText(QCoreApplication.translate("MainWindow", u"Se\u00f1al Portadora", None))
+        self.label_top_info_5.setText(QCoreApplication.translate("MainWindow", u"Frecuencia (Hz)", None))
+#if QT_CONFIG(tooltip)
+        self.carrierFreqInputASK.setToolTip("")
+#endif // QT_CONFIG(tooltip)
+        self.label_title_bar_top_2.setText(QCoreApplication.translate("MainWindow", u"Modulaci\u00f3n por\n"
+"Conmutaci\u00f3n\n"
+"de Amplitud", None))
+        self.label_top_info_3.setText(QCoreApplication.translate("MainWindow", u"Ingrese una cadena\n"
+"cadena de bits de\n"
+"2 / 4 / 8 / 16 bits", None))
+        self.modulateBtnASK.setText(QCoreApplication.translate("MainWindow", u"Modular", None))
+        self.clearBtnASK.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
+        self.label_top_info_9.setText(QCoreApplication.translate("MainWindow", u"Se\u00f1al 2", None))
+        self.label_top_info_10.setText(QCoreApplication.translate("MainWindow", u"Frecuencia (Hz)", None))
+#if QT_CONFIG(tooltip)
+        self.carrierFreq2InputFSK.setToolTip("")
+#endif // QT_CONFIG(tooltip)
+        self.clearBtnFSK.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
+#if QT_CONFIG(tooltip)
+        self.messageInputFSK.setToolTip(QCoreApplication.translate("MainWindow", u"Ingrese cadenas de 2, 4, 8 o 16 bits", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(statustip)
+        self.messageInputFSK.setStatusTip("")
+#endif // QT_CONFIG(statustip)
+#if QT_CONFIG(whatsthis)
+        self.messageInputFSK.setWhatsThis("")
+#endif // QT_CONFIG(whatsthis)
+        self.messageInputFSK.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese cadena de bits", None))
+        self.label_top_info_13.setText(QCoreApplication.translate("MainWindow", u"Ingrese una cadena\n"
+"cadena de bits de\n"
+"2 / 4 / 8 / 16 bits", None))
+        self.modulateBtnFSK.setText(QCoreApplication.translate("MainWindow", u"Modular", None))
+        self.label_title_bar_top_3.setText(QCoreApplication.translate("MainWindow", u"Modulaci\u00f3n por\n"
+"Conmutaci\u00f3n\n"
+"de Frecuencias", None))
+        self.label_top_info_6.setText(QCoreApplication.translate("MainWindow", u"Se\u00f1al 1", None))
+        self.label_top_info_7.setText(QCoreApplication.translate("MainWindow", u"Frecuencia (Hz)", None))
+#if QT_CONFIG(tooltip)
+        self.carrierFreq1InputFSK.setToolTip("")
+#endif // QT_CONFIG(tooltip)
+        self.label_top_info_11.setText(QCoreApplication.translate("MainWindow", u"Resultante", None))
+        self.label_top_info_12.setText(QCoreApplication.translate("MainWindow", u"f1 + f2 =", None))
+        self.label_resultFSK.setText("")
+#if QT_CONFIG(tooltip)
+        self.messageInputPSK.setToolTip(QCoreApplication.translate("MainWindow", u"Ingrese cadenas de 2, 4, 8 o 16 bits", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(statustip)
+        self.messageInputPSK.setStatusTip("")
+#endif // QT_CONFIG(statustip)
+#if QT_CONFIG(whatsthis)
+        self.messageInputPSK.setWhatsThis("")
+#endif // QT_CONFIG(whatsthis)
+        self.messageInputPSK.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese cadena de bits", None))
+        self.label_top_info_8.setText(QCoreApplication.translate("MainWindow", u"Se\u00f1al Portadora", None))
+        self.label_top_info_14.setText(QCoreApplication.translate("MainWindow", u"Frecuencia (Hz)", None))
+#if QT_CONFIG(tooltip)
+        self.carrierFreqInputPSK.setToolTip("")
+#endif // QT_CONFIG(tooltip)
+        self.label_title_bar_top_4.setText(QCoreApplication.translate("MainWindow", u"Modulaci\u00f3n por\n"
+"Conmutaci\u00f3n\n"
+"de Fase", None))
+        self.label_top_info_15.setText(QCoreApplication.translate("MainWindow", u"Ingrese una cadena\n"
+"cadena de bits de\n"
+"2 / 4 / 8 / 16 bits", None))
+        self.modulateBtnPSK.setText(QCoreApplication.translate("MainWindow", u"Modular", None))
+        self.clearBtnPSK.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
         self.labelBoxBlenderInstalation.setText(QCoreApplication.translate("MainWindow", u"BLENDER INSTALLATION", None))
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Your Password", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Open Blender", None))
@@ -1391,7 +2502,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Line", None));
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
-        self.label_credits.setText(QCoreApplication.translate("MainWindow", u"Registered by: Wanderson M. Pimenta", None))
-        self.label_version.setText(QCoreApplication.translate("MainWindow", u"v1.0.0", None))
+        self.label_credits.setText(QCoreApplication.translate("MainWindow", u"Desarrollado por: Lucas Depetris", None))
+        self.label_version.setText(QCoreApplication.translate("MainWindow", u"v1.0", None))
     # retranslateUi
 

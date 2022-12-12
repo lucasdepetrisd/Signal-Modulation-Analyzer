@@ -46,6 +46,19 @@ class UIFunctions(MainWindow):
             self.ui.btn_maximize_restore.setToolTip("Restore")
             self.ui.btn_maximize_restore.setIcon(QtGui.QIcon(u":/16x16/icons/16x16/cil-window-restore.png"))
             self.ui.frame_top_btns.setStyleSheet("background-color: rgb(27, 29, 35)")
+            self.ui.messageInputASK.setFont(QFont('Satoshi Black', 12))
+            self.ui.carrierFreqInputASK.setFont(QFont('Satoshi Black', 12))
+            self.ui.modulateBtnASK.setFont(QFont('Satoshi Black', 20))
+            self.ui.clearBtnASK.setFont(QFont('Satoshi Black', 20))
+            self.ui.messageInputFSK.setFont(QFont('Satoshi Black', 12))
+            self.ui.carrierFreq1InputFSK.setFont(QFont('Satoshi Black', 12))
+            self.ui.carrierFreq2InputFSK.setFont(QFont('Satoshi Black', 12))
+            self.ui.modulateBtnFSK.setFont(QFont('Satoshi Black', 20))
+            self.ui.clearBtnFSK.setFont(QFont('Satoshi Black', 20))
+            self.ui.messageInputPSK.setFont(QFont('Satoshi Black', 12))
+            self.ui.carrierFreqInputPSK.setFont(QFont('Satoshi Black', 12))
+            self.ui.modulateBtnPSK.setFont(QFont('Satoshi Black', 20))
+            self.ui.clearBtnPSK.setFont(QFont('Satoshi Black', 20))
             self.ui.frame_size_grip.hide()
         else:
             GLOBAL_STATE = 0
@@ -55,6 +68,19 @@ class UIFunctions(MainWindow):
             self.ui.btn_maximize_restore.setToolTip("Maximize")
             self.ui.btn_maximize_restore.setIcon(QtGui.QIcon(u":/16x16/icons/16x16/cil-window-maximize.png"))
             self.ui.frame_top_btns.setStyleSheet("background-color: rgba(27, 29, 35, 200)")
+            self.ui.messageInputASK.setFont(QFont('Satoshi Black', 10))
+            self.ui.carrierFreqInputASK.setFont(QFont('Satoshi Black', 10))
+            self.ui.modulateBtnASK.setFont(QFont('Satoshi Black', 14))
+            self.ui.clearBtnASK.setFont(QFont('Satoshi Black', 14))
+            self.ui.messageInputFSK.setFont(QFont('Satoshi Black', 10))
+            self.ui.carrierFreq1InputFSK.setFont(QFont('Satoshi Black', 10))
+            self.ui.carrierFreq2InputFSK.setFont(QFont('Satoshi Black', 10))
+            self.ui.modulateBtnFSK.setFont(QFont('Satoshi Black', 14))
+            self.ui.clearBtnFSK.setFont(QFont('Satoshi Black', 14))
+            self.ui.messageInputPSK.setFont(QFont('Satoshi Black', 10))
+            self.ui.carrierFreqInputPSK.setFont(QFont('Satoshi Black', 10))
+            self.ui.modulateBtnPSK.setFont(QFont('Satoshi Black', 14))
+            self.ui.clearBtnPSK.setFont(QFont('Satoshi Black', 14))
             self.ui.frame_size_grip.show()
 
     ## ==> RETURN STATUS
@@ -118,7 +144,7 @@ class UIFunctions(MainWindow):
     ########################################################################
     def addNewMenu(self, name, objName, icon, isTopMenu):
         font = QFont()
-        font.setFamily(u"SF Pro Display")
+        font.setFamily(u"Satoshi Black")
         font.setBold(True)
         font.setPixelSize(18)
         button = QPushButton(str(count),self)
