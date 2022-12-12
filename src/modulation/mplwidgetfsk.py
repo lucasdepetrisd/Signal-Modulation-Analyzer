@@ -18,7 +18,7 @@ class MplWidgetFSK(QWidget):
         vertical_layout = QVBoxLayout()
         vertical_layout.addWidget(self.canvas)
         
-        self.gridspec = self.canvas.figure.add_gridspec(3,2)
+        self.gridspec = self.canvas.figure.add_gridspec(4,3)
 
         self.canvas.axes = self.canvas.figure.add_subplot(111)
         self.canvas.ax = self.canvas.axes

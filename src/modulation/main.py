@@ -1,5 +1,4 @@
 # GUI FILE
-from ui_ComSysTrainerUI import Ui_ComSys
 from matplotlib.backends.backend_qt5agg  import  ( NavigationToolbar2QT  as  NavigationToolbar )
 from PySide2.QtWidgets import *
 import sys

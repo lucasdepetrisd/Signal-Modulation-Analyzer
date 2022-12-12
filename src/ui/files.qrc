@@ -252,6 +252,11 @@
     <file>icons/16x16/cil-zoom-in.png</file>
     <file>icons/16x16/cil-zoom-out.png</file>
   </qresource>
+  <qresource prefix="bigSize">
+    <file>icons/bigSize/cil-ask.png</file>
+    <file>icons/bigSize/cil-fsk.png</file>
+    <file>icons/bigSize/cil-psk.png</file>
+  </qresource>
   <qresource prefix="24x24">
     <file>icons/24x24/cil-check-alt.png</file>
     <file>icons/24x24/cil-fsk.png</file>

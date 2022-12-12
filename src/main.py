@@ -17,7 +17,7 @@
 
 import sys
 import platform
-from PySide2 import QtCore, QtGui, QtWidgets
+from PySide2 import QtCore, QtGui, QtWidgets, QtTest
 from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
 from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PySide2.QtWidgets import *
@@ -83,7 +83,7 @@ class MainWindow(QMainWindow):
         UIFunctions.addNewMenu(self, "FSK", "btn_FSK", "url(:/16x16/icons/16x16/cil-fsk.png)", True)
         UIFunctions.addNewMenu(self, "PSK", "btn_PSK", "url(:/16x16/icons/16x16/cil-psk.png)", True)
 
-        # UIFunctions.addNewMenu(self, "Custom Widgets", "btn_widgets", "url(:/16x16/icons/16x16/cil-equalizer.png)", False)
+        UIFunctions.addNewMenu(self, "Ajustes", "btn_ajustes", "url(:/16x16/icons/16x16/cil-equalizer.png)", False)
         ## ==> END ##
 
         # START MENU => SELECTION
@@ -98,7 +98,7 @@ class MainWindow(QMainWindow):
         ## USER ICON ==> SHOW HIDE
         UIFunctions.userIcon(self, "LD", "", True)
         UIFunctions.labelCredits(self, "Desarrollado por: Lucas Depetris")
-        UIFunctions.labelVersion(self, "v0.5")
+        UIFunctions.labelVersion(self, "v0.8")
         ## ==> END ##
 
 
@@ -134,7 +134,20 @@ class MainWindow(QMainWindow):
         self.ui.clearBtnFSK.clicked.connect(lambda: self.clearFSK())
         self.ui.modulateBtnPSK.clicked.connect(lambda: self.modulatePSK())
         self.ui.clearBtnPSK.clicked.connect(lambda: self.clearPSK())
-
+        self.ui.Btn_ASK.clicked.connect(self.Button)
+        self.ui.Btn_FSK.clicked.connect(self.Button)
+        self.ui.Btn_PSK.clicked.connect(self.Button)
+        
+        self.ui.maxCarrierASK.valueChanged.connect(lambda: self.valueChanged("askmax", self.ui.maxCarrierASK.value()))
+        self.ui.minCarrierASK.valueChanged.connect(lambda: self.valueChanged("askmin", self.ui.minCarrierASK.value()))
+        
+        self.ui.maxCarrierFSK1.valueChanged.connect(lambda: self.valueChanged("fsk1max", self.ui.maxCarrierFSK1.value()))
+        self.ui.minCarrierFSK1.valueChanged.connect(lambda: self.valueChanged("fsk1min", self.ui.minCarrierFSK1.value()))
+        self.ui.maxCarrierFSK2.valueChanged.connect(lambda: self.valueChanged("fsk2max", self.ui.maxCarrierFSK2.value()))
+        self.ui.minCarrierFSK2.valueChanged.connect(lambda: self.valueChanged("fsk2min", self.ui.minCarrierFSK2.value()))
+        self.ui.maxCarrierPSK.valueChanged.connect(lambda: self.valueChanged("pskmax", self.ui.maxCarrierPSK.value()))
+        self.ui.minCarrierPSK.valueChanged.connect(lambda: self.valueChanged("pskmin", self.ui.minCarrierPSK.value()))
+        
         ########################################################################
         #                                                                      #
         ## START -------------- WIDGETS FUNCTIONS/PARAMETERS ---------------- ##
@@ -142,11 +155,9 @@ class MainWindow(QMainWindow):
         ## ==> USER CODES BELOW                                               ##
         ########################################################################
 
-
-
         ## ==> QTableWidget PARAMETERS
         ########################################################################
-        self.ui.tableWidget.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
+        # self.ui.tableWidget.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
         ## ==> END ##
 
         ########################################################################
@@ -160,10 +171,10 @@ class MainWindow(QMainWindow):
 
         # Creating subplots and a blank canvas for FSK
         gdspec_fsk = self.ui.MplWidgetFSK.gridspec
-        self.ui.MplWidgetFSK.canvas.ax4 = self.ui.MplWidgetFSK.canvas.figure.add_subplot(gdspec_fsk[2,:])
-        self.ui.MplWidgetFSK.canvas.ax1 = self.ui.MplWidgetFSK.canvas.figure.add_subplot(gdspec_fsk[0,0],sharex = self.ui.MplWidgetFSK.canvas.ax4)
-        self.ui.MplWidgetFSK.canvas.ax2 = self.ui.MplWidgetFSK.canvas.figure.add_subplot(gdspec_fsk[0,1],sharex = self.ui.MplWidgetFSK.canvas.ax4)
-        self.ui.MplWidgetFSK.canvas.ax3 = self.ui.MplWidgetFSK.canvas.figure.add_subplot(gdspec_fsk[1,:],sharex = self.ui.MplWidgetFSK.canvas.ax4)
+        self.ui.MplWidgetFSK.canvas.ax4 = self.ui.MplWidgetFSK.canvas.figure.add_subplot(gdspec_fsk[3,:])
+        self.ui.MplWidgetFSK.canvas.ax1 = self.ui.MplWidgetFSK.canvas.figure.add_subplot(gdspec_fsk[0,:],sharex = self.ui.MplWidgetFSK.canvas.ax4)
+        self.ui.MplWidgetFSK.canvas.ax2 = self.ui.MplWidgetFSK.canvas.figure.add_subplot(gdspec_fsk[1,:],sharex = self.ui.MplWidgetFSK.canvas.ax4)
+        self.ui.MplWidgetFSK.canvas.ax3 = self.ui.MplWidgetFSK.canvas.figure.add_subplot(gdspec_fsk[2,:],sharex = self.ui.MplWidgetFSK.canvas.ax4)
         self.ui.MplWidgetFSK.canvas.ax2.set_xticks([])
         self.ui.MplWidgetFSK.canvas.ax3.set_xticks([])
 
@@ -212,21 +223,21 @@ class MainWindow(QMainWindow):
             btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
 
         # PAGE ASK
-        if btnWidget.objectName() == "btn_ASK":
+        if btnWidget.objectName() == "btn_ASK" or btnWidget.objectName() == "Btn_ASK":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_ask)
             UIFunctions.resetStyle(self, "btn_ASK")
             UIFunctions.labelPage(self, "MODULACIÓN ASK")
             UIFunctions.labelDescription(self, 'Ingrese los valores de las señales')
             btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
         # PAGE FSK
-        if btnWidget.objectName() == "btn_FSK":
+        if btnWidget.objectName() == "btn_FSK" or btnWidget.objectName() == "Btn_FSK":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_fsk)
             UIFunctions.resetStyle(self, "btn_FSK")
             UIFunctions.labelPage(self, "MODULACIÓN FSK")
             UIFunctions.labelDescription(self, 'Ingrese los valores de las señales')
             btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
         # PAGE PSK
-        if btnWidget.objectName() == "btn_PSK":
+        if btnWidget.objectName() == "btn_PSK" or btnWidget.objectName() == "Btn_PSK":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_psk)
             UIFunctions.resetStyle(self, "btn_PSK")
             UIFunctions.labelPage(self, "MODULACIÓN PSK")
@@ -234,10 +245,11 @@ class MainWindow(QMainWindow):
             btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
 
         # PAGE WIDGETS
-        if btnWidget.objectName() == "btn_widgets":
-            self.ui.stackedWidget.setCurrentWidget(self.ui.page_widgets)
-            UIFunctions.resetStyle(self, "btn_widgets")
-            UIFunctions.labelPage(self, "Custom Widgets")
+        if btnWidget.objectName() == "btn_ajustes":
+            self.ui.stackedWidget.setCurrentWidget(self.ui.page_settings)
+            UIFunctions.resetStyle(self, "btn_ajustes")
+            UIFunctions.labelPage(self, "AJUSTES")
+            UIFunctions.labelDescription(self, 'Modifique los valores máximos y mínimos de frecuencia. Valores en rojo no seran considerados')
             btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
 
     ## ==> END ##
@@ -245,6 +257,74 @@ class MainWindow(QMainWindow):
     ########################################################################
     ## START ==> APP EVENTS
     ########################################################################
+    
+    ## EVENT ==> CHANGE SETTINGS
+    ########################################################################
+    def valueChanged(self, mod, value):
+        if (mod == "askmax"):
+            if (self.ui.carrierFreqInputASK.minimum() > value) :
+                self.ui.maxCarrierASK.setStyleSheet("border: 2px solid #ff0000;")
+                print("No se puede cambiar: MaxAct={0} MaxIng={1}".format(self.ui.carrierFreqInputASK.maximum(),value))
+            else:
+                self.ui.maxCarrierASK.setStyleSheet("border: 2px solid #098c04;")
+                self.ui.carrierFreqInputASK.setMaximum(value)
+                self.ui.sliderASK.setMaximum(value)
+        elif (mod == "askmin"):
+            if (self.ui.carrierFreqInputASK.maximum() < value) :
+                self.ui.minCarrierASK.setStyleSheet("border: 2px solid #ff0000;")
+                print("No se puede cambiar: MinAct={0} MinIng={1}".format(self.ui.carrierFreqInputASK.minimum(),value))
+            else:
+                self.ui.minCarrierASK.setStyleSheet("border: 2px solid #098c04;")
+                self.ui.carrierFreqInputASK.setMinimum(value)
+                self.ui.sliderASK.setMinimum(value)
+        elif (mod == "fsk1max"):
+            if (self.ui.carrierFreq1InputFSK.minimum() > value) :
+                self.ui.maxCarrierFSK1.setStyleSheet("border: 2px solid #ff0000;")
+                print("No se puede cambiar: MaxAct={0} MaxIng={1}".format(self.ui.carrierFreq1InputFSK.maximum(),value))
+            else:
+                self.ui.maxCarrierFSK1.setStyleSheet("border: 2px solid #098c04;")
+                self.ui.carrierFreq1InputFSK.setMaximum(value)
+                self.ui.sliderFSK1.setMaximum(value)
+        elif (mod == "fsk1min"):
+            if (self.ui.carrierFreq1InputFSK.maximum() < value) :
+                self.ui.minCarrierFSK1.setStyleSheet("border: 2px solid #ff0000;")
+                print("No se puede cambiar: MinAct={0} MinIng={1}".format(self.ui.carrierFreq1InputFSK.minimum(),value))
+            else:
+                self.ui.minCarrierFSK1.setStyleSheet("border: 2px solid #098c04;")
+                self.ui.carrierFreq1InputFSK.setMinimum(value)
+                self.ui.sliderFSK1.setMinimum(value)
+        elif (mod == "fsk2max"):
+            if (self.ui.carrierFreq2InputFSK.minimum() > value) :
+                self.ui.maxCarrierFSK2.setStyleSheet("border: 2px solid #ff0000;")
+                print("No se puede cambiar: MaxAct={0} MaxIng={1}".format(self.ui.carrierFreq2InputFSK.maximum(),value))
+            else:
+                self.ui.maxCarrierFSK2.setStyleSheet("border: 2px solid #098c04;")
+                self.ui.carrierFreq2InputFSK.setMaximum(value)
+                self.ui.sliderFSK2.setMaximum(value)
+        elif (mod == "fsk2min"):
+            if (self.ui.carrierFreq2InputFSK.maximum() < value) :
+                self.ui.minCarrierFSK2.setStyleSheet("border: 2px solid #ff0000;")
+                print("No se puede cambiar: MinAct={0} MinIng={1}".format(self.ui.carrierFreq2InputFSK.minimum(),value))
+            else:
+                self.ui.minCarrierFSK2.setStyleSheet("border: 2px solid #098c04;")
+                self.ui.carrierFreq2InputFSK.setMinimum(value)
+                self.ui.sliderFSK2.setMinimum(value)
+        elif (mod == "pskmax"):
+            if (self.ui.carrierFreqInputPSK.minimum() > value) :
+                self.ui.maxCarrierPSK.setStyleSheet("border: 2px solid #ff0000;")
+                print("No se puede cambiar: MaxAct={0} MaxIng={1}".format(self.ui.carrierFreqInputPSK.maximum(),value))
+            else:
+                self.ui.maxCarrierPSK.setStyleSheet("border: 2px solid #098c04;")
+                self.ui.carrierFreqInputPSK.setMaximum(value)
+                self.ui.sliderPSK.setMaximum(value)
+        elif (mod == "pskmin"):
+            if (self.ui.carrierFreqInputPSK.maximum() < value) :
+                self.ui.maxCarrierPSK.setStyleSheet("border: 2px solid #ff0000;")
+                print("No se puede cambiar: MinAct={0} MinIng={1}".format(self.ui.carrierFreqInputPSK.minimum(),value))
+            else:
+                self.ui.maxCarrierPSK.setStyleSheet("border: 2px solid #098c04;")
+                self.ui.carrierFreqInputPSK.setMinimum(value)
+                self.ui.sliderPSK.setMinimum(value)
 
     ## EVENT ==> MOUSE DOUBLE CLICK
     ########################################################################
@@ -288,14 +368,20 @@ class MainWindow(QMainWindow):
     ########################################################################
     ## START ==> MODULATION EVENTS
     ########################################################################
-    def checkMessage(self,message: str, messagebox: QTextEdit):
-        if((len(message) in [2**i for i in range(1,5)])):
+    def checkMessage(self, message: str, messagebox: QTextEdit):
+        if((len(message) in [2**i for i in range(1,6)])):
             for bit in message:
                 if(int(bit) not in [0,1]):
                     messagebox.setStyleSheet("border: 2px solid #ff0000;")
+                    self.ui.clearBtnASK.click()
+                    self.ui.clearBtnFSK.click()
+                    self.ui.clearBtnPSK.click()
                     return False
             messagebox.setStyleSheet("border: 2px solid #00ff00;")
             return True
+        self.ui.clearBtnASK.click()
+        self.ui.clearBtnFSK.click()
+        self.ui.clearBtnPSK.click()
         messagebox.setStyleSheet("border: 2px solid #ff0000;")
         return False
     
@@ -308,8 +394,9 @@ class MainWindow(QMainWindow):
     def modulateASK(self):
         message = self.ui.messageInputASK.text()
         if(self.checkMessage(message,self.ui.messageInputASK)):
+            
             Fc = int(float(self.ui.carrierFreqInputASK.text()))
-            Fs = 64 * Fc # Sampling freq must be >>> 2 * fc (Nyquist rate)
+            Fs = 1000 * Fc # Sampling freq must be >>> 2 * fc (Nyquist rate)
             Fs = Fs + (Fs % len(message))
             t = np.arange(0,1,1/Fs)
             samples = Fs // len(message)
@@ -331,7 +418,7 @@ class MainWindow(QMainWindow):
 
             # Plotting data signal
             self.ui.MplWidgetASK.canvas.ax1.clear()
-            self.ui.MplWidgetASK.canvas.ax1.plot(t,data_signal,color='red',label=f' Frecuencia: {Fs} Hz\nCadena: {message}')
+            self.ui.MplWidgetASK.canvas.ax1.plot(t,data_signal,color='red',label=f'Frecuencia: {Fs} Hz\nBits: {message}')
             self.ui.MplWidgetASK.canvas.ax1.legend(loc = 'lower right')
 
             # Plotting carrier signal
@@ -390,6 +477,9 @@ class MainWindow(QMainWindow):
             
             fsk_signal = (carrier_signal_2 * data_signal) + (carrier_signal_1 * data_signal_inverse)
 
+            bandWidth = (2*len(message))+(2*abs(Fc2-Fc1))
+            self.ui.label_resultFSK.setText(str.format("{0} Hz", bandWidth))
+
             if self.ui.MplWidgetFSK.canvas.ax1:
                 self.ui.MplWidgetFSK.canvas.ax2.set_visible(True)
                 self.ui.MplWidgetFSK.canvas.ax3.set_visible(True)
@@ -401,22 +491,22 @@ class MainWindow(QMainWindow):
 
             # Plotting carrier signal 1
             self.ui.MplWidgetFSK.canvas.ax1.clear()
-            self.ui.MplWidgetFSK.canvas.ax1.plot(t,carrier_signal_1,color='cyan',label=f'Carrier 1 \nFreq :{Fc1} Hz')
+            self.ui.MplWidgetFSK.canvas.ax1.plot(t,carrier_signal_1,color='cyan',label=f'Señal 1 \nFrecuencia: {Fc1} Hz')
             self.ui.MplWidgetFSK.canvas.ax1.legend(loc = 'lower right')
 
             # Plotting carrier signal 2
             self.ui.MplWidgetFSK.canvas.ax2.clear()
-            self.ui.MplWidgetFSK.canvas.ax2.plot(t,carrier_signal_2,color='skyblue',label=f'Carrier 2 \nFreq :{Fc2} Hz')
+            self.ui.MplWidgetFSK.canvas.ax2.plot(t,carrier_signal_2,color='pink',label=f'Señal 2 \nFrecuencia:{Fc2} Hz')
             self.ui.MplWidgetFSK.canvas.ax2.legend(loc = 'lower right')
             
             # Plotting Data Signal
             self.ui.MplWidgetFSK.canvas.ax3.clear()
-            self.ui.MplWidgetFSK.canvas.ax3.plot(t,data_signal,color='lime',label=f'Fs: {Fs} Hz\nMessage : {message}')
+            self.ui.MplWidgetFSK.canvas.ax3.plot(t,data_signal,color='lime',label=f'Frec de Muestreo: {Fs} Hz\nBits : {message}')
             self.ui.MplWidgetFSK.canvas.ax3.legend(loc = 'lower right')
 
             # Plotting FSK modulated signal
             self.ui.MplWidgetFSK.canvas.ax4.clear()
-            self.ui.MplWidgetFSK.canvas.ax4.plot(t,fsk_signal,color='orange',label=f'FSK Signal \nFreq = {Fc1} Hz: Data(0)\nFreq = {Fc2} Hz: Data(1)')
+            self.ui.MplWidgetFSK.canvas.ax4.plot(t,fsk_signal,color='orange',label=f'Señal FSK \n(0): Frec = {Fc1} Hz\n(1): Frec = {Fc2} Hz')
             self.ui.MplWidgetFSK.canvas.ax4.legend(loc = 'lower right')
 
             # Removing intermediate xtick labels for a cleaner plot
@@ -436,7 +526,7 @@ class MainWindow(QMainWindow):
                             )
             
             # Set Title and Show Plot
-            self.ui.MplWidgetFSK.canvas.figure.suptitle(f'FSK signal plot')
+            self.ui.MplWidgetFSK.canvas.figure.suptitle(f'Señal FSK')
             self.ui.MplWidgetFSK.canvas.draw()
             
     def clearPSK(self):
@@ -470,17 +560,17 @@ class MainWindow(QMainWindow):
 
             # Plotting data signal
             self.ui.MplWidgetPSK.canvas.ax1.clear()
-            self.ui.MplWidgetPSK.canvas.ax1.plot(t,data_signal,color='cyan',label=f'Sampling Freq: {Fs} Hz\n Message: {message}')
+            self.ui.MplWidgetPSK.canvas.ax1.plot(t,data_signal,color='cyan',label=f'Frec de Muestreo: {Fs} Hz\nBits: {message}')
             self.ui.MplWidgetPSK.canvas.ax1.legend(loc = 'lower right')
 
             # Plotting carrier signal
             self.ui.MplWidgetPSK.canvas.ax2.clear()
-            self.ui.MplWidgetPSK.canvas.ax2.plot(t,carrier_signal,color='lime',label=f'Carrier Freq: {Fc} Hz')
+            self.ui.MplWidgetPSK.canvas.ax2.plot(t,carrier_signal,color='lime',label=f'Frecuencia Portadora: {Fc} Hz')
             self.ui.MplWidgetPSK.canvas.ax2.legend(loc = 'lower right')
             
             # Plotting ASK modulated signal
             self.ui.MplWidgetPSK.canvas.ax3.clear()
-            self.ui.MplWidgetPSK.canvas.ax3.plot(t,psk_signal,color='orange',label=f'PSK Signal')
+            self.ui.MplWidgetPSK.canvas.ax3.plot(t,psk_signal,color='orange',label=f'Señal PSK')
             self.ui.MplWidgetPSK.canvas.ax3.legend(loc = 'lower right')
 
             # Removing intermediate xtick labels for a cleaner plot
@@ -500,7 +590,7 @@ class MainWindow(QMainWindow):
                             )
             
             # Set Title and Show Plot
-            self.ui.MplWidgetPSK.canvas.ax1.set_title(f'PSK signal plot')
+            self.ui.MplWidgetPSK.canvas.ax1.set_title(f'Señal PSK')
             self.ui.MplWidgetPSK.canvas.draw()
 
     ########################################################################
