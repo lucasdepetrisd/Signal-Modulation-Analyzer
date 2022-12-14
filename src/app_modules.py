@@ -17,6 +17,7 @@
 
 # GUI FILE
 from ui.ui_main import Ui_MainWindow
+from ui.ui_helpWindow import Ui_helpWindow
 
 # IMPORT QSS CUSTOM
 from ui.ui_styles import Style

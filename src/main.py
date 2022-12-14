@@ -78,7 +78,7 @@ class MainWindow(QMainWindow):
 
         ## ==> ADD CUSTOM MENUS
         self.ui.stackedWidget.setMinimumWidth(20)
-        UIFunctions.addNewMenu(self, "INICIO", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
+        UIFunctions.addNewMenu(self, "Inicio", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
         UIFunctions.addNewMenu(self, "ASK", "btn_ASK", "url(:/16x16/icons/16x16/cil-ask.png)", True)
         UIFunctions.addNewMenu(self, "FSK", "btn_FSK", "url(:/16x16/icons/16x16/cil-fsk.png)", True)
         UIFunctions.addNewMenu(self, "PSK", "btn_PSK", "url(:/16x16/icons/16x16/cil-psk.png)", True)
@@ -88,7 +88,7 @@ class MainWindow(QMainWindow):
 
         # START MENU => SELECTION
         UIFunctions.selectStandardMenu(self, "btn_home")
-        UIFunctions.labelPage(self, "INICIO")
+        UIFunctions.labelPage(self, "Inicio")
         ## ==> END ##
 
         ## ==> START PAGE
@@ -96,7 +96,7 @@ class MainWindow(QMainWindow):
         ## ==> END ##
 
         ## USER ICON ==> SHOW HIDE
-        UIFunctions.userIcon(self, "LD", "", True)
+        UIFunctions.userIcon(self, "LD", "url(:/24x24/icons/24x24/sigma-logo.png)", True)
         UIFunctions.labelCredits(self, "Desarrollado por: Lucas Depetris")
         UIFunctions.labelVersion(self, "v0.8")
         ## ==> END ##
@@ -134,6 +134,10 @@ class MainWindow(QMainWindow):
         self.ui.clearBtnFSK.clicked.connect(lambda: self.clearFSK())
         self.ui.modulateBtnPSK.clicked.connect(lambda: self.modulatePSK())
         self.ui.clearBtnPSK.clicked.connect(lambda: self.clearPSK())
+        self.ui.Btn_helpASK.clicked.connect(lambda: self.helpPage("ask"))
+        self.ui.Btn_helpFSK.clicked.connect(lambda: self.helpPage("fsk"))
+        self.ui.Btn_helpPSK.clicked.connect(lambda: self.helpPage("psk"))
+        self.ui.Btn_helpSettings.clicked.connect(lambda: self.helpPage("settings"))
         self.ui.Btn_ASK.clicked.connect(self.Button)
         self.ui.Btn_FSK.clicked.connect(self.Button)
         self.ui.Btn_PSK.clicked.connect(self.Button)
@@ -368,6 +372,7 @@ class MainWindow(QMainWindow):
     ########################################################################
     ## START ==> MODULATION EVENTS
     ########################################################################
+
     def checkMessage(self, message: str, messagebox: QTextEdit):
         if((len(message) in [2**i for i in range(1,6)])):
             for bit in message:
@@ -596,6 +601,117 @@ class MainWindow(QMainWindow):
     ########################################################################
     ## END ==> MODULATION EVENTS
     ########################################################################
+
+    ########################################################################
+    ## START ==> HELP EVENTS
+    ########################################################################
+
+    def helpPage(self, mod):
+        self.ventana = HelpWindow()
+        if (mod == "ask"):
+            self.ventana.changeWidget(self.ventana.ui.page_ask)
+        elif (mod == "fsk"):
+            self.ventana.changeWidget(self.ventana.ui.page_fsk)
+        elif (mod == "psk"):
+            self.ventana.changeWidget(self.ventana.ui.page_psk)
+        elif (mod == "settings"):
+            self.ventana.changeWidget(self.ventana.ui.page_settings)
+        
+    ########################################################################
+    ## END ==> HELP EVENTS
+    ########################################################################
+
+class HelpWindow(QMainWindow):
+    def __init__(self):
+        QMainWindow.__init__(self)
+        self.ui = Ui_helpWindow()
+        self.ui.setupUi(self)
+
+        ########################################################################
+        ## START - WINDOW ATTRIBUTES
+        ########################################################################
+
+        ## REMOVE ==> STANDARD TITLE BAR
+        UIFunctionsHelp.removeTitleBar(True)
+        ## ==> END ##
+
+        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+
+        ## SET ==> WINDOW TITLE
+        self.setWindowTitle('Ayuda')
+        UIFunctionsHelp.labelTitle(self, 'Ayuda')
+        ## ==> END ##
+
+        ## WINDOW SIZE ==> DEFAULT SIZE
+        # startSize = QSize(1000, 800)
+        # self.resize(startSize)
+        # self.setMinimumSize(startSize)
+        # UIFunctionsHelp.enableMaximumSize(self, 500, 720)
+        ## ==> END ##
+
+        ## ==> MOVE WINDOW / MAXIMIZE / RESTORE
+        ########################################################################
+        def moveWindow(event):
+            # MOVE WINDOW
+            if event.buttons() == Qt.LeftButton:
+                self.move(self.pos() + event.globalPos() - self.dragPos)
+                self.dragPos = event.globalPos()
+                event.accept()
+
+        # WIDGET TO MOVE
+        self.ui.frame_label_top_btns.mouseMoveEvent = moveWindow
+        ## ==> END ##
+
+        ## ==> LOAD DEFINITIONS
+        ########################################################################
+        UIFunctionsHelp.uiDefinitions(self)
+        ## ==> END ##
+
+        self.show()
+
+    def changeWidget(self, widget):
+        self.ui.stackedWidget.setCurrentWidget(widget)
+
+    ## EVENT ==> MOUSE DOUBLE CLICK
+    ########################################################################
+    def eventFilter(self, watched, event):
+        if watched == self.le and event.type() == QtCore.QEvent.MouseButtonDblClick:
+            print("pos: ", event.pos())
+    ## ==> END ##
+
+    ## EVENT ==> MOUSE CLICK
+    ########################################################################
+    def mousePressEvent(self, event):
+        self.dragPos = event.globalPos()
+        if event.buttons() == Qt.LeftButton:
+            print('Mouse click: LEFT CLICK')
+        if event.buttons() == Qt.RightButton:
+            print('Mouse click: RIGHT CLICK')
+        if event.buttons() == Qt.MidButton:
+            print('Mouse click: MIDDLE BUTTON')
+    ## ==> END ##
+
+    ## EVENT ==> KEY PRESSED
+    ########################################################################
+    def keyPressEvent(self, event):
+        print('Key: ' + str(event.key()) + ' | Text Press: ' + str(event.text()))
+    ## ==> END ##
+
+    ## EVENT ==> RESIZE EVENT
+    ########################################################################
+    # def resizeEvent(self, event):
+    #     self.resizeFunction()
+    #     return super(MainWindow, self).resizeEvent(event)
+
+    # def resizeFunction(self):
+    #     print('Height: ' + str(self.height()) + ' | Width: ' + str(self.width()))
+    ## ==> END ##
+
+    ########################################################################
+    ## END ==> APP EVENTS
+    ############################## ---/--/--- ##############################
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

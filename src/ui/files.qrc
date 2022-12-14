@@ -2,6 +2,8 @@
   <qresource prefix="16x16">
     <file>icons/16x16/cil-psk.png</file>
     <file>icons/16x16/cil-ask.png</file>
+    <file>icons/16x16/cil-help.png</file>
+    <file>icons/16x16/sigma-logo.png</file>
     <file>icons/16x16/cil-fsk.png</file>
     <file>icons/16x16/cil-arrow-bottom.png</file>
     <file>icons/16x16/cil-arrow-top.png</file>
@@ -255,12 +257,15 @@
   <qresource prefix="bigSize">
     <file>icons/bigSize/cil-ask.png</file>
     <file>icons/bigSize/cil-fsk.png</file>
+    <file>icons/bigSize/sigma-logo.png</file>
     <file>icons/bigSize/cil-psk.png</file>
   </qresource>
   <qresource prefix="24x24">
     <file>icons/24x24/cil-check-alt.png</file>
     <file>icons/24x24/cil-fsk.png</file>
+    <file>icons/24x24/sigma-logo.png</file>
     <file>icons/24x24/cil-ask.png</file>
+    <file>icons/24x24/cil-help.png</file>
     <file>icons/24x24/cil-psk.png</file>
     <file>icons/24x24/cil-chevron-double-up-alt.png</file>
     <file>icons/24x24/cil-menu.png</file>
@@ -268,8 +273,10 @@
   <qresource prefix="20x20">
     <file>icons/20x20/cil-3d.png</file>
     <file>icons/20x20/cil-ask.png</file>
+    <file>icons/20x20/cil-help.png</file>
     <file>icons/20x20/cil-fsk.png</file>
     <file>icons/20x20/cil-psk.png</file>
+    <file>icons/20x20/sigma-logo.png</file>
     <file>icons/20x20/cil-4k.png</file>
     <file>icons/20x20/cil-airplay.png</file>
     <file>icons/20x20/cil-arrow-bottom.png</file>
