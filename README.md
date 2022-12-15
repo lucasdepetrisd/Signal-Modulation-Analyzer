@@ -1,4 +1,4 @@
-# Python Interface - PySide2/PyQt5(optional) (MODERN / FLAT GUI)
+<!-- # Python Interface - PySide2/PyQt5(optional) (MODERN / FLAT GUI)
 
 > ## :gift: **//// DONATE ////**
 > ## 🔗 Donate (Gumroad): https://gum.co/mHsRC
@@ -11,18 +11,35 @@
 Project created using Python, Qt Designer and PySide2.
 I hope it helps everyone who is starting now in the Python world.
 This project works very well with Windows, however on Linux and macOS there are some font size problems and the custom title bar does not work very well.
+-->
 
-# REQUERIMENTS:
+
+# 〰 SigMA: Signal Modulation Analyzer 〰
+
+SigMA o Signal Modulator Analyzer es un conjunto de simuladores creados para la materia de Comunicaciones en la UTN-FRT. Este programa ayuda al aprendizaje de diferentes técnicas de modulación (ASK, FSK y PSK).
+
+SigMA or Signal Modulator Analyzer is a basic kit made for the Communications subject at UTN-FRT that helps in the learning of different modulation techniques (ASK, FSK and PSK).
+
+
+# ⬇ INSTALACIÓN:
 > ```sh
-> pip install pyside2==5.15.2
+> pip install pyside2==5.15.2 matplotlib scipy numpy
+> ```
+> PySide2 y PyQt5 en la versión 5.15.1 **causan problemas** debido a sus actualizaciones.  
+> Utilizar python 3.9.12 con PySide.  
+
+## ⚙ EJECUTAR:
+> ```sh
+> py main.py
+> ```
+
+# ⬇ REQUERIMENTS:
+> ```sh
+> pip install pyside2==5.15.2 matplotlib scipy numpy
 > ```
 > PySide2 and PyQt5 in version 5.15.1 **are causing problems** due to several updates in process.
 
-# RUN FILE:
-main.py
-
-# ADD MENUS
-![add-MENUS](https://user-images.githubusercontent.com/60605512/94625100-56372c00-028e-11eb-978e-22165d8f77c8.png)
-
-# Youtube Video:
-> https://www.youtube.com/watch?v=iaIooM9FlRI
+## ⚙ RUN:
+> ```sh
+> py main.py
+> ```

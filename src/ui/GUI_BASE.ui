@@ -2225,6 +2225,9 @@ QLineEdit:focus {
                            <property name="inputMethodHints">
                             <set>Qt::ImhNone</set>
                            </property>
+                           <property name="text">
+                            <string>1100101011001010</string>
+                           </property>
                            <property name="maxLength">
                             <number>16</number>
                            </property>
@@ -2235,7 +2238,7 @@ QLineEdit:focus {
                             <enum>QLineEdit::Normal</enum>
                            </property>
                            <property name="placeholderText">
-                            <string>Ingrese cadena de bits</string>
+                            <string>Ingrese una cadena de bits</string>
                            </property>
                           </widget>
                          </item>
@@ -3510,6 +3513,9 @@ fontSizeMode: Text.Fit
                            <property name="inputMethodHints">
                             <set>Qt::ImhNone</set>
                            </property>
+                           <property name="text">
+                            <string>1100111100001101</string>
+                           </property>
                            <property name="maxLength">
                             <number>16</number>
                            </property>
@@ -3980,6 +3986,9 @@ fontSizeMode: Text.Fit
                            </property>
                            <property name="inputMethodHints">
                             <set>Qt::ImhNone</set>
+                           </property>
+                           <property name="text">
+                            <string>1010000011001011</string>
                            </property>
                            <property name="maxLength">
                             <number>16</number>

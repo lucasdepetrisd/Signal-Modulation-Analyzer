@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'GUI_BASEYQqZbd.ui'
+## Form generated from reading UI file 'GUI_BASERAVuBw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -3094,7 +3094,8 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(whatsthis)
         self.messageInputASK.setWhatsThis("")
 #endif // QT_CONFIG(whatsthis)
-        self.messageInputASK.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese cadena de bits", None))
+        self.messageInputASK.setText(QCoreApplication.translate("MainWindow", u"1100101011001010", None))
+        self.messageInputASK.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese una cadena de bits", None))
         self.label_top_info_4.setText(QCoreApplication.translate("MainWindow", u"Se\u00f1al Portadora", None))
         self.label_top_info_5.setText(QCoreApplication.translate("MainWindow", u"Frecuencia (Hz)", None))
 #if QT_CONFIG(tooltip)
@@ -3144,6 +3145,7 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(whatsthis)
         self.messageInputFSK.setWhatsThis("")
 #endif // QT_CONFIG(whatsthis)
+        self.messageInputFSK.setText(QCoreApplication.translate("MainWindow", u"1100111100001101", None))
         self.messageInputFSK.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese cadena de bits", None))
 #if QT_CONFIG(tooltip)
         self.Btn_helpFSK.setToolTip(QCoreApplication.translate("MainWindow", u"Consigue ayuda sobre esta p\u00e1gina", None))
@@ -3170,6 +3172,7 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(whatsthis)
         self.messageInputPSK.setWhatsThis("")
 #endif // QT_CONFIG(whatsthis)
+        self.messageInputPSK.setText(QCoreApplication.translate("MainWindow", u"1010000011001011", None))
         self.messageInputPSK.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese cadena de bits", None))
         self.label_title_bar_top_4.setText(QCoreApplication.translate("MainWindow", u"Modulaci\u00f3n por\n"
 "Conmutaci\u00f3n\n"

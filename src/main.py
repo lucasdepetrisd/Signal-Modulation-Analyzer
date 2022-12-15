@@ -32,7 +32,7 @@ import sys
 
 # Telling windows to let me make my own taskbar icons
 import ctypes
-myappid = 'nexusteam.ComSysTrainer.gui.version1' 
+myappid = 'lucasdepetris.SigMA.gui.v1'
 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
 # Libraries that do the heavy lifting
@@ -43,6 +43,11 @@ class MainWindow(QMainWindow):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+        self.setWindowIcon(QtGui.QIcon('sigma-logo.ico'))
+
+        self.ventana = HelpWindow()
+        self.ventana.hide()
 
         ## PRINT ==> SYSTEM
         print('System: ' + platform.system())
@@ -98,7 +103,7 @@ class MainWindow(QMainWindow):
         ## USER ICON ==> SHOW HIDE
         UIFunctions.userIcon(self, "LD", "url(:/24x24/icons/24x24/sigma-logo.png)", True)
         UIFunctions.labelCredits(self, "Desarrollado por: Lucas Depetris")
-        UIFunctions.labelVersion(self, "v0.8")
+        UIFunctions.labelVersion(self, "v0.9")
         ## ==> END ##
 
 
@@ -128,16 +133,27 @@ class MainWindow(QMainWindow):
         ## END - WINDOW ATTRIBUTES
         ############################## ---/--/--- ##############################
 
-        self.ui.modulateBtnASK.clicked.connect(lambda: self.modulateASK())
+        # self.ui.modulateBtnASK.clicked.connect(lambda: self.modulateASK())
+        self.ui.messageInputASK.textChanged.connect(lambda: self.modulateASK())
+        self.ui.carrierFreqInputASK.valueChanged.connect(lambda: self.modulateASK())
         self.ui.clearBtnASK.clicked.connect(lambda: self.clearASK())
-        self.ui.modulateBtnFSK.clicked.connect(lambda: self.modulateFSK())
+
+        # self.ui.modulateBtnFSK.clicked.connect(lambda: self.modulateFSK())
+        self.ui.messageInputFSK.textChanged.connect(lambda: self.modulateFSK())
+        self.ui.carrierFreq1InputFSK.valueChanged.connect(lambda: self.modulateFSK())
+        self.ui.carrierFreq2InputFSK.valueChanged.connect(lambda: self.modulateFSK())
         self.ui.clearBtnFSK.clicked.connect(lambda: self.clearFSK())
-        self.ui.modulateBtnPSK.clicked.connect(lambda: self.modulatePSK())
+
+        # self.ui.modulateBtnPSK.clicked.connect(lambda: self.modulatePSK())
+        self.ui.messageInputPSK.textChanged.connect(lambda: self.modulatePSK())
+        self.ui.carrierFreqInputPSK.valueChanged.connect(lambda: self.modulatePSK())
         self.ui.clearBtnPSK.clicked.connect(lambda: self.clearPSK())
+
         self.ui.Btn_helpASK.clicked.connect(lambda: self.helpPage("ask"))
         self.ui.Btn_helpFSK.clicked.connect(lambda: self.helpPage("fsk"))
         self.ui.Btn_helpPSK.clicked.connect(lambda: self.helpPage("psk"))
         self.ui.Btn_helpSettings.clicked.connect(lambda: self.helpPage("settings"))
+
         self.ui.Btn_ASK.clicked.connect(self.Button)
         self.ui.Btn_FSK.clicked.connect(self.Button)
         self.ui.Btn_PSK.clicked.connect(self.Button)
@@ -149,6 +165,7 @@ class MainWindow(QMainWindow):
         self.ui.minCarrierFSK1.valueChanged.connect(lambda: self.valueChanged("fsk1min", self.ui.minCarrierFSK1.value()))
         self.ui.maxCarrierFSK2.valueChanged.connect(lambda: self.valueChanged("fsk2max", self.ui.maxCarrierFSK2.value()))
         self.ui.minCarrierFSK2.valueChanged.connect(lambda: self.valueChanged("fsk2min", self.ui.minCarrierFSK2.value()))
+
         self.ui.maxCarrierPSK.valueChanged.connect(lambda: self.valueChanged("pskmax", self.ui.maxCarrierPSK.value()))
         self.ui.minCarrierPSK.valueChanged.connect(lambda: self.valueChanged("pskmin", self.ui.minCarrierPSK.value()))
         
@@ -607,7 +624,6 @@ class MainWindow(QMainWindow):
     ########################################################################
 
     def helpPage(self, mod):
-        self.ventana = HelpWindow()
         if (mod == "ask"):
             self.ventana.changeWidget(self.ventana.ui.page_ask)
         elif (mod == "fsk"):
@@ -616,6 +632,7 @@ class MainWindow(QMainWindow):
             self.ventana.changeWidget(self.ventana.ui.page_psk)
         elif (mod == "settings"):
             self.ventana.changeWidget(self.ventana.ui.page_settings)
+        self.ventana.show()
         
     ########################################################################
     ## END ==> HELP EVENTS
@@ -626,6 +643,7 @@ class HelpWindow(QMainWindow):
         QMainWindow.__init__(self)
         self.ui = Ui_helpWindow()
         self.ui.setupUi(self)
+        self.setWindowIcon(QtGui.QIcon('sigma-logo.ico'))
 
         ########################################################################
         ## START - WINDOW ATTRIBUTES

@@ -271,7 +271,7 @@ class UIFunctions(MainWindow):
         self.ui.btn_maximize_restore.clicked.connect(lambda: UIFunctions.maximize_restore(self))
 
         ## SHOW ==> CLOSE APPLICATION
-        self.ui.btn_close.clicked.connect(lambda: self.close())
+        self.ui.btn_close.clicked.connect(lambda: QApplication.closeAllWindows())
 
 
     ########################################################################
@@ -525,7 +525,7 @@ class UIFunctionsHelp(MainWindow):
         # self.ui.btn_maximize_restore.clicked.connect(lambda: UIFunctionsHelp.maximize_restore(self))
 
         ## SHOW ==> CLOSE APPLICATION
-        self.ui.btn_close.clicked.connect(lambda: self.close())
+        self.ui.btn_close.clicked.connect(lambda: self.hide())
 
 
     ########################################################################
