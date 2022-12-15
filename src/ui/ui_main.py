@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'GUI_BASERAVuBw.ui'
+## Form generated from reading UI file 'GUI_BASEfIlHOA.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -21,7 +21,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1045, 800)
+        MainWindow.resize(1045, 802)
         MainWindow.setMinimumSize(QSize(1000, 800))
         palette = QPalette()
         brush = QBrush(QColor(255, 255, 255, 255))
@@ -970,21 +970,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
         self.gridLayout_3 = QGridLayout()
         self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.label_top_info_3 = QLabel(self.frame_4)
-        self.label_top_info_3.setObjectName(u"label_top_info_3")
-        self.label_top_info_3.setMinimumSize(QSize(0, 25))
-        self.label_top_info_3.setMaximumSize(QSize(16777215, 80))
-        font6 = QFont()
-        font6.setFamily(u"Satoshi")
-        font6.setPointSize(12)
-        font6.setBold(True)
-        font6.setWeight(75)
-        self.label_top_info_3.setFont(font6)
-        self.label_top_info_3.setStyleSheet(u"color: rgb(191, 203, 217)")
-        self.label_top_info_3.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_3.addWidget(self.label_top_info_3, 1, 0, 1, 1)
-
         self.modulateBtnASK = QPushButton(self.frame_4)
         self.modulateBtnASK.setObjectName(u"modulateBtnASK")
         sizePolicy5 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
@@ -994,12 +979,12 @@ class Ui_MainWindow(object):
         self.modulateBtnASK.setSizePolicy(sizePolicy5)
         self.modulateBtnASK.setMinimumSize(QSize(150, 30))
         self.modulateBtnASK.setMaximumSize(QSize(16777215, 50))
-        font7 = QFont()
-        font7.setFamily(u"Satoshi Black")
-        font7.setPointSize(14)
-        font7.setBold(True)
-        font7.setWeight(75)
-        self.modulateBtnASK.setFont(font7)
+        font6 = QFont()
+        font6.setFamily(u"Satoshi Black")
+        font6.setPointSize(14)
+        font6.setBold(True)
+        font6.setWeight(75)
+        self.modulateBtnASK.setFont(font6)
         self.modulateBtnASK.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(56, 170, 72);\n"
 "	border-radius: 5px;	\n"
@@ -1021,39 +1006,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_3.addWidget(self.modulateBtnASK, 5, 0, 1, 1)
 
-        self.messageInputASK = QLineEdit(self.frame_4)
-        self.messageInputASK.setObjectName(u"messageInputASK")
-        sizePolicy6 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        sizePolicy6.setHorizontalStretch(0)
-        sizePolicy6.setVerticalStretch(0)
-        sizePolicy6.setHeightForWidth(self.messageInputASK.sizePolicy().hasHeightForWidth())
-        self.messageInputASK.setSizePolicy(sizePolicy6)
-        self.messageInputASK.setMinimumSize(QSize(0, 40))
-        font8 = QFont()
-        font8.setFamily(u"Satoshi Black")
-        font8.setPointSize(10)
-        self.messageInputASK.setFont(font8)
-        self.messageInputASK.setToolTipDuration(-1)
-        self.messageInputASK.setAutoFillBackground(False)
-        self.messageInputASK.setStyleSheet(u"QLineEdit {\n"
-"	background-color: rgb(27, 29, 35);\n"
-"	border-radius: 5px;\n"
-"	border: 2px solid rgb(27, 29, 35);\n"
-"	padding-left: 10px;\n"
-"}\n"
-"QLineEdit:hover {\n"
-"	border: 2px solid rgb(64, 71, 88);\n"
-"}\n"
-"QLineEdit:focus {\n"
-"	border: 2px solid rgb(91, 101, 124);\n"
-"}")
-        self.messageInputASK.setInputMethodHints(Qt.ImhNone)
-        self.messageInputASK.setMaxLength(16)
-        self.messageInputASK.setFrame(True)
-        self.messageInputASK.setEchoMode(QLineEdit.Normal)
-
-        self.gridLayout_3.addWidget(self.messageInputASK, 3, 0, 1, 1)
-
         self.frame_5 = QFrame(self.frame_4)
         self.frame_5.setObjectName(u"frame_5")
         self.frame_5.setMaximumSize(QSize(16777215, 150))
@@ -1067,12 +1019,12 @@ class Ui_MainWindow(object):
         self.label_top_info_4.setObjectName(u"label_top_info_4")
         self.label_top_info_4.setMinimumSize(QSize(0, 10))
         self.label_top_info_4.setMaximumSize(QSize(16777215, 25))
-        font9 = QFont()
-        font9.setFamily(u"Satoshi Black")
-        font9.setPointSize(12)
-        font9.setBold(True)
-        font9.setWeight(75)
-        self.label_top_info_4.setFont(font9)
+        font7 = QFont()
+        font7.setFamily(u"Satoshi Black")
+        font7.setPointSize(12)
+        font7.setBold(True)
+        font7.setWeight(75)
+        self.label_top_info_4.setFont(font7)
         self.label_top_info_4.setStyleSheet(u"QLabel{\n"
 "	background-color: rgb(33, 46, 112);\n"
 "	border: 0px solid ;\n"
@@ -1086,7 +1038,12 @@ class Ui_MainWindow(object):
         self.label_top_info_5.setObjectName(u"label_top_info_5")
         self.label_top_info_5.setMinimumSize(QSize(0, 20))
         self.label_top_info_5.setMaximumSize(QSize(16777215, 30))
-        self.label_top_info_5.setFont(font6)
+        font8 = QFont()
+        font8.setFamily(u"Satoshi")
+        font8.setPointSize(12)
+        font8.setBold(True)
+        font8.setWeight(75)
+        self.label_top_info_5.setFont(font8)
         self.label_top_info_5.setStyleSheet(u"color: rgb(191, 203, 217)")
         self.label_top_info_5.setAlignment(Qt.AlignCenter)
 
@@ -1094,12 +1051,12 @@ class Ui_MainWindow(object):
 
         self.carrierFreqInputASK = QSpinBox(self.frame_5)
         self.carrierFreqInputASK.setObjectName(u"carrierFreqInputASK")
-        font10 = QFont()
-        font10.setFamily(u"Satoshi")
-        font10.setPointSize(10)
-        font10.setBold(True)
-        font10.setWeight(75)
-        self.carrierFreqInputASK.setFont(font10)
+        font9 = QFont()
+        font9.setFamily(u"Satoshi")
+        font9.setPointSize(10)
+        font9.setBold(True)
+        font9.setWeight(75)
+        self.carrierFreqInputASK.setFont(font9)
         self.carrierFreqInputASK.setStyleSheet(u"QSpinBox{\n"
 "	background-color: rgb(5, 7, 35);\n"
 "	border-radius: 5px;\n"
@@ -1174,33 +1131,38 @@ class Ui_MainWindow(object):
 
         self.gridLayout_3.addWidget(self.frame_5, 4, 0, 1, 1)
 
-        self.clearBtnASK = QPushButton(self.frame_4)
-        self.clearBtnASK.setObjectName(u"clearBtnASK")
-        sizePolicy5.setHeightForWidth(self.clearBtnASK.sizePolicy().hasHeightForWidth())
-        self.clearBtnASK.setSizePolicy(sizePolicy5)
-        self.clearBtnASK.setMinimumSize(QSize(150, 30))
-        self.clearBtnASK.setMaximumSize(QSize(16777215, 50))
-        self.clearBtnASK.setFont(font7)
-        self.clearBtnASK.setStyleSheet(u"QPushButton {\n"
-"	border: 2px solid rgb(235, 59, 72);\n"
-"	border-radius: 5px;	\n"
-"	background-color: rgb(207, 59, 72);\n"
+        self.messageInputASK = QLineEdit(self.frame_4)
+        self.messageInputASK.setObjectName(u"messageInputASK")
+        sizePolicy6 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.messageInputASK.sizePolicy().hasHeightForWidth())
+        self.messageInputASK.setSizePolicy(sizePolicy6)
+        self.messageInputASK.setMinimumSize(QSize(0, 40))
+        font10 = QFont()
+        font10.setFamily(u"Satoshi Black")
+        font10.setPointSize(10)
+        self.messageInputASK.setFont(font10)
+        self.messageInputASK.setToolTipDuration(-1)
+        self.messageInputASK.setAutoFillBackground(False)
+        self.messageInputASK.setStyleSheet(u"QLineEdit {\n"
+"	background-color: rgb(27, 29, 35);\n"
+"	border-radius: 5px;\n"
+"	border: 2px solid rgb(27, 29, 35);\n"
+"	padding-left: 10px;\n"
 "}\n"
-"\n"
-"/* rgb(52, 59, 72)*/\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(235, 67, 84);\n"
-"	border: 2px solid rgb(207, 59, 72);\n"
+"QLineEdit:hover {\n"
+"	border: 2px solid rgb(64, 71, 88);\n"
 "}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(139, 37, 46);\n"
-"	border: 2px solid rgb(207, 59, 72);\n"
+"QLineEdit:focus {\n"
+"	border: 2px solid rgb(91, 101, 124);\n"
 "}")
-        icon4 = QIcon()
-        icon4.addFile(u":/16x16/icons/16x16/cil-remove.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.clearBtnASK.setIcon(icon4)
+        self.messageInputASK.setInputMethodHints(Qt.ImhNone)
+        self.messageInputASK.setMaxLength(16)
+        self.messageInputASK.setFrame(True)
+        self.messageInputASK.setEchoMode(QLineEdit.Normal)
 
-        self.gridLayout_3.addWidget(self.clearBtnASK, 6, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.messageInputASK, 3, 0, 1, 1)
 
         self.label_title_bar_top_2 = QLabel(self.frame_4)
         self.label_title_bar_top_2.setObjectName(u"label_title_bar_top_2")
@@ -1229,13 +1191,50 @@ class Ui_MainWindow(object):
 
         self.gridLayout_3.addWidget(self.label_title_bar_top_2, 0, 0, 1, 1)
 
-        self.Btn_helpASK = QPushButton(self.frame_4)
+        self.frame_29 = QFrame(self.frame_4)
+        self.frame_29.setObjectName(u"frame_29")
+        self.frame_29.setMaximumSize(QSize(16777215, 84))
+        self.frame_29.setFrameShape(QFrame.StyledPanel)
+        self.frame_29.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_29 = QVBoxLayout(self.frame_29)
+        self.verticalLayout_29.setSpacing(0)
+        self.verticalLayout_29.setObjectName(u"verticalLayout_29")
+        self.verticalLayout_29.setContentsMargins(0, 0, 0, 0)
+        self.Btn_pauseASK = QPushButton(self.frame_29)
+        self.Btn_pauseASK.setObjectName(u"Btn_pauseASK")
+        sizePolicy3.setHeightForWidth(self.Btn_pauseASK.sizePolicy().hasHeightForWidth())
+        self.Btn_pauseASK.setSizePolicy(sizePolicy3)
+        self.Btn_pauseASK.setMinimumSize(QSize(100, 30))
+        self.Btn_pauseASK.setMaximumSize(QSize(103, 30))
+        self.Btn_pauseASK.setFont(font6)
+        self.Btn_pauseASK.setStyleSheet(u"QPushButton {\n"
+"	border: 1px solid rgb(0, 0, 0);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(48, 48, 48);\n"
+"}\n"
+"\n"
+"/* rgb(52, 59, 72)*/\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(235, 67, 84);\n"
+"	border: 2px solid rgb(207, 59, 72);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(139, 37, 46);\n"
+"	border: 2px solid rgb(207, 59, 72);\n"
+"}")
+        icon4 = QIcon()
+        icon4.addFile(u":/16x16/icons/16x16/cil-media-pause.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.Btn_pauseASK.setIcon(icon4)
+
+        self.verticalLayout_29.addWidget(self.Btn_pauseASK)
+
+        self.Btn_helpASK = QPushButton(self.frame_29)
         self.Btn_helpASK.setObjectName(u"Btn_helpASK")
         sizePolicy3.setHeightForWidth(self.Btn_helpASK.sizePolicy().hasHeightForWidth())
         self.Btn_helpASK.setSizePolicy(sizePolicy3)
         self.Btn_helpASK.setMinimumSize(QSize(100, 30))
         self.Btn_helpASK.setMaximumSize(QSize(103, 30))
-        self.Btn_helpASK.setFont(font7)
+        self.Btn_helpASK.setFont(font6)
         self.Btn_helpASK.setStyleSheet(u"QPushButton {\n"
 "   color: #FFFFFF;\n"
 "   background-color: #3D94F6;\n"
@@ -1258,7 +1257,48 @@ class Ui_MainWindow(object):
         icon5.addFile(u":/16x16/icons/16x16/cil-help.png", QSize(), QIcon.Normal, QIcon.Off)
         self.Btn_helpASK.setIcon(icon5)
 
-        self.gridLayout_3.addWidget(self.Btn_helpASK, 7, 0, 1, 1, Qt.AlignHCenter)
+        self.verticalLayout_29.addWidget(self.Btn_helpASK)
+
+
+        self.gridLayout_3.addWidget(self.frame_29, 7, 0, 1, 1, Qt.AlignHCenter)
+
+        self.label_top_info_3 = QLabel(self.frame_4)
+        self.label_top_info_3.setObjectName(u"label_top_info_3")
+        self.label_top_info_3.setMinimumSize(QSize(0, 25))
+        self.label_top_info_3.setMaximumSize(QSize(16777215, 80))
+        self.label_top_info_3.setFont(font8)
+        self.label_top_info_3.setStyleSheet(u"color: rgb(191, 203, 217)")
+        self.label_top_info_3.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_3.addWidget(self.label_top_info_3, 1, 0, 1, 1)
+
+        self.clearBtnASK = QPushButton(self.frame_4)
+        self.clearBtnASK.setObjectName(u"clearBtnASK")
+        sizePolicy5.setHeightForWidth(self.clearBtnASK.sizePolicy().hasHeightForWidth())
+        self.clearBtnASK.setSizePolicy(sizePolicy5)
+        self.clearBtnASK.setMinimumSize(QSize(150, 30))
+        self.clearBtnASK.setMaximumSize(QSize(16777215, 50))
+        self.clearBtnASK.setFont(font6)
+        self.clearBtnASK.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(235, 59, 72);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(207, 59, 72);\n"
+"}\n"
+"\n"
+"/* rgb(52, 59, 72)*/\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(235, 67, 84);\n"
+"	border: 2px solid rgb(207, 59, 72);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(139, 37, 46);\n"
+"	border: 2px solid rgb(207, 59, 72);\n"
+"}")
+        icon6 = QIcon()
+        icon6.addFile(u":/16x16/icons/16x16/cil-remove.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.clearBtnASK.setIcon(icon6)
+
+        self.gridLayout_3.addWidget(self.clearBtnASK, 6, 0, 1, 1)
 
 
         self.verticalLayout_12.addLayout(self.gridLayout_3)
@@ -1327,7 +1367,7 @@ class Ui_MainWindow(object):
         self.label_top_info_11.setObjectName(u"label_top_info_11")
         self.label_top_info_11.setMinimumSize(QSize(0, 20))
         self.label_top_info_11.setMaximumSize(QSize(16777215, 25))
-        self.label_top_info_11.setFont(font9)
+        self.label_top_info_11.setFont(font7)
         self.label_top_info_11.setStyleSheet(u"QLabel{\n"
 "	background-color: rgb(33, 46, 112);\n"
 "	border: 0px solid ;\n"
@@ -1347,7 +1387,7 @@ class Ui_MainWindow(object):
         self.label_top_info_12.setObjectName(u"label_top_info_12")
         self.label_top_info_12.setMinimumSize(QSize(0, 20))
         self.label_top_info_12.setMaximumSize(QSize(16777215, 30))
-        self.label_top_info_12.setFont(font6)
+        self.label_top_info_12.setFont(font8)
         self.label_top_info_12.setStyleSheet(u"color: rgb(191, 203, 217)")
         self.label_top_info_12.setAlignment(Qt.AlignCenter)
 
@@ -1357,7 +1397,7 @@ class Ui_MainWindow(object):
         self.label_resultFSK.setObjectName(u"label_resultFSK")
         self.label_resultFSK.setMinimumSize(QSize(0, 20))
         self.label_resultFSK.setMaximumSize(QSize(16777215, 30))
-        self.label_resultFSK.setFont(font6)
+        self.label_resultFSK.setFont(font8)
         self.label_resultFSK.setStyleSheet(u"color: rgb(191, 203, 217)")
         self.label_resultFSK.setAlignment(Qt.AlignCenter)
 
@@ -1384,7 +1424,7 @@ class Ui_MainWindow(object):
         self.label_top_info_9.setObjectName(u"label_top_info_9")
         self.label_top_info_9.setMinimumSize(QSize(0, 20))
         self.label_top_info_9.setMaximumSize(QSize(16777215, 25))
-        self.label_top_info_9.setFont(font9)
+        self.label_top_info_9.setFont(font7)
         self.label_top_info_9.setStyleSheet(u"QLabel{\n"
 "	background-color: rgb(33, 46, 112);\n"
 "	border: 0px solid ;\n"
@@ -1398,7 +1438,7 @@ class Ui_MainWindow(object):
         self.label_top_info_10.setObjectName(u"label_top_info_10")
         self.label_top_info_10.setMinimumSize(QSize(0, 20))
         self.label_top_info_10.setMaximumSize(QSize(16777215, 30))
-        self.label_top_info_10.setFont(font6)
+        self.label_top_info_10.setFont(font8)
         self.label_top_info_10.setStyleSheet(u"color: rgb(191, 203, 217)")
         self.label_top_info_10.setAlignment(Qt.AlignCenter)
 
@@ -1406,7 +1446,7 @@ class Ui_MainWindow(object):
 
         self.carrierFreq2InputFSK = QSpinBox(self.frame_8)
         self.carrierFreq2InputFSK.setObjectName(u"carrierFreq2InputFSK")
-        self.carrierFreq2InputFSK.setFont(font10)
+        self.carrierFreq2InputFSK.setFont(font9)
         self.carrierFreq2InputFSK.setStyleSheet(u"QSpinBox{\n"
 "	background-color: rgb(5, 7, 35);\n"
 "	border-radius: 5px;\n"
@@ -1487,7 +1527,7 @@ class Ui_MainWindow(object):
         self.clearBtnFSK.setSizePolicy(sizePolicy5)
         self.clearBtnFSK.setMinimumSize(QSize(150, 30))
         self.clearBtnFSK.setMaximumSize(QSize(16777215, 50))
-        self.clearBtnFSK.setFont(font7)
+        self.clearBtnFSK.setFont(font6)
         self.clearBtnFSK.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(235, 59, 72);\n"
 "	border-radius: 5px;	\n"
@@ -1503,7 +1543,7 @@ class Ui_MainWindow(object):
 "	background-color: rgb(139, 37, 46);\n"
 "	border: 2px solid rgb(207, 59, 72);\n"
 "}")
-        self.clearBtnFSK.setIcon(icon4)
+        self.clearBtnFSK.setIcon(icon6)
 
         self.gridLayout_4.addWidget(self.clearBtnFSK, 7, 0, 1, 1)
 
@@ -1541,7 +1581,7 @@ class Ui_MainWindow(object):
         self.label_top_info_6.setObjectName(u"label_top_info_6")
         self.label_top_info_6.setMinimumSize(QSize(0, 20))
         self.label_top_info_6.setMaximumSize(QSize(16777215, 25))
-        self.label_top_info_6.setFont(font9)
+        self.label_top_info_6.setFont(font7)
         self.label_top_info_6.setStyleSheet(u"QLabel{\n"
 "	background-color: rgb(33, 46, 112);\n"
 "	border: 0px solid ;\n"
@@ -1555,7 +1595,7 @@ class Ui_MainWindow(object):
         self.label_top_info_7.setObjectName(u"label_top_info_7")
         self.label_top_info_7.setMinimumSize(QSize(0, 20))
         self.label_top_info_7.setMaximumSize(QSize(16777215, 30))
-        self.label_top_info_7.setFont(font6)
+        self.label_top_info_7.setFont(font8)
         self.label_top_info_7.setStyleSheet(u"color: rgb(191, 203, 217)")
         self.label_top_info_7.setAlignment(Qt.AlignCenter)
 
@@ -1563,7 +1603,7 @@ class Ui_MainWindow(object):
 
         self.carrierFreq1InputFSK = QSpinBox(self.frame_7)
         self.carrierFreq1InputFSK.setObjectName(u"carrierFreq1InputFSK")
-        self.carrierFreq1InputFSK.setFont(font10)
+        self.carrierFreq1InputFSK.setFont(font9)
         self.carrierFreq1InputFSK.setStyleSheet(u"QSpinBox{\n"
 "	background-color: rgb(5, 7, 35);\n"
 "	border-radius: 5px;\n"
@@ -1642,7 +1682,7 @@ class Ui_MainWindow(object):
         self.label_top_info_13.setObjectName(u"label_top_info_13")
         self.label_top_info_13.setMinimumSize(QSize(0, 25))
         self.label_top_info_13.setMaximumSize(QSize(16777215, 80))
-        self.label_top_info_13.setFont(font6)
+        self.label_top_info_13.setFont(font8)
         self.label_top_info_13.setStyleSheet(u"color: rgb(191, 203, 217)")
         self.label_top_info_13.setAlignment(Qt.AlignCenter)
         self.label_top_info_13.setWordWrap(True)
@@ -1655,7 +1695,7 @@ class Ui_MainWindow(object):
         self.modulateBtnFSK.setSizePolicy(sizePolicy5)
         self.modulateBtnFSK.setMinimumSize(QSize(150, 30))
         self.modulateBtnFSK.setMaximumSize(QSize(16777215, 50))
-        self.modulateBtnFSK.setFont(font7)
+        self.modulateBtnFSK.setFont(font6)
         self.modulateBtnFSK.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(56, 170, 72);\n"
 "	border-radius: 5px;	\n"
@@ -1671,9 +1711,9 @@ class Ui_MainWindow(object):
 "	background-color: rgb(37, 138, 26);\n"
 "	border: 2px solid rgb(60, 196, 72);\n"
 "}")
-        icon6 = QIcon()
-        icon6.addFile(u":/16x16/icons/16x16/cil-fsk.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.modulateBtnFSK.setIcon(icon6)
+        icon7 = QIcon()
+        icon7.addFile(u":/16x16/icons/16x16/cil-fsk.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.modulateBtnFSK.setIcon(icon7)
 
         self.gridLayout_4.addWidget(self.modulateBtnFSK, 6, 0, 1, 1)
 
@@ -1682,7 +1722,7 @@ class Ui_MainWindow(object):
         sizePolicy6.setHeightForWidth(self.messageInputFSK.sizePolicy().hasHeightForWidth())
         self.messageInputFSK.setSizePolicy(sizePolicy6)
         self.messageInputFSK.setMinimumSize(QSize(0, 40))
-        self.messageInputFSK.setFont(font8)
+        self.messageInputFSK.setFont(font10)
         self.messageInputFSK.setToolTipDuration(-1)
         self.messageInputFSK.setAutoFillBackground(False)
         self.messageInputFSK.setStyleSheet(u"QLineEdit {\n"
@@ -1718,7 +1758,7 @@ class Ui_MainWindow(object):
         self.Btn_helpFSK.setSizePolicy(sizePolicy3)
         self.Btn_helpFSK.setMinimumSize(QSize(100, 30))
         self.Btn_helpFSK.setMaximumSize(QSize(103, 30))
-        self.Btn_helpFSK.setFont(font7)
+        self.Btn_helpFSK.setFont(font6)
         self.Btn_helpFSK.setStyleSheet(u"QPushButton {\n"
 "   color: #FFFFFF;\n"
 "   background-color: #3D94F6;\n"
@@ -1799,7 +1839,7 @@ class Ui_MainWindow(object):
         self.label_top_info_8.setObjectName(u"label_top_info_8")
         self.label_top_info_8.setMinimumSize(QSize(0, 10))
         self.label_top_info_8.setMaximumSize(QSize(16777215, 25))
-        self.label_top_info_8.setFont(font9)
+        self.label_top_info_8.setFont(font7)
         self.label_top_info_8.setStyleSheet(u"QLabel{\n"
 "	background-color: rgb(33, 46, 112);\n"
 "	border: 0px solid ;\n"
@@ -1813,7 +1853,7 @@ class Ui_MainWindow(object):
         self.label_top_info_14.setObjectName(u"label_top_info_14")
         self.label_top_info_14.setMinimumSize(QSize(0, 20))
         self.label_top_info_14.setMaximumSize(QSize(16777215, 30))
-        self.label_top_info_14.setFont(font6)
+        self.label_top_info_14.setFont(font8)
         self.label_top_info_14.setStyleSheet(u"color: rgb(191, 203, 217)")
         self.label_top_info_14.setAlignment(Qt.AlignCenter)
 
@@ -1821,7 +1861,7 @@ class Ui_MainWindow(object):
 
         self.carrierFreqInputPSK = QSpinBox(self.frame_12)
         self.carrierFreqInputPSK.setObjectName(u"carrierFreqInputPSK")
-        self.carrierFreqInputPSK.setFont(font10)
+        self.carrierFreqInputPSK.setFont(font9)
         self.carrierFreqInputPSK.setStyleSheet(u"QSpinBox{\n"
 "	background-color: rgb(5, 7, 35);\n"
 "	border-radius: 5px;\n"
@@ -1902,7 +1942,7 @@ class Ui_MainWindow(object):
         self.clearBtnPSK.setSizePolicy(sizePolicy5)
         self.clearBtnPSK.setMinimumSize(QSize(150, 30))
         self.clearBtnPSK.setMaximumSize(QSize(16777215, 50))
-        self.clearBtnPSK.setFont(font7)
+        self.clearBtnPSK.setFont(font6)
         self.clearBtnPSK.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(235, 59, 72);\n"
 "	border-radius: 5px;	\n"
@@ -1918,7 +1958,7 @@ class Ui_MainWindow(object):
 "	background-color: rgb(139, 37, 46);\n"
 "	border: 2px solid rgb(207, 59, 72);\n"
 "}")
-        self.clearBtnPSK.setIcon(icon4)
+        self.clearBtnPSK.setIcon(icon6)
 
         self.gridLayout_5.addWidget(self.clearBtnPSK, 6, 0, 1, 1)
 
@@ -1927,7 +1967,7 @@ class Ui_MainWindow(object):
         sizePolicy6.setHeightForWidth(self.messageInputPSK.sizePolicy().hasHeightForWidth())
         self.messageInputPSK.setSizePolicy(sizePolicy6)
         self.messageInputPSK.setMinimumSize(QSize(0, 40))
-        self.messageInputPSK.setFont(font8)
+        self.messageInputPSK.setFont(font10)
         self.messageInputPSK.setToolTipDuration(-1)
         self.messageInputPSK.setAutoFillBackground(False)
         self.messageInputPSK.setStyleSheet(u"QLineEdit {\n"
@@ -1979,7 +2019,7 @@ class Ui_MainWindow(object):
         self.label_top_info_15.setObjectName(u"label_top_info_15")
         self.label_top_info_15.setMinimumSize(QSize(0, 25))
         self.label_top_info_15.setMaximumSize(QSize(16777215, 80))
-        self.label_top_info_15.setFont(font6)
+        self.label_top_info_15.setFont(font8)
         self.label_top_info_15.setStyleSheet(u"color: rgb(191, 203, 217)")
         self.label_top_info_15.setAlignment(Qt.AlignCenter)
 
@@ -1991,7 +2031,7 @@ class Ui_MainWindow(object):
         self.modulateBtnPSK.setSizePolicy(sizePolicy5)
         self.modulateBtnPSK.setMinimumSize(QSize(150, 30))
         self.modulateBtnPSK.setMaximumSize(QSize(16777215, 50))
-        self.modulateBtnPSK.setFont(font7)
+        self.modulateBtnPSK.setFont(font6)
         self.modulateBtnPSK.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(56, 170, 72);\n"
 "	border-radius: 5px;	\n"
@@ -2007,9 +2047,9 @@ class Ui_MainWindow(object):
 "	background-color: rgb(37, 138, 26);\n"
 "	border: 2px solid rgb(60, 196, 72);\n"
 "}")
-        icon7 = QIcon()
-        icon7.addFile(u":/16x16/icons/16x16/cil-psk.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.modulateBtnPSK.setIcon(icon7)
+        icon8 = QIcon()
+        icon8.addFile(u":/16x16/icons/16x16/cil-psk.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.modulateBtnPSK.setIcon(icon8)
 
         self.gridLayout_5.addWidget(self.modulateBtnPSK, 5, 0, 1, 1)
 
@@ -2019,7 +2059,7 @@ class Ui_MainWindow(object):
         self.Btn_helpPSK.setSizePolicy(sizePolicy3)
         self.Btn_helpPSK.setMinimumSize(QSize(100, 30))
         self.Btn_helpPSK.setMaximumSize(QSize(103, 30))
-        self.Btn_helpPSK.setFont(font7)
+        self.Btn_helpPSK.setFont(font6)
         self.Btn_helpPSK.setStyleSheet(u"QPushButton {\n"
 "   color: #FFFFFF;\n"
 "   background-color: #3D94F6;\n"
@@ -2132,7 +2172,7 @@ class Ui_MainWindow(object):
         self.label_top_info_16.setObjectName(u"label_top_info_16")
         self.label_top_info_16.setMinimumSize(QSize(0, 25))
         self.label_top_info_16.setMaximumSize(QSize(16777215, 25))
-        self.label_top_info_16.setFont(font9)
+        self.label_top_info_16.setFont(font7)
         self.label_top_info_16.setStyleSheet(u"QLabel{\n"
 "	background-color: rgb(33, 46, 112);\n"
 "	border: 0px solid ;\n"
@@ -2146,7 +2186,7 @@ class Ui_MainWindow(object):
         self.label_top_info_17.setObjectName(u"label_top_info_17")
         self.label_top_info_17.setMinimumSize(QSize(0, 20))
         self.label_top_info_17.setMaximumSize(QSize(16777215, 30))
-        self.label_top_info_17.setFont(font6)
+        self.label_top_info_17.setFont(font8)
         self.label_top_info_17.setStyleSheet(u"color: rgb(191, 203, 217)")
         self.label_top_info_17.setAlignment(Qt.AlignCenter)
 
@@ -2160,7 +2200,7 @@ class Ui_MainWindow(object):
         sizePolicy8.setHeightForWidth(self.maxCarrierASK.sizePolicy().hasHeightForWidth())
         self.maxCarrierASK.setSizePolicy(sizePolicy8)
         self.maxCarrierASK.setMinimumSize(QSize(150, 25))
-        self.maxCarrierASK.setFont(font10)
+        self.maxCarrierASK.setFont(font9)
         self.maxCarrierASK.setStyleSheet(u"QSpinBox{\n"
 "	background-color: rgb(5, 7, 35);\n"
 "	border-radius: 5px;\n"
@@ -2224,7 +2264,7 @@ class Ui_MainWindow(object):
         self.label_top_info_18.setObjectName(u"label_top_info_18")
         self.label_top_info_18.setMinimumSize(QSize(0, 20))
         self.label_top_info_18.setMaximumSize(QSize(16777215, 30))
-        self.label_top_info_18.setFont(font6)
+        self.label_top_info_18.setFont(font8)
         self.label_top_info_18.setStyleSheet(u"color: rgb(191, 203, 217)")
         self.label_top_info_18.setAlignment(Qt.AlignCenter)
 
@@ -2235,7 +2275,7 @@ class Ui_MainWindow(object):
         sizePolicy8.setHeightForWidth(self.minCarrierASK.sizePolicy().hasHeightForWidth())
         self.minCarrierASK.setSizePolicy(sizePolicy8)
         self.minCarrierASK.setMinimumSize(QSize(150, 25))
-        self.minCarrierASK.setFont(font10)
+        self.minCarrierASK.setFont(font9)
         self.minCarrierASK.setStyleSheet(u"QSpinBox{\n"
 "	background-color: rgb(5, 7, 35);\n"
 "	border-radius: 5px;\n"
@@ -2331,7 +2371,7 @@ class Ui_MainWindow(object):
         self.label_top_info_22.setObjectName(u"label_top_info_22")
         self.label_top_info_22.setMinimumSize(QSize(0, 25))
         self.label_top_info_22.setMaximumSize(QSize(16777215, 25))
-        self.label_top_info_22.setFont(font9)
+        self.label_top_info_22.setFont(font7)
         self.label_top_info_22.setStyleSheet(u"QLabel{\n"
 "	background-color: rgb(33, 46, 112);\n"
 "	border: 0px solid ;\n"
@@ -2345,7 +2385,7 @@ class Ui_MainWindow(object):
         self.label_top_info_23.setObjectName(u"label_top_info_23")
         self.label_top_info_23.setMinimumSize(QSize(0, 20))
         self.label_top_info_23.setMaximumSize(QSize(16777215, 30))
-        self.label_top_info_23.setFont(font6)
+        self.label_top_info_23.setFont(font8)
         self.label_top_info_23.setStyleSheet(u"color: rgb(191, 203, 217)")
         self.label_top_info_23.setAlignment(Qt.AlignCenter)
 
@@ -2356,7 +2396,7 @@ class Ui_MainWindow(object):
         sizePolicy8.setHeightForWidth(self.maxCarrierFSK1.sizePolicy().hasHeightForWidth())
         self.maxCarrierFSK1.setSizePolicy(sizePolicy8)
         self.maxCarrierFSK1.setMinimumSize(QSize(150, 25))
-        self.maxCarrierFSK1.setFont(font10)
+        self.maxCarrierFSK1.setFont(font9)
         self.maxCarrierFSK1.setStyleSheet(u"QSpinBox{\n"
 "	background-color: rgb(5, 7, 35);\n"
 "	border-radius: 5px;\n"
@@ -2420,7 +2460,7 @@ class Ui_MainWindow(object):
         self.label_top_info_21.setObjectName(u"label_top_info_21")
         self.label_top_info_21.setMinimumSize(QSize(0, 20))
         self.label_top_info_21.setMaximumSize(QSize(16777215, 30))
-        self.label_top_info_21.setFont(font6)
+        self.label_top_info_21.setFont(font8)
         self.label_top_info_21.setStyleSheet(u"color: rgb(191, 203, 217)")
         self.label_top_info_21.setAlignment(Qt.AlignCenter)
 
@@ -2431,7 +2471,7 @@ class Ui_MainWindow(object):
         sizePolicy8.setHeightForWidth(self.minCarrierFSK1.sizePolicy().hasHeightForWidth())
         self.minCarrierFSK1.setSizePolicy(sizePolicy8)
         self.minCarrierFSK1.setMinimumSize(QSize(150, 25))
-        self.minCarrierFSK1.setFont(font10)
+        self.minCarrierFSK1.setFont(font9)
         self.minCarrierFSK1.setStyleSheet(u"QSpinBox{\n"
 "	background-color: rgb(5, 7, 35);\n"
 "	border-radius: 5px;\n"
@@ -2527,7 +2567,7 @@ class Ui_MainWindow(object):
         self.label_top_info_24.setObjectName(u"label_top_info_24")
         self.label_top_info_24.setMinimumSize(QSize(0, 25))
         self.label_top_info_24.setMaximumSize(QSize(16777215, 25))
-        self.label_top_info_24.setFont(font9)
+        self.label_top_info_24.setFont(font7)
         self.label_top_info_24.setStyleSheet(u"QLabel{\n"
 "	background-color: rgb(33, 46, 112);\n"
 "	border: 0px solid ;\n"
@@ -2541,7 +2581,7 @@ class Ui_MainWindow(object):
         self.label_top_info_25.setObjectName(u"label_top_info_25")
         self.label_top_info_25.setMinimumSize(QSize(0, 20))
         self.label_top_info_25.setMaximumSize(QSize(16777215, 30))
-        self.label_top_info_25.setFont(font6)
+        self.label_top_info_25.setFont(font8)
         self.label_top_info_25.setStyleSheet(u"color: rgb(191, 203, 217)")
         self.label_top_info_25.setAlignment(Qt.AlignCenter)
 
@@ -2552,7 +2592,7 @@ class Ui_MainWindow(object):
         sizePolicy8.setHeightForWidth(self.maxCarrierFSK2.sizePolicy().hasHeightForWidth())
         self.maxCarrierFSK2.setSizePolicy(sizePolicy8)
         self.maxCarrierFSK2.setMinimumSize(QSize(150, 25))
-        self.maxCarrierFSK2.setFont(font10)
+        self.maxCarrierFSK2.setFont(font9)
         self.maxCarrierFSK2.setStyleSheet(u"QSpinBox{\n"
 "	background-color: rgb(5, 7, 35);\n"
 "	border-radius: 5px;\n"
@@ -2616,7 +2656,7 @@ class Ui_MainWindow(object):
         self.label_top_info_28.setObjectName(u"label_top_info_28")
         self.label_top_info_28.setMinimumSize(QSize(0, 20))
         self.label_top_info_28.setMaximumSize(QSize(16777215, 30))
-        self.label_top_info_28.setFont(font6)
+        self.label_top_info_28.setFont(font8)
         self.label_top_info_28.setStyleSheet(u"color: rgb(191, 203, 217)")
         self.label_top_info_28.setAlignment(Qt.AlignCenter)
 
@@ -2627,7 +2667,7 @@ class Ui_MainWindow(object):
         sizePolicy8.setHeightForWidth(self.minCarrierFSK2.sizePolicy().hasHeightForWidth())
         self.minCarrierFSK2.setSizePolicy(sizePolicy8)
         self.minCarrierFSK2.setMinimumSize(QSize(150, 25))
-        self.minCarrierFSK2.setFont(font10)
+        self.minCarrierFSK2.setFont(font9)
         self.minCarrierFSK2.setStyleSheet(u"QSpinBox{\n"
 "	background-color: rgb(5, 7, 35);\n"
 "	border-radius: 5px;\n"
@@ -2738,7 +2778,7 @@ class Ui_MainWindow(object):
         self.label_top_info_19.setObjectName(u"label_top_info_19")
         self.label_top_info_19.setMinimumSize(QSize(0, 25))
         self.label_top_info_19.setMaximumSize(QSize(16777215, 25))
-        self.label_top_info_19.setFont(font9)
+        self.label_top_info_19.setFont(font7)
         self.label_top_info_19.setStyleSheet(u"QLabel{\n"
 "	background-color: rgb(33, 46, 112);\n"
 "	border: 0px solid ;\n"
@@ -2752,7 +2792,7 @@ class Ui_MainWindow(object):
         self.label_top_info_20.setObjectName(u"label_top_info_20")
         self.label_top_info_20.setMinimumSize(QSize(0, 20))
         self.label_top_info_20.setMaximumSize(QSize(16777215, 30))
-        self.label_top_info_20.setFont(font6)
+        self.label_top_info_20.setFont(font8)
         self.label_top_info_20.setStyleSheet(u"color: rgb(191, 203, 217)")
         self.label_top_info_20.setAlignment(Qt.AlignCenter)
 
@@ -2763,7 +2803,7 @@ class Ui_MainWindow(object):
         sizePolicy8.setHeightForWidth(self.maxCarrierPSK.sizePolicy().hasHeightForWidth())
         self.maxCarrierPSK.setSizePolicy(sizePolicy8)
         self.maxCarrierPSK.setMinimumSize(QSize(150, 25))
-        self.maxCarrierPSK.setFont(font10)
+        self.maxCarrierPSK.setFont(font9)
         self.maxCarrierPSK.setStyleSheet(u"QSpinBox{\n"
 "	background-color: rgb(5, 7, 35);\n"
 "	border-radius: 5px;\n"
@@ -2827,7 +2867,7 @@ class Ui_MainWindow(object):
         self.label_top_info_29.setObjectName(u"label_top_info_29")
         self.label_top_info_29.setMinimumSize(QSize(0, 20))
         self.label_top_info_29.setMaximumSize(QSize(16777215, 30))
-        self.label_top_info_29.setFont(font6)
+        self.label_top_info_29.setFont(font8)
         self.label_top_info_29.setStyleSheet(u"color: rgb(191, 203, 217)")
         self.label_top_info_29.setAlignment(Qt.AlignCenter)
 
@@ -2838,7 +2878,7 @@ class Ui_MainWindow(object):
         sizePolicy8.setHeightForWidth(self.minCarrierPSK.sizePolicy().hasHeightForWidth())
         self.minCarrierPSK.setSizePolicy(sizePolicy8)
         self.minCarrierPSK.setMinimumSize(QSize(150, 25))
-        self.minCarrierPSK.setFont(font10)
+        self.minCarrierPSK.setFont(font9)
         self.minCarrierPSK.setStyleSheet(u"QSpinBox{\n"
 "	background-color: rgb(5, 7, 35);\n"
 "	border-radius: 5px;\n"
@@ -2923,7 +2963,7 @@ class Ui_MainWindow(object):
         self.Btn_helpSettings.setSizePolicy(sizePolicy3)
         self.Btn_helpSettings.setMinimumSize(QSize(100, 30))
         self.Btn_helpSettings.setMaximumSize(QSize(103, 30))
-        self.Btn_helpSettings.setFont(font7)
+        self.Btn_helpSettings.setFont(font6)
         self.Btn_helpSettings.setStyleSheet(u"QPushButton {\n"
 "   color: #FFFFFF;\n"
 "   background-color: #3D94F6;\n"
@@ -3028,17 +3068,6 @@ class Ui_MainWindow(object):
         QWidget.setTabOrder(self.btn_close, self.btn_toggle_menu)
 
         self.retranslateUi(MainWindow)
-        self.messageInputASK.textEdited.connect(self.modulateBtnASK.click)
-        self.carrierFreqInputASK.valueChanged.connect(self.modulateBtnASK.click)
-        self.sliderASK.sliderReleased.connect(self.modulateBtnASK.click)
-        self.messageInputFSK.textChanged.connect(self.modulateBtnFSK.click)
-        self.carrierFreq1InputFSK.valueChanged.connect(self.modulateBtnFSK.click)
-        self.carrierFreq2InputFSK.valueChanged.connect(self.modulateBtnFSK.click)
-        self.sliderFSK1.sliderReleased.connect(self.modulateBtnFSK.click)
-        self.sliderFSK2.sliderReleased.connect(self.modulateBtnFSK.click)
-        self.messageInputPSK.textChanged.connect(self.modulateBtnPSK.click)
-        self.carrierFreqInputPSK.valueChanged.connect(self.modulateBtnPSK.click)
-        self.sliderPSK.sliderReleased.connect(self.modulateBtnPSK.click)
         self.carrierFreqInputPSK.valueChanged.connect(self.sliderPSK.setValue)
         self.carrierFreqInputASK.valueChanged.connect(self.sliderASK.setValue)
         self.carrierFreq1InputFSK.valueChanged.connect(self.sliderFSK1.setValue)
@@ -3048,7 +3077,7 @@ class Ui_MainWindow(object):
         self.sliderFSK1.valueChanged.connect(self.carrierFreq1InputFSK.setValue)
         self.sliderPSK.valueChanged.connect(self.carrierFreqInputPSK.setValue)
 
-        self.stackedWidget.setCurrentIndex(4)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -3081,10 +3110,12 @@ class Ui_MainWindow(object):
 "FSK", None))
         self.Btn_PSK.setText(QCoreApplication.translate("MainWindow", u"Modulaci\u00f3n\n"
 "PSK", None))
-        self.label_top_info_3.setText(QCoreApplication.translate("MainWindow", u"Ingrese una cadena\n"
-"cadena de bits de\n"
-"2 / 4 / 8 / 16 bits", None))
         self.modulateBtnASK.setText(QCoreApplication.translate("MainWindow", u"Modular", None))
+        self.label_top_info_4.setText(QCoreApplication.translate("MainWindow", u"Se\u00f1al Portadora", None))
+        self.label_top_info_5.setText(QCoreApplication.translate("MainWindow", u"Frecuencia (Hz)", None))
+#if QT_CONFIG(tooltip)
+        self.carrierFreqInputASK.setToolTip("")
+#endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
         self.messageInputASK.setToolTip(QCoreApplication.translate("MainWindow", u"Ingrese cadenas de 2, 4, 8 o 16 bits", None))
 #endif // QT_CONFIG(tooltip)
@@ -3096,15 +3127,19 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(whatsthis)
         self.messageInputASK.setText(QCoreApplication.translate("MainWindow", u"1100101011001010", None))
         self.messageInputASK.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese una cadena de bits", None))
-        self.label_top_info_4.setText(QCoreApplication.translate("MainWindow", u"Se\u00f1al Portadora", None))
-        self.label_top_info_5.setText(QCoreApplication.translate("MainWindow", u"Frecuencia (Hz)", None))
-#if QT_CONFIG(tooltip)
-        self.carrierFreqInputASK.setToolTip("")
-#endif // QT_CONFIG(tooltip)
-        self.clearBtnASK.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
         self.label_title_bar_top_2.setText(QCoreApplication.translate("MainWindow", u"Modulaci\u00f3n por\n"
 "Conmutaci\u00f3n\n"
 "de Amplitud", None))
+#if QT_CONFIG(tooltip)
+        self.Btn_pauseASK.setToolTip(QCoreApplication.translate("MainWindow", u"Consigue ayuda sobre esta p\u00e1gina", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(statustip)
+        self.Btn_pauseASK.setStatusTip("")
+#endif // QT_CONFIG(statustip)
+#if QT_CONFIG(whatsthis)
+        self.Btn_pauseASK.setWhatsThis("")
+#endif // QT_CONFIG(whatsthis)
+        self.Btn_pauseASK.setText(QCoreApplication.translate("MainWindow", u"Pausar", None))
 #if QT_CONFIG(tooltip)
         self.Btn_helpASK.setToolTip(QCoreApplication.translate("MainWindow", u"Consigue ayuda sobre esta p\u00e1gina", None))
 #endif // QT_CONFIG(tooltip)
@@ -3115,6 +3150,10 @@ class Ui_MainWindow(object):
         self.Btn_helpASK.setWhatsThis("")
 #endif // QT_CONFIG(whatsthis)
         self.Btn_helpASK.setText(QCoreApplication.translate("MainWindow", u"Ayuda", None))
+        self.label_top_info_3.setText(QCoreApplication.translate("MainWindow", u"Ingrese una cadena\n"
+"cadena de bits de\n"
+"2 / 4 / 8 / 16 bits", None))
+        self.clearBtnASK.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
         self.label_top_info_11.setText(QCoreApplication.translate("MainWindow", u"Resultante", None))
         self.label_top_info_12.setText(QCoreApplication.translate("MainWindow", u"AB =", None))
         self.label_resultFSK.setText("")

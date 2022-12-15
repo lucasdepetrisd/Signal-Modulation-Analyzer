@@ -30,6 +30,9 @@ from matplotlib.backends.backend_qt5agg  import  ( NavigationToolbar2QT  as  Nav
 from PySide2.QtWidgets import *
 import sys
 
+# ANIMATION
+from matplotlib.animation import FuncAnimation
+
 # Telling windows to let me make my own taskbar icons
 import ctypes
 myappid = 'lucasdepetris.SigMA.gui.v1'
@@ -133,10 +136,11 @@ class MainWindow(QMainWindow):
         ## END - WINDOW ATTRIBUTES
         ############################## ---/--/--- ##############################
 
-        # self.ui.modulateBtnASK.clicked.connect(lambda: self.modulateASK())
         self.ui.messageInputASK.textChanged.connect(lambda: self.modulateASK())
         self.ui.carrierFreqInputASK.valueChanged.connect(lambda: self.modulateASK())
         self.ui.clearBtnASK.clicked.connect(lambda: self.clearASK())
+        self.ui.modulateBtnASK.clicked.connect(lambda: self.animateModulation("ask"))
+        self.ui.Btn_pauseASK.clicked.connect(lambda: self.ui.MplWidgetASK.switchAnimation(True))
 
         # self.ui.modulateBtnFSK.clicked.connect(lambda: self.modulateFSK())
         self.ui.messageInputFSK.textChanged.connect(lambda: self.modulateFSK())
@@ -148,6 +152,7 @@ class MainWindow(QMainWindow):
         self.ui.messageInputPSK.textChanged.connect(lambda: self.modulatePSK())
         self.ui.carrierFreqInputPSK.valueChanged.connect(lambda: self.modulatePSK())
         self.ui.clearBtnPSK.clicked.connect(lambda: self.clearPSK())
+        self.ui.modulateBtnASK.clicked.connect(lambda: self.animateModulation("psk"))
 
         self.ui.Btn_helpASK.clicked.connect(lambda: self.helpPage("ask"))
         self.ui.Btn_helpFSK.clicked.connect(lambda: self.helpPage("fsk"))
@@ -408,6 +413,8 @@ class MainWindow(QMainWindow):
         return False
     
     def clearASK(self):
+        if hasattr(self.ui.MplWidgetASK, 'ani1'):
+            self.ui.MplWidgetASK.pauseAnimation()
         self.ui.MplWidgetASK.canvas.ax1.clear()
         self.ui.MplWidgetASK.canvas.ax2.clear()
         self.ui.MplWidgetASK.canvas.ax3.clear()
@@ -418,7 +425,7 @@ class MainWindow(QMainWindow):
         if(self.checkMessage(message,self.ui.messageInputASK)):
             
             Fc = int(float(self.ui.carrierFreqInputASK.text()))
-            Fs = 1000 * Fc # Sampling freq must be >>> 2 * fc (Nyquist rate)
+            Fs = 25 * Fc # Sampling freq must be >>> 2 * fc (Nyquist rate)
             Fs = Fs + (Fs % len(message))
             t = np.arange(0,1,1/Fs)
             samples = Fs // len(message)
@@ -427,7 +434,15 @@ class MainWindow(QMainWindow):
 
             data_signal = BG.generate()
             carrier_signal = np.cos(2 * np.pi * Fc * t)
+
+            if len(t) > len(data_signal):
+                dif = abs(len(t) - len(data_signal))
+                for i in range(dif):
+                    data_signal = np.append(data_signal, data_signal[-1])
+                    
             ask_signal = carrier_signal * data_signal
+
+            arrays = [data_signal, carrier_signal, ask_signal]
 
             if self.ui.MplWidgetASK.canvas.ax1:
                 self.ui.MplWidgetASK.canvas.ax2.set_visible(True)
@@ -439,19 +454,23 @@ class MainWindow(QMainWindow):
             self.ui.MplWidgetASK.canvas.axes.clear()
 
             # Plotting data signal
+            if hasattr(self.ui.MplWidgetASK, 'ani1'):
+                self.ui.MplWidgetASK.pauseAnimation()
             self.ui.MplWidgetASK.canvas.ax1.clear()
-            self.ui.MplWidgetASK.canvas.ax1.plot(t,data_signal,color='red',label=f'Frecuencia: {Fs} Hz\nBits: {message}')
+            lin1, = self.ui.MplWidgetASK.canvas.ax1.plot(t,data_signal,color='red',label=f'Frecuencia: {Fs} Hz\nBits: {message}')
             self.ui.MplWidgetASK.canvas.ax1.legend(loc = 'lower right')
 
             # Plotting carrier signal
             self.ui.MplWidgetASK.canvas.ax2.clear()
-            self.ui.MplWidgetASK.canvas.ax2.plot(t,carrier_signal,color='blue',label=f'Frecuencia Portadora: {Fc} Hz')
+            lin2, = self.ui.MplWidgetASK.canvas.ax2.plot(t,carrier_signal,color='blue',label=f'Frecuencia Portadora: {Fc} Hz')
             self.ui.MplWidgetASK.canvas.ax2.legend(loc = 'lower right')
             
             # Plotting ASK modulated signal
             self.ui.MplWidgetASK.canvas.ax3.clear()
-            self.ui.MplWidgetASK.canvas.ax3.plot(t,ask_signal,color='purple',label=f'Señal ASK\n(0): Frec = 0 Hz\n(1): Frec = {Fc} Hz')
+            lin3, = self.ui.MplWidgetASK.canvas.ax3.plot(t,ask_signal,color='purple',label=f'Señal ASK\n(0): Frec = 0 Hz\n(1): Frec = {Fc} Hz')
             self.ui.MplWidgetASK.canvas.ax3.legend(loc = 'lower right')
+
+            line = [lin1, lin2, lin3]
 
             # Removing intermediate xtick labels for a cleaner plot
             self.ui.MplWidgetASK.canvas.ax1.tick_params(
@@ -472,6 +491,7 @@ class MainWindow(QMainWindow):
             # Set Title and Show Plot
             self.ui.MplWidgetASK.canvas.ax1.set_title(f'Señal ASK')
             self.ui.MplWidgetASK.canvas.draw()
+            return [arrays, t, line, self.ui.MplWidgetASK.canvas.figure]
     
     def clearFSK(self):
         self.ui.MplWidgetFSK.canvas.ax1.clear()
@@ -617,6 +637,52 @@ class MainWindow(QMainWindow):
 
     ########################################################################
     ## END ==> MODULATION EVENTS
+    ########################################################################
+
+    ########################################################################
+    ## START ==> ANIMATION EVENTS
+    ########################################################################
+
+    def animateModulation(self, mod="nofsk"):
+        if (mod != "fsk"):
+            if(mod == "ask"):
+                data = self.modulateASK()
+            elif(mod == "psk"):
+                data = self.modulatePSK()
+            else: data = 0
+
+            data_signal = data[0][0]
+            carrier_signal = data[0][1]
+            modulated_signal = data[0][2]
+            t = data[1]
+            line1 = data[2][0]
+            line2 = data[2][1]
+            line3 = data[2][2]
+            mplwidget = data[3]
+
+            anim1 = self.animateWave(mplwidget, data_signal, line1, t)
+            anim2 = self.animateWave(mplwidget, carrier_signal, line2, t)
+            anim3 = self.animateWave(mplwidget, modulated_signal, line3, t)
+
+            self.ui.MplWidgetASK.updateAnimation([anim1, anim2, anim3])
+
+    def animateWave(self, mplwidget, wave, line, t):
+        
+        def init():
+            line.set_data([], [])
+            return line,
+
+        def animate(i):
+            # x = np.linspace(0, 5, 500)
+            y = np.roll(wave, -i) 
+            line.set_data(t, y)
+            return line,
+
+        anim = FuncAnimation(mplwidget, animate, init_func=init, frames=len(t), interval=10, blit=True)
+        return anim
+
+    ########################################################################
+    ## END ==> ANIMATION EVENT
     ########################################################################
 
     ########################################################################
