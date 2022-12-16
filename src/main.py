@@ -106,7 +106,7 @@ class MainWindow(QMainWindow):
         ## USER ICON ==> SHOW HIDE
         UIFunctions.userIcon(self, "LD", "url(:/24x24/icons/24x24/sigma-logo.png)", True)
         UIFunctions.labelCredits(self, "Desarrollado por: Lucas Depetris")
-        UIFunctions.labelVersion(self, "v0.9")
+        UIFunctions.labelVersion(self, "v0.9.5")
         ## ==> END ##
 
 
@@ -165,6 +165,7 @@ class MainWindow(QMainWindow):
         self.ui.Btn_helpFSK.clicked.connect(lambda: self.helpPage("fsk"))
         self.ui.Btn_helpPSK.clicked.connect(lambda: self.helpPage("psk"))
         self.ui.Btn_helpSettings.clicked.connect(lambda: self.helpPage("settings"))
+        self.ui.Btn_helpMain.clicked.connect(lambda: self.helpPage("main"))
 
         self.ui.Btn_ASK.clicked.connect(self.Button)
         self.ui.Btn_FSK.clicked.connect(self.Button)
@@ -440,7 +441,7 @@ class MainWindow(QMainWindow):
         if(self.checkMessage(message,self.ui.messageInputASK, self.ui.labelASK, self.ui.clearBtnASK)):
             
             Fc = int(float(self.ui.carrierFreqInputASK.text()))
-            Fs = 25 * Fc # Sampling freq must be >>> 2 * fc (Nyquist rate)
+            Fs = 64 * Fc # Sampling freq must be >>> 2 * fc (Nyquist rate)
             Fs = Fs + (Fs % len(message))
             t = np.arange(0,1,1/Fs)
             samples = Fs // len(message)
@@ -451,13 +452,15 @@ class MainWindow(QMainWindow):
             carrier_signal = np.cos(2 * np.pi * Fc * t)
 
             if len(t) > len(data_signal):
-                dif = abs(len(t) - len(data_signal))
+                dif = len(t) - len(data_signal)
                 for i in range(dif):
                     data_signal = np.append(data_signal, data_signal[-1])
                     
             ask_signal = carrier_signal * data_signal
 
             arrays = [data_signal, carrier_signal, ask_signal]
+
+            bandWidth = len(message)
 
             if self.ui.MplWidgetASK.canvas.ax1:
                 self.ui.MplWidgetASK.canvas.ax2.set_visible(True)
@@ -476,7 +479,7 @@ class MainWindow(QMainWindow):
 
             # Plotting data signal and asigning line
             self.ui.MplWidgetASK.canvas.ax1.clear()
-            lin1, = self.ui.MplWidgetASK.canvas.ax1.plot(t,data_signal,color='red',label=f'Frecuencia: {Fs} Hz\nBits: {message}')
+            lin1, = self.ui.MplWidgetASK.canvas.ax1.plot(t,data_signal,color='red',label=f'Frec Muestreo = {Fs} Hz\nBits: {message}')
             self.ui.MplWidgetASK.canvas.ax1.legend(loc = 'lower right')
 
             # Plotting carrier signal and asigning line
@@ -486,7 +489,7 @@ class MainWindow(QMainWindow):
             
             # Plotting ASK modulated signal and asigning line
             self.ui.MplWidgetASK.canvas.ax3.clear()
-            lin3, = self.ui.MplWidgetASK.canvas.ax3.plot(t,ask_signal,color='purple',label=f'Señal ASK\n(0): Frec = 0 Hz\n(1): Frec = {Fc} Hz')
+            lin3, = self.ui.MplWidgetASK.canvas.ax3.plot(t,ask_signal,color='purple',label=f'Señal ASK\n(0): Frec = 0 Hz\n(1): Frec = {Fc} Hz\nAB = {bandWidth} Hz')
             self.ui.MplWidgetASK.canvas.ax3.legend(loc = 'lower right')
 
             line = [lin1, lin2, lin3]
@@ -526,7 +529,7 @@ class MainWindow(QMainWindow):
         if(self.checkMessage(message,self.ui.messageInputFSK, self.ui.labelFSK, self.ui.clearBtnFSK)):
             Fc1 = int(float(self.ui.carrierFreq1InputFSK.text())) # Carrier freq 1
             Fc2 = int(float(self.ui.carrierFreq2InputFSK.text())) # Carrier freq 2
-            Fs = 25 * max( Fc1, Fc2 ) # Sampling freq must be >>> 2 * fc (Nyquist rate)
+            Fs = 64 * max( Fc1, Fc2 ) # Sampling freq must be >>> 2 * fc (Nyquist rate)
             Fs = Fs + (Fs % len(message))
             t = np.arange(0, 1, 1/Fs)
             samples = Fs // len(message)
@@ -539,21 +542,26 @@ class MainWindow(QMainWindow):
             carrier_signal_2 = np.cos(2 * np.pi * Fc2 * t)
 
             if len(t) > len(data_signal_inverse):
-                dif = abs(len(t) - len(data_signal_inverse))
-                for i in range(dif):
+                dif = len(t) - len(data_signal_inverse)
+                for _ in range(dif):
                     data_signal_inverse = np.append(data_signal_inverse, data_signal_inverse[-1])
             
             if len(t) > len(data_signal):
-                dif = abs(len(t) - len(data_signal))
-                for i in range(dif):
+                dif = len(t) - len(data_signal)
+                for _ in range(dif):
                     data_signal = np.append(data_signal, data_signal[-1])
 
             fsk_signal = (carrier_signal_2 * data_signal) + (carrier_signal_1 * data_signal_inverse)
 
             arrays = [carrier_signal_1, carrier_signal_2, data_signal, fsk_signal]
 
-            bandWidth = (2*len(message))+(2*abs(Fc2-Fc1))
-            self.ui.label_resultFSK.setText(str.format("{0} Hz", bandWidth))
+            # T = 1/bps seconds 
+            # B = 1/(2T)
+            # 2B = 1/T
+            # 2B = 1/(1/bps) = bps
+            # 2B = bps Hz
+
+            bandWidth = (len(message))+(2*abs(Fc2-Fc1))
 
             if self.ui.MplWidgetFSK.canvas.ax1:
                 self.ui.MplWidgetFSK.canvas.ax2.set_visible(True)
@@ -577,17 +585,17 @@ class MainWindow(QMainWindow):
 
             # Plotting carrier signal 2 and asigning line
             self.ui.MplWidgetFSK.canvas.ax2.clear()
-            lin2, = self.ui.MplWidgetFSK.canvas.ax2.plot(t,carrier_signal_2,color='pink',label=f'Señal 2 \nFrecuencia:{Fc2} Hz')
+            lin2, = self.ui.MplWidgetFSK.canvas.ax2.plot(t,carrier_signal_2,color='yellow',label=f'Señal 2 \nFrecuencia:{Fc2} Hz')
             self.ui.MplWidgetFSK.canvas.ax2.legend(loc = 'lower right')
             
             # Plotting Data Signal and asigning line
             self.ui.MplWidgetFSK.canvas.ax3.clear()
-            lin3, = self.ui.MplWidgetFSK.canvas.ax3.plot(t,data_signal,color='lime',label=f'Frec de Muestreo: {Fs} Hz\nBits : {message}')
+            lin3, = self.ui.MplWidgetFSK.canvas.ax3.plot(t,data_signal,color='lightcoral',label=f'Frec de Muestreo: {Fs} Hz\nBits : {message}')
             self.ui.MplWidgetFSK.canvas.ax3.legend(loc = 'lower right')
 
             # Plotting FSK modulated signal and asigning line
             self.ui.MplWidgetFSK.canvas.ax4.clear()
-            lin4, = self.ui.MplWidgetFSK.canvas.ax4.plot(t,fsk_signal,color='orange',label=f'Señal FSK \n(0): Frec = {Fc1} Hz\n(1): Frec = {Fc2} Hz')
+            lin4, = self.ui.MplWidgetFSK.canvas.ax4.plot(t,fsk_signal,color='white',label=f'Señal FSK \n(0): Frec = {Fc1} Hz\n(1): Frec = {Fc2} Hz\nAB = {bandWidth} Hz')
             self.ui.MplWidgetFSK.canvas.ax4.legend(loc = 'lower right')
 
             line = [lin1, lin2, lin3, lin4]
@@ -625,7 +633,7 @@ class MainWindow(QMainWindow):
         message = self.ui.messageInputPSK.text()
         if(self.checkMessage(message,self.ui.messageInputPSK, self.ui.labelPSK, self.ui.clearBtnPSK)):
             Fc = int(float(self.ui.carrierFreqInputPSK.text()))
-            Fs = len(message) * 1000
+            Fs = len(message) * 64
             t = np.arange(0, 1, 1/Fs)
             samples = len(t) // len(message)
             
@@ -635,11 +643,13 @@ class MainWindow(QMainWindow):
             carrier_signal = np.sin(2 * np.pi * Fc * t)
 
             if len(t) > len(data_signal):
-                dif = abs(len(t) - len(data_signal))
+                dif = len(t) - len(data_signal)
                 for i in range(dif):
                     data_signal = np.append(data_signal, data_signal[-1])
 
             psk_signal = data_signal * carrier_signal
+
+            bandWidth = len(message)
 
             arrays = [data_signal, carrier_signal, psk_signal]
 
@@ -660,17 +670,17 @@ class MainWindow(QMainWindow):
 
             # Plotting data signal and asigning line
             self.ui.MplWidgetPSK.canvas.ax1.clear()
-            lin1, = self.ui.MplWidgetPSK.canvas.ax1.plot(t,data_signal,color='cyan',label=f'Frec de Muestreo: {Fs} Hz\nBits: {message}')
+            lin1, = self.ui.MplWidgetPSK.canvas.ax1.plot(t,data_signal,color='red',label=f'Frec de Muestreo: {Fs} Hz\nBits: {message}')
             self.ui.MplWidgetPSK.canvas.ax1.legend(loc = 'lower right')
 
             # Plotting carrier signal and asigning line
             self.ui.MplWidgetPSK.canvas.ax2.clear()
-            lin2, = self.ui.MplWidgetPSK.canvas.ax2.plot(t,carrier_signal,color='lime',label=f'Frecuencia Portadora: {Fc} Hz')
+            lin2, = self.ui.MplWidgetPSK.canvas.ax2.plot(t,carrier_signal,color='yellow',label=f'Frecuencia Portadora: {Fc} Hz')
             self.ui.MplWidgetPSK.canvas.ax2.legend(loc = 'lower right')
             
             # Plotting ASK modulated signal and asigning line
             self.ui.MplWidgetPSK.canvas.ax3.clear()
-            lin3, = self.ui.MplWidgetPSK.canvas.ax3.plot(t,psk_signal,color='orange',label=f'Señal PSK')
+            lin3, = self.ui.MplWidgetPSK.canvas.ax3.plot(t,psk_signal,color='darkorange',label=f'Señal PSK\nAB = {bandWidth} Hz')
             self.ui.MplWidgetPSK.canvas.ax3.legend(loc = 'lower right')
 
             line = [lin1, lin2, lin3]
@@ -772,12 +782,19 @@ class MainWindow(QMainWindow):
     def helpPage(self, mod):
         if (mod == "ask"):
             self.ventana.changeWidget(self.ventana.ui.page_ask)
+            UIFunctionsHelp.labelTitle(self.ventana,'Ayuda ASK')
         elif (mod == "fsk"):
             self.ventana.changeWidget(self.ventana.ui.page_fsk)
+            UIFunctionsHelp.labelTitle(self.ventana,'Ayuda FSK')
         elif (mod == "psk"):
             self.ventana.changeWidget(self.ventana.ui.page_psk)
+            UIFunctionsHelp.labelTitle(self.ventana,'Ayuda PSK')
         elif (mod == "settings"):
             self.ventana.changeWidget(self.ventana.ui.page_settings)
+            UIFunctionsHelp.labelTitle(self.ventana, 'Ayuda Ajustes')
+        elif (mod == "main"):
+            self.ventana.changeWidget(self.ventana.ui.page_main)
+            UIFunctionsHelp.labelTitle(self.ventana, 'Manual de Usuario')
         self.ventana.show()
         
     ########################################################################
@@ -803,8 +820,8 @@ class HelpWindow(QMainWindow):
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
 
         ## SET ==> WINDOW TITLE
-        self.setWindowTitle('Ayuda')
-        UIFunctionsHelp.labelTitle(self, 'Ayuda')
+        self.setWindowTitle('Manual de Usuario')
+        UIFunctionsHelp.labelTitle(self, 'Manual de Usuario')
         ## ==> END ##
 
         ## WINDOW SIZE ==> DEFAULT SIZE
