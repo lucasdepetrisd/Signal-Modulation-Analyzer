@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'GUI_BASESmwzen.ui'
+## Form generated from reading UI file 'GUI_BASEBVxVAv.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -699,7 +699,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
         self.frame_22 = QFrame(self.page_home)
         self.frame_22.setObjectName(u"frame_22")
-        self.frame_22.setMaximumSize(QSize(16777215, 170))
+        self.frame_22.setMinimumSize(QSize(0, 150))
+        self.frame_22.setMaximumSize(QSize(16777215, 191))
         self.frame_22.setStyleSheet(u"background-color: rgb(39, 44, 54);\n"
 "border-radius: 5px;")
         self.frame_22.setFrameShape(QFrame.StyledPanel)
@@ -766,10 +767,13 @@ class Ui_MainWindow(object):
         self.frame_26.setFrameShape(QFrame.StyledPanel)
         self.frame_26.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_12 = QHBoxLayout(self.frame_26)
+        self.horizontalLayout_12.setSpacing(0)
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
+        self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
         self.label_7 = QLabel(self.frame_26)
         self.label_7.setObjectName(u"label_7")
-        self.label_7.setMaximumSize(QSize(16777215, 150))
+        self.label_7.setMinimumSize(QSize(0, 50))
+        self.label_7.setMaximumSize(QSize(16777215, 100))
         font4 = QFont()
         font4.setFamily(u"Satoshi Black")
         font4.setPointSize(22)
@@ -778,6 +782,7 @@ class Ui_MainWindow(object):
         self.label_7.setFont(font4)
         self.label_7.setStyleSheet(u"")
         self.label_7.setAlignment(Qt.AlignCenter)
+        self.label_7.setWordWrap(True)
 
         self.horizontalLayout_12.addWidget(self.label_7)
 
@@ -844,6 +849,7 @@ class Ui_MainWindow(object):
 "	background-color: rgb(37, 138, 26);\n"
 "	border: 2px solid rgb(60, 196, 72);\n"
 "}")
+        self.Btn_ASK.setFlat(False)
 
         self.verticalLayout_6.addWidget(self.Btn_ASK)
 
@@ -974,6 +980,7 @@ class Ui_MainWindow(object):
         self.labelASK.setMinimumSize(QSize(0, 25))
         self.labelASK.setMaximumSize(QSize(16777215, 25))
         self.labelASK.setFont(font)
+        self.labelASK.setStyleSheet(u"color: rgb(63, 152, 90);")
         self.labelASK.setWordWrap(True)
 
         self.gridLayout_3.addWidget(self.labelASK, 4, 0, 1, 1)
@@ -1632,6 +1639,7 @@ class Ui_MainWindow(object):
         self.labelFSK.setMinimumSize(QSize(0, 25))
         self.labelFSK.setMaximumSize(QSize(16777215, 25))
         self.labelFSK.setFont(font)
+        self.labelFSK.setStyleSheet(u"color: rgb(63, 152, 90);")
         self.labelFSK.setWordWrap(True)
 
         self.gridLayout_4.addWidget(self.labelFSK, 3, 0, 1, 1)
@@ -2172,6 +2180,7 @@ class Ui_MainWindow(object):
         self.labelPSK.setMinimumSize(QSize(50, 25))
         self.labelPSK.setMaximumSize(QSize(16777215, 25))
         self.labelPSK.setFont(font)
+        self.labelPSK.setStyleSheet(u"color: rgb(63, 152, 90);")
         self.labelPSK.setWordWrap(True)
 
         self.gridLayout_5.addWidget(self.labelPSK, 4, 0, 1, 1)
@@ -3172,7 +3181,7 @@ class Ui_MainWindow(object):
         self.carrierFreqInputASK.valueChanged.connect(self.sliderASK.setValue)
         self.sliderASK.valueChanged.connect(self.carrierFreqInputASK.setValue)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -3198,7 +3207,7 @@ class Ui_MainWindow(object):
         self.label_top_info_2.setText(QCoreApplication.translate("MainWindow", u"| INICIO", None))
         self.label_user_icon.setText(QCoreApplication.translate("MainWindow", u"LD", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u" Bienvenido a SigMA ", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Seleccione una opci\u00f3n", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Seleccione una opci\u00f3n</p><p><span style=\" font-size:14pt;\">Puede encontrar un bot\u00f3n Ayuda en c/m\u00f3dulo</span></p></body></html>", None))
         self.Btn_ASK.setText(QCoreApplication.translate("MainWindow", u"Modulaci\u00f3n\n"
 "ASK", None))
         self.Btn_FSK.setText(QCoreApplication.translate("MainWindow", u"Modulaci\u00f3n\n"
