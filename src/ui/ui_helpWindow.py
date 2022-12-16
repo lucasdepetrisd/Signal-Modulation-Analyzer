@@ -8,10 +8,17 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
-
+from PySide2.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide2.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
+    QLabel, QLayout, QLineEdit, QMainWindow,
+    QPushButton, QSizePolicy, QSlider, QSpinBox,
+    QStackedWidget, QVBoxLayout, QWidget)
 import ui.files_rc
 
 class Ui_helpWindow(object):
@@ -927,13 +934,49 @@ class Ui_helpWindow(object):
 
         self.horizontalLayout_14.addWidget(self.frame_4)
 
+        self.frame = QFrame(self.page_ask)
+        self.frame.setObjectName(u"frame")
+        self.frame.setStyleSheet(u"background-color: rgb(39, 44, 54);\n"
+"border-radius: 5px;")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_5 = QVBoxLayout(self.frame)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.textASK = QFrame(self.frame)
+        self.textASK.setObjectName(u"textASK")
+        self.textASK.setMaximumSize(QSize(500, 16777215))
+        self.textASK.setFrameShape(QFrame.StyledPanel)
+        self.textASK.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_3 = QVBoxLayout(self.textASK)
+        self.verticalLayout_3.setSpacing(0)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.label = QLabel(self.textASK)
+        self.label.setObjectName(u"label")
+        self.label.setMinimumSize(QSize(450, 0))
+        font8 = QFont()
+        font8.setFamilies([u"Satoshi"])
+        font8.setPointSize(14)
+        font8.setBold(True)
+        self.label.setFont(font8)
+        self.label.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.label.setWordWrap(True)
+
+        self.verticalLayout_3.addWidget(self.label, 0, Qt.AlignTop)
+
+
+        self.verticalLayout_5.addWidget(self.textASK)
+
+
+        self.horizontalLayout_14.addWidget(self.frame)
+
         self.stackedWidget.addWidget(self.page_ask)
         self.page_fsk = QWidget()
         self.page_fsk.setObjectName(u"page_fsk")
         self.horizontalLayout_13 = QHBoxLayout(self.page_fsk)
-        self.horizontalLayout_13.setSpacing(3)
+        self.horizontalLayout_13.setSpacing(6)
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
-        self.horizontalLayout_13.setContentsMargins(1, 1, 1, 1)
+        self.horizontalLayout_13.setContentsMargins(6, 6, 6, 6)
         self.frame_6 = QFrame(self.page_fsk)
         self.frame_6.setObjectName(u"frame_6")
         self.frame_6.setMinimumSize(QSize(180, 0))
@@ -1365,11 +1408,44 @@ class Ui_helpWindow(object):
 
         self.horizontalLayout_13.addWidget(self.frame_6)
 
+        self.frame_2 = QFrame(self.page_fsk)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setStyleSheet(u"background-color: rgb(39, 44, 54);\n"
+"border-radius: 5px;")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_7 = QVBoxLayout(self.frame_2)
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.textASK_2 = QFrame(self.frame_2)
+        self.textASK_2.setObjectName(u"textASK_2")
+        self.textASK_2.setMaximumSize(QSize(500, 16777215))
+        self.textASK_2.setFrameShape(QFrame.StyledPanel)
+        self.textASK_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_6 = QVBoxLayout(self.textASK_2)
+        self.verticalLayout_6.setSpacing(0)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.label_2 = QLabel(self.textASK_2)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setMinimumSize(QSize(450, 0))
+        self.label_2.setFont(font8)
+        self.label_2.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.label_2.setWordWrap(True)
+
+        self.verticalLayout_6.addWidget(self.label_2, 0, Qt.AlignTop)
+
+
+        self.verticalLayout_7.addWidget(self.textASK_2)
+
+
+        self.horizontalLayout_13.addWidget(self.frame_2)
+
         self.stackedWidget.addWidget(self.page_fsk)
         self.page_psk = QWidget()
         self.page_psk.setObjectName(u"page_psk")
         self.horizontalLayout_16 = QHBoxLayout(self.page_psk)
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
+        self.horizontalLayout_16.setContentsMargins(6, 6, 6, 6)
         self.frame_11 = QFrame(self.page_psk)
         self.frame_11.setObjectName(u"frame_11")
         self.frame_11.setMinimumSize(QSize(180, 0))
@@ -1618,6 +1694,38 @@ class Ui_helpWindow(object):
 
 
         self.horizontalLayout_16.addWidget(self.frame_11)
+
+        self.frame_3 = QFrame(self.page_psk)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setStyleSheet(u"background-color: rgb(39, 44, 54);\n"
+"border-radius: 5px;")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_10 = QVBoxLayout(self.frame_3)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.textASK_3 = QFrame(self.frame_3)
+        self.textASK_3.setObjectName(u"textASK_3")
+        self.textASK_3.setMaximumSize(QSize(500, 16777215))
+        self.textASK_3.setFrameShape(QFrame.StyledPanel)
+        self.textASK_3.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_8 = QVBoxLayout(self.textASK_3)
+        self.verticalLayout_8.setSpacing(0)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.label_3 = QLabel(self.textASK_3)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setMinimumSize(QSize(450, 0))
+        self.label_3.setFont(font8)
+        self.label_3.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.label_3.setWordWrap(True)
+
+        self.verticalLayout_8.addWidget(self.label_3, 0, Qt.AlignTop)
+
+
+        self.verticalLayout_10.addWidget(self.textASK_3)
+
+
+        self.horizontalLayout_16.addWidget(self.frame_3)
 
         self.stackedWidget.addWidget(self.page_psk)
         self.page_settings = QWidget()
@@ -2493,7 +2601,7 @@ class Ui_helpWindow(object):
 
         self.retranslateUi(helpWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(helpWindow)
@@ -2533,6 +2641,7 @@ class Ui_helpWindow(object):
 #endif // QT_CONFIG(whatsthis)
         self.messageInputASK.setPlaceholderText(QCoreApplication.translate("helpWindow", u"Ingrese cadena de bits", None))
         self.modulateBtnASK.setText(QCoreApplication.translate("helpWindow", u"Modular", None))
+        self.label.setText(QCoreApplication.translate("helpWindow", u"La modulaci\u00f3n ASK es un tipo de modulaci\u00f3n basada en", None))
         self.label_top_info_9.setText(QCoreApplication.translate("helpWindow", u"Se\u00f1al 2", None))
         self.label_top_info_10.setText(QCoreApplication.translate("helpWindow", u"Frecuencia (Hz)", None))
 #if QT_CONFIG(tooltip)
@@ -2564,6 +2673,7 @@ class Ui_helpWindow(object):
         self.label_top_info_11.setText(QCoreApplication.translate("helpWindow", u"Resultante", None))
         self.label_top_info_12.setText(QCoreApplication.translate("helpWindow", u"AB =", None))
         self.label_resultFSK.setText("")
+        self.label_2.setText(QCoreApplication.translate("helpWindow", u"La modulaci\u00f3n FSK es un tipo de modulaci\u00f3n basada en", None))
 #if QT_CONFIG(tooltip)
         self.messageInputPSK.setToolTip(QCoreApplication.translate("helpWindow", u"Ingrese cadenas de 2, 4, 8 o 16 bits", None))
 #endif // QT_CONFIG(tooltip)
@@ -2587,6 +2697,7 @@ class Ui_helpWindow(object):
 "2 / 4 / 8 / 16 bits", None))
         self.modulateBtnPSK.setText(QCoreApplication.translate("helpWindow", u"Modular", None))
         self.clearBtnPSK.setText(QCoreApplication.translate("helpWindow", u"Limpiar", None))
+        self.label_3.setText(QCoreApplication.translate("helpWindow", u"La modulaci\u00f3n PSK es un tipo de modulaci\u00f3n basada en", None))
         self.label_title_bar_top_5.setText(QCoreApplication.translate("helpWindow", u"Modulaci\u00f3n por\n"
 "Conmutaci\u00f3n\n"
 "de Amplitud\n"

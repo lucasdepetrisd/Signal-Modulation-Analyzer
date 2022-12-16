@@ -40,6 +40,9 @@ class UIFunctions(MainWindow):
         global GLOBAL_STATE
         status = GLOBAL_STATE
         if status == 0:
+            self.ui.clearBtnASK.click()
+            self.ui.clearBtnFSK.click()
+            self.ui.clearBtnPSK.click()
             self.showMaximized()
             GLOBAL_STATE = 1
             self.ui.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -54,6 +57,12 @@ class UIFunctions(MainWindow):
             self.ui.carrierFreq1InputFSK.setFont(QFont('Satoshi Black', 12))
             self.ui.carrierFreq2InputFSK.setFont(QFont('Satoshi Black', 12))
             self.ui.modulateBtnFSK.setFont(QFont('Satoshi Black', 20))
+            self.ui.Btn_pauseASK.setFont(QFont('Satoshi Black', 20))
+            self.ui.Btn_helpASK.setFont(QFont('Satoshi Black', 14))
+            self.ui.Btn_pauseFSK.setFont(QFont('Satoshi Black', 20))
+            self.ui.Btn_helpFSK.setFont(QFont('Satoshi Black', 14))
+            self.ui.Btn_pausePSK.setFont(QFont('Satoshi Black', 20))
+            self.ui.Btn_helpPSK.setFont(QFont('Satoshi Black', 14))
             self.ui.clearBtnFSK.setFont(QFont('Satoshi Black', 20))
             self.ui.messageInputPSK.setFont(QFont('Satoshi Black', 12))
             self.ui.carrierFreqInputPSK.setFont(QFont('Satoshi Black', 12))
@@ -62,6 +71,9 @@ class UIFunctions(MainWindow):
             self.ui.frame_size_grip.hide()
         else:
             GLOBAL_STATE = 0
+            self.ui.clearBtnASK.click()
+            self.ui.clearBtnFSK.click()
+            self.ui.clearBtnPSK.click()
             self.showNormal()
             self.resize(self.width()+1, self.height()+1)
             self.ui.horizontalLayout.setContentsMargins(10, 10, 10, 10)
@@ -81,6 +93,12 @@ class UIFunctions(MainWindow):
             self.ui.carrierFreqInputPSK.setFont(QFont('Satoshi Black', 10))
             self.ui.modulateBtnPSK.setFont(QFont('Satoshi Black', 14))
             self.ui.clearBtnPSK.setFont(QFont('Satoshi Black', 14))
+            self.ui.Btn_pauseASK.setFont(QFont('Satoshi Black', 14))
+            self.ui.Btn_helpASK.setFont(QFont('Satoshi Black', 12))
+            self.ui.Btn_pauseFSK.setFont(QFont('Satoshi Black', 14))
+            self.ui.Btn_helpFSK.setFont(QFont('Satoshi Black', 12))
+            self.ui.Btn_pausePSK.setFont(QFont('Satoshi Black', 14))
+            self.ui.Btn_helpPSK.setFont(QFont('Satoshi Black', 12))
             self.ui.frame_size_grip.show()
 
     ## ==> RETURN STATUS

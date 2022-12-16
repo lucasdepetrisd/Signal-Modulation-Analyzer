@@ -7,7 +7,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1045</width>
+    <width>1000</width>
     <height>800</height>
    </rect>
   </property>
@@ -1577,7 +1577,7 @@ QPushButton:pressed {
                    <string notr="true">background: transparent;</string>
                   </property>
                   <property name="currentIndex">
-                   <number>4</number>
+                   <number>1</number>
                   </property>
                   <widget class="QWidget" name="page_home">
                    <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -2045,23 +2045,11 @@ PSK</string>
                   </widget>
                   <widget class="QWidget" name="page_ask">
                    <layout class="QHBoxLayout" name="horizontalLayout_14">
-                    <property name="leftMargin">
-                     <number>6</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>6</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>6</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>6</number>
-                    </property>
                     <item>
                      <widget class="QFrame" name="frame_4">
                       <property name="minimumSize">
                        <size>
-                        <width>180</width>
+                        <width>200</width>
                         <height>0</height>
                        </size>
                       </property>
@@ -2084,8 +2072,8 @@ border-radius: 5px;</string>
                       <layout class="QVBoxLayout" name="verticalLayout_12">
                        <item>
                         <layout class="QGridLayout" name="gridLayout_3">
-                         <item row="1" column="0">
-                          <widget class="QLabel" name="label_top_info_3">
+                         <item row="4" column="0">
+                          <widget class="QLabel" name="labelASK">
                            <property name="minimumSize">
                             <size>
                              <width>0</width>
@@ -2095,31 +2083,176 @@ border-radius: 5px;</string>
                            <property name="maximumSize">
                             <size>
                              <width>16777215</width>
-                             <height>80</height>
+                             <height>25</height>
                             </size>
                            </property>
                            <property name="font">
                             <font>
-                             <family>Satoshi</family>
-                             <pointsize>12</pointsize>
+                             <family>Satoshi Black</family>
+                             <pointsize>10</pointsize>
+                             <weight>75</weight>
+                             <bold>true</bold>
+                            </font>
+                           </property>
+                           <property name="text">
+                            <string>16/16</string>
+                           </property>
+                           <property name="wordWrap">
+                            <bool>true</bool>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="8" column="0">
+                          <widget class="QPushButton" name="Btn_pauseASK">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>40</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>Satoshi Black</family>
+                             <pointsize>14</pointsize>
+                             <weight>75</weight>
+                             <bold>true</bold>
+                            </font>
+                           </property>
+                           <property name="toolTip">
+                            <string>Pausa la animación</string>
+                           </property>
+                           <property name="statusTip">
+                            <string/>
+                           </property>
+                           <property name="whatsThis">
+                            <string/>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QPushButton {
+	border: 1px solid rgb(0, 0, 0);
+	border-radius: 5px;	
+	background-color: rgb(48, 48, 48);
+}
+
+/* rgb(52, 59, 72)*/
+QPushButton:hover {
+	background-color: rgb(235, 67, 84);
+	border: 2px solid rgb(207, 59, 72);
+}
+QPushButton:pressed {	
+	background-color: rgb(139, 37, 46);
+	border: 2px solid rgb(207, 59, 72);
+}</string>
+                           </property>
+                           <property name="text">
+                            <string>Pausar</string>
+                           </property>
+                           <property name="icon">
+                            <iconset resource="files.qrc">
+                             <normaloff>:/16x16/icons/16x16/cil-media-pause.png</normaloff>:/16x16/icons/16x16/cil-media-pause.png</iconset>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="12" column="0" alignment="Qt::AlignHCenter">
+                          <widget class="QFrame" name="frame_29">
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>84</height>
+                            </size>
+                           </property>
+                           <property name="frameShape">
+                            <enum>QFrame::StyledPanel</enum>
+                           </property>
+                           <property name="frameShadow">
+                            <enum>QFrame::Raised</enum>
+                           </property>
+                           <layout class="QVBoxLayout" name="verticalLayout_29">
+                            <property name="spacing">
+                             <number>0</number>
+                            </property>
+                            <property name="leftMargin">
+                             <number>0</number>
+                            </property>
+                            <property name="topMargin">
+                             <number>0</number>
+                            </property>
+                            <property name="rightMargin">
+                             <number>0</number>
+                            </property>
+                            <property name="bottomMargin">
+                             <number>0</number>
+                            </property>
+                           </layout>
+                          </widget>
+                         </item>
+                         <item row="9" column="0">
+                          <widget class="QPushButton" name="clearBtnASK">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>150</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>40</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>Satoshi Black</family>
+                             <pointsize>14</pointsize>
                              <weight>75</weight>
                              <bold>true</bold>
                             </font>
                            </property>
                            <property name="styleSheet">
-                            <string notr="true">color: rgb(191, 203, 217)</string>
+                            <string notr="true">QPushButton {
+	border: 2px solid rgb(235, 59, 72);
+	border-radius: 5px;	
+	background-color: rgb(207, 59, 72);
+}
+
+/* rgb(52, 59, 72)*/
+QPushButton:hover {
+	background-color: rgb(235, 67, 84);
+	border: 2px solid rgb(207, 59, 72);
+}
+QPushButton:pressed {	
+	background-color: rgb(139, 37, 46);
+	border: 2px solid rgb(207, 59, 72);
+}</string>
                            </property>
                            <property name="text">
-                            <string>Ingrese una cadena
-cadena de bits de
-2 / 4 / 8 / 16 bits</string>
+                            <string>Limpiar</string>
                            </property>
-                           <property name="alignment">
-                            <set>Qt::AlignCenter</set>
+                           <property name="icon">
+                            <iconset resource="files.qrc">
+                             <normaloff>:/16x16/icons/16x16/cil-remove.png</normaloff>:/16x16/icons/16x16/cil-remove.png</iconset>
                            </property>
                           </widget>
                          </item>
-                         <item row="5" column="0">
+                         <item row="6" column="0">
                           <widget class="QPushButton" name="modulateBtnASK">
                            <property name="sizePolicy">
                             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -2136,7 +2269,7 @@ cadena de bits de
                            <property name="maximumSize">
                             <size>
                              <width>16777215</width>
-                             <height>50</height>
+                             <height>40</height>
                             </size>
                            </property>
                            <property name="font">
@@ -2173,76 +2306,42 @@ QPushButton:pressed {
                            </property>
                           </widget>
                          </item>
-                         <item row="3" column="0">
-                          <widget class="QLineEdit" name="messageInputASK">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
+                         <item row="1" column="0">
+                          <widget class="QLabel" name="label_top_info_3">
                            <property name="minimumSize">
                             <size>
                              <width>0</width>
-                             <height>40</height>
+                             <height>25</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>80</height>
                             </size>
                            </property>
                            <property name="font">
                             <font>
-                             <family>Satoshi Black</family>
-                             <pointsize>10</pointsize>
+                             <family>Satoshi</family>
+                             <pointsize>12</pointsize>
+                             <weight>75</weight>
+                             <bold>true</bold>
                             </font>
                            </property>
-                           <property name="toolTip">
-                            <string>Ingrese cadenas de 2, 4, 8 o 16 bits</string>
-                           </property>
-                           <property name="toolTipDuration">
-                            <number>-1</number>
-                           </property>
-                           <property name="statusTip">
-                            <string/>
-                           </property>
-                           <property name="whatsThis">
-                            <string/>
-                           </property>
-                           <property name="autoFillBackground">
-                            <bool>false</bool>
-                           </property>
                            <property name="styleSheet">
-                            <string notr="true">QLineEdit {
-	background-color: rgb(27, 29, 35);
-	border-radius: 5px;
-	border: 2px solid rgb(27, 29, 35);
-	padding-left: 10px;
-}
-QLineEdit:hover {
-	border: 2px solid rgb(64, 71, 88);
-}
-QLineEdit:focus {
-	border: 2px solid rgb(91, 101, 124);
-}</string>
-                           </property>
-                           <property name="inputMethodHints">
-                            <set>Qt::ImhNone</set>
+                            <string notr="true">color: rgb(191, 203, 217)</string>
                            </property>
                            <property name="text">
-                            <string>1100101011001010</string>
+                            <string>Ingrese una cadena
+cadena de bits de
+2 / 4 / 8 / 16 bits</string>
                            </property>
-                           <property name="maxLength">
-                            <number>16</number>
-                           </property>
-                           <property name="frame">
-                            <bool>true</bool>
-                           </property>
-                           <property name="echoMode">
-                            <enum>QLineEdit::Normal</enum>
-                           </property>
-                           <property name="placeholderText">
-                            <string>Ingrese una cadena de bits</string>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
                            </property>
                           </widget>
                          </item>
-                         <item row="4" column="0">
+                         <item row="5" column="0">
                           <widget class="QFrame" name="frame_5">
                            <property name="maximumSize">
                             <size>
@@ -2333,6 +2432,12 @@ border-radius: 5px;</string>
                             </item>
                             <item>
                              <widget class="QSpinBox" name="carrierFreqInputASK">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>25</height>
+                               </size>
+                              </property>
                               <property name="font">
                                <font>
                                 <family>Satoshi</family>
@@ -2404,13 +2509,16 @@ QSpinBox::down-button{
                               <property name="maximum">
                                <number>200</number>
                               </property>
+                              <property name="value">
+                               <number>25</number>
+                              </property>
                              </widget>
                             </item>
                             <item>
                              <widget class="QSlider" name="sliderASK">
                               <property name="styleSheet">
                                <string notr="true">QSlider::handle:horizontal{
-	background: rgb(33, 46, 112);
+	background: rgb(255, 255, 255);
 }</string>
                               </property>
                               <property name="minimum">
@@ -2431,60 +2539,6 @@ QSpinBox::down-button{
                              </widget>
                             </item>
                            </layout>
-                          </widget>
-                         </item>
-                         <item row="6" column="0">
-                          <widget class="QPushButton" name="clearBtnASK">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>150</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>50</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>Satoshi Black</family>
-                             <pointsize>14</pointsize>
-                             <weight>75</weight>
-                             <bold>true</bold>
-                            </font>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QPushButton {
-	border: 2px solid rgb(235, 59, 72);
-	border-radius: 5px;	
-	background-color: rgb(207, 59, 72);
-}
-
-/* rgb(52, 59, 72)*/
-QPushButton:hover {
-	background-color: rgb(235, 67, 84);
-	border: 2px solid rgb(207, 59, 72);
-}
-QPushButton:pressed {	
-	background-color: rgb(139, 37, 46);
-	border: 2px solid rgb(207, 59, 72);
-}</string>
-                           </property>
-                           <property name="text">
-                            <string>Limpiar</string>
-                           </property>
-                           <property name="icon">
-                            <iconset resource="files.qrc">
-                             <normaloff>:/16x16/icons/16x16/cil-remove.png</normaloff>:/16x16/icons/16x16/cil-remove.png</iconset>
-                           </property>
                           </widget>
                          </item>
                          <item row="0" column="0">
@@ -2539,7 +2593,76 @@ de Amplitud</string>
                            </property>
                           </widget>
                          </item>
-                         <item row="7" column="0" alignment="Qt::AlignHCenter">
+                         <item row="3" column="0">
+                          <widget class="QLineEdit" name="messageInputASK">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>40</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>Satoshi Black</family>
+                             <pointsize>10</pointsize>
+                            </font>
+                           </property>
+                           <property name="toolTip">
+                            <string>Ingrese cadenas de 2, 4, 8 o 16 bits</string>
+                           </property>
+                           <property name="toolTipDuration">
+                            <number>-1</number>
+                           </property>
+                           <property name="statusTip">
+                            <string/>
+                           </property>
+                           <property name="whatsThis">
+                            <string/>
+                           </property>
+                           <property name="autoFillBackground">
+                            <bool>false</bool>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLineEdit {
+	background-color: rgb(27, 29, 35);
+	border-radius: 5px;
+	border: 2px solid rgb(27, 29, 35);
+	padding-left: 10px;
+}
+QLineEdit:hover {
+	border: 2px solid rgb(64, 71, 88);
+}
+QLineEdit:focus {
+	border: 2px solid rgb(91, 101, 124);
+}</string>
+                           </property>
+                           <property name="inputMethodHints">
+                            <set>Qt::ImhNone</set>
+                           </property>
+                           <property name="text">
+                            <string>1100101011001010</string>
+                           </property>
+                           <property name="maxLength">
+                            <number>16</number>
+                           </property>
+                           <property name="frame">
+                            <bool>true</bool>
+                           </property>
+                           <property name="echoMode">
+                            <enum>QLineEdit::Normal</enum>
+                           </property>
+                           <property name="placeholderText">
+                            <string>Ingrese una cadena de bits</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="13" column="0">
                           <widget class="QPushButton" name="Btn_helpASK">
                            <property name="sizePolicy">
                             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -2683,7 +2806,7 @@ border-radius: 5px;</string>
                      <widget class="QFrame" name="frame_6">
                       <property name="minimumSize">
                        <size>
-                        <width>180</width>
+                        <width>200</width>
                         <height>0</height>
                        </size>
                       </property>
@@ -2706,410 +2829,13 @@ border-radius: 5px;</string>
                       <layout class="QVBoxLayout" name="verticalLayout_17">
                        <item>
                         <layout class="QGridLayout" name="gridLayout_4">
-                         <property name="horizontalSpacing">
-                          <number>10</number>
+                         <property name="verticalSpacing">
+                          <number>4</number>
                          </property>
-                         <item row="5" column="0">
-                          <widget class="QFrame" name="frame_9">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>100</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: rgb(23, 32, 77);
-border-radius: 5px;</string>
-                           </property>
-                           <property name="frameShape">
-                            <enum>QFrame::StyledPanel</enum>
-                           </property>
-                           <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                           </property>
-                           <layout class="QVBoxLayout" name="verticalLayout_20">
-                            <property name="leftMargin">
-                             <number>9</number>
-                            </property>
-                            <item>
-                             <widget class="QLabel" name="label_top_info_11">
-                              <property name="minimumSize">
-                               <size>
-                                <width>0</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>25</height>
-                               </size>
-                              </property>
-                              <property name="font">
-                               <font>
-                                <family>Satoshi Black</family>
-                                <pointsize>12</pointsize>
-                                <weight>75</weight>
-                                <bold>true</bold>
-                               </font>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QLabel{
-	background-color: rgb(33, 46, 112);
-	border: 0px solid ;
-	border-radius: 8px;
-}</string>
-                              </property>
-                              <property name="text">
-                               <string>Resultante</string>
-                              </property>
-                              <property name="alignment">
-                               <set>Qt::AlignCenter</set>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QFrame" name="frame_10">
-                              <property name="frameShape">
-                               <enum>QFrame::StyledPanel</enum>
-                              </property>
-                              <property name="frameShadow">
-                               <enum>QFrame::Raised</enum>
-                              </property>
-                              <layout class="QHBoxLayout" name="horizontalLayout_15">
-                               <item>
-                                <widget class="QLabel" name="label_top_info_12">
-                                 <property name="minimumSize">
-                                  <size>
-                                   <width>0</width>
-                                   <height>20</height>
-                                  </size>
-                                 </property>
-                                 <property name="maximumSize">
-                                  <size>
-                                   <width>16777215</width>
-                                   <height>30</height>
-                                  </size>
-                                 </property>
-                                 <property name="font">
-                                  <font>
-                                   <family>Satoshi</family>
-                                   <pointsize>12</pointsize>
-                                   <weight>75</weight>
-                                   <bold>true</bold>
-                                  </font>
-                                 </property>
-                                 <property name="styleSheet">
-                                  <string notr="true">color: rgb(191, 203, 217)</string>
-                                 </property>
-                                 <property name="text">
-                                  <string>AB =</string>
-                                 </property>
-                                 <property name="alignment">
-                                  <set>Qt::AlignCenter</set>
-                                 </property>
-                                </widget>
-                               </item>
-                               <item>
-                                <widget class="QLabel" name="label_resultFSK">
-                                 <property name="minimumSize">
-                                  <size>
-                                   <width>0</width>
-                                   <height>20</height>
-                                  </size>
-                                 </property>
-                                 <property name="maximumSize">
-                                  <size>
-                                   <width>16777215</width>
-                                   <height>30</height>
-                                  </size>
-                                 </property>
-                                 <property name="font">
-                                  <font>
-                                   <family>Satoshi</family>
-                                   <pointsize>12</pointsize>
-                                   <weight>75</weight>
-                                   <bold>true</bold>
-                                  </font>
-                                 </property>
-                                 <property name="styleSheet">
-                                  <string notr="true">color: rgb(191, 203, 217)</string>
-                                 </property>
-                                 <property name="text">
-                                  <string/>
-                                 </property>
-                                 <property name="alignment">
-                                  <set>Qt::AlignCenter</set>
-                                 </property>
-                                </widget>
-                               </item>
-                              </layout>
-                             </widget>
-                            </item>
-                           </layout>
-                          </widget>
-                         </item>
                          <item row="4" column="0">
-                          <widget class="QFrame" name="frame_8">
+                          <widget class="QFrame" name="frame_7">
                            <property name="sizePolicy">
                             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>150</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: rgb(23, 32, 77);
-border-radius: 5px;</string>
-                           </property>
-                           <property name="frameShape">
-                            <enum>QFrame::StyledPanel</enum>
-                           </property>
-                           <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                           </property>
-                           <layout class="QVBoxLayout" name="verticalLayout_19">
-                            <item>
-                             <widget class="QLabel" name="label_top_info_9">
-                              <property name="minimumSize">
-                               <size>
-                                <width>0</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>25</height>
-                               </size>
-                              </property>
-                              <property name="font">
-                               <font>
-                                <family>Satoshi Black</family>
-                                <pointsize>12</pointsize>
-                                <weight>75</weight>
-                                <bold>true</bold>
-                               </font>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QLabel{
-	background-color: rgb(33, 46, 112);
-	border: 0px solid ;
-	border-radius: 8px;
-}</string>
-                              </property>
-                              <property name="text">
-                               <string>Señal 2</string>
-                              </property>
-                              <property name="alignment">
-                               <set>Qt::AlignCenter</set>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QLabel" name="label_top_info_10">
-                              <property name="minimumSize">
-                               <size>
-                                <width>0</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>30</height>
-                               </size>
-                              </property>
-                              <property name="font">
-                               <font>
-                                <family>Satoshi</family>
-                                <pointsize>12</pointsize>
-                                <weight>75</weight>
-                                <bold>true</bold>
-                               </font>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">color: rgb(191, 203, 217)</string>
-                              </property>
-                              <property name="text">
-                               <string>Frecuencia (Hz)</string>
-                              </property>
-                              <property name="alignment">
-                               <set>Qt::AlignCenter</set>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QSpinBox" name="carrierFreq2InputFSK">
-                              <property name="font">
-                               <font>
-                                <family>Satoshi</family>
-                                <pointsize>10</pointsize>
-                                <weight>75</weight>
-                                <bold>true</bold>
-                               </font>
-                              </property>
-                              <property name="toolTip">
-                               <string/>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QSpinBox{
-	background-color: rgb(5, 7, 35);
-	border-radius: 5px;
-	border: 2px solid rgb(10, 11, 35);
-	padding: 5px;
-	padding-left: 10px;
-}
-QSpinBox:hover{
-	border: 2px solid rgb(0, 0, 127)
-}
-QSpinBox QAbstractItemView {
-	color: rgb(85, 170, 255);	
-	background-color: rgb(27, 29, 35);
-	padding: 10px;
-	selection-background-color: rgb(27, 29, 35);
-}
-/*
-rgb(27, 29, 35);
-rgb(13, 9, 59)
-*/
-
-QSpinBox::up-button{
-	width: 25px; 
-	border-left-width: 3px;
-	border-left-color: rgba(39, 44, 54, 150);
-	border-left-style: solid;
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;	
-	background-image: url(:/16x16/icons/16x16/cil-arrow-top.png);
-	background-position: center;
-	background-repeat: no-reperat;
-}
-
-QSpinBox::up-button:hover{
-	background-color: rgb(80, 80, 80)
-}
-
-QSpinBox::down-button:hover{
-	background-color: rgb(80, 80, 80)
-}
-
-QSpinBox::down-button{
-	width: 25px; 
-	border-left-width: 3px;
-	border-left-color: rgba(39, 44, 54, 150);
-	border-left-style: solid;
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;	
-	background-image: url(:/16x16/icons/16x16/cil-arrow-bottom.png);
-	background-position: center;
-	background-repeat: no-reperat;
-}</string>
-                              </property>
-                              <property name="minimum">
-                               <number>1</number>
-                              </property>
-                              <property name="maximum">
-                               <number>200</number>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QSlider" name="sliderFSK2">
-                              <property name="styleSheet">
-                               <string notr="true">QSlider::handle:horizontal{
-	background: rgb(33, 46, 112);
-}</string>
-                              </property>
-                              <property name="minimum">
-                               <number>1</number>
-                              </property>
-                              <property name="maximum">
-                               <number>200</number>
-                              </property>
-                              <property name="tracking">
-                               <bool>false</bool>
-                              </property>
-                              <property name="orientation">
-                               <enum>Qt::Horizontal</enum>
-                              </property>
-                              <property name="tickPosition">
-                               <enum>QSlider::NoTicks</enum>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
-                          </widget>
-                         </item>
-                         <item row="7" column="0">
-                          <widget class="QPushButton" name="clearBtnFSK">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>150</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>50</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>Satoshi Black</family>
-                             <pointsize>14</pointsize>
-                             <weight>75</weight>
-                             <bold>true</bold>
-                            </font>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QPushButton {
-	border: 2px solid rgb(235, 59, 72);
-	border-radius: 5px;	
-	background-color: rgb(207, 59, 72);
-}
-
-/* rgb(52, 59, 72)*/
-QPushButton:hover {
-	background-color: rgb(235, 67, 84);
-	border: 2px solid rgb(207, 59, 72);
-}
-QPushButton:pressed {	
-	background-color: rgb(139, 37, 46);
-	border: 2px solid rgb(207, 59, 72);
-}</string>
-                           </property>
-                           <property name="text">
-                            <string>Limpiar</string>
-                           </property>
-                           <property name="icon">
-                            <iconset resource="files.qrc">
-                             <normaloff>:/16x16/icons/16x16/cil-remove.png</normaloff>:/16x16/icons/16x16/cil-remove.png</iconset>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="0">
-                          <widget class="QLabel" name="label_title_bar_top_3">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                              <horstretch>0</horstretch>
                              <verstretch>0</verstretch>
                             </sizepolicy>
@@ -3117,60 +2843,8 @@ QPushButton:pressed {
                            <property name="minimumSize">
                             <size>
                              <width>0</width>
-                             <height>25</height>
+                             <height>110</height>
                             </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>100</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>Satoshi Black</family>
-                             <pointsize>14</pointsize>
-                             <weight>75</weight>
-                             <italic>false</italic>
-                             <bold>true</bold>
-                             <underline>false</underline>
-                             <strikeout>false</strikeout>
-                             <kerning>true</kerning>
-                            </font>
-                           </property>
-                           <property name="cursor">
-                            <cursorShape>ArrowCursor</cursorShape>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QLabel{
-background-color: rgb(27, 29, 35);
-border: 0px solid ;
-border-radius: 8px;
-}</string>
-                           </property>
-                           <property name="text">
-                            <string>Modulación por
-Conmutación
-de Frecuencias</string>
-                           </property>
-                           <property name="scaledContents">
-                            <bool>true</bool>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignCenter</set>
-                           </property>
-                           <property name="wordWrap">
-                            <bool>true</bool>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="3" column="0">
-                          <widget class="QFrame" name="frame_7">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
                            </property>
                            <property name="maximumSize">
                             <size>
@@ -3261,6 +2935,12 @@ border-radius: 5px;</string>
                             </item>
                             <item>
                              <widget class="QSpinBox" name="carrierFreq1InputFSK">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>25</height>
+                               </size>
+                              </property>
                               <property name="font">
                                <font>
                                 <family>Satoshi</family>
@@ -3332,13 +3012,16 @@ QSpinBox::down-button{
                               <property name="maximum">
                                <number>200</number>
                               </property>
+                              <property name="value">
+                               <number>25</number>
+                              </property>
                              </widget>
                             </item>
                             <item>
                              <widget class="QSlider" name="sliderFSK1">
                               <property name="styleSheet">
                                <string notr="true">QSlider::handle:horizontal{
-	background: rgb(33, 46, 112);
+	background: rgb(255, 255, 255);
 }</string>
                               </property>
                               <property name="minimum">
@@ -3361,46 +3044,74 @@ QSpinBox::down-button{
                            </layout>
                           </widget>
                          </item>
-                         <item row="1" column="0">
-                          <widget class="QLabel" name="label_top_info_13">
+                         <item row="11" column="0" alignment="Qt::AlignLeft|Qt::AlignBottom">
+                          <widget class="QPushButton" name="Btn_helpFSK">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
                            <property name="minimumSize">
                             <size>
-                             <width>0</width>
-                             <height>25</height>
+                             <width>100</width>
+                             <height>30</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>16777215</width>
-                             <height>80</height>
+                             <width>103</width>
+                             <height>30</height>
                             </size>
                            </property>
                            <property name="font">
                             <font>
-                             <family>Satoshi</family>
-                             <pointsize>12</pointsize>
+                             <family>Satoshi Black</family>
+                             <pointsize>14</pointsize>
                              <weight>75</weight>
                              <bold>true</bold>
                             </font>
                            </property>
+                           <property name="toolTip">
+                            <string>Consigue ayuda sobre esta página</string>
+                           </property>
+                           <property name="statusTip">
+                            <string/>
+                           </property>
+                           <property name="whatsThis">
+                            <string/>
+                           </property>
                            <property name="styleSheet">
-                            <string notr="true">color: rgb(191, 203, 217)</string>
+                            <string notr="true">QPushButton {
+   color: #FFFFFF;
+   background-color: #3D94F6;
+   border: 1px solid #0059A0;
+   border-radius: 15px;
+}
+
+/* rgb(52, 59, 72)*/
+QPushButton:hover {
+	background: #0078FF;
+	border: 1px solid #0059A0;
+   border-radius: 15px;
+}
+
+QPushButton:pressed {	
+	background-color: rgb(0, 87, 131);
+	border: 1px solid #0059A0;
+}</string>
                            </property>
                            <property name="text">
-                            <string>Ingrese una cadena
-cadena de bits de
-2 / 4 / 8 / 16 bits</string>
+                            <string>Ayuda</string>
                            </property>
-                           <property name="alignment">
-                            <set>Qt::AlignCenter</set>
-                           </property>
-                           <property name="wordWrap">
-                            <bool>true</bool>
+                           <property name="icon">
+                            <iconset resource="files.qrc">
+                             <normaloff>:/16x16/icons/16x16/cil-help.png</normaloff>:/16x16/icons/16x16/cil-help.png</iconset>
                            </property>
                           </widget>
                          </item>
-                         <item row="6" column="0">
-                          <widget class="QPushButton" name="modulateBtnFSK">
+                         <item row="10" column="0">
+                          <widget class="QPushButton" name="clearBtnFSK">
                            <property name="sizePolicy">
                             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
                              <horstretch>0</horstretch>
@@ -3410,7 +3121,7 @@ cadena de bits de
                            <property name="minimumSize">
                             <size>
                              <width>150</width>
-                             <height>30</height>
+                             <height>25</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -3429,27 +3140,186 @@ cadena de bits de
                            </property>
                            <property name="styleSheet">
                             <string notr="true">QPushButton {
-	border: 2px solid rgb(56, 170, 72);
+	border: 2px solid rgb(235, 59, 72);
 	border-radius: 5px;	
-	background-color: rgb(63, 152, 90);
+	background-color: rgb(207, 59, 72);
 }
 
 /* rgb(52, 59, 72)*/
 QPushButton:hover {
-	background-color: rgb(60, 198, 84);
-	border: 2px solid rgb(60, 196, 72);
+	background-color: rgb(235, 67, 84);
+	border: 2px solid rgb(207, 59, 72);
 }
 QPushButton:pressed {	
-	background-color: rgb(37, 138, 26);
-	border: 2px solid rgb(60, 196, 72);
+	background-color: rgb(139, 37, 46);
+	border: 2px solid rgb(207, 59, 72);
 }</string>
                            </property>
                            <property name="text">
-                            <string>Modular</string>
+                            <string>Limpiar</string>
                            </property>
                            <property name="icon">
                             <iconset resource="files.qrc">
-                             <normaloff>:/16x16/icons/16x16/cil-fsk.png</normaloff>:/16x16/icons/16x16/cil-fsk.png</iconset>
+                             <normaloff>:/16x16/icons/16x16/cil-remove.png</normaloff>:/16x16/icons/16x16/cil-remove.png</iconset>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="9" column="0">
+                          <widget class="QPushButton" name="Btn_pauseFSK">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>150</width>
+                             <height>25</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>50</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>Satoshi Black</family>
+                             <pointsize>14</pointsize>
+                             <weight>75</weight>
+                             <bold>true</bold>
+                            </font>
+                           </property>
+                           <property name="toolTip">
+                            <string>Pausa la animación</string>
+                           </property>
+                           <property name="statusTip">
+                            <string/>
+                           </property>
+                           <property name="whatsThis">
+                            <string/>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QPushButton {
+	border: 1px solid rgb(0, 0, 0);
+	border-radius: 5px;	
+	background-color: rgb(48, 48, 48);
+}
+
+/* rgb(52, 59, 72)*/
+QPushButton:hover {
+	background-color: rgb(235, 67, 84);
+	border: 2px solid rgb(207, 59, 72);
+}
+QPushButton:pressed {	
+	background-color: rgb(139, 37, 46);
+	border: 2px solid rgb(207, 59, 72);
+}</string>
+                           </property>
+                           <property name="text">
+                            <string>Pausar</string>
+                           </property>
+                           <property name="icon">
+                            <iconset resource="files.qrc">
+                             <normaloff>:/16x16/icons/16x16/cil-media-pause.png</normaloff>:/16x16/icons/16x16/cil-media-pause.png</iconset>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="0" column="0">
+                          <widget class="QLabel" name="label_title_bar_top_3">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>25</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>100</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>Satoshi Black</family>
+                             <pointsize>14</pointsize>
+                             <weight>75</weight>
+                             <italic>false</italic>
+                             <bold>true</bold>
+                             <underline>false</underline>
+                             <strikeout>false</strikeout>
+                             <kerning>true</kerning>
+                            </font>
+                           </property>
+                           <property name="cursor">
+                            <cursorShape>ArrowCursor</cursorShape>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel{
+background-color: rgb(27, 29, 35);
+border: 0px solid ;
+border-radius: 8px;
+}</string>
+                           </property>
+                           <property name="text">
+                            <string>Modulación por
+Conmutación
+de Frecuencias</string>
+                           </property>
+                           <property name="scaledContents">
+                            <bool>true</bool>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                           <property name="wordWrap">
+                            <bool>true</bool>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="1" column="0">
+                          <widget class="QLabel" name="label_top_info_13">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>25</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>80</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>Satoshi</family>
+                             <pointsize>11</pointsize>
+                             <weight>75</weight>
+                             <bold>true</bold>
+                            </font>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">color: rgb(191, 203, 217)</string>
+                           </property>
+                           <property name="text">
+                            <string>Ingrese una cadena
+cadena de bits de
+2 / 4 / 8 / 16 bits</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                           <property name="wordWrap">
+                            <bool>true</bool>
                            </property>
                           </widget>
                          </item>
@@ -3530,24 +3400,266 @@ fontSizeMode: Text.Fit
                            </property>
                           </widget>
                          </item>
-                         <item row="8" column="0" alignment="Qt::AlignHCenter">
-                          <widget class="QPushButton" name="Btn_helpFSK">
+                         <item row="3" column="0">
+                          <widget class="QLabel" name="labelFSK">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>25</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>25</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>Satoshi Black</family>
+                             <pointsize>10</pointsize>
+                             <weight>75</weight>
+                             <bold>true</bold>
+                            </font>
+                           </property>
+                           <property name="text">
+                            <string>16/16</string>
+                           </property>
+                           <property name="wordWrap">
+                            <bool>true</bool>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="6" column="0">
+                          <widget class="QFrame" name="frame_8">
                            <property name="sizePolicy">
-                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                              <horstretch>0</horstretch>
                              <verstretch>0</verstretch>
                             </sizepolicy>
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
-                             <height>30</height>
+                             <width>0</width>
+                             <height>110</height>
                             </size>
                            </property>
                            <property name="maximumSize">
                             <size>
-                             <width>103</width>
-                             <height>30</height>
+                             <width>16777215</width>
+                             <height>150</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: rgb(23, 32, 77);
+border-radius: 5px;</string>
+                           </property>
+                           <property name="frameShape">
+                            <enum>QFrame::StyledPanel</enum>
+                           </property>
+                           <property name="frameShadow">
+                            <enum>QFrame::Raised</enum>
+                           </property>
+                           <layout class="QVBoxLayout" name="verticalLayout_19">
+                            <item>
+                             <widget class="QLabel" name="label_top_info_9">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>16777215</width>
+                                <height>25</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <family>Satoshi Black</family>
+                                <pointsize>12</pointsize>
+                                <weight>75</weight>
+                                <bold>true</bold>
+                               </font>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">QLabel{
+	background-color: rgb(33, 46, 112);
+	border: 0px solid ;
+	border-radius: 8px;
+}</string>
+                              </property>
+                              <property name="text">
+                               <string>Señal 2</string>
+                              </property>
+                              <property name="alignment">
+                               <set>Qt::AlignCenter</set>
+                              </property>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QLabel" name="label_top_info_10">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>16777215</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <family>Satoshi</family>
+                                <pointsize>12</pointsize>
+                                <weight>75</weight>
+                                <bold>true</bold>
+                               </font>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">color: rgb(191, 203, 217)</string>
+                              </property>
+                              <property name="text">
+                               <string>Frecuencia (Hz)</string>
+                              </property>
+                              <property name="alignment">
+                               <set>Qt::AlignCenter</set>
+                              </property>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QSpinBox" name="carrierFreq2InputFSK">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>25</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <family>Satoshi</family>
+                                <pointsize>10</pointsize>
+                                <weight>75</weight>
+                                <bold>true</bold>
+                               </font>
+                              </property>
+                              <property name="toolTip">
+                               <string/>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">QSpinBox{
+	background-color: rgb(5, 7, 35);
+	border-radius: 5px;
+	border: 2px solid rgb(10, 11, 35);
+	padding: 5px;
+	padding-left: 10px;
+}
+QSpinBox:hover{
+	border: 2px solid rgb(0, 0, 127)
+}
+QSpinBox QAbstractItemView {
+	color: rgb(85, 170, 255);	
+	background-color: rgb(27, 29, 35);
+	padding: 10px;
+	selection-background-color: rgb(27, 29, 35);
+}
+/*
+rgb(27, 29, 35);
+rgb(13, 9, 59)
+*/
+
+QSpinBox::up-button{
+	width: 25px; 
+	border-left-width: 3px;
+	border-left-color: rgba(39, 44, 54, 150);
+	border-left-style: solid;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;	
+	background-image: url(:/16x16/icons/16x16/cil-arrow-top.png);
+	background-position: center;
+	background-repeat: no-reperat;
+}
+
+QSpinBox::up-button:hover{
+	background-color: rgb(80, 80, 80)
+}
+
+QSpinBox::down-button:hover{
+	background-color: rgb(80, 80, 80)
+}
+
+QSpinBox::down-button{
+	width: 25px; 
+	border-left-width: 3px;
+	border-left-color: rgba(39, 44, 54, 150);
+	border-left-style: solid;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;	
+	background-image: url(:/16x16/icons/16x16/cil-arrow-bottom.png);
+	background-position: center;
+	background-repeat: no-reperat;
+}</string>
+                              </property>
+                              <property name="minimum">
+                               <number>1</number>
+                              </property>
+                              <property name="maximum">
+                               <number>200</number>
+                              </property>
+                              <property name="value">
+                               <number>50</number>
+                              </property>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QSlider" name="sliderFSK2">
+                              <property name="styleSheet">
+                               <string notr="true">QSlider::handle:horizontal{
+	background: rgb(255, 255, 255);
+}</string>
+                              </property>
+                              <property name="minimum">
+                               <number>1</number>
+                              </property>
+                              <property name="maximum">
+                               <number>200</number>
+                              </property>
+                              <property name="tracking">
+                               <bool>false</bool>
+                              </property>
+                              <property name="orientation">
+                               <enum>Qt::Horizontal</enum>
+                              </property>
+                              <property name="tickPosition">
+                               <enum>QSlider::NoTicks</enum>
+                              </property>
+                             </widget>
+                            </item>
+                           </layout>
+                          </widget>
+                         </item>
+                         <item row="8" column="0">
+                          <widget class="QPushButton" name="modulateBtnFSK">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>150</width>
+                             <height>25</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>50</height>
                             </size>
                            </property>
                            <property name="font">
@@ -3558,42 +3670,188 @@ fontSizeMode: Text.Fit
                              <bold>true</bold>
                             </font>
                            </property>
-                           <property name="toolTip">
-                            <string>Consigue ayuda sobre esta página</string>
-                           </property>
-                           <property name="statusTip">
-                            <string/>
-                           </property>
-                           <property name="whatsThis">
-                            <string/>
-                           </property>
                            <property name="styleSheet">
                             <string notr="true">QPushButton {
-   color: #FFFFFF;
-   background-color: #3D94F6;
-   border: 1px solid #0059A0;
-   border-radius: 15px;
+	border: 2px solid rgb(56, 170, 72);
+	border-radius: 5px;	
+	background-color: rgb(63, 152, 90);
 }
 
 /* rgb(52, 59, 72)*/
 QPushButton:hover {
-	background: #0078FF;
-	border: 1px solid #0059A0;
-   border-radius: 15px;
+	background-color: rgb(60, 198, 84);
+	border: 2px solid rgb(60, 196, 72);
 }
-
 QPushButton:pressed {	
-	background-color: rgb(0, 87, 131);
-	border: 1px solid #0059A0;
+	background-color: rgb(37, 138, 26);
+	border: 2px solid rgb(60, 196, 72);
 }</string>
                            </property>
                            <property name="text">
-                            <string>Ayuda</string>
+                            <string>Modular</string>
                            </property>
                            <property name="icon">
                             <iconset resource="files.qrc">
-                             <normaloff>:/16x16/icons/16x16/cil-help.png</normaloff>:/16x16/icons/16x16/cil-help.png</iconset>
+                             <normaloff>:/16x16/icons/16x16/cil-fsk.png</normaloff>:/16x16/icons/16x16/cil-fsk.png</iconset>
                            </property>
+                          </widget>
+                         </item>
+                         <item row="7" column="0">
+                          <widget class="QFrame" name="frame_9">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>74</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">background-color: rgb(23, 32, 77);
+border-radius: 5px;</string>
+                           </property>
+                           <property name="frameShape">
+                            <enum>QFrame::StyledPanel</enum>
+                           </property>
+                           <property name="frameShadow">
+                            <enum>QFrame::Raised</enum>
+                           </property>
+                           <layout class="QVBoxLayout" name="verticalLayout_20">
+                            <property name="leftMargin">
+                             <number>9</number>
+                            </property>
+                            <item>
+                             <widget class="QLabel" name="label_top_info_11">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>16777215</width>
+                                <height>25</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <family>Satoshi Black</family>
+                                <pointsize>12</pointsize>
+                                <weight>75</weight>
+                                <bold>true</bold>
+                               </font>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">QLabel{
+	background-color: rgb(33, 46, 112);
+	border: 0px solid ;
+	border-radius: 8px;
+}</string>
+                              </property>
+                              <property name="text">
+                               <string>Resultante</string>
+                              </property>
+                              <property name="alignment">
+                               <set>Qt::AlignCenter</set>
+                              </property>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QFrame" name="frame_10">
+                              <property name="frameShape">
+                               <enum>QFrame::StyledPanel</enum>
+                              </property>
+                              <property name="frameShadow">
+                               <enum>QFrame::Raised</enum>
+                              </property>
+                              <layout class="QHBoxLayout" name="horizontalLayout_15">
+                               <property name="leftMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="topMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="rightMargin">
+                                <number>0</number>
+                               </property>
+                               <property name="bottomMargin">
+                                <number>0</number>
+                               </property>
+                               <item>
+                                <widget class="QLabel" name="label_top_info_12">
+                                 <property name="minimumSize">
+                                  <size>
+                                   <width>0</width>
+                                   <height>20</height>
+                                  </size>
+                                 </property>
+                                 <property name="maximumSize">
+                                  <size>
+                                   <width>16777215</width>
+                                   <height>30</height>
+                                  </size>
+                                 </property>
+                                 <property name="font">
+                                  <font>
+                                   <family>Satoshi</family>
+                                   <pointsize>12</pointsize>
+                                   <weight>75</weight>
+                                   <bold>true</bold>
+                                  </font>
+                                 </property>
+                                 <property name="styleSheet">
+                                  <string notr="true">color: rgb(191, 203, 217)</string>
+                                 </property>
+                                 <property name="text">
+                                  <string>AB =</string>
+                                 </property>
+                                 <property name="alignment">
+                                  <set>Qt::AlignCenter</set>
+                                 </property>
+                                </widget>
+                               </item>
+                               <item>
+                                <widget class="QLabel" name="label_resultFSK">
+                                 <property name="minimumSize">
+                                  <size>
+                                   <width>0</width>
+                                   <height>20</height>
+                                  </size>
+                                 </property>
+                                 <property name="maximumSize">
+                                  <size>
+                                   <width>16777215</width>
+                                   <height>30</height>
+                                  </size>
+                                 </property>
+                                 <property name="font">
+                                  <font>
+                                   <family>Satoshi</family>
+                                   <pointsize>12</pointsize>
+                                   <weight>75</weight>
+                                   <bold>true</bold>
+                                  </font>
+                                 </property>
+                                 <property name="styleSheet">
+                                  <string notr="true">color: rgb(191, 203, 217)</string>
+                                 </property>
+                                 <property name="text">
+                                  <string/>
+                                 </property>
+                                 <property name="alignment">
+                                  <set>Qt::AlignCenter</set>
+                                 </property>
+                                </widget>
+                               </item>
+                              </layout>
+                             </widget>
+                            </item>
+                           </layout>
                           </widget>
                          </item>
                         </layout>
@@ -3659,7 +3917,7 @@ border-radius: 5px;</string>
                      <widget class="QFrame" name="frame_11">
                       <property name="minimumSize">
                        <size>
-                        <width>180</width>
+                        <width>200</width>
                         <height>0</height>
                        </size>
                       </property>
@@ -3682,7 +3940,7 @@ border-radius: 5px;</string>
                       <layout class="QVBoxLayout" name="verticalLayout_21">
                        <item>
                         <layout class="QGridLayout" name="gridLayout_5">
-                         <item row="4" column="0">
+                         <item row="5" column="0">
                           <widget class="QFrame" name="frame_12">
                            <property name="maximumSize">
                             <size>
@@ -3773,6 +4031,12 @@ border-radius: 5px;</string>
                             </item>
                             <item>
                              <widget class="QSpinBox" name="carrierFreqInputPSK">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>25</height>
+                               </size>
+                              </property>
                               <property name="font">
                                <font>
                                 <family>Satoshi</family>
@@ -3844,13 +4108,16 @@ QSpinBox::down-button{
                               <property name="maximum">
                                <number>200</number>
                               </property>
+                              <property name="value">
+                               <number>15</number>
+                              </property>
                              </widget>
                             </item>
                             <item>
                              <widget class="QSlider" name="sliderPSK">
                               <property name="styleSheet">
                                <string notr="true">QSlider::handle:horizontal{
-	background: rgb(33, 46, 112);
+	background: rgb(255, 255, 255);
 }</string>
                               </property>
                               <property name="minimum">
@@ -3873,7 +4140,7 @@ QSpinBox::down-button{
                            </layout>
                           </widget>
                          </item>
-                         <item row="6" column="0">
+                         <item row="8" column="0">
                           <widget class="QPushButton" name="clearBtnPSK">
                            <property name="sizePolicy">
                             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -3890,7 +4157,7 @@ QSpinBox::down-button{
                            <property name="maximumSize">
                             <size>
                              <width>16777215</width>
-                             <height>50</height>
+                             <height>40</height>
                             </size>
                            </property>
                            <property name="font">
@@ -3927,10 +4194,10 @@ QPushButton:pressed {
                            </property>
                           </widget>
                          </item>
-                         <item row="3" column="0">
-                          <widget class="QLineEdit" name="messageInputPSK">
+                         <item row="7" column="0">
+                          <widget class="QPushButton" name="Btn_pausePSK">
                            <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
                              <horstretch>0</horstretch>
                              <verstretch>0</verstretch>
                             </sizepolicy>
@@ -3938,20 +4205,25 @@ QPushButton:pressed {
                            <property name="minimumSize">
                             <size>
                              <width>0</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
                              <height>40</height>
                             </size>
                            </property>
                            <property name="font">
                             <font>
                              <family>Satoshi Black</family>
-                             <pointsize>10</pointsize>
+                             <pointsize>14</pointsize>
+                             <weight>75</weight>
+                             <bold>true</bold>
                             </font>
                            </property>
                            <property name="toolTip">
-                            <string>Ingrese cadenas de 2, 4, 8 o 16 bits</string>
-                           </property>
-                           <property name="toolTipDuration">
-                            <number>-1</number>
+                            <string>Pausa la animación</string>
                            </property>
                            <property name="statusTip">
                             <string/>
@@ -3959,48 +4231,95 @@ QPushButton:pressed {
                            <property name="whatsThis">
                             <string/>
                            </property>
-                           <property name="autoFillBackground">
-                            <bool>false</bool>
-                           </property>
                            <property name="styleSheet">
-                            <string notr="true">QLineEdit {
-	background-color: rgb(27, 29, 35);
-	border-radius: 5px;
-	border: 2px solid rgb(27, 29, 35);
-	padding-left: 10px;
-}
-QLineEdit:hover {
-	border: 2px solid rgb(64, 71, 88);
-}
-QLineEdit:focus {
-	border: 2px solid rgb(91, 101, 124);
+                            <string notr="true">QPushButton {
+	border: 1px solid rgb(0, 0, 0);
+	border-radius: 5px;	
+	background-color: rgb(48, 48, 48);
 }
 
-QLineEdit::Text {
-width: parent.width
-height: parent.height
-font.pointSize: 100
-minimumPointSize: 10
-fontSizeMode: Text.Fit
+/* rgb(52, 59, 72)*/
+QPushButton:hover {
+	background-color: rgb(235, 67, 84);
+	border: 2px solid rgb(207, 59, 72);
+}
+QPushButton:pressed {	
+	background-color: rgb(139, 37, 46);
+	border: 2px solid rgb(207, 59, 72);
 }</string>
                            </property>
-                           <property name="inputMethodHints">
-                            <set>Qt::ImhNone</set>
+                           <property name="text">
+                            <string>Pausar</string>
+                           </property>
+                           <property name="icon">
+                            <iconset resource="files.qrc">
+                             <normaloff>:/16x16/icons/16x16/cil-media-pause.png</normaloff>:/16x16/icons/16x16/cil-media-pause.png</iconset>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="11" column="0" alignment="Qt::AlignLeft|Qt::AlignBottom">
+                          <widget class="QPushButton" name="Btn_helpPSK">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                             <horstretch>0</horstretch>
+                             <verstretch>0</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>100</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>103</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>Satoshi Black</family>
+                             <pointsize>14</pointsize>
+                             <weight>75</weight>
+                             <bold>true</bold>
+                            </font>
+                           </property>
+                           <property name="toolTip">
+                            <string>Consigue ayuda sobre esta página</string>
+                           </property>
+                           <property name="statusTip">
+                            <string/>
+                           </property>
+                           <property name="whatsThis">
+                            <string/>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QPushButton {
+   color: #FFFFFF;
+   background-color: #3D94F6;
+   border: 1px solid #0059A0;
+   border-radius: 15px;
+}
+
+/* rgb(52, 59, 72)*/
+QPushButton:hover {
+	background: #0078FF;
+	border: 1px solid #0059A0;
+   border-radius: 15px;
+}
+
+QPushButton:pressed {	
+	background-color: rgb(0, 87, 131);
+	border: 1px solid #0059A0;
+}</string>
                            </property>
                            <property name="text">
-                            <string>1010000011001011</string>
+                            <string>Ayuda</string>
                            </property>
-                           <property name="maxLength">
-                            <number>16</number>
-                           </property>
-                           <property name="frame">
-                            <bool>true</bool>
-                           </property>
-                           <property name="echoMode">
-                            <enum>QLineEdit::Normal</enum>
-                           </property>
-                           <property name="placeholderText">
-                            <string>Ingrese cadena de bits</string>
+                           <property name="icon">
+                            <iconset resource="files.qrc">
+                             <normaloff>:/16x16/icons/16x16/cil-help.png</normaloff>:/16x16/icons/16x16/cil-help.png</iconset>
                            </property>
                           </widget>
                          </item>
@@ -4091,7 +4410,7 @@ cadena de bits de
                            </property>
                           </widget>
                          </item>
-                         <item row="5" column="0">
+                         <item row="6" column="0">
                           <widget class="QPushButton" name="modulateBtnPSK">
                            <property name="sizePolicy">
                             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -4108,7 +4427,7 @@ cadena de bits de
                            <property name="maximumSize">
                             <size>
                              <width>16777215</width>
-                             <height>50</height>
+                             <height>40</height>
                             </size>
                            </property>
                            <property name="font">
@@ -4145,36 +4464,31 @@ QPushButton:pressed {
                            </property>
                           </widget>
                          </item>
-                         <item row="7" column="0" alignment="Qt::AlignHCenter">
-                          <widget class="QPushButton" name="Btn_helpPSK">
+                         <item row="3" column="0">
+                          <widget class="QLineEdit" name="messageInputPSK">
                            <property name="sizePolicy">
-                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                              <horstretch>0</horstretch>
                              <verstretch>0</verstretch>
                             </sizepolicy>
                            </property>
                            <property name="minimumSize">
                             <size>
-                             <width>100</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>103</width>
-                             <height>30</height>
+                             <width>0</width>
+                             <height>40</height>
                             </size>
                            </property>
                            <property name="font">
                             <font>
                              <family>Satoshi Black</family>
-                             <pointsize>14</pointsize>
-                             <weight>75</weight>
-                             <bold>true</bold>
+                             <pointsize>10</pointsize>
                             </font>
                            </property>
                            <property name="toolTip">
-                            <string>Consigue ayuda sobre esta página</string>
+                            <string>Ingrese cadenas de 2, 4, 8 o 16 bits</string>
+                           </property>
+                           <property name="toolTipDuration">
+                            <number>-1</number>
                            </property>
                            <property name="statusTip">
                             <string/>
@@ -4182,32 +4496,78 @@ QPushButton:pressed {
                            <property name="whatsThis">
                             <string/>
                            </property>
+                           <property name="autoFillBackground">
+                            <bool>false</bool>
+                           </property>
                            <property name="styleSheet">
-                            <string notr="true">QPushButton {
-   color: #FFFFFF;
-   background-color: #3D94F6;
-   border: 1px solid #0059A0;
-   border-radius: 15px;
+                            <string notr="true">QLineEdit {
+	background-color: rgb(27, 29, 35);
+	border-radius: 5px;
+	border: 2px solid rgb(27, 29, 35);
+	padding-left: 10px;
+}
+QLineEdit:hover {
+	border: 2px solid rgb(64, 71, 88);
+}
+QLineEdit:focus {
+	border: 2px solid rgb(91, 101, 124);
 }
 
-/* rgb(52, 59, 72)*/
-QPushButton:hover {
-	background: #0078FF;
-	border: 1px solid #0059A0;
-   border-radius: 15px;
-}
-
-QPushButton:pressed {	
-	background-color: rgb(0, 87, 131);
-	border: 1px solid #0059A0;
+QLineEdit::Text {
+width: parent.width
+height: parent.height
+font.pointSize: 100
+minimumPointSize: 10
+fontSizeMode: Text.Fit
 }</string>
                            </property>
-                           <property name="text">
-                            <string>Ayuda</string>
+                           <property name="inputMethodHints">
+                            <set>Qt::ImhNone</set>
                            </property>
-                           <property name="icon">
-                            <iconset resource="files.qrc">
-                             <normaloff>:/16x16/icons/16x16/cil-help.png</normaloff>:/16x16/icons/16x16/cil-help.png</iconset>
+                           <property name="text">
+                            <string>1010000011001011</string>
+                           </property>
+                           <property name="maxLength">
+                            <number>16</number>
+                           </property>
+                           <property name="frame">
+                            <bool>true</bool>
+                           </property>
+                           <property name="echoMode">
+                            <enum>QLineEdit::Normal</enum>
+                           </property>
+                           <property name="placeholderText">
+                            <string>Ingrese cadena de bits</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item row="4" column="0">
+                          <widget class="QLabel" name="labelPSK">
+                           <property name="minimumSize">
+                            <size>
+                             <width>50</width>
+                             <height>25</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>25</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>Satoshi Black</family>
+                             <pointsize>10</pointsize>
+                             <weight>75</weight>
+                             <bold>true</bold>
+                            </font>
+                           </property>
+                           <property name="text">
+                            <string>16/16</string>
+                           </property>
+                           <property name="wordWrap">
+                            <bool>true</bool>
                            </property>
                           </widget>
                          </item>
@@ -4397,7 +4757,7 @@ ASK</string>
                                  <property name="maximumSize">
                                   <size>
                                    <width>16777215</width>
-                                   <height>150</height>
+                                   <height>175</height>
                                   </size>
                                  </property>
                                  <property name="styleSheet">
@@ -4411,6 +4771,9 @@ border-radius: 5px;</string>
                                   <enum>QFrame::Raised</enum>
                                  </property>
                                  <layout class="QVBoxLayout" name="verticalLayout_23">
+                                  <property name="bottomMargin">
+                                   <number>9</number>
+                                  </property>
                                   <item>
                                    <widget class="QLabel" name="label_top_info_16">
                                     <property name="minimumSize">
@@ -4492,7 +4855,7 @@ border-radius: 5px;</string>
                                     <property name="minimumSize">
                                      <size>
                                       <width>150</width>
-                                      <height>25</height>
+                                      <height>30</height>
                                      </size>
                                     </property>
                                     <property name="font">
@@ -4615,7 +4978,7 @@ QSpinBox::down-button{
                                     <property name="minimumSize">
                                      <size>
                                       <width>150</width>
-                                      <height>25</height>
+                                      <height>30</height>
                                      </size>
                                     </property>
                                     <property name="font">
@@ -4740,7 +5103,7 @@ border-radius: 5px;</string>
                                  <property name="maximumSize">
                                   <size>
                                    <width>16777215</width>
-                                   <height>150</height>
+                                   <height>175</height>
                                   </size>
                                  </property>
                                  <property name="styleSheet">
@@ -4835,7 +5198,7 @@ border-radius: 5px;</string>
                                     <property name="minimumSize">
                                      <size>
                                       <width>150</width>
-                                      <height>25</height>
+                                      <height>30</height>
                                      </size>
                                     </property>
                                     <property name="font">
@@ -4958,7 +5321,7 @@ QSpinBox::down-button{
                                     <property name="minimumSize">
                                      <size>
                                       <width>150</width>
-                                      <height>25</height>
+                                      <height>30</height>
                                      </size>
                                     </property>
                                     <property name="font">
@@ -5107,7 +5470,7 @@ FSK</string>
                                  <property name="maximumSize">
                                   <size>
                                    <width>16777215</width>
-                                   <height>150</height>
+                                   <height>175</height>
                                   </size>
                                  </property>
                                  <property name="styleSheet">
@@ -5202,7 +5565,7 @@ border-radius: 5px;</string>
                                     <property name="minimumSize">
                                      <size>
                                       <width>150</width>
-                                      <height>25</height>
+                                      <height>30</height>
                                      </size>
                                     </property>
                                     <property name="font">
@@ -5325,7 +5688,7 @@ QSpinBox::down-button{
                                     <property name="minimumSize">
                                      <size>
                                       <width>150</width>
-                                      <height>25</height>
+                                      <height>30</height>
                                      </size>
                                     </property>
                                     <property name="font">
@@ -5494,7 +5857,7 @@ PSK</string>
                                  <property name="maximumSize">
                                   <size>
                                    <width>16777215</width>
-                                   <height>150</height>
+                                   <height>175</height>
                                   </size>
                                  </property>
                                  <property name="styleSheet">
@@ -5589,7 +5952,7 @@ border-radius: 5px;</string>
                                     <property name="minimumSize">
                                      <size>
                                       <width>150</width>
-                                      <height>25</height>
+                                      <height>30</height>
                                      </size>
                                     </property>
                                     <property name="font">
@@ -5712,7 +6075,7 @@ QSpinBox::down-button{
                                     <property name="minimumSize">
                                      <size>
                                       <width>150</width>
-                                      <height>25</height>
+                                      <height>30</height>
                                      </size>
                                     </property>
                                     <property name="font">
@@ -6076,210 +6439,18 @@ QPushButton:pressed {
  </resources>
  <connections>
   <connection>
-   <sender>messageInputASK</sender>
-   <signal>textEdited(QString)</signal>
-   <receiver>modulateBtnASK</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>174</x>
-     <y>358</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>174</x>
-     <y>590</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>carrierFreqInputASK</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>modulateBtnASK</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>213</x>
-     <y>492</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>222</x>
-     <y>595</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>sliderASK</sender>
-   <signal>sliderReleased()</signal>
-   <receiver>modulateBtnASK</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>200</x>
-     <y>527</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>129</x>
-     <y>609</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>messageInputFSK</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>modulateBtnFSK</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>144</x>
-     <y>249</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>104</x>
-     <y>662</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>carrierFreq1InputFSK</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>modulateBtnFSK</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>254</x>
-     <y>352</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>257</x>
-     <y>652</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>carrierFreq2InputFSK</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>modulateBtnFSK</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>231</x>
-     <y>491</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>234</x>
-     <y>660</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>sliderFSK1</sender>
-   <signal>sliderReleased()</signal>
-   <receiver>modulateBtnFSK</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>174</x>
-     <y>395</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>196</x>
-     <y>650</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>sliderFSK2</sender>
-   <signal>sliderReleased()</signal>
-   <receiver>modulateBtnFSK</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>160</x>
-     <y>531</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>168</x>
-     <y>659</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>messageInputPSK</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>modulateBtnPSK</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>119</x>
-     <y>357</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>115</x>
-     <y>587</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>carrierFreqInputPSK</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>modulateBtnPSK</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>238</x>
-     <y>493</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>241</x>
-     <y>601</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>sliderPSK</sender>
-   <signal>sliderReleased()</signal>
-   <receiver>modulateBtnPSK</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>191</x>
-     <y>537</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>190</x>
-     <y>583</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>carrierFreqInputPSK</sender>
    <signal>valueChanged(int)</signal>
    <receiver>sliderPSK</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>150</x>
-     <y>491</y>
+     <x>252</x>
+     <y>458</y>
     </hint>
     <hint type="destinationlabel">
-     <x>147</x>
-     <y>527</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>carrierFreqInputASK</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>sliderASK</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>199</x>
-     <y>497</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>200</x>
-     <y>537</y>
+     <x>252</x>
+     <y>486</y>
     </hint>
    </hints>
   </connection>
@@ -6290,12 +6461,12 @@ QPushButton:pressed {
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>150</x>
-     <y>350</y>
+     <x>263</x>
+     <y>389</y>
     </hint>
     <hint type="destinationlabel">
-     <x>139</x>
-     <y>383</y>
+     <x>263</x>
+     <y>417</y>
     </hint>
    </hints>
   </connection>
@@ -6306,28 +6477,12 @@ QPushButton:pressed {
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>132</x>
-     <y>503</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>131</x>
-     <y>519</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>sliderASK</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>carrierFreqInputASK</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>159</x>
+     <x>263</x>
      <y>522</y>
     </hint>
     <hint type="destinationlabel">
-     <x>163</x>
-     <y>493</y>
+     <x>263</x>
+     <y>550</y>
     </hint>
    </hints>
   </connection>
@@ -6338,12 +6493,12 @@ QPushButton:pressed {
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>151</x>
-     <y>525</y>
+     <x>263</x>
+     <y>550</y>
     </hint>
     <hint type="destinationlabel">
-     <x>151</x>
-     <y>501</y>
+     <x>263</x>
+     <y>522</y>
     </hint>
    </hints>
   </connection>
@@ -6354,12 +6509,12 @@ QPushButton:pressed {
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>162</x>
-     <y>386</y>
+     <x>263</x>
+     <y>417</y>
     </hint>
     <hint type="destinationlabel">
-     <x>163</x>
-     <y>365</y>
+     <x>263</x>
+     <y>389</y>
     </hint>
    </hints>
   </connection>
@@ -6370,12 +6525,44 @@ QPushButton:pressed {
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>220</x>
-     <y>525</y>
+     <x>252</x>
+     <y>486</y>
     </hint>
     <hint type="destinationlabel">
-     <x>219</x>
-     <y>497</y>
+     <x>252</x>
+     <y>458</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>carrierFreqInputASK</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>sliderASK</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>252</x>
+     <y>442</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>252</x>
+     <y>470</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sliderASK</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>carrierFreqInputASK</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>252</x>
+     <y>470</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>252</x>
+     <y>442</y>
     </hint>
    </hints>
   </connection>
