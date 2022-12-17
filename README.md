@@ -6,8 +6,6 @@ SigMA or Signal Modulation Analyzer is a basic kit made for the Communications s
 
 
 ## ⬇ INSTALACIÓN:
----
-<br/>
 
 > ```sh
 > pip install pyside2==5.15.2 matplotlib scipy numpy
@@ -21,8 +19,6 @@ SigMA or Signal Modulation Analyzer is a basic kit made for the Communications s
 > ```
 
 ## ⬇ REQUERIMENTS:
----
-<br/>
 
 > ```sh
 > pip install pyside2==5.15.2 matplotlib scipy numpy
