@@ -47,7 +47,7 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.setWindowIcon(QtGui.QIcon('sigma-logo.ico'))
+        # self.setWindowIcon(QtGui.QIcon("url(:/16x16/icons/16x16/cil-home.png)"))
 
         self.ventana = HelpWindow()
         self.ventana.hide()
@@ -106,7 +106,7 @@ class MainWindow(QMainWindow):
         ## USER ICON ==> SHOW HIDE
         UIFunctions.userIcon(self, "LD", "url(:/24x24/icons/24x24/sigma-logo.png)", True)
         UIFunctions.labelCredits(self, "Desarrollado por: Lucas Depetris")
-        UIFunctions.labelVersion(self, "v0.9.5")
+        UIFunctions.labelVersion(self, "v1.0")
         ## ==> END ##
 
 
@@ -171,16 +171,11 @@ class MainWindow(QMainWindow):
         self.ui.Btn_FSK.clicked.connect(self.Button)
         self.ui.Btn_PSK.clicked.connect(self.Button)
         
-        self.ui.maxCarrierASK.valueChanged.connect(lambda: self.valueChanged("askmax", self.ui.maxCarrierASK.value()))
-        self.ui.minCarrierASK.valueChanged.connect(lambda: self.valueChanged("askmin", self.ui.minCarrierASK.value()))
-        
-        self.ui.maxCarrierFSK1.valueChanged.connect(lambda: self.valueChanged("fsk1max", self.ui.maxCarrierFSK1.value()))
-        self.ui.minCarrierFSK1.valueChanged.connect(lambda: self.valueChanged("fsk1min", self.ui.minCarrierFSK1.value()))
-        self.ui.maxCarrierFSK2.valueChanged.connect(lambda: self.valueChanged("fsk2max", self.ui.maxCarrierFSK2.value()))
-        self.ui.minCarrierFSK2.valueChanged.connect(lambda: self.valueChanged("fsk2min", self.ui.minCarrierFSK2.value()))
-
-        self.ui.maxCarrierPSK.valueChanged.connect(lambda: self.valueChanged("pskmax", self.ui.maxCarrierPSK.value()))
-        self.ui.minCarrierPSK.valueChanged.connect(lambda: self.valueChanged("pskmin", self.ui.minCarrierPSK.value()))
+        # SETTINGS
+        self.ui.btn_AplicarASK.clicked.connect(lambda: self.valueChanged(self.ui.maxCarrierASK, self.ui.minCarrierASK, self.ui.sliderASK, self.ui.carrierFreqInputASK, self.ui.label_maxASK, self.ui.label_minASK))
+        self.ui.btn_AplicarFSK1.clicked.connect(lambda: self.valueChanged(self.ui.maxCarrierFSK1, self.ui.minCarrierFSK1, self.ui.sliderFSK1, self.ui.carrierFreq1InputFSK, self.ui.label_maxFSK_1, self.ui.label_minFSK_1))
+        self.ui.btn_AplicarFSK2.clicked.connect(lambda: self.valueChanged(self.ui.maxCarrierFSK2, self.ui.minCarrierFSK2, self.ui.sliderFSK2, self.ui.carrierFreq2InputFSK, self.ui.label_maxFSK_2, self.ui.label_minFSK_2))
+        self.ui.btn_AplicarPSK.clicked.connect(lambda: self.valueChanged(self.ui.maxCarrierPSK, self.ui.minCarrierPSK, self.ui.sliderPSK, self.ui.carrierFreqInputPSK, self.ui.label_maxPSK, self.ui.label_minPSK))
         
         ########################################################################
         #                                                                      #
@@ -262,21 +257,23 @@ class MainWindow(QMainWindow):
             UIFunctions.resetStyle(self, "btn_ASK")
             UIFunctions.labelPage(self, "MODULACIÓN ASK")
             UIFunctions.labelDescription(self, 'Ingrese los valores de las señales')
-            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+            if btnWidget.objectName() == "btn_ASK": btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+        
         # PAGE FSK
         if btnWidget.objectName() == "btn_FSK" or btnWidget.objectName() == "Btn_FSK":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_fsk)
             UIFunctions.resetStyle(self, "btn_FSK")
             UIFunctions.labelPage(self, "MODULACIÓN FSK")
             UIFunctions.labelDescription(self, 'Ingrese los valores de las señales')
-            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+            if btnWidget.objectName() == "btn_FSK": btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+        
         # PAGE PSK
         if btnWidget.objectName() == "btn_PSK" or btnWidget.objectName() == "Btn_PSK":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_psk)
             UIFunctions.resetStyle(self, "btn_PSK")
             UIFunctions.labelPage(self, "MODULACIÓN PSK")
             UIFunctions.labelDescription(self, 'Ingrese los valores de las señales')
-            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
+            if btnWidget.objectName() == "btn_PSK": btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
 
         # PAGE WIDGETS
         if btnWidget.objectName() == "btn_ajustes":
@@ -294,71 +291,87 @@ class MainWindow(QMainWindow):
 
     ## EVENT ==> CHANGE SETTINGS
     ########################################################################
-    def valueChanged(self, mod, value):
-        if (mod == "askmax"):
-            if (self.ui.carrierFreqInputASK.minimum() > value) :
-                self.ui.maxCarrierASK.setStyleSheet("border: 2px solid #ff0000;")
-                print("No se puede cambiar: MaxAct={0} MaxIng={1}".format(self.ui.carrierFreqInputASK.maximum(),value))
-            else:
-                self.ui.maxCarrierASK.setStyleSheet("border: 2px solid #098c04;")
-                self.ui.carrierFreqInputASK.setMaximum(value)
-                self.ui.sliderASK.setMaximum(value)
-        elif (mod == "askmin"):
-            if (self.ui.carrierFreqInputASK.maximum() < value) :
-                self.ui.minCarrierASK.setStyleSheet("border: 2px solid #ff0000;")
-                print("No se puede cambiar: MinAct={0} MinIng={1}".format(self.ui.carrierFreqInputASK.minimum(),value))
-            else:
-                self.ui.minCarrierASK.setStyleSheet("border: 2px solid #098c04;")
-                self.ui.carrierFreqInputASK.setMinimum(value)
-                self.ui.sliderASK.setMinimum(value)
-        elif (mod == "fsk1max"):
-            if (self.ui.carrierFreq1InputFSK.minimum() > value) :
-                self.ui.maxCarrierFSK1.setStyleSheet("border: 2px solid #ff0000;")
-                print("No se puede cambiar: MaxAct={0} MaxIng={1}".format(self.ui.carrierFreq1InputFSK.maximum(),value))
-            else:
-                self.ui.maxCarrierFSK1.setStyleSheet("border: 2px solid #098c04;")
-                self.ui.carrierFreq1InputFSK.setMaximum(value)
-                self.ui.sliderFSK1.setMaximum(value)
-        elif (mod == "fsk1min"):
-            if (self.ui.carrierFreq1InputFSK.maximum() < value) :
-                self.ui.minCarrierFSK1.setStyleSheet("border: 2px solid #ff0000;")
-                print("No se puede cambiar: MinAct={0} MinIng={1}".format(self.ui.carrierFreq1InputFSK.minimum(),value))
-            else:
-                self.ui.minCarrierFSK1.setStyleSheet("border: 2px solid #098c04;")
-                self.ui.carrierFreq1InputFSK.setMinimum(value)
-                self.ui.sliderFSK1.setMinimum(value)
-        elif (mod == "fsk2max"):
-            if (self.ui.carrierFreq2InputFSK.minimum() > value) :
-                self.ui.maxCarrierFSK2.setStyleSheet("border: 2px solid #ff0000;")
-                print("No se puede cambiar: MaxAct={0} MaxIng={1}".format(self.ui.carrierFreq2InputFSK.maximum(),value))
-            else:
-                self.ui.maxCarrierFSK2.setStyleSheet("border: 2px solid #098c04;")
-                self.ui.carrierFreq2InputFSK.setMaximum(value)
-                self.ui.sliderFSK2.setMaximum(value)
-        elif (mod == "fsk2min"):
-            if (self.ui.carrierFreq2InputFSK.maximum() < value) :
-                self.ui.minCarrierFSK2.setStyleSheet("border: 2px solid #ff0000;")
-                print("No se puede cambiar: MinAct={0} MinIng={1}".format(self.ui.carrierFreq2InputFSK.minimum(),value))
-            else:
-                self.ui.minCarrierFSK2.setStyleSheet("border: 2px solid #098c04;")
-                self.ui.carrierFreq2InputFSK.setMinimum(value)
-                self.ui.sliderFSK2.setMinimum(value)
-        elif (mod == "pskmax"):
-            if (self.ui.carrierFreqInputPSK.minimum() > value) :
-                self.ui.maxCarrierPSK.setStyleSheet("border: 2px solid #ff0000;")
-                print("No se puede cambiar: MaxAct={0} MaxIng={1}".format(self.ui.carrierFreqInputPSK.maximum(),value))
-            else:
-                self.ui.maxCarrierPSK.setStyleSheet("border: 2px solid #098c04;")
-                self.ui.carrierFreqInputPSK.setMaximum(value)
-                self.ui.sliderPSK.setMaximum(value)
-        elif (mod == "pskmin"):
-            if (self.ui.carrierFreqInputPSK.maximum() < value) :
-                self.ui.maxCarrierPSK.setStyleSheet("border: 2px solid #ff0000;")
-                print("No se puede cambiar: MinAct={0} MinIng={1}".format(self.ui.carrierFreqInputPSK.minimum(),value))
-            else:
-                self.ui.maxCarrierPSK.setStyleSheet("border: 2px solid #098c04;")
-                self.ui.carrierFreqInputPSK.setMinimum(value)
-                self.ui.sliderPSK.setMinimum(value)
+    def valueChanged(self, inputMax: QSpinBox, inputMin: QSpinBox, slider: QSlider, input: QSpinBox, labelMax: QLabel, labelMin: QLabel):
+        newMax = inputMax.value()
+        newMin = inputMin.value()
+        if (newMax - newMin) > 0:
+            slider.setMaximum(newMax)
+            input.setMaximum(newMax)
+            slider.setMinimum(newMin)
+            input.setMinimum(newMin)
+            labelMax.setText("{0} Hz".format(newMax))
+            labelMin.setText("{0} Hz".format(newMin))
+            inputMax.setStyleSheet(Style.style_spinbox_ok)
+            inputMin.setStyleSheet(Style.style_spinbox_ok)
+        else:
+            inputMax.setStyleSheet(Style.style_spinbox_error)
+            inputMin.setStyleSheet(Style.style_spinbox_error)
+            # print("No se puede cambiar: MaxAct={0} MaxIng={1}".format())
+        # if (mod == "ask"):
+        #     if (self.ui.carrierFreqInputASK.minimum() > value) :
+        #         # self.ui.maxCarrierASK.setStyleSheet("border: 2px solid #ff0000;")
+        #         self.ui.maxCarrierASK.setStyleSheet(Style.style_spinbox_error)
+        #         print("No se puede cambiar: MaxAct={0} MaxIng={1}".format(self.ui.carrierFreqInputASK.maximum(),value))
+        #     else:
+        #         self.ui.maxCarrierASK.setStyleSheet(Style.style_spinbox_ok)
+        #         self.ui.carrierFreqInputASK.setMaximum(value)
+        #         self.ui.sliderASK.setMaximum(value)
+        # elif (mod == "askmin"):
+        #     if (self.ui.carrierFreqInputASK.maximum() < value) :
+        #         self.ui.minCarrierASK.setStyleSheet(Style.style_spinbox_error)
+        #         print("No se puede cambiar: MinAct={0} MinIng={1}".format(self.ui.carrierFreqInputASK.minimum(),value))
+        #     else:
+        #         self.ui.minCarrierASK.setStyleSheet(Style.style_spinbox_ok)
+        #         self.ui.carrierFreqInputASK.setMinimum(value)
+        #         self.ui.sliderASK.setMinimum(value)
+        # elif (mod == "fsk1max"):
+        #     if (self.ui.carrierFreq1InputFSK.minimum() > value) :
+        #         self.ui.maxCarrierFSK1.setStyleSheet(Style.style_spinbox_error)
+        #         print("No se puede cambiar: MaxAct={0} MaxIng={1}".format(self.ui.carrierFreq1InputFSK.maximum(),value))
+        #     else:
+        #         self.ui.maxCarrierFSK1.setStyleSheet(Style.style_spinbox_ok)
+        #         self.ui.carrierFreq1InputFSK.setMaximum(value)
+        #         self.ui.sliderFSK1.setMaximum(value)
+        # elif (mod == "fsk1min"):
+        #     if (self.ui.carrierFreq1InputFSK.maximum() < value) :
+        #         self.ui.minCarrierFSK1.setStyleSheet(Style.style_spinbox_error)
+        #         print("No se puede cambiar: MinAct={0} MinIng={1}".format(self.ui.carrierFreq1InputFSK.minimum(),value))
+        #     else:
+        #         self.ui.minCarrierFSK1.setStyleSheet(Style.style_spinbox_ok)
+        #         self.ui.carrierFreq1InputFSK.setMinimum(value)
+        #         self.ui.sliderFSK1.setMinimum(value)
+        # elif (mod == "fsk2max"):
+        #     if (self.ui.carrierFreq2InputFSK.minimum() > value) :
+        #         self.ui.maxCarrierFSK2.setStyleSheet(Style.style_spinbox_error)
+        #         print("No se puede cambiar: MaxAct={0} MaxIng={1}".format(self.ui.carrierFreq2InputFSK.maximum(),value))
+        #     else:
+        #         self.ui.maxCarrierFSK2.setStyleSheet(Style.style_spinbox_ok)
+        #         self.ui.carrierFreq2InputFSK.setMaximum(value)
+        #         self.ui.sliderFSK2.setMaximum(value)
+        # elif (mod == "fsk2min"):
+        #     if (self.ui.carrierFreq2InputFSK.maximum() < value) :
+        #         self.ui.minCarrierFSK2.setStyleSheet(Style.style_spinbox_error)
+        #         print("No se puede cambiar: MinAct={0} MinIng={1}".format(self.ui.carrierFreq2InputFSK.minimum(),value))
+        #     else:
+        #         self.ui.minCarrierFSK2.setStyleSheet(Style.style_spinbox_ok)
+        #         self.ui.carrierFreq2InputFSK.setMinimum(value)
+        #         self.ui.sliderFSK2.setMinimum(value)
+        # elif (mod == "pskmax"):
+        #     if (self.ui.carrierFreqInputPSK.minimum() > value) :
+        #         self.ui.maxCarrierPSK.setStyleSheet(Style.style_spinbox_error)
+        #         print("No se puede cambiar: MaxAct={0} MaxIng={1}".format(self.ui.carrierFreqInputPSK.maximum(),value))
+        #     else:
+        #         self.ui.maxCarrierPSK.setStyleSheet(Style.style_spinbox_ok)
+        #         self.ui.carrierFreqInputPSK.setMaximum(value)
+        #         self.ui.sliderPSK.setMaximum(value)
+        # elif (mod == "pskmin"):
+        #     if (self.ui.carrierFreqInputPSK.maximum() < value) :
+        #         self.ui.maxCarrierPSK.setStyleSheet(Style.style_spinbox_error)
+        #         print("No se puede cambiar: MinAct={0} MinIng={1}".format(self.ui.carrierFreqInputPSK.minimum(),value))
+        #     else:
+        #         self.ui.maxCarrierPSK.setStyleSheet(Style.style_spinbox_ok)
+        #         self.ui.carrierFreqInputPSK.setMinimum(value)
+        #         self.ui.sliderPSK.setMinimum(value)
 
     ## EVENT ==> MOUSE DOUBLE CLICK
     ########################################################################
@@ -806,7 +819,7 @@ class HelpWindow(QMainWindow):
         QMainWindow.__init__(self)
         self.ui = Ui_helpWindow()
         self.ui.setupUi(self)
-        self.setWindowIcon(QtGui.QIcon('sigma-logo.ico'))
+        # self.setWindowIcon(QtGui.QIcon('sigma-logo.ico'))
 
         ########################################################################
         ## START - WINDOW ATTRIBUTES
@@ -849,6 +862,12 @@ class HelpWindow(QMainWindow):
         UIFunctionsHelp.uiDefinitions(self)
         ## ==> END ##
 
+        self.ui.btn_home.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_main))
+        self.ui.btn_home.clicked.connect(lambda: UIFunctionsHelp.labelTitle(self, 'Manual de Usuario'))
+
+        self.ui.btn_prev.clicked.connect(lambda: self.pageHandler(self.ui.stackedWidget.currentIndex(), -1))
+        self.ui.btn_next.clicked.connect(lambda: self.pageHandler(self.ui.stackedWidget.currentIndex(), 1))
+
         self.show()
 
     def changeWidget(self, widget):
@@ -888,6 +907,21 @@ class HelpWindow(QMainWindow):
     # def resizeFunction(self):
     #     print('Height: ' + str(self.height()) + ' | Width: ' + str(self.width()))
     ## ==> END ##
+    
+    def pageHandler(self, index, offset):
+        index += offset
+        self.ui.stackedWidget.setCurrentIndex(index)
+        print(self.ui.stackedWidget.currentIndex())
+        if index == 0:
+            UIFunctionsHelp.labelTitle(self, 'Manual de Usuario')
+        elif index == 1:
+            UIFunctionsHelp.labelTitle(self, 'Ayuda ASK')
+        elif index == 2:
+            UIFunctionsHelp.labelTitle(self, 'Ayuda FSK')
+        elif index == 3:
+            UIFunctionsHelp.labelTitle(self, 'Ayuda PSK')
+        elif index == 4:
+            UIFunctionsHelp.labelTitle(self, 'Ayuda Ajustes')
 
     ########################################################################
     ## END ==> APP EVENTS

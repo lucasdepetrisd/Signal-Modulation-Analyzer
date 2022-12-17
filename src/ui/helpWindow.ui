@@ -30,6 +30,10 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="files.qrc">
+    <normaloff>:/bigSize/icons/bigSize/sigma-logo.png</normaloff>:/bigSize/icons/bigSize/sigma-logo.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">/* LINE EDIT */
 QLineEdit {
@@ -237,6 +241,12 @@ QSlider::handle:vertical:pressed {
 }
 
 </string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>24</width>
+    <height>24</height>
+   </size>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -659,6 +669,129 @@ color: white;
                      </property>
                     </widget>
                    </item>
+                   <item>
+                    <widget class="QPushButton" name="btn_home">
+                     <property name="minimumSize">
+                      <size>
+                       <width>30</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>30</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+	border: none;
+	background-color: transparent;
+}
+
+QPushButton:hover {
+	background-color: rgb(52, 59, 72);
+	border-radius: 15px
+}
+
+QPushButton:pressed{
+	background-color: rgb(11, 11, 11);
+	border-radius: 15px
+}
+
+</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="files.qrc">
+                       <normaloff>:/20x20/icons/20x20/cil-home.png</normaloff>:/20x20/icons/20x20/cil-home.png</iconset>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btn_prev">
+                     <property name="minimumSize">
+                      <size>
+                       <width>30</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>30</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+	border: none;
+	background-color: transparent;
+}
+
+QPushButton:hover {
+	background-color: rgb(52, 59, 72);
+	border-radius: 15px
+}
+
+QPushButton:pressed{
+	background-color: rgb(11, 11, 11);
+	border-radius: 15px
+}
+
+</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="files.qrc">
+                       <normaloff>:/20x20/icons/20x20/cil-arrow-left.png</normaloff>:/20x20/icons/20x20/cil-arrow-left.png</iconset>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btn_next">
+                     <property name="minimumSize">
+                      <size>
+                       <width>30</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>30</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+	border: none;
+	background-color: transparent;
+}
+
+QPushButton:hover {
+	background-color: rgb(52, 59, 72);
+	border-radius: 15px
+}
+
+QPushButton:pressed{
+	background-color: rgb(11, 11, 11);
+	border-radius: 15px
+}
+
+</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="files.qrc">
+                       <normaloff>:/20x20/icons/20x20/cil-arrow-right.png</normaloff>:/20x20/icons/20x20/cil-arrow-right.png</iconset>
+                     </property>
+                    </widget>
+                   </item>
                   </layout>
                  </widget>
                 </item>
@@ -775,7 +908,7 @@ QPushButton:hover {
 	background-color: rgb(189, 0, 0);
 }
 QPushButton:pressed {	
-	background-color: rgb(85, 170, 255);
+	background-color: rgb(189, 88, 88);
 }</string>
                      </property>
                      <property name="text">
@@ -910,10 +1043,22 @@ QPushButton:pressed {
                    <string notr="true">background: transparent;</string>
                   </property>
                   <property name="currentIndex">
-                   <number>4</number>
+                   <number>1</number>
                   </property>
                   <widget class="QWidget" name="page_main">
                    <layout class="QHBoxLayout" name="horizontalLayout_34">
+                    <property name="leftMargin">
+                     <number>6</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>6</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>6</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>6</number>
+                    </property>
                     <item>
                      <widget class="QFrame" name="frame_32">
                       <property name="minimumSize">
@@ -2202,7 +2347,7 @@ border-radius: 5px;</string>
                              <string notr="true">color: rgb(255, 255, 255);</string>
                             </property>
                             <property name="text">
-                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; text-decoration: underline;&quot;&gt;¡Bienvenido a SigMA!&lt;/span&gt;&lt;/p&gt;&lt;p&gt;A la izquierda se tiene un modelo como el que encontrará en cada tipo de modulación. La simulación se actualizará automáticamente a medida que cambie estos valores.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; text-decoration: underline;&quot;&gt;Ingresar el Mensaje&lt;/span&gt;&lt;/p&gt;&lt;p&gt;En (1) puede cambiar la cadena que se enviará como mensaje, en (2) se indicará si coincide con la longitud y los caracteres. SigMA soporta cadenas de bits (0 o 1) de longitudes en potencias de 2 (2, 4, 8 y 16 bits).&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; text-decoration: underline;&quot;&gt;Modificar la Señal&lt;/span&gt;&lt;/p&gt;&lt;p&gt;En (3) se muestra la señal a modificar. Podrá ingresar o deslizar en (4) para cambiar la frecuencia de la señal.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; text-decoration: underline;&quot;&gt;Animar el Resultado&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Finalmente para mostrar una animación de la señal presione en el botón Modular (5). Puede Pausar la animación con (6) o limpiar la pantalla utilizando Limpiar en (7).&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; text-decoration: underline;&quot;&gt;Ayuda&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Desde cualquier menú utilice el botón de ayuda (9) para mostrar más información sobre la ventana actual.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; text-decoration: underline;&quot;&gt;¡Bienvenido a SigMA!&lt;/span&gt;&lt;/p&gt;&lt;p&gt;A la izquierda se tiene un modelo como el que encontrará en cada tipo de modulación. La simulación se actualizará automáticamente a medida que cambie estos valores.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; text-decoration: underline;&quot;&gt;Ingresar el Mensaje&lt;/span&gt;&lt;/p&gt;&lt;p&gt;En (1) puede cambiar la cadena que se enviará como mensaje, en (2) se indicará si coincide con la longitud y los caracteres. SigMA soporta cadenas de bits (0 o 1) de longitudes en potencias de 2 (2, 4, 8 y 16 bits).&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; text-decoration: underline;&quot;&gt;Modificar la Señal&lt;/span&gt;&lt;/p&gt;&lt;p&gt;En (3) se muestra la señal a modificar. Podrá ingresar en (4) o deslizar en (5) para cambiar la frecuencia de la señal.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; text-decoration: underline;&quot;&gt;Animar el Resultado&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Finalmente para mostrar una animación de la señal presione en el botón Modular (6). Puede Pausar la animación con (7) o limpiar la pantalla utilizando Limpiar en (8).&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; text-decoration: underline;&quot;&gt;Ayuda&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Desde cualquier menú utilice el botón de ayuda (9) para mostrar más información sobre la ventana actual.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/24x24/icons/24x24/sigma-logo.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                             <property name="scaledContents">
                              <bool>false</bool>
@@ -2240,12 +2385,12 @@ border-radius: 5px;</string>
                     <property name="bottomMargin">
                      <number>6</number>
                     </property>
-                    <item>
+                    <item alignment="Qt::AlignTop">
                      <widget class="QFrame" name="frame_4">
                       <property name="minimumSize">
                        <size>
                         <width>180</width>
-                        <height>0</height>
+                        <height>385</height>
                        </size>
                       </property>
                       <property name="maximumSize">
@@ -2868,12 +3013,12 @@ border-radius: 5px;</string>
                     <property name="bottomMargin">
                      <number>6</number>
                     </property>
-                    <item>
+                    <item alignment="Qt::AlignTop">
                      <widget class="QFrame" name="frame_6">
                       <property name="minimumSize">
                        <size>
                         <width>180</width>
-                        <height>0</height>
+                        <height>540</height>
                        </size>
                       </property>
                       <property name="maximumSize">
@@ -3759,6 +3904,12 @@ border-radius: 5px;</string>
                               <height>0</height>
                              </size>
                             </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>650</height>
+                             </size>
+                            </property>
                             <property name="font">
                              <font>
                               <family>Satoshi</family>
@@ -3803,12 +3954,12 @@ border-radius: 5px;</string>
                     <property name="bottomMargin">
                      <number>6</number>
                     </property>
-                    <item>
+                    <item alignment="Qt::AlignTop">
                      <widget class="QFrame" name="frame_11">
                       <property name="minimumSize">
                        <size>
                         <width>180</width>
-                        <height>0</height>
+                        <height>385</height>
                        </size>
                       </property>
                       <property name="maximumSize">
@@ -4345,16 +4496,16 @@ border-radius: 5px;</string>
                     </property>
                     <item alignment="Qt::AlignTop">
                      <widget class="QFrame" name="frame_18">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
                       <property name="minimumSize">
                        <size>
-                        <width>180</width>
-                        <height>0</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>280</width>
-                        <height>16777215</height>
+                        <width>220</width>
+                        <height>425</height>
                        </size>
                       </property>
                       <property name="styleSheet">
@@ -4373,7 +4524,7 @@ border-radius: 5px;</string>
                          <property name="verticalSpacing">
                           <number>6</number>
                          </property>
-                         <item row="1" column="0">
+                         <item row="2" column="0" alignment="Qt::AlignTop">
                           <widget class="QFrame" name="frame_21">
                            <property name="sizePolicy">
                             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -4390,7 +4541,7 @@ border-radius: 5px;</string>
                            <property name="maximumSize">
                             <size>
                              <width>16777215</width>
-                             <height>290</height>
+                             <height>400</height>
                             </size>
                            </property>
                            <property name="styleSheet">
@@ -4403,7 +4554,7 @@ border-radius: 5px;</string>
                            <property name="frameShadow">
                             <enum>QFrame::Raised</enum>
                            </property>
-                           <layout class="QVBoxLayout" name="verticalLayout_26" stretch="0,0,0,0,0">
+                           <layout class="QVBoxLayout" name="verticalLayout_26" stretch="0,0,0,0,0,0,0,0,0">
                             <property name="spacing">
                              <number>6</number>
                             </property>
@@ -4471,7 +4622,7 @@ color: white;
                                <string notr="true">color: rgb(191, 203, 217)</string>
                               </property>
                               <property name="text">
-                               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Frecuencia Máxima (Hz)&lt;br/&gt;1-10.000&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Frecuencia Máxima (Hz) 1-10.000&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                               </property>
                               <property name="alignment">
                                <set>Qt::AlignCenter</set>
@@ -4598,7 +4749,7 @@ QSpinBox::down-button{
                                <string notr="true">color: rgb(191, 203, 217)</string>
                               </property>
                               <property name="text">
-                               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Frecuencia Mínima (Hz)&lt;br/&gt;1-1000&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Frecuencia Mínima (Hz) 1-1000&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                               </property>
                               <property name="alignment">
                                <set>Qt::AlignCenter</set>
@@ -4696,10 +4847,260 @@ QSpinBox::down-button{
                               </property>
                              </widget>
                             </item>
+                            <item>
+                             <widget class="Line" name="line">
+                              <property name="maximumSize">
+                               <size>
+                                <width>16777215</width>
+                                <height>1</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(255, 255, 255);</string>
+                              </property>
+                              <property name="orientation">
+                               <enum>Qt::Horizontal</enum>
+                              </property>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QPushButton" name="btn_AplicarASK">
+                              <property name="sizePolicy">
+                               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                               </sizepolicy>
+                              </property>
+                              <property name="minimumSize">
+                               <size>
+                                <width>150</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>16777215</width>
+                                <height>40</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <family>Satoshi Black</family>
+                                <pointsize>14</pointsize>
+                                <weight>75</weight>
+                                <bold>true</bold>
+                               </font>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">QPushButton {
+	border: 2px solid rgb(56, 170, 72);
+	border-radius: 5px;	
+	background-color: rgb(63, 152, 90);
+}
+
+/* rgb(52, 59, 72)*/
+QPushButton:hover {
+	background-color: rgb(60, 198, 84);
+	border: 2px solid rgb(60, 196, 72);
+}
+QPushButton:pressed {	
+	background-color: rgb(37, 138, 26);
+	border: 2px solid rgb(60, 196, 72);
+}</string>
+                              </property>
+                              <property name="text">
+                               <string>Aplicar</string>
+                              </property>
+                              <property name="icon">
+                               <iconset resource="files.qrc">
+                                <normaloff>:/16x16/icons/16x16/cil-check-alt.png</normaloff>:/16x16/icons/16x16/cil-check-alt.png</iconset>
+                              </property>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QFrame" name="frame_20">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>40</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>16777215</width>
+                                <height>40</height>
+                               </size>
+                              </property>
+                              <property name="frameShape">
+                               <enum>QFrame::StyledPanel</enum>
+                              </property>
+                              <property name="frameShadow">
+                               <enum>QFrame::Raised</enum>
+                              </property>
+                              <layout class="QHBoxLayout" name="horizontalLayout_22">
+                               <item>
+                                <widget class="QLabel" name="label_top_info_31">
+                                 <property name="minimumSize">
+                                  <size>
+                                   <width>0</width>
+                                   <height>20</height>
+                                  </size>
+                                 </property>
+                                 <property name="maximumSize">
+                                  <size>
+                                   <width>16777215</width>
+                                   <height>30</height>
+                                  </size>
+                                 </property>
+                                 <property name="font">
+                                  <font>
+                                   <family>Satoshi</family>
+                                   <pointsize>12</pointsize>
+                                   <weight>75</weight>
+                                   <bold>true</bold>
+                                  </font>
+                                 </property>
+                                 <property name="styleSheet">
+                                  <string notr="true">color: rgb(191, 203, 217)</string>
+                                 </property>
+                                 <property name="text">
+                                  <string>Frec Máxima Actual:</string>
+                                 </property>
+                                 <property name="alignment">
+                                  <set>Qt::AlignCenter</set>
+                                 </property>
+                                </widget>
+                               </item>
+                               <item alignment="Qt::AlignRight">
+                                <widget class="QLabel" name="label_maxASK">
+                                 <property name="minimumSize">
+                                  <size>
+                                   <width>0</width>
+                                   <height>20</height>
+                                  </size>
+                                 </property>
+                                 <property name="maximumSize">
+                                  <size>
+                                   <width>16777215</width>
+                                   <height>30</height>
+                                  </size>
+                                 </property>
+                                 <property name="font">
+                                  <font>
+                                   <family>Satoshi</family>
+                                   <pointsize>12</pointsize>
+                                   <weight>75</weight>
+                                   <bold>true</bold>
+                                  </font>
+                                 </property>
+                                 <property name="styleSheet">
+                                  <string notr="true">color: rgb(191, 203, 217)</string>
+                                 </property>
+                                 <property name="text">
+                                  <string>200 Hz</string>
+                                 </property>
+                                 <property name="alignment">
+                                  <set>Qt::AlignCenter</set>
+                                 </property>
+                                </widget>
+                               </item>
+                              </layout>
+                             </widget>
+                            </item>
+                            <item>
+                             <widget class="QFrame" name="frame_16">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>40</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>16777215</width>
+                                <height>40</height>
+                               </size>
+                              </property>
+                              <property name="frameShape">
+                               <enum>QFrame::StyledPanel</enum>
+                              </property>
+                              <property name="frameShadow">
+                               <enum>QFrame::Raised</enum>
+                              </property>
+                              <layout class="QHBoxLayout" name="horizontalLayout_18">
+                               <item>
+                                <widget class="QLabel" name="label_top_info_27">
+                                 <property name="minimumSize">
+                                  <size>
+                                   <width>0</width>
+                                   <height>20</height>
+                                  </size>
+                                 </property>
+                                 <property name="maximumSize">
+                                  <size>
+                                   <width>16777215</width>
+                                   <height>30</height>
+                                  </size>
+                                 </property>
+                                 <property name="font">
+                                  <font>
+                                   <family>Satoshi</family>
+                                   <pointsize>12</pointsize>
+                                   <weight>75</weight>
+                                   <bold>true</bold>
+                                  </font>
+                                 </property>
+                                 <property name="styleSheet">
+                                  <string notr="true">color: rgb(191, 203, 217)</string>
+                                 </property>
+                                 <property name="text">
+                                  <string>Frec Mínima Actual:</string>
+                                 </property>
+                                 <property name="alignment">
+                                  <set>Qt::AlignCenter</set>
+                                 </property>
+                                </widget>
+                               </item>
+                               <item alignment="Qt::AlignRight">
+                                <widget class="QLabel" name="label_minASK">
+                                 <property name="minimumSize">
+                                  <size>
+                                   <width>0</width>
+                                   <height>20</height>
+                                  </size>
+                                 </property>
+                                 <property name="maximumSize">
+                                  <size>
+                                   <width>16777215</width>
+                                   <height>30</height>
+                                  </size>
+                                 </property>
+                                 <property name="font">
+                                  <font>
+                                   <family>Satoshi</family>
+                                   <pointsize>12</pointsize>
+                                   <weight>75</weight>
+                                   <bold>true</bold>
+                                  </font>
+                                 </property>
+                                 <property name="styleSheet">
+                                  <string notr="true">color: rgb(191, 203, 217)</string>
+                                 </property>
+                                 <property name="text">
+                                  <string>1 Hz</string>
+                                 </property>
+                                 <property name="alignment">
+                                  <set>Qt::AlignCenter</set>
+                                 </property>
+                                </widget>
+                               </item>
+                              </layout>
+                             </widget>
+                            </item>
                            </layout>
                           </widget>
                          </item>
-                         <item row="0" column="0">
+                         <item row="1" column="0">
                           <widget class="QLabel" name="label_title_bar_top_6">
                            <property name="sizePolicy">
                             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -4716,7 +5117,7 @@ QSpinBox::down-button{
                            <property name="maximumSize">
                             <size>
                              <width>16777215</width>
-                             <height>125</height>
+                             <height>50</height>
                             </size>
                            </property>
                            <property name="font">
@@ -4756,332 +5157,6 @@ color: white;
                            </property>
                           </widget>
                          </item>
-                         <item row="2" column="0">
-                          <widget class="QFrame" name="frame_23">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>200</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>290</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">background-color: rgb(23, 32, 77);
-border-radius: 5px;</string>
-                           </property>
-                           <property name="frameShape">
-                            <enum>QFrame::StyledPanel</enum>
-                           </property>
-                           <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                           </property>
-                           <layout class="QVBoxLayout" name="verticalLayout_27" stretch="0,0,0,0,0">
-                            <property name="spacing">
-                             <number>6</number>
-                            </property>
-                            <item>
-                             <widget class="QLabel" name="label_top_info_24">
-                              <property name="minimumSize">
-                               <size>
-                                <width>0</width>
-                                <height>25</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>25</height>
-                               </size>
-                              </property>
-                              <property name="font">
-                               <font>
-                                <family>Satoshi Black</family>
-                                <pointsize>12</pointsize>
-                                <weight>75</weight>
-                                <bold>true</bold>
-                               </font>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QLabel{
-	background-color: rgb(33, 46, 112);
-	border: 0px solid ;
-	border-radius: 8px;
-color: white;
-}</string>
-                              </property>
-                              <property name="text">
-                               <string>Señal 2</string>
-                              </property>
-                              <property name="alignment">
-                               <set>Qt::AlignCenter</set>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QLabel" name="label_top_info_25">
-                              <property name="minimumSize">
-                               <size>
-                                <width>0</width>
-                                <height>40</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>30</height>
-                               </size>
-                              </property>
-                              <property name="font">
-                               <font>
-                                <family>Satoshi</family>
-                                <pointsize>12</pointsize>
-                                <weight>75</weight>
-                                <bold>true</bold>
-                               </font>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">color: rgb(191, 203, 217)</string>
-                              </property>
-                              <property name="text">
-                               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Frecuencia Máxima (Hz)&lt;br/&gt;1-10.000&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                              </property>
-                              <property name="alignment">
-                               <set>Qt::AlignCenter</set>
-                              </property>
-                              <property name="wordWrap">
-                               <bool>true</bool>
-                              </property>
-                             </widget>
-                            </item>
-                            <item alignment="Qt::AlignHCenter">
-                             <widget class="QSpinBox" name="maxCarrierFSK1_2">
-                              <property name="sizePolicy">
-                               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                               </sizepolicy>
-                              </property>
-                              <property name="minimumSize">
-                               <size>
-                                <width>150</width>
-                                <height>30</height>
-                               </size>
-                              </property>
-                              <property name="font">
-                               <font>
-                                <family>Satoshi</family>
-                                <pointsize>10</pointsize>
-                                <weight>75</weight>
-                                <bold>true</bold>
-                               </font>
-                              </property>
-                              <property name="toolTip">
-                               <string/>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QSpinBox{
-	background-color: rgb(5, 7, 35);
-	color: rgb(255,255,255);
-	border-radius: 5px;
-	border: 2px solid rgb(10, 11, 35);
-	padding: 5px;
-	padding-left: 10px;
-}
-QSpinBox:hover{
-	border: 2px solid rgb(0, 0, 127)
-}
-QSpinBox QAbstractItemView {
-	color: rgb(85, 170, 255);	
-	background-color: rgb(27, 29, 35);
-	padding: 10px;
-	selection-background-color: rgb(27, 29, 35);
-}
-/*
-rgb(27, 29, 35);
-rgb(13, 9, 59)
-*/
-
-QSpinBox::up-button{
-	width: 25px; 
-	border-left-width: 3px;
-	border-left-color: rgba(39, 44, 54, 150);
-	border-left-style: solid;
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;	
-	background-image: url(:/16x16/icons/16x16/cil-arrow-top.png);
-	background-position: center;
-	background-repeat: no-reperat;
-}
-
-QSpinBox::up-button:hover{
-	background-color: rgb(80, 80, 80)
-}
-
-QSpinBox::down-button:hover{
-	background-color: rgb(80, 80, 80)
-}
-
-QSpinBox::down-button{
-	width: 25px; 
-	border-left-width: 3px;
-	border-left-color: rgba(39, 44, 54, 150);
-	border-left-style: solid;
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;	
-	background-image: url(:/16x16/icons/16x16/cil-arrow-bottom.png);
-	background-position: center;
-	background-repeat: no-reperat;
-}</string>
-                              </property>
-                              <property name="minimum">
-                               <number>1</number>
-                              </property>
-                              <property name="maximum">
-                               <number>10000</number>
-                              </property>
-                              <property name="value">
-                               <number>200</number>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QLabel" name="label_top_info_26">
-                              <property name="minimumSize">
-                               <size>
-                                <width>0</width>
-                                <height>40</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>30</height>
-                               </size>
-                              </property>
-                              <property name="font">
-                               <font>
-                                <family>Satoshi</family>
-                                <pointsize>12</pointsize>
-                                <weight>75</weight>
-                                <bold>true</bold>
-                               </font>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">color: rgb(191, 203, 217)</string>
-                              </property>
-                              <property name="text">
-                               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Frecuencia Mínima (Hz)&lt;br/&gt;1-1000&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                              </property>
-                              <property name="alignment">
-                               <set>Qt::AlignCenter</set>
-                              </property>
-                              <property name="wordWrap">
-                               <bool>true</bool>
-                              </property>
-                             </widget>
-                            </item>
-                            <item alignment="Qt::AlignHCenter">
-                             <widget class="QSpinBox" name="minCarrierFSK1_2">
-                              <property name="sizePolicy">
-                               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                               </sizepolicy>
-                              </property>
-                              <property name="minimumSize">
-                               <size>
-                                <width>150</width>
-                                <height>30</height>
-                               </size>
-                              </property>
-                              <property name="font">
-                               <font>
-                                <family>Satoshi</family>
-                                <pointsize>10</pointsize>
-                                <weight>75</weight>
-                                <bold>true</bold>
-                               </font>
-                              </property>
-                              <property name="toolTip">
-                               <string/>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QSpinBox{
-	background-color: rgb(5, 7, 35);
-	color: rgb(255,255,255);
-	border-radius: 5px;
-	border: 2px solid rgb(10, 11, 35);
-	padding: 5px;
-	padding-left: 10px;
-}
-QSpinBox:hover{
-	border: 2px solid rgb(0, 0, 127)
-}
-QSpinBox QAbstractItemView {
-	color: rgb(85, 170, 255);	
-	background-color: rgb(27, 29, 35);
-	padding: 10px;
-	selection-background-color: rgb(27, 29, 35);
-}
-/*
-rgb(27, 29, 35);
-rgb(13, 9, 59)
-*/
-
-QSpinBox::up-button{
-	width: 25px; 
-	border-left-width: 3px;
-	border-left-color: rgba(39, 44, 54, 150);
-	border-left-style: solid;
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;	
-	background-image: url(:/16x16/icons/16x16/cil-arrow-top.png);
-	background-position: center;
-	background-repeat: no-reperat;
-}
-
-QSpinBox::up-button:hover{
-	background-color: rgb(80, 80, 80)
-}
-
-QSpinBox::down-button:hover{
-	background-color: rgb(80, 80, 80)
-}
-
-QSpinBox::down-button{
-	width: 25px; 
-	border-left-width: 3px;
-	border-left-color: rgba(39, 44, 54, 150);
-	border-left-style: solid;
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;	
-	background-image: url(:/16x16/icons/16x16/cil-arrow-bottom.png);
-	background-position: center;
-	background-repeat: no-reperat;
-}</string>
-                              </property>
-                              <property name="minimum">
-                               <number>1</number>
-                              </property>
-                              <property name="maximum">
-                               <number>1000</number>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
-                          </widget>
-                         </item>
                         </layout>
                        </item>
                       </layout>
@@ -5093,6 +5168,12 @@ QSpinBox::down-button{
                        <size>
                         <width>200</width>
                         <height>0</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>450</width>
+                        <height>650</height>
                        </size>
                       </property>
                       <property name="styleSheet">
@@ -5119,7 +5200,7 @@ border-radius: 5px;</string>
                            <widget class="QLabel" name="label_4">
                             <property name="minimumSize">
                              <size>
-                              <width>450</width>
+                              <width>0</width>
                               <height>0</height>
                              </size>
                             </property>
@@ -5149,23 +5230,31 @@ border-radius: 5px;</string>
                            <widget class="QLabel" name="label_5">
                             <property name="minimumSize">
                              <size>
-                              <width>450</width>
+                              <width>0</width>
                               <height>0</height>
                              </size>
                             </property>
                             <property name="font">
                              <font>
                               <family>Satoshi</family>
-                              <pointsize>14</pointsize>
+                              <pointsize>18</pointsize>
                               <weight>75</weight>
                               <bold>true</bold>
                              </font>
                             </property>
+                            <property name="styleSheet">
+                             <string notr="true">QLabel{
+background-color: rgb(27, 29, 35);
+border: 0px solid ;
+border-radius: 8px;
+padding: 10px
+}</string>
+                            </property>
                             <property name="text">
-                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;¡CUIDADO!&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;LOS VALORES DEMASIADO ALTOS PUEDEN CONGELAR LA APLICACIÓN. SOLO CAMBIAR SI SABE LO QUE HACE.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/20x20/icons/20x20/cil-danger.png&quot;/&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt; ¡CUIDADO! &lt;/span&gt;&lt;img src=&quot;:/20x20/icons/20x20/cil-danger.png&quot;/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#e70000;&quot;&gt;LOS VALORES DEMASIADO ALTOS PUEDEN CONGELAR LA APLICACIÓN. SOLO CAMBIAR SI SABE LO QUE HACE.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                             <property name="alignment">
-                             <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+                             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                             </property>
                             <property name="wordWrap">
                              <bool>true</bool>
@@ -5309,12 +5398,12 @@ border-radius: 5px;</string>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>170</x>
-     <y>398</y>
+     <x>207</x>
+     <y>282</y>
     </hint>
     <hint type="destinationlabel">
-     <x>175</x>
-     <y>426</y>
+     <x>212</x>
+     <y>313</y>
     </hint>
    </hints>
   </connection>
@@ -5325,12 +5414,12 @@ border-radius: 5px;</string>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>420</y>
+     <x>156</x>
+     <y>313</y>
     </hint>
     <hint type="destinationlabel">
-     <x>114</x>
-     <y>390</y>
+     <x>151</x>
+     <y>282</y>
     </hint>
    </hints>
   </connection>
@@ -5341,12 +5430,12 @@ border-radius: 5px;</string>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>308</y>
+     <x>153</x>
+     <y>278</y>
     </hint>
     <hint type="destinationlabel">
-     <x>105</x>
-     <y>346</y>
+     <x>139</x>
+     <y>312</y>
     </hint>
    </hints>
   </connection>
@@ -5357,12 +5446,12 @@ border-radius: 5px;</string>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>214</x>
-     <y>342</y>
+     <x>248</x>
+     <y>312</y>
     </hint>
     <hint type="destinationlabel">
-     <x>212</x>
-     <y>303</y>
+     <x>246</x>
+     <y>278</y>
     </hint>
    </hints>
   </connection>
@@ -5373,12 +5462,12 @@ border-radius: 5px;</string>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>102</x>
-     <y>472</y>
+     <x>136</x>
+     <y>434</y>
     </hint>
     <hint type="destinationlabel">
-     <x>99</x>
-     <y>518</y>
+     <x>133</x>
+     <y>468</y>
     </hint>
    </hints>
   </connection>
@@ -5389,12 +5478,12 @@ border-radius: 5px;</string>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>206</x>
-     <y>510</y>
+     <x>240</x>
+     <y>468</y>
     </hint>
     <hint type="destinationlabel">
-     <x>211</x>
-     <y>472</y>
+     <x>245</x>
+     <y>434</y>
     </hint>
    </hints>
   </connection>
@@ -5405,12 +5494,12 @@ border-radius: 5px;</string>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>137</x>
-     <y>408</y>
+     <x>174</x>
+     <y>286</y>
     </hint>
     <hint type="destinationlabel">
-     <x>133</x>
-     <y>439</y>
+     <x>170</x>
+     <y>315</y>
     </hint>
    </hints>
   </connection>
@@ -5421,12 +5510,12 @@ border-radius: 5px;</string>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>219</x>
-     <y>426</y>
+     <x>256</x>
+     <y>315</y>
     </hint>
     <hint type="destinationlabel">
-     <x>219</x>
-     <y>400</y>
+     <x>256</x>
+     <y>286</y>
     </hint>
    </hints>
   </connection>

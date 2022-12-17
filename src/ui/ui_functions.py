@@ -545,7 +545,6 @@ class UIFunctionsHelp(MainWindow):
         ## SHOW ==> CLOSE APPLICATION
         self.ui.btn_close.clicked.connect(lambda: self.hide())
 
-
     ########################################################################
     ## END - GUI DEFINITIONS
     ########################################################################
