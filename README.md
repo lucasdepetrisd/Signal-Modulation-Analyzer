@@ -40,7 +40,7 @@ SigMA o Signal Modulation Analyzer es un conjunto de simuladores creados para la
 ## ![SigMA logo](./src/ui/icons/16x16/sigma-logo.png) Ajustes de valores máximos y mínimos en la simulación.
 > ### Settings menu for max. and min. values.
 <p align="center">
-    <img src="repo/sigma-ask.gif" width="700">
+    <img src="repo/sigma-settings.gif" width="700">
 <p/>
 
 Además incluye:
