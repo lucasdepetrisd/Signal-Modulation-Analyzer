@@ -1,8 +1,9 @@
 ################################################################################
 ##
-# BY: WANDERSON M.PIMENTA
+# BASED ON WANDERSON M. PIMENTA'S PROJECT
 # PROJECT MADE WITH: Qt Designer and PySide2
 # V: 1.0.0
+# EDITED BY: LUCAS DEPETRIS
 ##
 # This project can be used freely for all uses, as long as they maintain the
 # respective credits only in the Python scripts, any information in the visual
