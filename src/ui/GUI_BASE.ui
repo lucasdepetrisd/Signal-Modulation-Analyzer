@@ -1021,7 +1021,7 @@ QPushButton:pressed {
                      </property>
                      <property name="styleSheet">
                       <string notr="true">background: transparent;
-background-image: url(:/16x16/icons/16x16/sigma-logo.png);
+background-image: url(:/20x20/icons/20x20/sigma-logo.png);
 background-position: center;
 background-repeat: no-repeat;
 </string>
@@ -1603,13 +1603,13 @@ border-radius: 5px;</string>
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
-                           <height>0</height>
+                           <height>80</height>
                           </size>
                          </property>
                          <property name="maximumSize">
                           <size>
                            <width>16777215</width>
-                           <height>160</height>
+                           <height>170</height>
                           </size>
                          </property>
                          <property name="frameShape">
@@ -1634,32 +1634,22 @@ border-radius: 5px;</string>
                           <property name="bottomMargin">
                            <number>0</number>
                           </property>
-                          <item>
-                           <widget class="QFrame" name="frame_icon_top_bar_2">
+                          <item alignment="Qt::AlignLeft">
+                           <widget class="QLabel" name="label">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
                             <property name="minimumSize">
                              <size>
-                              <width>70</width>
+                              <width>0</width>
                               <height>80</height>
                              </size>
                             </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>80</width>
-                              <height>120</height>
-                             </size>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">background: transparent;
-background-image: url(:/bigSize/icons/bigSize/sigma-logo.png);
-background-position: center;
-background-repeat: no-repeat;
-</string>
-                            </property>
-                            <property name="frameShape">
-                             <enum>QFrame::StyledPanel</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Raised</enum>
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/bigSize/icons/bigSize/sigma-logo.png&quot;/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                            </widget>
                           </item>
@@ -1690,32 +1680,16 @@ background-repeat: no-repeat;
                             </property>
                            </widget>
                           </item>
-                          <item>
-                           <widget class="QFrame" name="frame_icon_top_bar_3">
+                          <item alignment="Qt::AlignRight|Qt::AlignTop">
+                           <widget class="QLabel" name="label_2">
                             <property name="minimumSize">
                              <size>
-                              <width>70</width>
+                              <width>0</width>
                               <height>80</height>
                              </size>
                             </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>80</width>
-                              <height>120</height>
-                             </size>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">background: transparent;
-background-image: url(:/bigSize/icons/bigSize/sigma-logo.png);
-background-position: center;
-background-repeat: no-repeat;
-</string>
-                            </property>
-                            <property name="frameShape">
-                             <enum>QFrame::StyledPanel</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Raised</enum>
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/bigSize/icons/bigSize/sigma-logo.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                            </widget>
                           </item>
@@ -2302,7 +2276,7 @@ QLineEdit:focus {
                             <set>Qt::ImhNone</set>
                            </property>
                            <property name="text">
-                            <string>1100101011001010</string>
+                            <string>0110110001100100</string>
                            </property>
                            <property name="maxLength">
                             <number>16</number>
@@ -3328,7 +3302,7 @@ fontSizeMode: Text.Fit
                             <set>Qt::ImhNone</set>
                            </property>
                            <property name="text">
-                            <string>1100111100001101</string>
+                            <string>0110110001100100</string>
                            </property>
                            <property name="maxLength">
                             <number>16</number>
@@ -4149,7 +4123,7 @@ fontSizeMode: Text.Fit
                             <set>Qt::ImhNone</set>
                            </property>
                            <property name="text">
-                            <string>1010000011001011</string>
+                            <string>0110110001100100</string>
                            </property>
                            <property name="maxLength">
                             <number>16</number>

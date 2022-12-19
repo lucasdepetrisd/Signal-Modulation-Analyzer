@@ -449,7 +449,7 @@ class Ui_MainWindow(object):
         self.frame_icon_top_bar.setObjectName(u"frame_icon_top_bar")
         self.frame_icon_top_bar.setMaximumSize(QSize(30, 30))
         self.frame_icon_top_bar.setStyleSheet(u"background: transparent;\n"
-"background-image: url(:/16x16/icons/16x16/sigma-logo.png);\n"
+"background-image: url(:/20x20/icons/20x20/sigma-logo.png);\n"
 "background-position: center;\n"
 "background-repeat: no-repeat;\n"
 "")
@@ -716,27 +716,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.frame_25 = QFrame(self.frame_22)
         self.frame_25.setObjectName(u"frame_25")
-        self.frame_25.setMinimumSize(QSize(0, 0))
-        self.frame_25.setMaximumSize(QSize(16777215, 160))
+        self.frame_25.setMinimumSize(QSize(0, 80))
+        self.frame_25.setMaximumSize(QSize(16777215, 170))
         self.frame_25.setFrameShape(QFrame.StyledPanel)
         self.frame_25.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_17 = QHBoxLayout(self.frame_25)
         self.horizontalLayout_17.setSpacing(0)
         self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
         self.horizontalLayout_17.setContentsMargins(0, 0, 0, 0)
-        self.frame_icon_top_bar_2 = QFrame(self.frame_25)
-        self.frame_icon_top_bar_2.setObjectName(u"frame_icon_top_bar_2")
-        self.frame_icon_top_bar_2.setMinimumSize(QSize(70, 80))
-        self.frame_icon_top_bar_2.setMaximumSize(QSize(80, 120))
-        self.frame_icon_top_bar_2.setStyleSheet(u"background: transparent;\n"
-"background-image: url(:/bigSize/icons/bigSize/sigma-logo.png);\n"
-"background-position: center;\n"
-"background-repeat: no-repeat;\n"
-"")
-        self.frame_icon_top_bar_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_icon_top_bar_2.setFrameShadow(QFrame.Raised)
+        self.label = QLabel(self.frame_25)
+        self.label.setObjectName(u"label")
+        sizePolicy3.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
+        self.label.setSizePolicy(sizePolicy3)
+        self.label.setMinimumSize(QSize(0, 80))
 
-        self.horizontalLayout_17.addWidget(self.frame_icon_top_bar_2)
+        self.horizontalLayout_17.addWidget(self.label, 0, Qt.AlignLeft)
 
         self.label_6 = QLabel(self.frame_25)
         self.label_6.setObjectName(u"label_6")
@@ -751,19 +745,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_17.addWidget(self.label_6)
 
-        self.frame_icon_top_bar_3 = QFrame(self.frame_25)
-        self.frame_icon_top_bar_3.setObjectName(u"frame_icon_top_bar_3")
-        self.frame_icon_top_bar_3.setMinimumSize(QSize(70, 80))
-        self.frame_icon_top_bar_3.setMaximumSize(QSize(80, 120))
-        self.frame_icon_top_bar_3.setStyleSheet(u"background: transparent;\n"
-"background-image: url(:/bigSize/icons/bigSize/sigma-logo.png);\n"
-"background-position: center;\n"
-"background-repeat: no-repeat;\n"
-"")
-        self.frame_icon_top_bar_3.setFrameShape(QFrame.StyledPanel)
-        self.frame_icon_top_bar_3.setFrameShadow(QFrame.Raised)
+        self.label_2 = QLabel(self.frame_25)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setMinimumSize(QSize(0, 80))
 
-        self.horizontalLayout_17.addWidget(self.frame_icon_top_bar_3)
+        self.horizontalLayout_17.addWidget(self.label_2, 0, Qt.AlignRight|Qt.AlignTop)
 
 
         self.verticalLayout_15.addWidget(self.frame_25)
@@ -3549,7 +3535,9 @@ class Ui_MainWindow(object):
         self.label_top_info_1.setText(QCoreApplication.translate("MainWindow", u"C:\\Program Files\\Blender Foundation\\Blender 2.82", None))
         self.label_top_info_2.setText(QCoreApplication.translate("MainWindow", u"| INICIO", None))
         self.label_user_icon.setText(QCoreApplication.translate("MainWindow", u"LD", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\":/bigSize/icons/bigSize/sigma-logo.png\"/></p><p><br/></p></body></html>", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u" Bienvenido a SigMA ", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\":/bigSize/icons/bigSize/sigma-logo.png\"/></p></body></html>", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Seleccione una opci\u00f3n</p></body></html>", None))
 #if QT_CONFIG(tooltip)
         self.Btn_helpMain.setToolTip(QCoreApplication.translate("MainWindow", u"Consigue ayuda sobre esta p\u00e1gina", None))
@@ -3581,7 +3569,7 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(whatsthis)
         self.messageInputASK.setWhatsThis("")
 #endif // QT_CONFIG(whatsthis)
-        self.messageInputASK.setText(QCoreApplication.translate("MainWindow", u"1100101011001010", None))
+        self.messageInputASK.setText(QCoreApplication.translate("MainWindow", u"0110110001100100", None))
         self.messageInputASK.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese una cadena de bits", None))
         self.labelASK.setText(QCoreApplication.translate("MainWindow", u"16/16", None))
         self.label_top_info_4.setText(QCoreApplication.translate("MainWindow", u"Se\u00f1al Portadora", None))
@@ -3639,7 +3627,7 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(whatsthis)
         self.messageInputFSK.setWhatsThis("")
 #endif // QT_CONFIG(whatsthis)
-        self.messageInputFSK.setText(QCoreApplication.translate("MainWindow", u"1100111100001101", None))
+        self.messageInputFSK.setText(QCoreApplication.translate("MainWindow", u"0110110001100100", None))
         self.messageInputFSK.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese cadena de bits", None))
 #if QT_CONFIG(tooltip)
         self.Btn_pauseFSK.setToolTip(QCoreApplication.translate("MainWindow", u"Pausa la animaci\u00f3n", None))
@@ -3693,7 +3681,7 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(whatsthis)
         self.messageInputPSK.setWhatsThis("")
 #endif // QT_CONFIG(whatsthis)
-        self.messageInputPSK.setText(QCoreApplication.translate("MainWindow", u"1010000011001011", None))
+        self.messageInputPSK.setText(QCoreApplication.translate("MainWindow", u"0110110001100100", None))
         self.messageInputPSK.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese cadena de bits", None))
         self.labelPSK.setText(QCoreApplication.translate("MainWindow", u"16/16", None))
         self.clearBtnPSK.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))

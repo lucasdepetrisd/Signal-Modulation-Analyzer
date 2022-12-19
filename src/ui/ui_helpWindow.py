@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'helpWindowSSqIxk.ui'
+## Form generated from reading UI file 'helpWindowhpjDCH.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -510,7 +510,7 @@ class Ui_helpWindow(object):
         self.frame_icon_top_bar.setObjectName(u"frame_icon_top_bar")
         self.frame_icon_top_bar.setMaximumSize(QSize(30, 30))
         self.frame_icon_top_bar.setStyleSheet(u"background: transparent;\n"
-"background-image: url(:/16x16/icons/16x16/sigma-logo.png);\n"
+"background-image: url(:/20x20/icons/20x20/sigma-logo.png);\n"
 "background-position: center;\n"
 "background-repeat: no-repeat;\n"
 "")
