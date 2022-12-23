@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'helpWindowhpjDCH.ui'
+## Form generated from reading UI file 'helpWindowxdcyvl.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -22,12 +22,16 @@ class Ui_helpWindow(object):
         helpWindow.setMinimumSize(QSize(800, 740))
         helpWindow.setMaximumSize(QSize(800, 740))
         font = QFont()
-        font.setFamily(u"Satoshi")
+        font.setFamily(u"Satoshi Black")
         helpWindow.setFont(font)
         icon = QIcon()
         icon.addFile(u":/bigSize/icons/bigSize/sigma-logo.png", QSize(), QIcon.Normal, QIcon.Off)
         helpWindow.setWindowIcon(icon)
         helpWindow.setStyleSheet(u"/* LINE EDIT */\n"
+"QMainWindow {\n"
+"	font-family: \"Satoshi Black\"\n"
+"}\n"
+"\n"
 "QLineEdit {\n"
 "	background-color: rgb(27, 29, 35);\n"
 "	border-radius: 5px;\n"
@@ -64,10 +68,10 @@ class Ui_helpWindow(object):
 "    subcontrol-position: right;\n"
 "    subcontrol-origin: margin;\n"
 "}\n"
-"QScrollBar::sub-line:horizontal {\n"
+"QScrollBar::sub-lin"
+                        "e:horizontal {\n"
 "    border: none;\n"
-"    background: rgb(55, "
-                        "63, 77);\n"
+"    background: rgb(55, 63, 77);\n"
 "    width: 20px;\n"
 "	border-top-left-radius: 7px;\n"
 "    border-bottom-left-radius: 7px;\n"
@@ -101,11 +105,11 @@ class Ui_helpWindow(object):
 "	border-bottom-left-radius: 7px;\n"
 "    border-bottom-right-radius: 7px;\n"
 "     subcontrol-position: bottom;\n"
-"     subcontrol-origin: margin;\n"
+"     subcontrol-origin: ma"
+                        "rgin;\n"
 " }\n"
 " QScrollBar::sub-line:vertical {\n"
-"	border: no"
-                        "ne;\n"
+"	border: none;\n"
 "    background: rgb(55, 63, 77);\n"
 "     height: 20px;\n"
 "	border-top-left-radius: 7px;\n"
@@ -139,11 +143,11 @@ class Ui_helpWindow(object):
 "}\n"
 "\n"
 "/* RADIO BUTTON */\n"
-"QRadioButton::indicator {\n"
+"QRadioButton::indicator {"
+                        "\n"
 "    border: 3px solid rgb(52, 59, 72);\n"
 "	width: 15px;\n"
-""
-                        "	height: 15px;\n"
+"	height: 15px;\n"
 "	border-radius: 10px;\n"
 "    background: rgb(44, 49, 60);\n"
 "}\n"
@@ -176,11 +180,11 @@ class Ui_helpWindow(object):
 "	border-top-right-radius: 3px;\n"
 "	border-bottom-right-radius: 3px;	\n"
 "	background-image: url(:/16x16/icons/16x16/cil-arrow-bottom.png);\n"
-"	background-position: center;\n"
+"	background-position: ce"
+                        "nter;\n"
 "	background-repeat: no-reperat;\n"
 " }\n"
-"QComboBox QAb"
-                        "stractItemView {\n"
+"QComboBox QAbstractItemView {\n"
 "	color: rgb(85, 170, 255);	\n"
 "	background-color: rgb(27, 29, 35);\n"
 "	padding: 10px;\n"
@@ -218,9 +222,9 @@ class Ui_helpWindow(object):
 "    margin: 0px;\n"
 "	background-color: rgb(52, 59, 72);\n"
 "}\n"
-"QSlider::groove:vertical:hover {\n"
-"	background-color: rgb(55, 62, 76)"
-                        ";\n"
+"QSlid"
+                        "er::groove:vertical:hover {\n"
+"	background-color: rgb(55, 62, 76);\n"
 "}\n"
 "QSlider::handle:vertical {\n"
 "    background-color: rgb(85, 170, 255);\n"
@@ -510,7 +514,7 @@ class Ui_helpWindow(object):
         self.frame_icon_top_bar.setObjectName(u"frame_icon_top_bar")
         self.frame_icon_top_bar.setMaximumSize(QSize(30, 30))
         self.frame_icon_top_bar.setStyleSheet(u"background: transparent;\n"
-"background-image: url(:/20x20/icons/20x20/sigma-logo.png);\n"
+"background-image: url(:/16x16/icons/16x16/sigma-logo.png);\n"
 "background-position: center;\n"
 "background-repeat: no-repeat;\n"
 "")
@@ -2764,7 +2768,7 @@ class Ui_helpWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.label_23.setText(QCoreApplication.translate("helpWindow", u"(5)", None))
         self.label_21.setText(QCoreApplication.translate("helpWindow", u"(6)", None))
-        self.modulateBtnASK_2.setText(QCoreApplication.translate("helpWindow", u"Modular", None))
+        self.modulateBtnASK_2.setText(QCoreApplication.translate("helpWindow", u"Animar", None))
         self.label_25.setText(QCoreApplication.translate("helpWindow", u"(7)", None))
 #if QT_CONFIG(tooltip)
         self.Btn_pauseASK_2.setToolTip(QCoreApplication.translate("helpWindow", u"Pausa la animaci\u00f3n", None))

@@ -707,7 +707,7 @@ class Ui_MainWindow(object):
         self.frame_22 = QFrame(self.page_home)
         self.frame_22.setObjectName(u"frame_22")
         self.frame_22.setMinimumSize(QSize(0, 150))
-        self.frame_22.setMaximumSize(QSize(16777215, 191))
+        self.frame_22.setMaximumSize(QSize(16777215, 204))
         self.frame_22.setStyleSheet(u"background-color: rgb(39, 44, 54);\n"
 "border-radius: 5px;")
         self.frame_22.setFrameShape(QFrame.StyledPanel)
@@ -716,8 +716,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.frame_25 = QFrame(self.frame_22)
         self.frame_25.setObjectName(u"frame_25")
-        self.frame_25.setMinimumSize(QSize(0, 80))
-        self.frame_25.setMaximumSize(QSize(16777215, 170))
+        self.frame_25.setMinimumSize(QSize(0, 95))
+        self.frame_25.setMaximumSize(QSize(16777215, 190))
+        self.frame_25.setStyleSheet(u"QFrame {\n"
+"	background-color: rgb(27, 29, 35);\n"
+"	border: 0px solid ;\n"
+"	border-radius: 12px;\n"
+"	padding: 4px\n"
+"}")
         self.frame_25.setFrameShape(QFrame.StyledPanel)
         self.frame_25.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_17 = QHBoxLayout(self.frame_25)
@@ -728,9 +734,11 @@ class Ui_MainWindow(object):
         self.label.setObjectName(u"label")
         sizePolicy3.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
         self.label.setSizePolicy(sizePolicy3)
-        self.label.setMinimumSize(QSize(0, 80))
+        self.label.setMinimumSize(QSize(80, 80))
+        self.label.setMaximumSize(QSize(16777215, 89))
+        self.label.setStyleSheet(u"background-color: rgba(255, 255, 255, 0);")
 
-        self.horizontalLayout_17.addWidget(self.label, 0, Qt.AlignLeft)
+        self.horizontalLayout_17.addWidget(self.label)
 
         self.label_6 = QLabel(self.frame_25)
         self.label_6.setObjectName(u"label_6")
@@ -743,11 +751,13 @@ class Ui_MainWindow(object):
         self.label_6.setStyleSheet(u"")
         self.label_6.setAlignment(Qt.AlignCenter)
 
-        self.horizontalLayout_17.addWidget(self.label_6)
+        self.horizontalLayout_17.addWidget(self.label_6, 0, Qt.AlignHCenter)
 
         self.label_2 = QLabel(self.frame_25)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setMinimumSize(QSize(0, 80))
+        self.label_2.setMaximumSize(QSize(16777215, 90))
+        self.label_2.setStyleSheet(u"background-color: rgba(255, 255, 255, 0);")
 
         self.horizontalLayout_17.addWidget(self.label_2, 0, Qt.AlignRight|Qt.AlignTop)
 

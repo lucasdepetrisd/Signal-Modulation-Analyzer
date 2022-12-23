@@ -11,10 +11,8 @@ import sys
 import platform
 # from PySide2 import QtCore, QtGui, QtWidgets, QtTest
 from PySide2 import QtCore, QtGui
-from PySide2.QtCore import QSize, Qt
-from PySide2.QtGui import QColor, QFont
-# from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
-# from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
+from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
+from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PySide2.QtWidgets import *
 
 # GUI FILE
@@ -22,6 +20,7 @@ from app_modules import *
 
 # MODULATIONS
 from matplotlib.backends.backend_qt5agg  import  ( NavigationToolbar2QT  as  NavigationToolbar )
+from matplotlib.backends.backend_qt5agg import FigureManagerQT
 from PySide2.QtWidgets import *
 import sys
 
@@ -101,7 +100,7 @@ class MainWindow(QMainWindow):
         ## USER ICON ==> SHOW HIDE
         UIFunctions.userIcon(self, "LD", "url(:/24x24/icons/24x24/sigma-logo.png)", True)
         UIFunctions.labelCredits(self, "Desarrollado por: Lucas Depetris")
-        UIFunctions.labelVersion(self, "v1.0")
+        UIFunctions.labelVersion(self, "v1.1")
         ## ==> END ##
 
 
@@ -588,22 +587,22 @@ class MainWindow(QMainWindow):
 
             # Plotting carrier signal 1 and asigning line
             self.ui.MplWidgetFSK.canvas.ax1.clear()
-            lin1, = self.ui.MplWidgetFSK.canvas.ax1.plot(t,carrier_signal_1,color='cyan',label=f'Señal 1 \nFrecuencia: {Fc1} Hz')
+            lin1, = self.ui.MplWidgetFSK.canvas.ax1.plot(t,carrier_signal_1,color='green',label=f'Señal 1 \nFrecuencia: {Fc1} Hz')
             self.ui.MplWidgetFSK.canvas.ax1.legend(loc = 'lower right')
 
             # Plotting carrier signal 2 and asigning line
             self.ui.MplWidgetFSK.canvas.ax2.clear()
-            lin2, = self.ui.MplWidgetFSK.canvas.ax2.plot(t,carrier_signal_2,color='yellow',label=f'Señal 2 \nFrecuencia:{Fc2} Hz')
+            lin2, = self.ui.MplWidgetFSK.canvas.ax2.plot(t,carrier_signal_2,color='lime',label=f'Señal 2 \nFrecuencia:{Fc2} Hz')
             self.ui.MplWidgetFSK.canvas.ax2.legend(loc = 'lower right')
             
             # Plotting Data Signal and asigning line
             self.ui.MplWidgetFSK.canvas.ax3.clear()
-            lin3, = self.ui.MplWidgetFSK.canvas.ax3.plot(t,data_signal,color='lightcoral',label=f'Frec de Muestreo: {Fs} Hz\nBits : {message}')
+            lin3, = self.ui.MplWidgetFSK.canvas.ax3.plot(t,data_signal,color='red',label=f'Frec de Muestreo: {Fs} Hz\nBits : {message}')
             self.ui.MplWidgetFSK.canvas.ax3.legend(loc = 'lower right')
 
             # Plotting FSK modulated signal and asigning line
             self.ui.MplWidgetFSK.canvas.ax4.clear()
-            lin4, = self.ui.MplWidgetFSK.canvas.ax4.plot(t,fsk_signal,color='white',label=f'Señal FSK \n(0): Frec = {Fc1} Hz\n(1): Frec = {Fc2} Hz\nAB = {bandWidth} Hz')
+            lin4, = self.ui.MplWidgetFSK.canvas.ax4.plot(t,fsk_signal,color='darkorange',label=f'Señal FSK \n(0): Frec = {Fc1} Hz\n(1): Frec = {Fc2} Hz\nAB = {bandWidth} Hz')
             self.ui.MplWidgetFSK.canvas.ax4.legend(loc = 'lower right')
 
             line = [lin1, lin2, lin3, lin4]
@@ -645,7 +644,7 @@ class MainWindow(QMainWindow):
             t = np.arange(0, 1, 1/Fs)
             samples = len(t) // len(message)
             
-            BG = BinaryGenerator(message,samples)
+            BG = BinaryGenerator(message, samples)
 
             data_signal = BG.generateBipolar()
             carrier_signal = np.sin(2 * np.pi * Fc * t)
@@ -926,7 +925,9 @@ class HelpWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     QtGui.QFontDatabase.addApplicationFont('./ui/fonts/Satoshi-Black.ttf')
+    QtGui.QFontDatabase.addApplicationFont('./ui/fonts/segoeui.ttf')
     QtGui.QFontDatabase.addApplicationFont('./ui/fonts/Satoshi-Light.ttf')
     QtGui.QFontDatabase.addApplicationFont('./ui/fonts/Satoshi-Regular.ttf')
+    app.setFont("Segoe UI", "*")
     window = MainWindow()
     sys.exit(app.exec_())

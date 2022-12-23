@@ -568,8 +568,25 @@ QToolTip {
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true">background: transparent;
-color: rgb(210, 210, 210);</string>
+    <string notr="true">QLabel {
+	color: rgb(210, 210, 210);
+}
+
+QPushButton {
+	color: rgb(210, 210, 210);
+}
+
+QLineEdit {
+	color: rgb(210, 210, 210);
+}
+
+QSpinBox {
+	color: rgb(210, 210, 210);
+}
+
+QWidget {
+	background: transparent;
+}</string>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <property name="spacing">
@@ -1569,7 +1586,7 @@ QPushButton:pressed {
                    <string notr="true">background: transparent;</string>
                   </property>
                   <property name="currentIndex">
-                   <number>0</number>
+                   <number>2</number>
                   </property>
                   <widget class="QWidget" name="page_home">
                    <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -1584,7 +1601,7 @@ QPushButton:pressed {
                       <property name="maximumSize">
                        <size>
                         <width>16777215</width>
-                        <height>191</height>
+                        <height>204</height>
                        </size>
                       </property>
                       <property name="styleSheet">
@@ -1603,14 +1620,22 @@ border-radius: 5px;</string>
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
-                           <height>80</height>
+                           <height>95</height>
                           </size>
                          </property>
                          <property name="maximumSize">
                           <size>
                            <width>16777215</width>
-                           <height>170</height>
+                           <height>190</height>
                           </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">QFrame {
+	background-color: rgb(27, 29, 35);
+	border: 0px solid ;
+	border-radius: 12px;
+	padding: 4px
+}</string>
                          </property>
                          <property name="frameShape">
                           <enum>QFrame::StyledPanel</enum>
@@ -1634,7 +1659,7 @@ border-radius: 5px;</string>
                           <property name="bottomMargin">
                            <number>0</number>
                           </property>
-                          <item alignment="Qt::AlignLeft">
+                          <item>
                            <widget class="QLabel" name="label">
                             <property name="sizePolicy">
                              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -1644,16 +1669,25 @@ border-radius: 5px;</string>
                             </property>
                             <property name="minimumSize">
                              <size>
-                              <width>0</width>
+                              <width>80</width>
                               <height>80</height>
                              </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>89</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
                             </property>
                             <property name="text">
                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/bigSize/icons/bigSize/sigma-logo.png&quot;/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                            </widget>
                           </item>
-                          <item>
+                          <item alignment="Qt::AlignHCenter">
                            <widget class="QLabel" name="label_6">
                             <property name="maximumSize">
                              <size>
@@ -1687,6 +1721,15 @@ border-radius: 5px;</string>
                               <width>0</width>
                               <height>80</height>
                              </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>90</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
                             </property>
                             <property name="text">
                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/bigSize/icons/bigSize/sigma-logo.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -2574,7 +2617,7 @@ QPushButton:pressed {
 }</string>
                            </property>
                            <property name="text">
-                            <string>Modular</string>
+                            <string>Animar</string>
                            </property>
                            <property name="icon">
                             <iconset resource="files.qrc">
@@ -3733,7 +3776,7 @@ QPushButton:pressed {
 }</string>
                            </property>
                            <property name="text">
-                            <string>Modular</string>
+                            <string>Animar</string>
                            </property>
                            <property name="icon">
                             <iconset resource="files.qrc">
@@ -3789,7 +3832,8 @@ QPushButton:pressed {
                          </property>
                          <property name="styleSheet">
                           <string notr="true">background-color: rgba(0,0,0,0.7);
-border-radius: 5px;</string>
+border-radius: 5px;
+color: rgb(210, 210, 210);</string>
                          </property>
                         </widget>
                        </item>
@@ -3873,7 +3917,7 @@ QPushButton:pressed {
 }</string>
                            </property>
                            <property name="text">
-                            <string>Modular</string>
+                            <string>Animar</string>
                            </property>
                            <property name="icon">
                             <iconset resource="files.qrc">
@@ -4589,7 +4633,7 @@ border-radius: 5px;</string>
                             </property>
                             <property name="maximumSize">
                              <size>
-                              <width>300</width>
+                              <width>350</width>
                               <height>16777215</height>
                              </size>
                             </property>
@@ -4739,7 +4783,7 @@ border-radius: 5px;</string>
                                    <widget class="QLabel" name="label_top_info_17">
                                     <property name="minimumSize">
                                      <size>
-                                      <width>0</width>
+                                      <width>250</width>
                                       <height>20</height>
                                      </size>
                                     </property>
@@ -4862,7 +4906,7 @@ QSpinBox::down-button{
                                    <widget class="QLabel" name="label_top_info_18">
                                     <property name="minimumSize">
                                      <size>
-                                      <width>0</width>
+                                      <width>250</width>
                                       <height>20</height>
                                      </size>
                                     </property>
@@ -5222,7 +5266,7 @@ QPushButton:pressed {
                             </property>
                             <property name="maximumSize">
                              <size>
-                              <width>300</width>
+                              <width>350</width>
                               <height>16777215</height>
                              </size>
                             </property>
@@ -5323,7 +5367,7 @@ border-radius: 5px;</string>
                                    <widget class="QLabel" name="label_top_info_23">
                                     <property name="minimumSize">
                                      <size>
-                                      <width>0</width>
+                                      <width>250</width>
                                       <height>20</height>
                                      </size>
                                     </property>
@@ -5446,7 +5490,7 @@ QSpinBox::down-button{
                                    <widget class="QLabel" name="label_top_info_21">
                                     <property name="minimumSize">
                                      <size>
-                                      <width>0</width>
+                                      <width>250</width>
                                       <height>20</height>
                                      </size>
                                     </property>
@@ -5858,7 +5902,7 @@ border-radius: 5px;</string>
                                    <widget class="QLabel" name="label_top_info_25">
                                     <property name="minimumSize">
                                      <size>
-                                      <width>0</width>
+                                      <width>250</width>
                                       <height>20</height>
                                      </size>
                                     </property>
@@ -5981,7 +6025,7 @@ QSpinBox::down-button{
                                    <widget class="QLabel" name="label_top_info_28">
                                     <property name="minimumSize">
                                      <size>
-                                      <width>0</width>
+                                      <width>250</width>
                                       <height>20</height>
                                      </size>
                                     </property>
@@ -6399,7 +6443,7 @@ FSK</string>
                             </property>
                             <property name="maximumSize">
                              <size>
-                              <width>300</width>
+                              <width>350</width>
                               <height>16777215</height>
                              </size>
                             </property>
@@ -6546,7 +6590,7 @@ border-radius: 5px;</string>
                                    <widget class="QLabel" name="label_top_info_20">
                                     <property name="minimumSize">
                                      <size>
-                                      <width>0</width>
+                                      <width>250</width>
                                       <height>20</height>
                                      </size>
                                     </property>
@@ -6669,7 +6713,7 @@ QSpinBox::down-button{
                                    <widget class="QLabel" name="label_top_info_29">
                                     <property name="minimumSize">
                                      <size>
-                                      <width>0</width>
+                                      <width>250</width>
                                       <height>20</height>
                                      </size>
                                     </property>

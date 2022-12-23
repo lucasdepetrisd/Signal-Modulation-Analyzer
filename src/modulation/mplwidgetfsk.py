@@ -2,7 +2,7 @@
 # ----------------- mplwidgetfsk.py --------------------
 # ------------------------------------------------------
 from PySide2.QtWidgets import *
-from matplotlib.backends.backend_qt5agg import FigureCanvas
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import matplotlib.pyplot as plt
 
 class MplWidgetFSK(QWidget):
@@ -24,7 +24,7 @@ class MplWidgetFSK(QWidget):
         self.canvas.axes = self.canvas.figure.add_subplot(111)
         self.canvas.ax = self.canvas.axes
         self.setLayout(vertical_layout)
-        plt.tight_layout(pad = 2)
+        plt.tight_layout(pad = 1)
 
     def updateAnimation(self, animations):
         self.ani1 = animations[0]

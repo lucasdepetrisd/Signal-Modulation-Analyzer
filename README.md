@@ -6,7 +6,7 @@ SigMA o Signal Modulation Analyzer es un conjunto de simuladores creados para la
 > SigMA or Signal Modulation Analyzer is a basic kit made for the Communications subject at UTN-FRT that helps in the learning of different modulation techniques (ASK, FSK and PSK).
 
 
-## ⬇ INSTALACIÓN / INSTALLATION:
+## ⬇ INSTALAR / INSTALL:
 
 > ```sh
 > pip install pyside2==5.15.2 matplotlib scipy numpy

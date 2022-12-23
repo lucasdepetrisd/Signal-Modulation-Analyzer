@@ -23,6 +23,10 @@ class UIFunctions(MainWindow):
     GLOBAL_STATE = 0
     GLOBAL_TITLE_BAR = True
 
+    # custom_font = QFont('Satoshi Black')
+    # custom_font.setWeight(18);
+    # QApplication.setFont(custom_font, "QPushButton")
+
     ########################################################################
     ## START - GUI FUNCTIONS
     ########################################################################
@@ -32,6 +36,7 @@ class UIFunctions(MainWindow):
     def maximize_restore(self):
         global GLOBAL_STATE
         status = GLOBAL_STATE
+        # fontManager(self, status)
         if status == 0:
             self.ui.clearBtnASK.click()
             self.ui.clearBtnFSK.click()
@@ -42,25 +47,6 @@ class UIFunctions(MainWindow):
             self.ui.btn_maximize_restore.setToolTip("Restore")
             self.ui.btn_maximize_restore.setIcon(QtGui.QIcon(u":/16x16/icons/16x16/cil-window-restore.png"))
             self.ui.frame_top_btns.setStyleSheet("background-color: rgb(27, 29, 35)")
-            self.ui.messageInputASK.setFont(QFont('Satoshi Black', 12))
-            self.ui.carrierFreqInputASK.setFont(QFont('Satoshi Black', 12))
-            self.ui.modulateBtnASK.setFont(QFont('Satoshi Black', 20))
-            self.ui.clearBtnASK.setFont(QFont('Satoshi Black', 20))
-            self.ui.messageInputFSK.setFont(QFont('Satoshi Black', 12))
-            self.ui.carrierFreq1InputFSK.setFont(QFont('Satoshi Black', 12))
-            self.ui.carrierFreq2InputFSK.setFont(QFont('Satoshi Black', 12))
-            self.ui.modulateBtnFSK.setFont(QFont('Satoshi Black', 20))
-            self.ui.Btn_pauseASK.setFont(QFont('Satoshi Black', 20))
-            self.ui.Btn_helpASK.setFont(QFont('Satoshi Black', 14))
-            self.ui.Btn_pauseFSK.setFont(QFont('Satoshi Black', 20))
-            self.ui.Btn_helpFSK.setFont(QFont('Satoshi Black', 14))
-            self.ui.Btn_pausePSK.setFont(QFont('Satoshi Black', 20))
-            self.ui.Btn_helpPSK.setFont(QFont('Satoshi Black', 14))
-            self.ui.clearBtnFSK.setFont(QFont('Satoshi Black', 20))
-            self.ui.messageInputPSK.setFont(QFont('Satoshi Black', 12))
-            self.ui.carrierFreqInputPSK.setFont(QFont('Satoshi Black', 12))
-            self.ui.modulateBtnPSK.setFont(QFont('Satoshi Black', 20))
-            self.ui.clearBtnPSK.setFont(QFont('Satoshi Black', 20))
             self.ui.frame_size_grip.hide()
         else:
             GLOBAL_STATE = 0
@@ -73,26 +59,8 @@ class UIFunctions(MainWindow):
             self.ui.btn_maximize_restore.setToolTip("Maximize")
             self.ui.btn_maximize_restore.setIcon(QtGui.QIcon(u":/16x16/icons/16x16/cil-window-maximize.png"))
             self.ui.frame_top_btns.setStyleSheet("background-color: rgba(27, 29, 35, 200)")
-            self.ui.messageInputASK.setFont(QFont('Satoshi Black', 10))
-            self.ui.carrierFreqInputASK.setFont(QFont('Satoshi Black', 10))
-            self.ui.modulateBtnASK.setFont(QFont('Satoshi Black', 14))
-            self.ui.clearBtnASK.setFont(QFont('Satoshi Black', 14))
-            self.ui.messageInputFSK.setFont(QFont('Satoshi Black', 10))
-            self.ui.carrierFreq1InputFSK.setFont(QFont('Satoshi Black', 10))
-            self.ui.carrierFreq2InputFSK.setFont(QFont('Satoshi Black', 10))
-            self.ui.modulateBtnFSK.setFont(QFont('Satoshi Black', 14))
-            self.ui.clearBtnFSK.setFont(QFont('Satoshi Black', 14))
-            self.ui.messageInputPSK.setFont(QFont('Satoshi Black', 10))
-            self.ui.carrierFreqInputPSK.setFont(QFont('Satoshi Black', 10))
-            self.ui.modulateBtnPSK.setFont(QFont('Satoshi Black', 14))
-            self.ui.clearBtnPSK.setFont(QFont('Satoshi Black', 14))
-            self.ui.Btn_pauseASK.setFont(QFont('Satoshi Black', 14))
-            self.ui.Btn_helpASK.setFont(QFont('Satoshi Black', 12))
-            self.ui.Btn_pauseFSK.setFont(QFont('Satoshi Black', 14))
-            self.ui.Btn_helpFSK.setFont(QFont('Satoshi Black', 12))
-            self.ui.Btn_pausePSK.setFont(QFont('Satoshi Black', 14))
-            self.ui.Btn_helpPSK.setFont(QFont('Satoshi Black', 12))
             self.ui.frame_size_grip.show()
+
 
     ## ==> RETURN STATUS
     def returnStatus():
@@ -288,6 +256,48 @@ class UIFunctions(MainWindow):
     ########################################################################
     ## END - GUI DEFINITIONS
     ########################################################################
+
+def fontManager(self, status):
+    if status == 0:
+        self.ui.messageInputASK.setFont(QFont('Satoshi Black', 12))
+        self.ui.carrierFreqInputASK.setFont(QFont('Satoshi Black', 12))
+        self.ui.modulateBtnASK.setFont(QFont('Satoshi Black', 20))
+        self.ui.clearBtnASK.setFont(QFont('Satoshi Black', 20))
+        self.ui.messageInputFSK.setFont(QFont('Satoshi Black', 12))
+        self.ui.carrierFreq1InputFSK.setFont(QFont('Satoshi Black', 12))
+        self.ui.carrierFreq2InputFSK.setFont(QFont('Satoshi Black', 12))
+        self.ui.modulateBtnFSK.setFont(QFont('Satoshi Black', 20))
+        self.ui.Btn_pauseASK.setFont(QFont('Satoshi Black', 20))
+        self.ui.Btn_helpASK.setFont(QFont('Satoshi Black', 14))
+        self.ui.Btn_pauseFSK.setFont(QFont('Satoshi Black', 20))
+        self.ui.Btn_helpFSK.setFont(QFont('Satoshi Black', 14))
+        self.ui.Btn_pausePSK.setFont(QFont('Satoshi Black', 20))
+        self.ui.Btn_helpPSK.setFont(QFont('Satoshi Black', 14))
+        self.ui.clearBtnFSK.setFont(QFont('Satoshi Black', 20))
+        self.ui.messageInputPSK.setFont(QFont('Satoshi Black', 12))
+        self.ui.carrierFreqInputPSK.setFont(QFont('Satoshi Black', 12))
+        self.ui.modulateBtnPSK.setFont(QFont('Satoshi Black', 20))
+        self.ui.clearBtnPSK.setFont(QFont('Satoshi Black', 20))
+    else: 
+        self.ui.messageInputASK.setFont(QFont('Satoshi Black', 10))
+        self.ui.carrierFreqInputASK.setFont(QFont('Satoshi Black', 10))
+        self.ui.modulateBtnASK.setFont(QFont('Satoshi Black', 14))
+        self.ui.clearBtnASK.setFont(QFont('Satoshi Black', 14))
+        self.ui.messageInputFSK.setFont(QFont('Satoshi Black', 10))
+        self.ui.carrierFreq1InputFSK.setFont(QFont('Satoshi Black', 10))
+        self.ui.carrierFreq2InputFSK.setFont(QFont('Satoshi Black', 10))
+        self.ui.modulateBtnFSK.setFont(QFont('Satoshi Black', 14))
+        self.ui.clearBtnFSK.setFont(QFont('Satoshi Black', 14))
+        self.ui.messageInputPSK.setFont(QFont('Satoshi Black', 10))
+        self.ui.carrierFreqInputPSK.setFont(QFont('Satoshi Black', 10))
+        self.ui.modulateBtnPSK.setFont(QFont('Satoshi Black', 14))
+        self.ui.clearBtnPSK.setFont(QFont('Satoshi Black', 14))
+        self.ui.Btn_pauseASK.setFont(QFont('Satoshi Black', 14))
+        self.ui.Btn_helpASK.setFont(QFont('Satoshi Black', 12))
+        self.ui.Btn_pauseFSK.setFont(QFont('Satoshi Black', 14))
+        self.ui.Btn_helpFSK.setFont(QFont('Satoshi Black', 12))
+        self.ui.Btn_pausePSK.setFont(QFont('Satoshi Black', 14))
+        self.ui.Btn_helpPSK.setFont(QFont('Satoshi Black', 12))
 
 class UIFunctionsHelp(MainWindow):
 
