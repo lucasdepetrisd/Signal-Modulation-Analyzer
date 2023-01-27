@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'GUI_BASEAZqJgI.ui'
+## Form generated from reading UI file 'GUI_BASEKsPFIL.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -3444,7 +3444,7 @@ class Ui_MainWindow(object):
         self.frame_28.setFrameShape(QFrame.StyledPanel)
         self.frame_28.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_21 = QHBoxLayout(self.frame_28)
-        self.horizontalLayout_21.setSpacing(0)
+        self.horizontalLayout_21.setSpacing(10)
         self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
         self.horizontalLayout_21.setContentsMargins(0, 0, 0, 0)
         self.Btn_helpSettings = QPushButton(self.frame_28)
@@ -3567,7 +3567,7 @@ class Ui_MainWindow(object):
         self.carrierFreqInputASK.valueChanged.connect(self.sliderASK.setValue)
         self.sliderASK.valueChanged.connect(self.carrierFreqInputASK.setValue)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -3593,7 +3593,7 @@ class Ui_MainWindow(object):
         self.label_top_info_2.setText(QCoreApplication.translate("MainWindow", u"| INICIO", None))
         self.label_user_icon.setText(QCoreApplication.translate("MainWindow", u"LD", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\":/bigSize/icons/bigSize/sigma-logo.png\"/></p><p><br/></p></body></html>", None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u" Bienvenido a SigMA ", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u" Bienvenido/a a SigMA ", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\":/bigSize/icons/bigSize/sigma-logo.png\"/></p></body></html>", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Seleccione una opci\u00f3n</p></body></html>", None))
 #if QT_CONFIG(tooltip)

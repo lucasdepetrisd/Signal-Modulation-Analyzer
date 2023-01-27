@@ -3,7 +3,7 @@
 ## SIGMA BY: LUCAS DEPETRIS
 ## BASED ON WANDERSON M. PIMENTA'S PROJECT AND COMSYS-TRAINER BY SOUMADIP DEY
 ## PROJECT MADE WITH: Qt Designer and PySide2
-## V: 1.0.0
+## V: 1.2.0
 ##
 ################################################################################
 
@@ -26,6 +26,10 @@ import sys
 
 # ANIMATION
 from matplotlib.animation import FuncAnimation
+
+# SETTINGS FILE MANAGER
+import json
+from pathlib import Path
 
 # Telling windows to let me make my own taskbar icons
 # import ctypes
@@ -100,7 +104,7 @@ class MainWindow(QMainWindow):
         ## USER ICON ==> SHOW HIDE
         UIFunctions.userIcon(self, "LD", "url(:/24x24/icons/24x24/sigma-logo.png)", True)
         UIFunctions.labelCredits(self, "Desarrollado por: Lucas Depetris")
-        UIFunctions.labelVersion(self, "v1.1")
+        UIFunctions.labelVersion(self, "v1.2")
         ## ==> END ##
 
 
@@ -170,7 +174,7 @@ class MainWindow(QMainWindow):
         self.ui.btn_AplicarFSK1.clicked.connect(lambda: self.valueChanged(self.ui.maxCarrierFSK1, self.ui.minCarrierFSK1, self.ui.sliderFSK1, self.ui.carrierFreq1InputFSK, self.ui.label_maxFSK_1, self.ui.label_minFSK_1))
         self.ui.btn_AplicarFSK2.clicked.connect(lambda: self.valueChanged(self.ui.maxCarrierFSK2, self.ui.minCarrierFSK2, self.ui.sliderFSK2, self.ui.carrierFreq2InputFSK, self.ui.label_maxFSK_2, self.ui.label_minFSK_2))
         self.ui.btn_AplicarPSK.clicked.connect(lambda: self.valueChanged(self.ui.maxCarrierPSK, self.ui.minCarrierPSK, self.ui.sliderPSK, self.ui.carrierFreqInputPSK, self.ui.label_maxPSK, self.ui.label_minPSK))
-        
+
         ########################################################################
         #                                                                      #
         ## START -------------- WIDGETS FUNCTIONS/PARAMETERS ---------------- ##
@@ -224,6 +228,8 @@ class MainWindow(QMainWindow):
         #                                                                      #
         ############################## ---/--/--- ##############################
 
+        ## INITIALIZE SETTINGS
+        self.loadSettings()
 
         ## SHOW ==> MAIN WINDOW
         ########################################################################
@@ -297,75 +303,56 @@ class MainWindow(QMainWindow):
             labelMin.setText("{0} Hz".format(newMin))
             inputMax.setStyleSheet(Style.style_spinbox_ok)
             inputMin.setStyleSheet(Style.style_spinbox_ok)
+            self.saveSettings()
         else:
             inputMax.setStyleSheet(Style.style_spinbox_error)
             inputMin.setStyleSheet(Style.style_spinbox_error)
             # print("No se puede cambiar: MaxAct={0} MaxIng={1}".format())
-        # if (mod == "ask"):
-        #     if (self.ui.carrierFreqInputASK.minimum() > value) :
-        #         # self.ui.maxCarrierASK.setStyleSheet("border: 2px solid #ff0000;")
-        #         self.ui.maxCarrierASK.setStyleSheet(Style.style_spinbox_error)
-        #         print("No se puede cambiar: MaxAct={0} MaxIng={1}".format(self.ui.carrierFreqInputASK.maximum(),value))
-        #     else:
-        #         self.ui.maxCarrierASK.setStyleSheet(Style.style_spinbox_ok)
-        #         self.ui.carrierFreqInputASK.setMaximum(value)
-        #         self.ui.sliderASK.setMaximum(value)
-        # elif (mod == "askmin"):
-        #     if (self.ui.carrierFreqInputASK.maximum() < value) :
-        #         self.ui.minCarrierASK.setStyleSheet(Style.style_spinbox_error)
-        #         print("No se puede cambiar: MinAct={0} MinIng={1}".format(self.ui.carrierFreqInputASK.minimum(),value))
-        #     else:
-        #         self.ui.minCarrierASK.setStyleSheet(Style.style_spinbox_ok)
-        #         self.ui.carrierFreqInputASK.setMinimum(value)
-        #         self.ui.sliderASK.setMinimum(value)
-        # elif (mod == "fsk1max"):
-        #     if (self.ui.carrierFreq1InputFSK.minimum() > value) :
-        #         self.ui.maxCarrierFSK1.setStyleSheet(Style.style_spinbox_error)
-        #         print("No se puede cambiar: MaxAct={0} MaxIng={1}".format(self.ui.carrierFreq1InputFSK.maximum(),value))
-        #     else:
-        #         self.ui.maxCarrierFSK1.setStyleSheet(Style.style_spinbox_ok)
-        #         self.ui.carrierFreq1InputFSK.setMaximum(value)
-        #         self.ui.sliderFSK1.setMaximum(value)
-        # elif (mod == "fsk1min"):
-        #     if (self.ui.carrierFreq1InputFSK.maximum() < value) :
-        #         self.ui.minCarrierFSK1.setStyleSheet(Style.style_spinbox_error)
-        #         print("No se puede cambiar: MinAct={0} MinIng={1}".format(self.ui.carrierFreq1InputFSK.minimum(),value))
-        #     else:
-        #         self.ui.minCarrierFSK1.setStyleSheet(Style.style_spinbox_ok)
-        #         self.ui.carrierFreq1InputFSK.setMinimum(value)
-        #         self.ui.sliderFSK1.setMinimum(value)
-        # elif (mod == "fsk2max"):
-        #     if (self.ui.carrierFreq2InputFSK.minimum() > value) :
-        #         self.ui.maxCarrierFSK2.setStyleSheet(Style.style_spinbox_error)
-        #         print("No se puede cambiar: MaxAct={0} MaxIng={1}".format(self.ui.carrierFreq2InputFSK.maximum(),value))
-        #     else:
-        #         self.ui.maxCarrierFSK2.setStyleSheet(Style.style_spinbox_ok)
-        #         self.ui.carrierFreq2InputFSK.setMaximum(value)
-        #         self.ui.sliderFSK2.setMaximum(value)
-        # elif (mod == "fsk2min"):
-        #     if (self.ui.carrierFreq2InputFSK.maximum() < value) :
-        #         self.ui.minCarrierFSK2.setStyleSheet(Style.style_spinbox_error)
-        #         print("No se puede cambiar: MinAct={0} MinIng={1}".format(self.ui.carrierFreq2InputFSK.minimum(),value))
-        #     else:
-        #         self.ui.minCarrierFSK2.setStyleSheet(Style.style_spinbox_ok)
-        #         self.ui.carrierFreq2InputFSK.setMinimum(value)
-        #         self.ui.sliderFSK2.setMinimum(value)
-        # elif (mod == "pskmax"):
-        #     if (self.ui.carrierFreqInputPSK.minimum() > value) :
-        #         self.ui.maxCarrierPSK.setStyleSheet(Style.style_spinbox_error)
-        #         print("No se puede cambiar: MaxAct={0} MaxIng={1}".format(self.ui.carrierFreqInputPSK.maximum(),value))
-        #     else:
-        #         self.ui.maxCarrierPSK.setStyleSheet(Style.style_spinbox_ok)
-        #         self.ui.carrierFreqInputPSK.setMaximum(value)
-        #         self.ui.sliderPSK.setMaximum(value)
-        # elif (mod == "pskmin"):
-        #     if (self.ui.carrierFreqInputPSK.maximum() < value) :
-        #         self.ui.maxCarrierPSK.setStyleSheet(Style.style_spinbox_error)
-        #         print("No se puede cambiar: MinAct={0} MinIng={1}".format(self.ui.carrierFreqInputPSK.minimum(),value))
-        #     else:
-        #         self.ui.maxCarrierPSK.setStyleSheet(Style.style_spinbox_ok)
-        #         self.ui.carrierFreqInputPSK.setMinimum(value)
-        #         self.ui.sliderPSK.setMinimum(value)
+
+    def saveSettings(self):
+        print("saving")
+        settings_json = {'maxASK' : self.ui.maxCarrierASK.value(),
+                    'minASK' : self.ui.minCarrierASK.value(),
+                    'maxFSK1' : self.ui.maxCarrierFSK1.value(),
+                    'minFSK1' : self.ui.minCarrierFSK1.value(),
+                    'maxFSK2' : self.ui.maxCarrierFSK2.value(),
+                    'minFSK2' : self.ui.minCarrierFSK2.value(),
+                    'maxPSK' : self.ui.maxCarrierPSK.value(),
+                    'minPSK' : self.ui.minCarrierPSK.value()
+                    }
+        with open('settingSIGMA.json','w+') as fp:
+            fp.seek(0)
+            json.dump(settings_json, fp)#, indent=4)
+            # fp.write(json.dumps(settings_json))
+
+    def loadSettings(self):
+        settingsFile = "./settingSIGMA.json"
+        path = Path(settingsFile)
+        if path.is_file():
+            print("existe el archivo")
+            if path.stat().st_size != 0:
+                print("cargando archivo...")
+                with open(settingsFile,'r') as json_file:
+                    settings_json = json.load(json_file)
+
+                self.ui.maxCarrierASK.setValue(settings_json["maxASK"])
+                self.ui.minCarrierASK.setValue(settings_json["minASK"])
+                self.ui.maxCarrierFSK1.setValue(settings_json["maxFSK1"])
+                self.ui.minCarrierFSK1.setValue(settings_json["minFSK1"])
+                self.ui.maxCarrierFSK2.setValue(settings_json["maxFSK2"])
+                self.ui.minCarrierFSK2.setValue(settings_json["minFSK2"])
+                self.ui.maxCarrierPSK.setValue(settings_json["maxPSK"])
+                self.ui.minCarrierPSK.setValue(settings_json["minPSK"])
+
+                self.ui.btn_AplicarASK.click()
+                self.ui.btn_AplicarFSK1.click()
+                self.ui.btn_AplicarFSK2.click()
+                self.ui.btn_AplicarPSK.click()
+            else:
+                print("archivo vacio")
+        else:
+            print("no existe el archivo")
+        
 
     ## EVENT ==> MOUSE DOUBLE CLICK
     ########################################################################

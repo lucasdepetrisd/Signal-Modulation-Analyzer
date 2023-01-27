@@ -24,7 +24,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Satoshi</family>
+    <family>Satoshi Black</family>
    </font>
   </property>
   <property name="windowTitle">
@@ -36,6 +36,10 @@
   </property>
   <property name="styleSheet">
    <string notr="true">/* LINE EDIT */
+QMainWindow {
+	font-family: &quot;Satoshi Black&quot;
+}
+
 QLineEdit {
 	background-color: rgb(27, 29, 35);
 	border-radius: 5px;
@@ -1895,7 +1899,7 @@ QPushButton:pressed {
 </string>
                               </property>
                               <property name="text">
-                               <string>Modular</string>
+                               <string>Animar</string>
                               </property>
                               <property name="icon">
                                <iconset resource="files.qrc">
