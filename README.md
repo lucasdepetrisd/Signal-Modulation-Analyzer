@@ -29,13 +29,6 @@ SigMA o Signal Modulation Analyzer es un conjunto de simuladores creados para la
 <p align="center">
     <img src="repo/sigma-ask.gif" width="700">
 <p/>
- 
-## ![SigMA logo](./src/ui/icons/16x16/sigma-logo.png) Manual de Usuario
-> ### Help menu with user manual.
-<p align="center">
-    <img src="repo/sigma-help.gif" width="700">
-<p/>
-
 
 ## ![SigMA logo](./src/ui/icons/16x16/sigma-logo.png) Ajustes de valores máximos y mínimos en la simulación.
 > ### Settings menu for max. and min. values.
@@ -43,10 +36,19 @@ SigMA o Signal Modulation Analyzer es un conjunto de simuladores creados para la
     <img src="repo/sigma-settings.gif" width="700">
 <p/>
 
+## ![SigMA logo](./src/ui/icons/16x16/sigma-logo.png) Manual de Usuario
+> ### Help menu with user manual.
+También disponible un [Manual de Usuario](https://github.com/lucasdepetrisd/Signal-Modulation-Analyzer/blob/main/Manual_de_Usuario_SigMA.pdf) en .pdf.
+<p align="center">
+    <img src="repo/sigma-help.gif" width="700">
+<p/>
+
 Además incluye:
 - Animaciones para cada modulación.
 - Interfaz gráfica pulida.
+- [Manual de Usuario](https://github.com/lucasdepetrisd/Signal-Modulation-Analyzer/blob/main/Manual_de_Usuario_SigMA.pdf).
 
 > Also includes:
 > - Animations for each modulation. 
 > - Polished UI, look and feel.
+> - [User Manual](https://github.com/lucasdepetrisd/Signal-Modulation-Analyzer/blob/main/Manual_de_Usuario_SigMA.pdf) (in Spanish).
