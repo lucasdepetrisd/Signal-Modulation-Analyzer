@@ -423,11 +423,11 @@ class MainWindow(QMainWindow):
         return False        
     
     def clearASK(self):
-        if hasattr(self.ui.MplWidgetASK, 'ani1'):
-            self.ui.MplWidgetASK.pauseAnimation()
+        self.ui.MplWidgetASK.pauseAnimation()
         self.ui.MplWidgetASK.canvas.ax1.clear()
         self.ui.MplWidgetASK.canvas.ax2.clear()
         self.ui.MplWidgetASK.canvas.ax3.clear()
+        self.ui.MplWidgetASK.canvas.axes.clear()
         self.ui.MplWidgetASK.canvas.draw()
         
     def modulateASK(self):
@@ -510,12 +510,12 @@ class MainWindow(QMainWindow):
             return [arrays, t, line, self.ui.MplWidgetASK]
     
     def clearFSK(self):
-        if hasattr(self.ui.MplWidgetFSK, 'ani1'):
-            self.ui.MplWidgetFSK.pauseAnimation()
+        self.ui.MplWidgetFSK.pauseAnimation()
         self.ui.MplWidgetFSK.canvas.ax1.clear()
         self.ui.MplWidgetFSK.canvas.ax2.clear()
         self.ui.MplWidgetFSK.canvas.ax3.clear()
         self.ui.MplWidgetFSK.canvas.ax4.clear()
+        self.ui.MplWidgetFSK.canvas.axes.clear()
         self.ui.MplWidgetFSK.canvas.draw()
         
     def modulateFSK(self):
@@ -616,11 +616,11 @@ class MainWindow(QMainWindow):
             return [arrays, t, line, self.ui.MplWidgetFSK]
             
     def clearPSK(self):
-        if hasattr(self.ui.MplWidgetPSK, 'ani1'):
-            self.ui.MplWidgetPSK.pauseAnimation()
+        self.ui.MplWidgetPSK.pauseAnimation()
         self.ui.MplWidgetPSK.canvas.ax1.clear()
         self.ui.MplWidgetPSK.canvas.ax2.clear()
         self.ui.MplWidgetPSK.canvas.ax3.clear()
+        self.ui.MplWidgetPSK.canvas.axes.clear()
         self.ui.MplWidgetPSK.canvas.draw()
 
     def modulatePSK(self):

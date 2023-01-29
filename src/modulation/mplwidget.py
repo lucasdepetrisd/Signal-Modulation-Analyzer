@@ -8,7 +8,8 @@ import matplotlib.pyplot as plt
 
 class MplWidget(QWidget):
     
-    def __init__(self, parent = None):
+    def __init__(self, parent = None, dpi=1):
+        self._running = True
         self.state = 1
         QWidget.__init__(self, parent)
         plt.style.use(('dark_background'))
@@ -37,18 +38,20 @@ class MplWidget(QWidget):
     
     def switchAnimation(self, pause):
         if hasattr(self, 'ani1'):
-            self.state += 1
-            if pause and (self.state % 2):
+            if self._running == False:
+                self._running = True
                 self.ani1.event_source.start()
                 self.ani2.event_source.start()
                 self.ani3.event_source.start()
-            else: 
+            elif self._running == True:
+                self._running = False
                 self.ani1.event_source.stop()
                 self.ani2.event_source.stop()
                 self.ani3.event_source.stop()
     
     def pauseAnimation(self):
         if hasattr(self, 'ani1'):
+            self._running = False
             self.ani1.event_source.stop()
             self.ani2.event_source.stop()
             self.ani3.event_source.stop()

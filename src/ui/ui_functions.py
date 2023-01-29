@@ -37,10 +37,17 @@ class UIFunctions(MainWindow):
         global GLOBAL_STATE
         status = GLOBAL_STATE
         # fontManager(self, status)
+        self.clearASK()
+        self.clearFSK()
+        self.clearPSK()
+        # self.ui.clearBtnASK.click()
+        # self.ui.clearBtnFSK.click()
+        # self.ui.clearBtnPSK.click()
+        # self.ui.Btn_pauseASK.click()
+        # self.ui.Btn_pauseFSK.click()
+        # self.ui.Btn_pausePSK.click()
+
         if status == 0:
-            self.ui.clearBtnASK.click()
-            self.ui.clearBtnFSK.click()
-            self.ui.clearBtnPSK.click()
             self.showMaximized()
             GLOBAL_STATE = 1
             self.ui.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -50,9 +57,6 @@ class UIFunctions(MainWindow):
             self.ui.frame_size_grip.hide()
         else:
             GLOBAL_STATE = 0
-            self.ui.clearBtnASK.click()
-            self.ui.clearBtnFSK.click()
-            self.ui.clearBtnPSK.click()
             self.showNormal()
             self.resize(self.width()+1, self.height()+1)
             self.ui.horizontalLayout.setContentsMargins(10, 10, 10, 10)
