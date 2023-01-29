@@ -2,6 +2,7 @@ __pycache__
 ui_GUI_BASE.ui
 *.pyc
 setup.py
+settingSIGMA.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
