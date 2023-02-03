@@ -1331,7 +1331,7 @@ QPushButton:pressed {
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">color: rgb(118, 125, 134)</string>
+                   <string notr="true">color: rgb(159, 165, 177);</string>
                   </property>
                   <property name="text">
                    <string>C:\Program Files\Blender Foundation\Blender 2.82</string>
@@ -1361,7 +1361,7 @@ QPushButton:pressed {
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">color: rgb(98, 103, 111);</string>
+                   <string notr="true">color: rgb(159, 165, 177);</string>
                   </property>
                   <property name="text">
                    <string>| INICIO</string>
@@ -1733,7 +1733,7 @@ border-radius: 5px;</string>
                              <string notr="true"/>
                             </property>
                             <property name="text">
-                             <string> Bienvenido a SigMA </string>
+                             <string> Bienvenido/a a SigMA </string>
                             </property>
                             <property name="alignment">
                              <set>Qt::AlignCenter</set>
@@ -2842,53 +2842,88 @@ QPushButton:pressed {
                      </widget>
                     </item>
                     <item>
-                     <widget class="QFrame" name="ASK_graph_layout">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
+                     <widget class="QStackedWidget" name="stackedWidgetASK">
                       <property name="minimumSize">
                        <size>
-                        <width>685</width>
+                        <width>676</width>
                         <height>585</height>
                        </size>
                       </property>
-                      <property name="styleSheet">
-                       <string notr="true"/>
+                      <property name="currentIndex">
+                       <number>0</number>
                       </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_13">
-                       <property name="spacing">
-                        <number>0</number>
-                       </property>
-                       <property name="leftMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="topMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="rightMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="bottomMargin">
-                        <number>0</number>
-                       </property>
-                       <item>
-                        <widget class="MplWidget" name="MplWidgetASK" native="true">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">background-color: rgba(0,0,0,0.7);
+                      <widget class="QWidget" name="mplask">
+                       <layout class="QVBoxLayout" name="verticalLayout_20">
+                        <property name="spacing">
+                         <number>0</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <widget class="MplWidget" name="MplWidgetASK" native="true">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="baseSize">
+                           <size>
+                            <width>0</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">background-color: rgba(0,0,0,0.7);
 border-radius: 5px;</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                      <widget class="QWidget" name="pqgask">
+                       <layout class="QVBoxLayout" name="verticalLayout_13">
+                        <property name="spacing">
+                         <number>0</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <widget class="GraphicsLayoutWidget" name="PyQtGraphASK">
+                          <property name="styleSheet">
+                           <string notr="true">background-color: rgba(0,0,0,0.7);
+border-radius: 5px;</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
                      </widget>
                     </item>
                    </layout>
@@ -3822,54 +3857,77 @@ QPushButton:pressed {
                      </widget>
                     </item>
                     <item>
-                     <widget class="QFrame" name="FSK_graph_layout">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
+                     <widget class="QStackedWidget" name="stackedWidgetFSK">
                       <property name="minimumSize">
                        <size>
-                        <width>685</width>
+                        <width>676</width>
                         <height>585</height>
                        </size>
                       </property>
-                      <property name="styleSheet">
-                       <string notr="true"/>
+                      <property name="currentIndex">
+                       <number>0</number>
                       </property>
-                      <layout class="QVBoxLayout" name="graph_layout_4">
-                       <property name="spacing">
-                        <number>0</number>
-                       </property>
-                       <property name="leftMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="topMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="rightMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="bottomMargin">
-                        <number>0</number>
-                       </property>
-                       <item>
-                        <widget class="MplWidgetFSK" name="MplWidgetFSK" native="true">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">background-color: rgba(0,0,0,0.7);
+                      <widget class="QWidget" name="mplfsk">
+                       <layout class="QVBoxLayout" name="verticalLayout_29">
+                        <property name="spacing">
+                         <number>0</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <widget class="MplWidgetFSK" name="MplWidgetFSK" native="true">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">background-color: rgba(0,0,0,0.7);
 border-radius: 5px;
 color: rgb(210, 210, 210);</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                      <widget class="QWidget" name="pqgfsk">
+                       <layout class="QVBoxLayout" name="verticalLayout_30">
+                        <property name="spacing">
+                         <number>0</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <widget class="GraphicsLayoutWidget" name="PyQtGraphFSK">
+                          <property name="styleSheet">
+                           <string notr="true">background-color: rgba(0,0,0,0.7);
+border-radius: 5px;</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
                      </widget>
                     </item>
                    </layout>
@@ -4545,47 +4603,88 @@ QSpinBox::down-button{
                      </widget>
                     </item>
                     <item>
-                     <widget class="QFrame" name="PSK_graph_layout">
+                     <widget class="QStackedWidget" name="stackedWidgetPSK">
                       <property name="minimumSize">
                        <size>
-                        <width>685</width>
+                        <width>676</width>
                         <height>585</height>
                        </size>
                       </property>
-                      <property name="styleSheet">
-                       <string notr="true"/>
+                      <property name="currentIndex">
+                       <number>0</number>
                       </property>
-                      <layout class="QVBoxLayout" name="graph_layout_5">
-                       <property name="spacing">
-                        <number>0</number>
-                       </property>
-                       <property name="leftMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="topMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="rightMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="bottomMargin">
-                        <number>0</number>
-                       </property>
-                       <item>
-                        <widget class="MplWidget" name="MplWidgetPSK" native="true">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">background-color: rgba(0,0,0,0.7);
+                      <widget class="QWidget" name="mplpsk">
+                       <layout class="QVBoxLayout" name="verticalLayout_31">
+                        <property name="spacing">
+                         <number>0</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <widget class="MplWidget" name="MplWidgetPSK" native="true">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="baseSize">
+                           <size>
+                            <width>0</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">background-color: rgba(0,0,0,0.7);
 border-radius: 5px;</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                      <widget class="QWidget" name="pqgpsk">
+                       <layout class="QVBoxLayout" name="verticalLayout_33">
+                        <property name="spacing">
+                         <number>0</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <widget class="GraphicsLayoutWidget" name="PyQtGraphPSK">
+                          <property name="styleSheet">
+                           <string notr="true">background-color: rgba(0,0,0,0.7);
+border-radius: 5px;</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
                      </widget>
                     </item>
                    </layout>
@@ -4927,7 +5026,7 @@ QSpinBox::down-button{
                                      <number>1</number>
                                     </property>
                                     <property name="maximum">
-                                     <number>10000</number>
+                                     <number>5000</number>
                                     </property>
                                     <property name="value">
                                      <number>200</number>
@@ -5050,7 +5149,7 @@ QSpinBox::down-button{
                                      <number>1</number>
                                     </property>
                                     <property name="maximum">
-                                     <number>1000</number>
+                                     <number>5000</number>
                                     </property>
                                    </widget>
                                   </item>
@@ -5511,7 +5610,7 @@ QSpinBox::down-button{
                                      <number>1</number>
                                     </property>
                                     <property name="maximum">
-                                     <number>10000</number>
+                                     <number>5000</number>
                                     </property>
                                     <property name="value">
                                      <number>200</number>
@@ -5635,7 +5734,7 @@ QSpinBox::down-button{
                                      <number>1</number>
                                     </property>
                                     <property name="maximum">
-                                     <number>1000</number>
+                                     <number>5000</number>
                                     </property>
                                    </widget>
                                   </item>
@@ -6046,7 +6145,7 @@ QSpinBox::down-button{
                                      <number>1</number>
                                     </property>
                                     <property name="maximum">
-                                     <number>10000</number>
+                                     <number>5000</number>
                                     </property>
                                     <property name="value">
                                      <number>200</number>
@@ -6169,7 +6268,7 @@ QSpinBox::down-button{
                                      <number>1</number>
                                     </property>
                                     <property name="maximum">
-                                     <number>1000</number>
+                                     <number>5000</number>
                                     </property>
                                    </widget>
                                   </item>
@@ -6734,7 +6833,7 @@ QSpinBox::down-button{
                                      <number>1</number>
                                     </property>
                                     <property name="maximum">
-                                     <number>10000</number>
+                                     <number>5000</number>
                                     </property>
                                     <property name="value">
                                      <number>200</number>
@@ -6857,7 +6956,7 @@ QSpinBox::down-button{
                                      <number>1</number>
                                     </property>
                                     <property name="maximum">
-                                     <number>1000</number>
+                                     <number>5000</number>
                                     </property>
                                    </widget>
                                   </item>
@@ -7108,7 +7207,7 @@ QPushButton:pressed {
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_21">
                           <property name="spacing">
-                           <number>0</number>
+                           <number>10</number>
                           </property>
                           <property name="leftMargin">
                            <number>0</number>
@@ -7242,6 +7341,9 @@ QPushButton:pressed {
                 </property>
                 <item>
                  <widget class="QFrame" name="frame_label_bottom">
+                  <property name="styleSheet">
+                   <string notr="true">color: rgb(159, 165, 177);</string>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::NoFrame</enum>
                   </property>
@@ -7275,7 +7377,7 @@ QPushButton:pressed {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(98, 103, 111);</string>
+                      <string notr="true">color: rgb(159, 165, 177);</string>
                      </property>
                      <property name="text">
                       <string>Desarrollado por: Lucas Depetris</string>
@@ -7299,7 +7401,7 @@ QPushButton:pressed {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(98, 103, 111);</string>
+                      <string notr="true">color: rgb(159, 165, 177);</string>
                      </property>
                      <property name="text">
                       <string>v1.0</string>
@@ -7362,6 +7464,11 @@ QPushButton:pressed {
    <extends>QWidget</extends>
    <header>mplwidgetfsk.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>GraphicsLayoutWidget</class>
+   <extends>QGraphicsView</extends>
+   <header>pyqtgraph</header>
   </customwidget>
  </customwidgets>
  <tabstops>

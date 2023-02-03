@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'GUI_BASEKsPFIL.ui'
+## Form generated from reading UI file 'GUI_BASEZSASOZ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -13,7 +13,8 @@ from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
 from modulation.mplwidget import MplWidget
-from modulation.mplwidgetfsk import MplWidgetFSK
+from modulation.mplwidget import MplWidgetFSK
+from pyqtgraph import GraphicsLayoutWidget
 
 import ui.files_rc
 
@@ -617,7 +618,7 @@ class Ui_MainWindow(object):
         self.label_top_info_1.setObjectName(u"label_top_info_1")
         self.label_top_info_1.setMaximumSize(QSize(16777215, 15))
         self.label_top_info_1.setFont(font)
-        self.label_top_info_1.setStyleSheet(u"color: rgb(118, 125, 134)")
+        self.label_top_info_1.setStyleSheet(u"color: rgb(159, 165, 177);")
 
         self.horizontalLayout_8.addWidget(self.label_top_info_1)
 
@@ -626,7 +627,7 @@ class Ui_MainWindow(object):
         self.label_top_info_2.setMinimumSize(QSize(0, 0))
         self.label_top_info_2.setMaximumSize(QSize(250, 20))
         self.label_top_info_2.setFont(font)
-        self.label_top_info_2.setStyleSheet(u"color: rgb(98, 103, 111);")
+        self.label_top_info_2.setStyleSheet(u"color: rgb(159, 165, 177);")
         self.label_top_info_2.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.horizontalLayout_8.addWidget(self.label_top_info_2)
@@ -1264,7 +1265,7 @@ class Ui_MainWindow(object):
         sizePolicy6.setVerticalStretch(0)
         sizePolicy6.setHeightForWidth(self.modulateBtnASK.sizePolicy().hasHeightForWidth())
         self.modulateBtnASK.setSizePolicy(sizePolicy6)
-        self.modulateBtnASK.setMinimumSize(QSize(150, 30))
+        self.modulateBtnASK.setMinimumSize(QSize(150, 25))
         self.modulateBtnASK.setMaximumSize(QSize(16777215, 40))
         self.modulateBtnASK.setFont(font5)
         self.modulateBtnASK.setStyleSheet(u"QPushButton {\n"
@@ -1275,8 +1276,8 @@ class Ui_MainWindow(object):
 "\n"
 "/* rgb(52, 59, 72)*/\n"
 "QPushButton:hover {\n"
-"	background-color: rgb(60, 198, 84);\n"
-"	border: 2px solid rgb(60, 196, 72);\n"
+"	background-color: rgb(56, 185, 78);\n"
+"	border: 2px solid rgb(54, 177, 64);\n"
 "}\n"
 "QPushButton:pressed {	\n"
 "	background-color: rgb(37, 138, 26);\n"
@@ -1379,27 +1380,215 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_14.addWidget(self.frame_4)
 
-        self.ASK_graph_layout = QFrame(self.page_ask)
-        self.ASK_graph_layout.setObjectName(u"ASK_graph_layout")
-        sizePolicy3.setHeightForWidth(self.ASK_graph_layout.sizePolicy().hasHeightForWidth())
-        self.ASK_graph_layout.setSizePolicy(sizePolicy3)
-        self.ASK_graph_layout.setMinimumSize(QSize(685, 585))
-        self.ASK_graph_layout.setStyleSheet(u"")
-        self.verticalLayout_13 = QVBoxLayout(self.ASK_graph_layout)
-        self.verticalLayout_13.setSpacing(0)
-        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
-        self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
-        self.MplWidgetASK = MplWidget(self.ASK_graph_layout)
+        self.stackedWidgetASK = QStackedWidget(self.page_ask)
+        self.stackedWidgetASK.setObjectName(u"stackedWidgetASK")
+        self.stackedWidgetASK.setMinimumSize(QSize(676, 585))
+        self.mplask = QWidget()
+        self.mplask.setObjectName(u"mplask")
+        self.verticalLayout_20 = QVBoxLayout(self.mplask)
+        self.verticalLayout_20.setSpacing(0)
+        self.verticalLayout_20.setObjectName(u"verticalLayout_20")
+        self.verticalLayout_20.setContentsMargins(0, 0, 0, 0)
+        self.MplWidgetASK = MplWidget(self.mplask)
         self.MplWidgetASK.setObjectName(u"MplWidgetASK")
         sizePolicy3.setHeightForWidth(self.MplWidgetASK.sizePolicy().hasHeightForWidth())
         self.MplWidgetASK.setSizePolicy(sizePolicy3)
+        self.MplWidgetASK.setMinimumSize(QSize(0, 0))
+        self.MplWidgetASK.setBaseSize(QSize(0, 0))
         self.MplWidgetASK.setStyleSheet(u"background-color: rgba(0,0,0,0.7);\n"
 "border-radius: 5px;")
 
-        self.verticalLayout_13.addWidget(self.MplWidgetASK)
+        self.verticalLayout_20.addWidget(self.MplWidgetASK)
+
+        self.stackedWidgetASK.addWidget(self.mplask)
+        self.pqgask = QWidget()
+        self.pqgask.setObjectName(u"pqgask")
+        self.verticalLayout_13 = QVBoxLayout(self.pqgask)
+        self.verticalLayout_13.setSpacing(0)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.PyQtGraphASK = GraphicsLayoutWidget(self.pqgask)
+        self.PyQtGraphASK.setObjectName(u"PyQtGraphASK")
+        self.PyQtGraphASK.setStyleSheet(u"background-color: rgba(0,0,0,0.7);\n"
+"border-radius: 5px;")
+
+        self.verticalLayout_13.addWidget(self.PyQtGraphASK)
+
+        self.frame_35 = QFrame(self.pqgask)
+        self.frame_35.setObjectName(u"frame_35")
+        self.frame_35.setMinimumSize(QSize(0, 0))
+        self.frame_35.setMaximumSize(QSize(16777215, 50))
+        self.frame_35.setFrameShape(QFrame.NoFrame)
+        self.horizontalLayout_25 = QHBoxLayout(self.frame_35)
+        self.horizontalLayout_25.setSpacing(6)
+        self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
+        self.horizontalLayout_25.setContentsMargins(3, 3, 3, 0)
+        self.Btn_antialiasASK = QPushButton(self.frame_35)
+        self.Btn_antialiasASK.setObjectName(u"Btn_antialiasASK")
+        sizePolicy6.setHeightForWidth(self.Btn_antialiasASK.sizePolicy().hasHeightForWidth())
+        self.Btn_antialiasASK.setSizePolicy(sizePolicy6)
+        self.Btn_antialiasASK.setMinimumSize(QSize(150, 30))
+        self.Btn_antialiasASK.setMaximumSize(QSize(16777215, 40))
+        font11 = QFont()
+        font11.setFamily(u"Satoshi Black")
+        font11.setPointSize(13)
+        font11.setBold(False)
+        font11.setWeight(50)
+        self.Btn_antialiasASK.setFont(font11)
+        self.Btn_antialiasASK.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(46, 139, 59);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(53, 128, 76);\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(52, 168, 71);\n"
+"	border: 2px solid rgb(48, 156, 57);\n"
+"}\n"
+"QPushButton:pressed, QPushButton:checked {	\n"
+"	background-color: rgb(138, 26, 26);\n"
+"	border: 2px solid rgb(163, 52, 52);\n"
+"}\n"
+"")
+        icon8 = QIcon()
+        icon8.addFile(u":/16x16/icons/16x16/cil-double-quote-sans-right.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.Btn_antialiasASK.setIcon(icon8)
+        self.Btn_antialiasASK.setCheckable(True)
+        self.Btn_antialiasASK.setChecked(True)
+        self.Btn_antialiasASK.setAutoRepeat(False)
+        self.Btn_antialiasASK.setFlat(False)
+
+        self.horizontalLayout_25.addWidget(self.Btn_antialiasASK)
+
+        self.Btn_autoajustadoASK = QPushButton(self.frame_35)
+        self.Btn_autoajustadoASK.setObjectName(u"Btn_autoajustadoASK")
+        sizePolicy6.setHeightForWidth(self.Btn_autoajustadoASK.sizePolicy().hasHeightForWidth())
+        self.Btn_autoajustadoASK.setSizePolicy(sizePolicy6)
+        self.Btn_autoajustadoASK.setMinimumSize(QSize(150, 30))
+        self.Btn_autoajustadoASK.setMaximumSize(QSize(16777215, 40))
+        self.Btn_autoajustadoASK.setFont(font11)
+        self.Btn_autoajustadoASK.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(46, 139, 59);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(53, 128, 76);\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(52, 168, 71);\n"
+"	border: 2px solid rgb(48, 156, 57);\n"
+"}\n"
+"QPushButton:pressed, QPushButton:checked {	\n"
+"	background-color: rgb(138, 26, 26);\n"
+"	border: 2px solid rgb(163, 52, 52);\n"
+"}\n"
+"")
+        icon9 = QIcon()
+        icon9.addFile(u":/16x16/icons/16x16/cil-cursor-move.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.Btn_autoajustadoASK.setIcon(icon9)
+        self.Btn_autoajustadoASK.setCheckable(False)
+        self.Btn_autoajustadoASK.setChecked(False)
+
+        self.horizontalLayout_25.addWidget(self.Btn_autoajustadoASK)
+
+        self.frame_36 = QFrame(self.frame_35)
+        self.frame_36.setObjectName(u"frame_36")
+        sizePolicy6.setHeightForWidth(self.frame_36.sizePolicy().hasHeightForWidth())
+        self.frame_36.setSizePolicy(sizePolicy6)
+        self.frame_36.setMinimumSize(QSize(250, 25))
+        self.frame_36.setStyleSheet(u"background-color: rgb(23, 32, 77);\n"
+"border-radius: 5px;")
+        self.frame_36.setFrameShape(QFrame.StyledPanel)
+        self.frame_36.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_26 = QHBoxLayout(self.frame_36)
+        self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
+        self.label_velASK = QLabel(self.frame_36)
+        self.label_velASK.setObjectName(u"label_velASK")
+        self.label_velASK.setMinimumSize(QSize(0, 10))
+        self.label_velASK.setMaximumSize(QSize(16777215, 25))
+        self.label_velASK.setFont(font9)
+        self.label_velASK.setStyleSheet(u"QLabel{\n"
+"	background-color: rgb(33, 46, 112);\n"
+"	border: 0px solid ;\n"
+"	border-radius: 8px;\n"
+"}")
+        self.label_velASK.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_26.addWidget(self.label_velASK)
+
+        self.velocidadInputASK = QSpinBox(self.frame_36)
+        self.velocidadInputASK.setObjectName(u"velocidadInputASK")
+        sizePolicy6.setHeightForWidth(self.velocidadInputASK.sizePolicy().hasHeightForWidth())
+        self.velocidadInputASK.setSizePolicy(sizePolicy6)
+        self.velocidadInputASK.setMinimumSize(QSize(0, 15))
+        self.velocidadInputASK.setFont(font10)
+        self.velocidadInputASK.setLayoutDirection(Qt.LeftToRight)
+        self.velocidadInputASK.setStyleSheet(u"QSpinBox{\n"
+"	background-color: rgb(5, 7, 35);\n"
+"	border-radius: 5px;\n"
+"	border: 2px solid rgb(10, 11, 35);\n"
+"	padding: 5px;\n"
+"	padding-left: 10px;\n"
+"}\n"
+"QSpinBox:hover{\n"
+"	border: 2px solid rgb(0, 0, 127)\n"
+"}\n"
+"QSpinBox QAbstractItemView {\n"
+"	color: rgb(85, 170, 255);	\n"
+"	background-color: rgb(27, 29, 35);\n"
+"	padding: 10px;\n"
+"	selection-background-color: rgb(27, 29, 35);\n"
+"}\n"
+"/*\n"
+"rgb(27, 29, 35);\n"
+"rgb(13, 9, 59)\n"
+"*/\n"
+"\n"
+"QSpinBox::up-button{\n"
+"	width: 25px; \n"
+"	border-left-width: 3px;\n"
+"	border-left-color: rgba(39, 44, 54, 150);\n"
+"	border-left-style: solid;\n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;	\n"
+"	background-image: url(:/16x16/icons/16x16/cil-arrow-top.png);\n"
+"	background-position: center;\n"
+"	background-repeat: no-reperat;\n"
+"}\n"
+"\n"
+"QSpinBox::up-button:hover{\n"
+"	background-color: rgb(80, 80, 80)\n"
+"}\n"
+"\n"
+"QSpinBox::down-button:hover{\n"
+"	background-color: rgb(80, 80, 80)\n"
+"}\n"
+"\n"
+"QSpinBox::down-bu"
+                        "tton{\n"
+"	width: 25px; \n"
+"	border-left-width: 3px;\n"
+"	border-left-color: rgba(39, 44, 54, 150);\n"
+"	border-left-style: solid;\n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;	\n"
+"	background-image: url(:/16x16/icons/16x16/cil-arrow-bottom.png);\n"
+"	background-position: center;\n"
+"	background-repeat: no-reperat;\n"
+"}")
+        self.velocidadInputASK.setButtonSymbols(QAbstractSpinBox.UpDownArrows)
+        self.velocidadInputASK.setMinimum(1)
+        self.velocidadInputASK.setMaximum(5000)
+        self.velocidadInputASK.setValue(1)
+
+        self.horizontalLayout_26.addWidget(self.velocidadInputASK)
 
 
-        self.horizontalLayout_14.addWidget(self.ASK_graph_layout)
+        self.horizontalLayout_25.addWidget(self.frame_36, 0, Qt.AlignHCenter|Qt.AlignVCenter)
+
+
+        self.verticalLayout_13.addWidget(self.frame_35, 0, Qt.AlignLeft)
+
+        self.stackedWidgetASK.addWidget(self.pqgask)
+
+        self.horizontalLayout_14.addWidget(self.stackedWidgetASK)
 
         self.stackedWidget.addWidget(self.page_ask)
         self.page_fsk = QWidget()
@@ -1603,10 +1792,10 @@ class Ui_MainWindow(object):
         sizePolicy5.setHeightForWidth(self.messageInputFSK.sizePolicy().hasHeightForWidth())
         self.messageInputFSK.setSizePolicy(sizePolicy5)
         self.messageInputFSK.setMinimumSize(QSize(0, 40))
-        font11 = QFont()
-        font11.setFamily(u"Satoshi Black")
-        font11.setPointSize(10)
-        self.messageInputFSK.setFont(font11)
+        font12 = QFont()
+        font12.setFamily(u"Satoshi Black")
+        font12.setPointSize(10)
+        self.messageInputFSK.setFont(font12)
         self.messageInputFSK.setToolTipDuration(-1)
         self.messageInputFSK.setAutoFillBackground(False)
         self.messageInputFSK.setStyleSheet(u"QMainWindow > *{\n"
@@ -1834,16 +2023,16 @@ class Ui_MainWindow(object):
 "\n"
 "/* rgb(52, 59, 72)*/\n"
 "QPushButton:hover {\n"
-"	background-color: rgb(60, 198, 84);\n"
-"	border: 2px solid rgb(60, 196, 72);\n"
+"	background-color: rgb(56, 185, 78);\n"
+"	border: 2px solid rgb(54, 177, 64);\n"
 "}\n"
 "QPushButton:pressed {	\n"
 "	background-color: rgb(37, 138, 26);\n"
 "	border: 2px solid rgb(60, 196, 72);\n"
 "}")
-        icon8 = QIcon()
-        icon8.addFile(u":/16x16/icons/16x16/cil-fsk.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.modulateBtnFSK.setIcon(icon8)
+        icon10 = QIcon()
+        icon10.addFile(u":/16x16/icons/16x16/cil-fsk.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.modulateBtnFSK.setIcon(icon10)
 
         self.gridLayout_4.addWidget(self.modulateBtnFSK, 7, 0, 1, 1)
 
@@ -1853,17 +2042,16 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_13.addWidget(self.frame_6)
 
-        self.FSK_graph_layout = QFrame(self.page_fsk)
-        self.FSK_graph_layout.setObjectName(u"FSK_graph_layout")
-        sizePolicy3.setHeightForWidth(self.FSK_graph_layout.sizePolicy().hasHeightForWidth())
-        self.FSK_graph_layout.setSizePolicy(sizePolicy3)
-        self.FSK_graph_layout.setMinimumSize(QSize(685, 585))
-        self.FSK_graph_layout.setStyleSheet(u"")
-        self.graph_layout_4 = QVBoxLayout(self.FSK_graph_layout)
-        self.graph_layout_4.setSpacing(0)
-        self.graph_layout_4.setObjectName(u"graph_layout_4")
-        self.graph_layout_4.setContentsMargins(0, 0, 0, 0)
-        self.MplWidgetFSK = MplWidgetFSK(self.FSK_graph_layout)
+        self.stackedWidgetFSK = QStackedWidget(self.page_fsk)
+        self.stackedWidgetFSK.setObjectName(u"stackedWidgetFSK")
+        self.stackedWidgetFSK.setMinimumSize(QSize(676, 585))
+        self.mplfsk = QWidget()
+        self.mplfsk.setObjectName(u"mplfsk")
+        self.verticalLayout_29 = QVBoxLayout(self.mplfsk)
+        self.verticalLayout_29.setSpacing(0)
+        self.verticalLayout_29.setObjectName(u"verticalLayout_29")
+        self.verticalLayout_29.setContentsMargins(0, 0, 0, 0)
+        self.MplWidgetFSK = MplWidgetFSK(self.mplfsk)
         self.MplWidgetFSK.setObjectName(u"MplWidgetFSK")
         sizePolicy3.setHeightForWidth(self.MplWidgetFSK.sizePolicy().hasHeightForWidth())
         self.MplWidgetFSK.setSizePolicy(sizePolicy3)
@@ -1871,10 +2059,188 @@ class Ui_MainWindow(object):
 "border-radius: 5px;\n"
 "color: rgb(210, 210, 210);")
 
-        self.graph_layout_4.addWidget(self.MplWidgetFSK)
+        self.verticalLayout_29.addWidget(self.MplWidgetFSK)
+
+        self.stackedWidgetFSK.addWidget(self.mplfsk)
+        self.pqgfsk = QWidget()
+        self.pqgfsk.setObjectName(u"pqgfsk")
+        self.verticalLayout_30 = QVBoxLayout(self.pqgfsk)
+        self.verticalLayout_30.setSpacing(0)
+        self.verticalLayout_30.setObjectName(u"verticalLayout_30")
+        self.verticalLayout_30.setContentsMargins(0, 0, 0, 0)
+        self.PyQtGraphFSK = GraphicsLayoutWidget(self.pqgfsk)
+        self.PyQtGraphFSK.setObjectName(u"PyQtGraphFSK")
+        self.PyQtGraphFSK.setStyleSheet(u"background-color: rgba(0,0,0,0.7);\n"
+"border-radius: 5px;")
+
+        self.verticalLayout_30.addWidget(self.PyQtGraphFSK)
+
+        self.frame_38 = QFrame(self.pqgfsk)
+        self.frame_38.setObjectName(u"frame_38")
+        self.frame_38.setMinimumSize(QSize(0, 0))
+        self.frame_38.setMaximumSize(QSize(16777215, 50))
+        self.frame_38.setFrameShape(QFrame.NoFrame)
+        self.horizontalLayout_31 = QHBoxLayout(self.frame_38)
+        self.horizontalLayout_31.setSpacing(6)
+        self.horizontalLayout_31.setObjectName(u"horizontalLayout_31")
+        self.horizontalLayout_31.setContentsMargins(3, 3, 3, 0)
+        self.Btn_antialiasFSK = QPushButton(self.frame_38)
+        self.Btn_antialiasFSK.setObjectName(u"Btn_antialiasFSK")
+        sizePolicy6.setHeightForWidth(self.Btn_antialiasFSK.sizePolicy().hasHeightForWidth())
+        self.Btn_antialiasFSK.setSizePolicy(sizePolicy6)
+        self.Btn_antialiasFSK.setMinimumSize(QSize(150, 30))
+        self.Btn_antialiasFSK.setMaximumSize(QSize(16777215, 40))
+        self.Btn_antialiasFSK.setFont(font11)
+        self.Btn_antialiasFSK.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(46, 139, 59);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(53, 128, 76);\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(52, 168, 71);\n"
+"	border: 2px solid rgb(48, 156, 57);\n"
+"}\n"
+"QPushButton:pressed, QPushButton:checked {	\n"
+"	background-color: rgb(138, 26, 26);\n"
+"	border: 2px solid rgb(163, 52, 52);\n"
+"}\n"
+"")
+        self.Btn_antialiasFSK.setIcon(icon8)
+        self.Btn_antialiasFSK.setCheckable(True)
+        self.Btn_antialiasFSK.setChecked(True)
+        self.Btn_antialiasFSK.setAutoRepeat(False)
+        self.Btn_antialiasFSK.setFlat(False)
+
+        self.horizontalLayout_31.addWidget(self.Btn_antialiasFSK)
+
+        self.Btn_autoajustadoFSK = QPushButton(self.frame_38)
+        self.Btn_autoajustadoFSK.setObjectName(u"Btn_autoajustadoFSK")
+        sizePolicy6.setHeightForWidth(self.Btn_autoajustadoFSK.sizePolicy().hasHeightForWidth())
+        self.Btn_autoajustadoFSK.setSizePolicy(sizePolicy6)
+        self.Btn_autoajustadoFSK.setMinimumSize(QSize(150, 30))
+        self.Btn_autoajustadoFSK.setMaximumSize(QSize(16777215, 40))
+        self.Btn_autoajustadoFSK.setFont(font11)
+        self.Btn_autoajustadoFSK.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(46, 139, 59);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(53, 128, 76);\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(52, 168, 71);\n"
+"	border: 2px solid rgb(48, 156, 57);\n"
+"}\n"
+"QPushButton:pressed, QPushButton:checked {	\n"
+"	background-color: rgb(138, 26, 26);\n"
+"	border: 2px solid rgb(163, 52, 52);\n"
+"}\n"
+"")
+        self.Btn_autoajustadoFSK.setIcon(icon9)
+        self.Btn_autoajustadoFSK.setCheckable(False)
+        self.Btn_autoajustadoFSK.setChecked(False)
+
+        self.horizontalLayout_31.addWidget(self.Btn_autoajustadoFSK)
+
+        self.frame_39 = QFrame(self.frame_38)
+        self.frame_39.setObjectName(u"frame_39")
+        sizePolicy6.setHeightForWidth(self.frame_39.sizePolicy().hasHeightForWidth())
+        self.frame_39.setSizePolicy(sizePolicy6)
+        self.frame_39.setMinimumSize(QSize(250, 25))
+        self.frame_39.setStyleSheet(u"background-color: rgb(23, 32, 77);\n"
+"border-radius: 5px;")
+        self.frame_39.setFrameShape(QFrame.StyledPanel)
+        self.frame_39.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_32 = QHBoxLayout(self.frame_39)
+        self.horizontalLayout_32.setObjectName(u"horizontalLayout_32")
+        self.label_velFSK = QLabel(self.frame_39)
+        self.label_velFSK.setObjectName(u"label_velFSK")
+        self.label_velFSK.setMinimumSize(QSize(0, 10))
+        self.label_velFSK.setMaximumSize(QSize(16777215, 25))
+        self.label_velFSK.setFont(font9)
+        self.label_velFSK.setStyleSheet(u"QLabel{\n"
+"	background-color: rgb(33, 46, 112);\n"
+"	border: 0px solid ;\n"
+"	border-radius: 8px;\n"
+"}")
+        self.label_velFSK.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_32.addWidget(self.label_velFSK)
+
+        self.velocidadInputFSK = QSpinBox(self.frame_39)
+        self.velocidadInputFSK.setObjectName(u"velocidadInputFSK")
+        sizePolicy6.setHeightForWidth(self.velocidadInputFSK.sizePolicy().hasHeightForWidth())
+        self.velocidadInputFSK.setSizePolicy(sizePolicy6)
+        self.velocidadInputFSK.setMinimumSize(QSize(0, 15))
+        self.velocidadInputFSK.setFont(font10)
+        self.velocidadInputFSK.setLayoutDirection(Qt.LeftToRight)
+        self.velocidadInputFSK.setStyleSheet(u"QSpinBox{\n"
+"	background-color: rgb(5, 7, 35);\n"
+"	border-radius: 5px;\n"
+"	border: 2px solid rgb(10, 11, 35);\n"
+"	padding: 5px;\n"
+"	padding-left: 10px;\n"
+"}\n"
+"QSpinBox:hover{\n"
+"	border: 2px solid rgb(0, 0, 127)\n"
+"}\n"
+"QSpinBox QAbstractItemView {\n"
+"	color: rgb(85, 170, 255);	\n"
+"	background-color: rgb(27, 29, 35);\n"
+"	padding: 10px;\n"
+"	selection-background-color: rgb(27, 29, 35);\n"
+"}\n"
+"/*\n"
+"rgb(27, 29, 35);\n"
+"rgb(13, 9, 59)\n"
+"*/\n"
+"\n"
+"QSpinBox::up-button{\n"
+"	width: 25px; \n"
+"	border-left-width: 3px;\n"
+"	border-left-color: rgba(39, 44, 54, 150);\n"
+"	border-left-style: solid;\n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;	\n"
+"	background-image: url(:/16x16/icons/16x16/cil-arrow-top.png);\n"
+"	background-position: center;\n"
+"	background-repeat: no-reperat;\n"
+"}\n"
+"\n"
+"QSpinBox::up-button:hover{\n"
+"	background-color: rgb(80, 80, 80)\n"
+"}\n"
+"\n"
+"QSpinBox::down-button:hover{\n"
+"	background-color: rgb(80, 80, 80)\n"
+"}\n"
+"\n"
+"QSpinBox::down-bu"
+                        "tton{\n"
+"	width: 25px; \n"
+"	border-left-width: 3px;\n"
+"	border-left-color: rgba(39, 44, 54, 150);\n"
+"	border-left-style: solid;\n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;	\n"
+"	background-image: url(:/16x16/icons/16x16/cil-arrow-bottom.png);\n"
+"	background-position: center;\n"
+"	background-repeat: no-reperat;\n"
+"}")
+        self.velocidadInputFSK.setButtonSymbols(QAbstractSpinBox.UpDownArrows)
+        self.velocidadInputFSK.setMinimum(1)
+        self.velocidadInputFSK.setMaximum(5000)
+        self.velocidadInputFSK.setValue(1)
+
+        self.horizontalLayout_32.addWidget(self.velocidadInputFSK)
 
 
-        self.horizontalLayout_13.addWidget(self.FSK_graph_layout)
+        self.horizontalLayout_31.addWidget(self.frame_39, 0, Qt.AlignHCenter|Qt.AlignVCenter)
+
+
+        self.verticalLayout_30.addWidget(self.frame_38, 0, Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.stackedWidgetFSK.addWidget(self.pqgfsk)
+
+        self.horizontalLayout_13.addWidget(self.stackedWidgetFSK)
 
         self.stackedWidget.addWidget(self.page_fsk)
         self.page_psk = QWidget()
@@ -1908,16 +2274,16 @@ class Ui_MainWindow(object):
 "\n"
 "/* rgb(52, 59, 72)*/\n"
 "QPushButton:hover {\n"
-"	background-color: rgb(60, 198, 84);\n"
-"	border: 2px solid rgb(60, 196, 72);\n"
+"	background-color: rgb(56, 185, 78);\n"
+"	border: 2px solid rgb(54, 177, 64);\n"
 "}\n"
 "QPushButton:pressed {	\n"
 "	background-color: rgb(37, 138, 26);\n"
 "	border: 2px solid rgb(60, 196, 72);\n"
 "}")
-        icon9 = QIcon()
-        icon9.addFile(u":/16x16/icons/16x16/cil-psk.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.modulateBtnPSK.setIcon(icon9)
+        icon11 = QIcon()
+        icon11.addFile(u":/16x16/icons/16x16/cil-psk.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.modulateBtnPSK.setIcon(icon11)
 
         self.gridLayout_5.addWidget(self.modulateBtnPSK, 6, 0, 1, 1)
 
@@ -1999,7 +2365,7 @@ class Ui_MainWindow(object):
         sizePolicy5.setHeightForWidth(self.messageInputPSK.sizePolicy().hasHeightForWidth())
         self.messageInputPSK.setSizePolicy(sizePolicy5)
         self.messageInputPSK.setMinimumSize(QSize(0, 40))
-        self.messageInputPSK.setFont(font11)
+        self.messageInputPSK.setFont(font12)
         self.messageInputPSK.setToolTipDuration(-1)
         self.messageInputPSK.setAutoFillBackground(False)
         self.messageInputPSK.setStyleSheet(u"QLineEdit {\n"
@@ -2194,25 +2560,206 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_16.addWidget(self.frame_11)
 
-        self.PSK_graph_layout = QFrame(self.page_psk)
-        self.PSK_graph_layout.setObjectName(u"PSK_graph_layout")
-        self.PSK_graph_layout.setMinimumSize(QSize(685, 585))
-        self.PSK_graph_layout.setStyleSheet(u"")
-        self.graph_layout_5 = QVBoxLayout(self.PSK_graph_layout)
-        self.graph_layout_5.setSpacing(0)
-        self.graph_layout_5.setObjectName(u"graph_layout_5")
-        self.graph_layout_5.setContentsMargins(0, 0, 0, 0)
-        self.MplWidgetPSK = MplWidget(self.PSK_graph_layout)
+        self.stackedWidgetPSK = QStackedWidget(self.page_psk)
+        self.stackedWidgetPSK.setObjectName(u"stackedWidgetPSK")
+        self.stackedWidgetPSK.setMinimumSize(QSize(676, 585))
+        self.mplpsk = QWidget()
+        self.mplpsk.setObjectName(u"mplpsk")
+        self.verticalLayout_31 = QVBoxLayout(self.mplpsk)
+        self.verticalLayout_31.setSpacing(0)
+        self.verticalLayout_31.setObjectName(u"verticalLayout_31")
+        self.verticalLayout_31.setContentsMargins(0, 0, 0, 0)
+        self.MplWidgetPSK = MplWidget(self.mplpsk)
         self.MplWidgetPSK.setObjectName(u"MplWidgetPSK")
         sizePolicy3.setHeightForWidth(self.MplWidgetPSK.sizePolicy().hasHeightForWidth())
         self.MplWidgetPSK.setSizePolicy(sizePolicy3)
+        self.MplWidgetPSK.setMinimumSize(QSize(0, 0))
+        self.MplWidgetPSK.setBaseSize(QSize(0, 0))
         self.MplWidgetPSK.setStyleSheet(u"background-color: rgba(0,0,0,0.7);\n"
 "border-radius: 5px;")
 
-        self.graph_layout_5.addWidget(self.MplWidgetPSK)
+        self.verticalLayout_31.addWidget(self.MplWidgetPSK)
+
+        self.stackedWidgetPSK.addWidget(self.mplpsk)
+        self.pqgpsk = QWidget()
+        self.pqgpsk.setObjectName(u"pqgpsk")
+        self.verticalLayout_33 = QVBoxLayout(self.pqgpsk)
+        self.verticalLayout_33.setSpacing(0)
+        self.verticalLayout_33.setObjectName(u"verticalLayout_33")
+        self.verticalLayout_33.setContentsMargins(0, 0, 0, 0)
+        self.PyQtGraphPSK = GraphicsLayoutWidget(self.pqgpsk)
+        self.PyQtGraphPSK.setObjectName(u"PyQtGraphPSK")
+        self.PyQtGraphPSK.setStyleSheet(u"background-color: rgba(0,0,0,0.7);\n"
+"border-radius: 5px;")
+
+        self.verticalLayout_33.addWidget(self.PyQtGraphPSK)
+
+        self.frame_40 = QFrame(self.pqgpsk)
+        self.frame_40.setObjectName(u"frame_40")
+        self.frame_40.setMinimumSize(QSize(0, 0))
+        self.frame_40.setMaximumSize(QSize(16777215, 50))
+        self.frame_40.setFrameShape(QFrame.NoFrame)
+        self.horizontalLayout_33 = QHBoxLayout(self.frame_40)
+        self.horizontalLayout_33.setSpacing(6)
+        self.horizontalLayout_33.setObjectName(u"horizontalLayout_33")
+        self.horizontalLayout_33.setContentsMargins(3, 3, 3, 0)
+        self.Btn_antialiasPSK = QPushButton(self.frame_40)
+        self.Btn_antialiasPSK.setObjectName(u"Btn_antialiasPSK")
+        sizePolicy6.setHeightForWidth(self.Btn_antialiasPSK.sizePolicy().hasHeightForWidth())
+        self.Btn_antialiasPSK.setSizePolicy(sizePolicy6)
+        self.Btn_antialiasPSK.setMinimumSize(QSize(150, 30))
+        self.Btn_antialiasPSK.setMaximumSize(QSize(16777215, 40))
+        self.Btn_antialiasPSK.setFont(font11)
+        self.Btn_antialiasPSK.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(46, 139, 59);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(53, 128, 76);\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(52, 168, 71);\n"
+"	border: 2px solid rgb(48, 156, 57);\n"
+"}\n"
+"QPushButton:pressed, QPushButton:checked {	\n"
+"	background-color: rgb(138, 26, 26);\n"
+"	border: 2px solid rgb(163, 52, 52);\n"
+"}\n"
+"")
+        self.Btn_antialiasPSK.setIcon(icon8)
+        self.Btn_antialiasPSK.setCheckable(True)
+        self.Btn_antialiasPSK.setChecked(True)
+        self.Btn_antialiasPSK.setAutoRepeat(False)
+        self.Btn_antialiasPSK.setFlat(False)
+
+        self.horizontalLayout_33.addWidget(self.Btn_antialiasPSK)
+
+        self.Btn_autoajustadoPSK = QPushButton(self.frame_40)
+        self.Btn_autoajustadoPSK.setObjectName(u"Btn_autoajustadoPSK")
+        sizePolicy6.setHeightForWidth(self.Btn_autoajustadoPSK.sizePolicy().hasHeightForWidth())
+        self.Btn_autoajustadoPSK.setSizePolicy(sizePolicy6)
+        self.Btn_autoajustadoPSK.setMinimumSize(QSize(150, 30))
+        self.Btn_autoajustadoPSK.setMaximumSize(QSize(16777215, 40))
+        self.Btn_autoajustadoPSK.setFont(font11)
+        self.Btn_autoajustadoPSK.setStyleSheet(u"QPushButton {\n"
+"	border: 2px solid rgb(46, 139, 59);\n"
+"	border-radius: 5px;	\n"
+"	background-color: rgb(53, 128, 76);\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(52, 168, 71);\n"
+"	border: 2px solid rgb(48, 156, 57);\n"
+"}\n"
+"QPushButton:pressed, QPushButton:checked {	\n"
+"	background-color: rgb(138, 26, 26);\n"
+"	border: 2px solid rgb(163, 52, 52);\n"
+"}\n"
+"")
+        self.Btn_autoajustadoPSK.setIcon(icon9)
+        self.Btn_autoajustadoPSK.setCheckable(False)
+        self.Btn_autoajustadoPSK.setChecked(False)
+
+        self.horizontalLayout_33.addWidget(self.Btn_autoajustadoPSK)
+
+        self.frame_41 = QFrame(self.frame_40)
+        self.frame_41.setObjectName(u"frame_41")
+        sizePolicy6.setHeightForWidth(self.frame_41.sizePolicy().hasHeightForWidth())
+        self.frame_41.setSizePolicy(sizePolicy6)
+        self.frame_41.setMinimumSize(QSize(250, 25))
+        self.frame_41.setStyleSheet(u"background-color: rgb(23, 32, 77);\n"
+"border-radius: 5px;")
+        self.frame_41.setFrameShape(QFrame.StyledPanel)
+        self.frame_41.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_34 = QHBoxLayout(self.frame_41)
+        self.horizontalLayout_34.setObjectName(u"horizontalLayout_34")
+        self.label_velPSK = QLabel(self.frame_41)
+        self.label_velPSK.setObjectName(u"label_velPSK")
+        self.label_velPSK.setMinimumSize(QSize(0, 10))
+        self.label_velPSK.setMaximumSize(QSize(16777215, 25))
+        self.label_velPSK.setFont(font9)
+        self.label_velPSK.setStyleSheet(u"QLabel{\n"
+"	background-color: rgb(33, 46, 112);\n"
+"	border: 0px solid ;\n"
+"	border-radius: 8px;\n"
+"}")
+        self.label_velPSK.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_34.addWidget(self.label_velPSK)
+
+        self.velocidadInputPSK = QSpinBox(self.frame_41)
+        self.velocidadInputPSK.setObjectName(u"velocidadInputPSK")
+        sizePolicy6.setHeightForWidth(self.velocidadInputPSK.sizePolicy().hasHeightForWidth())
+        self.velocidadInputPSK.setSizePolicy(sizePolicy6)
+        self.velocidadInputPSK.setMinimumSize(QSize(0, 15))
+        self.velocidadInputPSK.setFont(font10)
+        self.velocidadInputPSK.setLayoutDirection(Qt.LeftToRight)
+        self.velocidadInputPSK.setStyleSheet(u"QSpinBox{\n"
+"	background-color: rgb(5, 7, 35);\n"
+"	border-radius: 5px;\n"
+"	border: 2px solid rgb(10, 11, 35);\n"
+"	padding: 5px;\n"
+"	padding-left: 10px;\n"
+"}\n"
+"QSpinBox:hover{\n"
+"	border: 2px solid rgb(0, 0, 127)\n"
+"}\n"
+"QSpinBox QAbstractItemView {\n"
+"	color: rgb(85, 170, 255);	\n"
+"	background-color: rgb(27, 29, 35);\n"
+"	padding: 10px;\n"
+"	selection-background-color: rgb(27, 29, 35);\n"
+"}\n"
+"/*\n"
+"rgb(27, 29, 35);\n"
+"rgb(13, 9, 59)\n"
+"*/\n"
+"\n"
+"QSpinBox::up-button{\n"
+"	width: 25px; \n"
+"	border-left-width: 3px;\n"
+"	border-left-color: rgba(39, 44, 54, 150);\n"
+"	border-left-style: solid;\n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;	\n"
+"	background-image: url(:/16x16/icons/16x16/cil-arrow-top.png);\n"
+"	background-position: center;\n"
+"	background-repeat: no-reperat;\n"
+"}\n"
+"\n"
+"QSpinBox::up-button:hover{\n"
+"	background-color: rgb(80, 80, 80)\n"
+"}\n"
+"\n"
+"QSpinBox::down-button:hover{\n"
+"	background-color: rgb(80, 80, 80)\n"
+"}\n"
+"\n"
+"QSpinBox::down-bu"
+                        "tton{\n"
+"	width: 25px; \n"
+"	border-left-width: 3px;\n"
+"	border-left-color: rgba(39, 44, 54, 150);\n"
+"	border-left-style: solid;\n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;	\n"
+"	background-image: url(:/16x16/icons/16x16/cil-arrow-bottom.png);\n"
+"	background-position: center;\n"
+"	background-repeat: no-reperat;\n"
+"}")
+        self.velocidadInputPSK.setButtonSymbols(QAbstractSpinBox.UpDownArrows)
+        self.velocidadInputPSK.setMinimum(1)
+        self.velocidadInputPSK.setMaximum(5000)
+        self.velocidadInputPSK.setValue(1)
+
+        self.horizontalLayout_34.addWidget(self.velocidadInputPSK)
 
 
-        self.horizontalLayout_16.addWidget(self.PSK_graph_layout)
+        self.horizontalLayout_33.addWidget(self.frame_41, 0, Qt.AlignHCenter|Qt.AlignVCenter)
+
+
+        self.verticalLayout_33.addWidget(self.frame_40, 0, Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.stackedWidgetPSK.addWidget(self.pqgpsk)
+
+        self.horizontalLayout_16.addWidget(self.stackedWidgetPSK)
 
         self.stackedWidget.addWidget(self.page_psk)
         self.page_settings = QWidget()
@@ -2366,7 +2913,7 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.maxCarrierASK.setMinimum(1)
-        self.maxCarrierASK.setMaximum(10000)
+        self.maxCarrierASK.setMaximum(5000)
         self.maxCarrierASK.setValue(200)
 
         self.verticalLayout_23.addWidget(self.maxCarrierASK, 0, Qt.AlignHCenter)
@@ -2441,7 +2988,7 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.minCarrierASK.setMinimum(1)
-        self.minCarrierASK.setMaximum(1000)
+        self.minCarrierASK.setMaximum(5000)
 
         self.verticalLayout_23.addWidget(self.minCarrierASK, 0, Qt.AlignHCenter)
 
@@ -2476,9 +3023,9 @@ class Ui_MainWindow(object):
 "	background-color: rgb(37, 138, 26);\n"
 "	border: 2px solid rgb(60, 196, 72);\n"
 "}")
-        icon10 = QIcon()
-        icon10.addFile(u":/16x16/icons/16x16/cil-check-alt.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_AplicarASK.setIcon(icon10)
+        icon12 = QIcon()
+        icon12.addFile(u":/16x16/icons/16x16/cil-check-alt.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_AplicarASK.setIcon(icon12)
 
         self.verticalLayout_23.addWidget(self.btn_AplicarASK)
 
@@ -2659,7 +3206,7 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.maxCarrierFSK1.setMinimum(1)
-        self.maxCarrierFSK1.setMaximum(10000)
+        self.maxCarrierFSK1.setMaximum(5000)
         self.maxCarrierFSK1.setValue(200)
 
         self.verticalLayout_26.addWidget(self.maxCarrierFSK1, 0, Qt.AlignHCenter)
@@ -2735,7 +3282,7 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.minCarrierFSK1.setMinimum(1)
-        self.minCarrierFSK1.setMaximum(1000)
+        self.minCarrierFSK1.setMaximum(5000)
 
         self.verticalLayout_26.addWidget(self.minCarrierFSK1, 0, Qt.AlignHCenter)
 
@@ -2770,7 +3317,7 @@ class Ui_MainWindow(object):
 "	background-color: rgb(37, 138, 26);\n"
 "	border: 2px solid rgb(60, 196, 72);\n"
 "}")
-        self.btn_AplicarFSK1.setIcon(icon10)
+        self.btn_AplicarFSK1.setIcon(icon12)
 
         self.verticalLayout_26.addWidget(self.btn_AplicarFSK1)
 
@@ -2930,7 +3477,7 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.maxCarrierFSK2.setMinimum(1)
-        self.maxCarrierFSK2.setMaximum(10000)
+        self.maxCarrierFSK2.setMaximum(5000)
         self.maxCarrierFSK2.setValue(200)
 
         self.verticalLayout_27.addWidget(self.maxCarrierFSK2, 0, Qt.AlignHCenter)
@@ -3005,7 +3552,7 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.minCarrierFSK2.setMinimum(1)
-        self.minCarrierFSK2.setMaximum(1000)
+        self.minCarrierFSK2.setMaximum(5000)
 
         self.verticalLayout_27.addWidget(self.minCarrierFSK2, 0, Qt.AlignHCenter)
 
@@ -3040,7 +3587,7 @@ class Ui_MainWindow(object):
 "	background-color: rgb(37, 138, 26);\n"
 "	border: 2px solid rgb(60, 196, 72);\n"
 "}")
-        self.btn_AplicarFSK2.setIcon(icon10)
+        self.btn_AplicarFSK2.setIcon(icon12)
 
         self.verticalLayout_27.addWidget(self.btn_AplicarFSK2)
 
@@ -3255,7 +3802,7 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.maxCarrierPSK.setMinimum(1)
-        self.maxCarrierPSK.setMaximum(10000)
+        self.maxCarrierPSK.setMaximum(5000)
         self.maxCarrierPSK.setValue(200)
 
         self.verticalLayout_25.addWidget(self.maxCarrierPSK, 0, Qt.AlignHCenter)
@@ -3330,7 +3877,7 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.minCarrierPSK.setMinimum(1)
-        self.minCarrierPSK.setMaximum(1000)
+        self.minCarrierPSK.setMaximum(5000)
 
         self.verticalLayout_25.addWidget(self.minCarrierPSK, 0, Qt.AlignHCenter)
 
@@ -3365,7 +3912,7 @@ class Ui_MainWindow(object):
 "	background-color: rgb(37, 138, 26);\n"
 "	border: 2px solid rgb(60, 196, 72);\n"
 "}")
-        self.btn_AplicarPSK.setIcon(icon10)
+        self.btn_AplicarPSK.setIcon(icon12)
 
         self.verticalLayout_25.addWidget(self.btn_AplicarPSK)
 
@@ -3502,6 +4049,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.setContentsMargins(0, 0, 2, 0)
         self.frame_label_bottom = QFrame(self.frame_grip)
         self.frame_label_bottom.setObjectName(u"frame_label_bottom")
+        self.frame_label_bottom.setStyleSheet(u"color: rgb(159, 165, 177);")
         self.frame_label_bottom.setFrameShape(QFrame.NoFrame)
         self.frame_label_bottom.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_7 = QHBoxLayout(self.frame_label_bottom)
@@ -3511,7 +4059,7 @@ class Ui_MainWindow(object):
         self.label_credits = QLabel(self.frame_label_bottom)
         self.label_credits.setObjectName(u"label_credits")
         self.label_credits.setFont(font)
-        self.label_credits.setStyleSheet(u"color: rgb(98, 103, 111);")
+        self.label_credits.setStyleSheet(u"color: rgb(159, 165, 177);")
 
         self.horizontalLayout_7.addWidget(self.label_credits)
 
@@ -3519,7 +4067,7 @@ class Ui_MainWindow(object):
         self.label_version.setObjectName(u"label_version")
         self.label_version.setMaximumSize(QSize(100, 16777215))
         self.label_version.setFont(font)
-        self.label_version.setStyleSheet(u"color: rgb(98, 103, 111);")
+        self.label_version.setStyleSheet(u"color: rgb(159, 165, 177);")
         self.label_version.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.horizontalLayout_7.addWidget(self.label_version)
@@ -3567,7 +4115,10 @@ class Ui_MainWindow(object):
         self.carrierFreqInputASK.valueChanged.connect(self.sliderASK.setValue)
         self.sliderASK.valueChanged.connect(self.carrierFreqInputASK.setValue)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidgetASK.setCurrentIndex(0)
+        self.stackedWidgetFSK.setCurrentIndex(0)
+        self.stackedWidgetPSK.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -3616,7 +4167,7 @@ class Ui_MainWindow(object):
 "Conmutaci\u00f3n\n"
 "de Amplitud", None))
         self.label_top_info_3.setText(QCoreApplication.translate("MainWindow", u"Ingrese una cadena\n"
-" de 2 / 4 / 8 / 16 bits", None))
+" de 2, 4, 8 o 16 bits", None))
 #if QT_CONFIG(tooltip)
         self.messageInputASK.setToolTip(QCoreApplication.translate("MainWindow", u"Ingrese cadenas de 2, 4, 8 o 16 bits", None))
 #endif // QT_CONFIG(tooltip)
@@ -3645,7 +4196,13 @@ class Ui_MainWindow(object):
         self.Btn_pauseASK.setWhatsThis("")
 #endif // QT_CONFIG(whatsthis)
         self.Btn_pauseASK.setText(QCoreApplication.translate("MainWindow", u"Pausar", None))
+#if QT_CONFIG(shortcut)
+        self.Btn_pauseASK.setShortcut(QCoreApplication.translate("MainWindow", u"Space", None))
+#endif // QT_CONFIG(shortcut)
         self.clearBtnASK.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
+#if QT_CONFIG(shortcut)
+        self.clearBtnASK.setShortcut(QCoreApplication.translate("MainWindow", u"Backspace", None))
+#endif // QT_CONFIG(shortcut)
 #if QT_CONFIG(tooltip)
         self.Btn_helpASK.setToolTip(QCoreApplication.translate("MainWindow", u"Consigue ayuda sobre esta p\u00e1gina", None))
 #endif // QT_CONFIG(tooltip)
@@ -3656,6 +4213,12 @@ class Ui_MainWindow(object):
         self.Btn_helpASK.setWhatsThis("")
 #endif // QT_CONFIG(whatsthis)
         self.Btn_helpASK.setText(QCoreApplication.translate("MainWindow", u"Ayuda", None))
+        self.Btn_antialiasASK.setText(QCoreApplication.translate("MainWindow", u"Anti-aliasing", None))
+        self.Btn_autoajustadoASK.setText(QCoreApplication.translate("MainWindow", u"Auto Ajustar", None))
+        self.label_velASK.setText(QCoreApplication.translate("MainWindow", u"Velocidad", None))
+#if QT_CONFIG(tooltip)
+        self.velocidadInputASK.setToolTip("")
+#endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
         self.Btn_helpFSK.setToolTip(QCoreApplication.translate("MainWindow", u"Consigue ayuda sobre esta p\u00e1gina", None))
 #endif // QT_CONFIG(tooltip)
@@ -3696,15 +4259,27 @@ class Ui_MainWindow(object):
         self.Btn_pauseFSK.setWhatsThis("")
 #endif // QT_CONFIG(whatsthis)
         self.Btn_pauseFSK.setText(QCoreApplication.translate("MainWindow", u"Pausar", None))
+#if QT_CONFIG(shortcut)
+        self.Btn_pauseFSK.setShortcut(QCoreApplication.translate("MainWindow", u"Space", None))
+#endif // QT_CONFIG(shortcut)
         self.label_top_info_9.setText(QCoreApplication.translate("MainWindow", u"Se\u00f1al 2", None))
         self.label_top_info_10.setText(QCoreApplication.translate("MainWindow", u"Frecuencia (Hz)", None))
 #if QT_CONFIG(tooltip)
         self.carrierFreq2InputFSK.setToolTip("")
 #endif // QT_CONFIG(tooltip)
         self.clearBtnFSK.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
+#if QT_CONFIG(shortcut)
+        self.clearBtnFSK.setShortcut(QCoreApplication.translate("MainWindow", u"Backspace", None))
+#endif // QT_CONFIG(shortcut)
         self.label_top_info_13.setText(QCoreApplication.translate("MainWindow", u"Ingrese una cadena\n"
-" de 2 / 4 / 8 / 16 bits", None))
+" de 2, 4, 8 o 16 bits", None))
         self.modulateBtnFSK.setText(QCoreApplication.translate("MainWindow", u"Animar", None))
+        self.Btn_antialiasFSK.setText(QCoreApplication.translate("MainWindow", u"Anti-aliasing", None))
+        self.Btn_autoajustadoFSK.setText(QCoreApplication.translate("MainWindow", u"Auto Ajustar", None))
+        self.label_velFSK.setText(QCoreApplication.translate("MainWindow", u"Velocidad", None))
+#if QT_CONFIG(tooltip)
+        self.velocidadInputFSK.setToolTip("")
+#endif // QT_CONFIG(tooltip)
         self.modulateBtnPSK.setText(QCoreApplication.translate("MainWindow", u"Animar", None))
 #if QT_CONFIG(tooltip)
         self.Btn_helpPSK.setToolTip(QCoreApplication.translate("MainWindow", u"Consigue ayuda sobre esta p\u00e1gina", None))
@@ -3726,6 +4301,9 @@ class Ui_MainWindow(object):
         self.Btn_pausePSK.setWhatsThis("")
 #endif // QT_CONFIG(whatsthis)
         self.Btn_pausePSK.setText(QCoreApplication.translate("MainWindow", u"Pausar", None))
+#if QT_CONFIG(shortcut)
+        self.Btn_pausePSK.setShortcut(QCoreApplication.translate("MainWindow", u"Space", None))
+#endif // QT_CONFIG(shortcut)
         self.label_title_bar_top_4.setText(QCoreApplication.translate("MainWindow", u"Modulaci\u00f3n por\n"
 "Conmutaci\u00f3n\n"
 "de Fase", None))
@@ -3742,12 +4320,21 @@ class Ui_MainWindow(object):
         self.messageInputPSK.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ingrese cadena de bits", None))
         self.labelPSK.setText(QCoreApplication.translate("MainWindow", u"16/16", None))
         self.clearBtnPSK.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
+#if QT_CONFIG(shortcut)
+        self.clearBtnPSK.setShortcut(QCoreApplication.translate("MainWindow", u"Backspace", None))
+#endif // QT_CONFIG(shortcut)
         self.label_top_info_15.setText(QCoreApplication.translate("MainWindow", u"Ingrese una cadena\n"
-" de 2 / 4 / 8 / 16 bits", None))
+" de 2, 4, 8 o 16 bits", None))
         self.label_top_info_8.setText(QCoreApplication.translate("MainWindow", u"Se\u00f1al Portadora", None))
         self.label_top_info_14.setText(QCoreApplication.translate("MainWindow", u"Frecuencia (Hz)", None))
 #if QT_CONFIG(tooltip)
         self.carrierFreqInputPSK.setToolTip("")
+#endif // QT_CONFIG(tooltip)
+        self.Btn_antialiasPSK.setText(QCoreApplication.translate("MainWindow", u"Anti-aliasing", None))
+        self.Btn_autoajustadoPSK.setText(QCoreApplication.translate("MainWindow", u"Auto Ajustar", None))
+        self.label_velPSK.setText(QCoreApplication.translate("MainWindow", u"Velocidad", None))
+#if QT_CONFIG(tooltip)
+        self.velocidadInputPSK.setToolTip("")
 #endif // QT_CONFIG(tooltip)
         self.label_title_bar_top_5.setText(QCoreApplication.translate("MainWindow", u"Modulaci\u00f3n por\n"
 "Conmutaci\u00f3n de Amplitud\n"
