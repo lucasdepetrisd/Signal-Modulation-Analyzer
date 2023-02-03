@@ -142,6 +142,8 @@ class MainWindow(QMainWindow):
         # ASK ANIMATION CONNECTORS
         self.ui.modulateBtnASK.clicked.connect(lambda: self.animateModulation("ask"))
         self.ui.Btn_pauseASK.clicked.connect(lambda: self.animASK.switchAnimation())
+        self.ui.Btn_antialiasASK.clicked.connect(lambda: self.animASK.antialiasing(self.ui.Btn_antialiasASK.isChecked()))
+        self.ui.Btn_autoajustadoASK.clicked.connect(lambda: self.animASK.autoadjust())
 
         # FSK MODULATION CONNECTORS
         self.ui.messageInputFSK.textChanged.connect(lambda: self.modulateFSK())
@@ -151,6 +153,8 @@ class MainWindow(QMainWindow):
         # FSK ANIMATION CONNECTORS
         self.ui.modulateBtnFSK.clicked.connect(lambda: self.animateModulation("fsk"))
         self.ui.Btn_pauseFSK.clicked.connect(lambda: self.ui.MplWidgetFSK.switchAnimation(True))
+        self.ui.Btn_antialiasFSK.clicked.connect(lambda: self.animFSK.antialiasing(self.ui.Btn_antialiasFSK.isChecked()))
+        self.ui.Btn_autoajustadoFSK.clicked.connect(lambda: self.animFSK.autoadjust())
 
         # PSK MODULATION CONNECTORS
         self.ui.messageInputPSK.textChanged.connect(lambda: self.modulatePSK())
@@ -159,6 +163,8 @@ class MainWindow(QMainWindow):
         # PSK ANIMATION CONNECTORS
         self.ui.modulateBtnPSK.clicked.connect(lambda: self.animateModulation("psk"))
         self.ui.Btn_pausePSK.clicked.connect(lambda: self.ui.MplWidgetPSK.switchAnimation(True))
+        self.ui.Btn_antialiasPSK.clicked.connect(lambda: self.animPSK.antialiasing(self.ui.Btn_antialiasPSK.isChecked()))
+        self.ui.Btn_autoajustadoPSK.clicked.connect(lambda: self.animPSK.autoadjust())
 
         self.ui.Btn_helpASK.clicked.connect(lambda: self.helpPage("ask"))
         self.ui.Btn_helpFSK.clicked.connect(lambda: self.helpPage("fsk"))
