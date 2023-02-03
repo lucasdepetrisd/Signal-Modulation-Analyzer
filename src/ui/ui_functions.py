@@ -37,9 +37,9 @@ class UIFunctions(MainWindow):
         global GLOBAL_STATE
         status = GLOBAL_STATE
         # fontManager(self, status)
-        self.clearASK()
-        self.clearFSK()
-        self.clearPSK()
+        # self.clearASK()
+        # self.clearFSK()
+        # self.clearPSK()
         # self.ui.clearBtnASK.click()
         # self.ui.clearBtnFSK.click()
         # self.ui.clearBtnPSK.click()
