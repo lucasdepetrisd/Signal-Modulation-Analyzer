@@ -3,7 +3,7 @@ from scipy import signal
 
 class BinaryGenerator:
 
-    def __init__(self,Message: str,SampleSize: int):
+    def __init__(self,Message: str, SampleSize: int):
         self.dmsg = Message
         self.samples = SampleSize
         self.bits = [1 if bit == '1' else 0 for bit in self.dmsg]
