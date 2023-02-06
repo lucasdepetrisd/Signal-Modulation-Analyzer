@@ -14,7 +14,7 @@ from main import *
 GLOBAL_STATE = 0
 GLOBAL_TITLE_BAR = True
 
-## ==> COUT INITIAL MENU
+## ==> COUNT INITIAL MENU
 count = 1
 
 class UIFunctions(MainWindow):

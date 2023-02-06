@@ -1,5 +1,5 @@
 from modulation.BGen import BinaryGenerator
-import numpy as np
+from main import *
 
 ########################################################################
 ## START ==> MODULATION EVENTS

@@ -7,8 +7,9 @@ from pyqtgraph.Qt import QtCore, QtWidgets
 from PyQt5 import QtGui, QtCore
 
 #Libraries that do the heavy lifting
-import numpy as np
-import modulation.modulation as mod
+from main import *
+# import numpy as np
+# import modulation.modulation as mod
 
 #Timer FPS
 from time import perf_counter
