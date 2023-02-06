@@ -18,7 +18,7 @@ def checkMessage(message: str):
     
 def modulateASK(message, Fc):
     if(checkMessage(message)):
-        Fs = 64 * Fc # Sampling freq must be >>> 2 * fc (Nyquist rate)
+        Fs = 32 * Fc # Sampling freq must be >>> 2 * fc (Nyquist rate)
         Fs = Fs + (Fs % len(message))
         t = np.arange(0,1,1/Fs)
         samples = Fs // len(message)
@@ -36,19 +36,18 @@ def modulateASK(message, Fc):
         ask_signal = carrier_signal * data_signal
 
         bandWidth = len(message)
-        # arrays = [data_signal, carrier_signal, ask_signal, Fs, t, bandWidth]
-        return data_signal, carrier_signal, ask_signal, Fs, t, bandWidth
+        return data_signal, carrier_signal, ask_signal, t, Fs, bandWidth
     else: 
         return 0
     
 def modulateFSK(message, Fc1, Fc2):
     if(checkMessage(message)):
-        Fs = 64 * max( Fc1, Fc2 ) # Sampling freq must be >>> 2 * fc (Nyquist rate)
+        Fs = 32 * max( Fc1, Fc2 ) # Sampling freq must be >>> 2 * fc (Nyquist rate)
         Fs = Fs + (Fs % len(message))
         t = np.arange(0, 1, 1/Fs)
         samples = Fs // len(message)
 
-        BG = BinaryGenerator(message,samples)
+        BG = BinaryGenerator(message, samples)
 
         data_signal = BG.generate()
         data_signal_inverse = BG.generateInverse()
@@ -67,8 +66,6 @@ def modulateFSK(message, Fc1, Fc2):
 
         fsk_signal = (carrier_signal_2 * data_signal) + (carrier_signal_1 * data_signal_inverse)
 
-        arrays = [carrier_signal_1, carrier_signal_2, data_signal, fsk_signal]
-
         # T = 1/bps seconds 
         # B = 1/(2T)
         # 2B = 1/T
@@ -76,16 +73,16 @@ def modulateFSK(message, Fc1, Fc2):
         # 2B = bps Hz
 
         bandWidth = (len(message))+(2*abs(Fc2-Fc1))
-        return data_signal, carrier_signal_1, carrier_signal_2, fsk_signal, Fs, t, bandWidth
+        return data_signal, carrier_signal_1, carrier_signal_2, fsk_signal, t, Fs, bandWidth
     else: 
         return 0
 
 def modulatePSK(message, Fc):
     if(checkMessage(message)):
-        Fs = len(message) * 64
+        # Fs = 32 * len(message)
+        Fs = 32 * Fc
         t = np.arange(0, 1, 1/Fs)
         samples = len(t) // len(message)
-        
         BG = BinaryGenerator(message, samples)
 
         data_signal = BG.generateBipolar()
@@ -100,7 +97,7 @@ def modulatePSK(message, Fc):
 
         bandWidth = len(message)
 
-        return data_signal, carrier_signal, psk_signal, Fs, t, bandWidth
+        return data_signal, carrier_signal, psk_signal, t, Fs, bandWidth
     else: 
         return 0
         
