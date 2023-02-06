@@ -36,16 +36,9 @@ class UIFunctions(MainWindow):
     def maximize_restore(self):
         global GLOBAL_STATE
         status = GLOBAL_STATE
-        # fontManager(self, status)
-        # self.clearASK()
-        # self.clearFSK()
-        # self.clearPSK()
-        # self.ui.clearBtnASK.click()
-        # self.ui.clearBtnFSK.click()
-        # self.ui.clearBtnPSK.click()
-        # self.ui.Btn_pauseASK.click()
-        # self.ui.Btn_pauseFSK.click()
-        # self.ui.Btn_pausePSK.click()
+        self.animASK.adjustPlot()
+        self.animFSK.adjustPlot()
+        self.animPSK.adjustPlot()
 
         if status == 0:
             self.showMaximized()
