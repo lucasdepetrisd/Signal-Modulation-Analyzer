@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'GUI_BASEprRSFk.ui'
+## Form generated from reading UI file 'GUI_BASEzZfhBW.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -1574,9 +1574,9 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.velocidadInputASK.setButtonSymbols(QAbstractSpinBox.UpDownArrows)
-        self.velocidadInputASK.setMinimum(1)
-        self.velocidadInputASK.setMaximum(5000)
-        self.velocidadInputASK.setValue(1)
+        self.velocidadInputASK.setMinimum(0)
+        self.velocidadInputASK.setMaximum(100)
+        self.velocidadInputASK.setValue(0)
 
         self.horizontalLayout_26.addWidget(self.velocidadInputASK)
 
@@ -1655,9 +1655,9 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.samplesInputASK.setButtonSymbols(QAbstractSpinBox.UpDownArrows)
-        self.samplesInputASK.setMinimum(2)
-        self.samplesInputASK.setMaximum(5000)
-        self.samplesInputASK.setValue(2)
+        self.samplesInputASK.setMinimum(1)
+        self.samplesInputASK.setMaximum(100)
+        self.samplesInputASK.setValue(100)
 
         self.horizontalLayout_26.addWidget(self.samplesInputASK)
 
@@ -2307,9 +2307,9 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.velocidadInputFSK.setButtonSymbols(QAbstractSpinBox.UpDownArrows)
-        self.velocidadInputFSK.setMinimum(1)
-        self.velocidadInputFSK.setMaximum(5000)
-        self.velocidadInputFSK.setValue(1)
+        self.velocidadInputFSK.setMinimum(0)
+        self.velocidadInputFSK.setMaximum(100)
+        self.velocidadInputFSK.setValue(0)
 
         self.horizontalLayout_37.addWidget(self.velocidadInputFSK)
 
@@ -2388,9 +2388,9 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.samplesInputFSK.setButtonSymbols(QAbstractSpinBox.UpDownArrows)
-        self.samplesInputFSK.setMinimum(2)
-        self.samplesInputFSK.setMaximum(5000)
-        self.samplesInputFSK.setValue(2)
+        self.samplesInputFSK.setMinimum(1)
+        self.samplesInputFSK.setMaximum(100)
+        self.samplesInputFSK.setValue(100)
 
         self.horizontalLayout_37.addWidget(self.samplesInputFSK)
 
@@ -2907,9 +2907,9 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.velocidadInputPSK.setButtonSymbols(QAbstractSpinBox.UpDownArrows)
-        self.velocidadInputPSK.setMinimum(1)
-        self.velocidadInputPSK.setMaximum(2000)
-        self.velocidadInputPSK.setValue(1)
+        self.velocidadInputPSK.setMinimum(0)
+        self.velocidadInputPSK.setMaximum(100)
+        self.velocidadInputPSK.setValue(0)
 
         self.horizontalLayout_39.addWidget(self.velocidadInputPSK)
 
@@ -2988,9 +2988,9 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.samplesInputPSK.setButtonSymbols(QAbstractSpinBox.UpDownArrows)
-        self.samplesInputPSK.setMinimum(2)
-        self.samplesInputPSK.setMaximum(5000)
-        self.samplesInputPSK.setValue(2)
+        self.samplesInputPSK.setMinimum(1)
+        self.samplesInputPSK.setMaximum(100)
+        self.samplesInputPSK.setValue(100)
 
         self.horizontalLayout_39.addWidget(self.samplesInputPSK)
 
@@ -3156,7 +3156,7 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.maxCarrierASK.setMinimum(1)
-        self.maxCarrierASK.setMaximum(1000)
+        self.maxCarrierASK.setMaximum(10000)
         self.maxCarrierASK.setValue(200)
 
         self.verticalLayout_23.addWidget(self.maxCarrierASK, 0, Qt.AlignHCenter)
@@ -3231,7 +3231,7 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.minCarrierASK.setMinimum(1)
-        self.minCarrierASK.setMaximum(1000)
+        self.minCarrierASK.setMaximum(10000)
 
         self.verticalLayout_23.addWidget(self.minCarrierASK, 0, Qt.AlignHCenter)
 
@@ -3449,7 +3449,7 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.maxCarrierFSK1.setMinimum(1)
-        self.maxCarrierFSK1.setMaximum(1000)
+        self.maxCarrierFSK1.setMaximum(10000)
         self.maxCarrierFSK1.setValue(200)
 
         self.verticalLayout_26.addWidget(self.maxCarrierFSK1, 0, Qt.AlignHCenter)
@@ -3525,7 +3525,7 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.minCarrierFSK1.setMinimum(1)
-        self.minCarrierFSK1.setMaximum(1000)
+        self.minCarrierFSK1.setMaximum(10000)
 
         self.verticalLayout_26.addWidget(self.minCarrierFSK1, 0, Qt.AlignHCenter)
 
@@ -3720,7 +3720,7 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.maxCarrierFSK2.setMinimum(1)
-        self.maxCarrierFSK2.setMaximum(1000)
+        self.maxCarrierFSK2.setMaximum(10000)
         self.maxCarrierFSK2.setValue(200)
 
         self.verticalLayout_27.addWidget(self.maxCarrierFSK2, 0, Qt.AlignHCenter)
@@ -3795,7 +3795,7 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.minCarrierFSK2.setMinimum(1)
-        self.minCarrierFSK2.setMaximum(1000)
+        self.minCarrierFSK2.setMaximum(10000)
 
         self.verticalLayout_27.addWidget(self.minCarrierFSK2, 0, Qt.AlignHCenter)
 
@@ -4045,7 +4045,7 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.maxCarrierPSK.setMinimum(1)
-        self.maxCarrierPSK.setMaximum(1000)
+        self.maxCarrierPSK.setMaximum(10000)
         self.maxCarrierPSK.setValue(200)
 
         self.verticalLayout_25.addWidget(self.maxCarrierPSK, 0, Qt.AlignHCenter)
@@ -4120,7 +4120,7 @@ class Ui_MainWindow(object):
 "	background-repeat: no-reperat;\n"
 "}")
         self.minCarrierPSK.setMinimum(1)
-        self.minCarrierPSK.setMaximum(1000)
+        self.minCarrierPSK.setMaximum(10000)
 
         self.verticalLayout_25.addWidget(self.minCarrierPSK, 0, Qt.AlignHCenter)
 
@@ -4359,9 +4359,9 @@ class Ui_MainWindow(object):
         self.sliderASK.valueChanged.connect(self.carrierFreqInputASK.setValue)
 
         self.stackedWidget.setCurrentIndex(3)
-        self.stackedWidgetASK.setCurrentIndex(1)
-        self.stackedWidgetFSK.setCurrentIndex(1)
-        self.stackedWidgetPSK.setCurrentIndex(1)
+        self.stackedWidgetASK.setCurrentIndex(0)
+        self.stackedWidgetFSK.setCurrentIndex(0)
+        self.stackedWidgetPSK.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -4462,10 +4462,12 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(tooltip)
         self.velocidadInputASK.setToolTip("")
 #endif // QT_CONFIG(tooltip)
+        self.velocidadInputASK.setSuffix(QCoreApplication.translate("MainWindow", u"%", None))
         self.label_velASK_3.setText(QCoreApplication.translate("MainWindow", u"Muestras", None))
 #if QT_CONFIG(tooltip)
         self.samplesInputASK.setToolTip("")
 #endif // QT_CONFIG(tooltip)
+        self.samplesInputASK.setSuffix(QCoreApplication.translate("MainWindow", u"%", None))
 #if QT_CONFIG(tooltip)
         self.Btn_helpFSK.setToolTip(QCoreApplication.translate("MainWindow", u"Consigue ayuda sobre esta p\u00e1gina", None))
 #endif // QT_CONFIG(tooltip)
@@ -4527,10 +4529,12 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(tooltip)
         self.velocidadInputFSK.setToolTip("")
 #endif // QT_CONFIG(tooltip)
+        self.velocidadInputFSK.setSuffix(QCoreApplication.translate("MainWindow", u"%", None))
         self.label_samFSK.setText(QCoreApplication.translate("MainWindow", u"Muestras", None))
 #if QT_CONFIG(tooltip)
         self.samplesInputFSK.setToolTip("")
 #endif // QT_CONFIG(tooltip)
+        self.samplesInputFSK.setSuffix(QCoreApplication.translate("MainWindow", u"%", None))
         self.modulateBtnPSK.setText(QCoreApplication.translate("MainWindow", u"Animar", None))
 #if QT_CONFIG(tooltip)
         self.Btn_helpPSK.setToolTip(QCoreApplication.translate("MainWindow", u"Consigue ayuda sobre esta p\u00e1gina", None))
@@ -4587,19 +4591,21 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(tooltip)
         self.velocidadInputPSK.setToolTip("")
 #endif // QT_CONFIG(tooltip)
+        self.velocidadInputPSK.setSuffix(QCoreApplication.translate("MainWindow", u"%", None))
         self.label_samPSK.setText(QCoreApplication.translate("MainWindow", u"Muestras", None))
 #if QT_CONFIG(tooltip)
         self.samplesInputPSK.setToolTip("")
 #endif // QT_CONFIG(tooltip)
+        self.samplesInputPSK.setSuffix(QCoreApplication.translate("MainWindow", u"%", None))
         self.label_title_bar_top_5.setText(QCoreApplication.translate("MainWindow", u"Modulaci\u00f3n por\n"
 "Conmutaci\u00f3n de Amplitud\n"
 "ASK", None))
         self.label_top_info_16.setText(QCoreApplication.translate("MainWindow", u"Se\u00f1al Portadora", None))
-        self.label_top_info_17.setText(QCoreApplication.translate("MainWindow", u"Frecuencia M\u00e1xima (Hz) | 1 a 1.000", None))
+        self.label_top_info_17.setText(QCoreApplication.translate("MainWindow", u"Frecuencia M\u00e1xima (Hz) | 1 a 10.000", None))
 #if QT_CONFIG(tooltip)
         self.maxCarrierASK.setToolTip("")
 #endif // QT_CONFIG(tooltip)
-        self.label_top_info_18.setText(QCoreApplication.translate("MainWindow", u"Frecuencia M\u00ednima (Hz) | 1 a 1.000", None))
+        self.label_top_info_18.setText(QCoreApplication.translate("MainWindow", u"Frecuencia M\u00ednima (Hz) | 1 a 10.000", None))
 #if QT_CONFIG(tooltip)
         self.minCarrierASK.setToolTip("")
 #endif // QT_CONFIG(tooltip)
@@ -4609,11 +4615,11 @@ class Ui_MainWindow(object):
         self.label_top_info_26.setText(QCoreApplication.translate("MainWindow", u"Frec M\u00ednima Actual:", None))
         self.label_minASK.setText(QCoreApplication.translate("MainWindow", u"1 Hz", None))
         self.label_top_info_22.setText(QCoreApplication.translate("MainWindow", u"Se\u00f1al 1", None))
-        self.label_top_info_23.setText(QCoreApplication.translate("MainWindow", u"Frecuencia M\u00e1xima (Hz) | 1 a 1.000", None))
+        self.label_top_info_23.setText(QCoreApplication.translate("MainWindow", u"Frecuencia M\u00e1xima (Hz) | 1 a 10.000", None))
 #if QT_CONFIG(tooltip)
         self.maxCarrierFSK1.setToolTip("")
 #endif // QT_CONFIG(tooltip)
-        self.label_top_info_21.setText(QCoreApplication.translate("MainWindow", u"Frecuencia M\u00ednima (Hz) | 1 a 1.000", None))
+        self.label_top_info_21.setText(QCoreApplication.translate("MainWindow", u"Frecuencia M\u00ednima (Hz) | 1 a 10.000", None))
 #if QT_CONFIG(tooltip)
         self.minCarrierFSK1.setToolTip("")
 #endif // QT_CONFIG(tooltip)
@@ -4623,11 +4629,11 @@ class Ui_MainWindow(object):
         self.label_top_info_27.setText(QCoreApplication.translate("MainWindow", u"Frec M\u00ednima Actual:", None))
         self.label_minFSK_1.setText(QCoreApplication.translate("MainWindow", u"1 Hz", None))
         self.label_top_info_24.setText(QCoreApplication.translate("MainWindow", u"Se\u00f1al 2", None))
-        self.label_top_info_25.setText(QCoreApplication.translate("MainWindow", u"Frecuencia M\u00e1xima (Hz) | 1 a 1.000", None))
+        self.label_top_info_25.setText(QCoreApplication.translate("MainWindow", u"Frecuencia M\u00e1xima (Hz) | 1 a 10.000", None))
 #if QT_CONFIG(tooltip)
         self.maxCarrierFSK2.setToolTip("")
 #endif // QT_CONFIG(tooltip)
-        self.label_top_info_28.setText(QCoreApplication.translate("MainWindow", u"Frecuencia M\u00ednima (Hz) | 1 a 1.000", None))
+        self.label_top_info_28.setText(QCoreApplication.translate("MainWindow", u"Frecuencia M\u00ednima (Hz) | 1 a 10.000", None))
 #if QT_CONFIG(tooltip)
         self.minCarrierFSK2.setToolTip("")
 #endif // QT_CONFIG(tooltip)
@@ -4643,11 +4649,11 @@ class Ui_MainWindow(object):
 "Conmutaci\u00f3n de Fase\n"
 "PSK", None))
         self.label_top_info_19.setText(QCoreApplication.translate("MainWindow", u"Se\u00f1al Portadora", None))
-        self.label_top_info_20.setText(QCoreApplication.translate("MainWindow", u"Frecuencia M\u00e1xima (Hz) | 1 a 1.000", None))
+        self.label_top_info_20.setText(QCoreApplication.translate("MainWindow", u"Frecuencia M\u00e1xima (Hz) | 1 a 10.000", None))
 #if QT_CONFIG(tooltip)
         self.maxCarrierPSK.setToolTip("")
 #endif // QT_CONFIG(tooltip)
-        self.label_top_info_29.setText(QCoreApplication.translate("MainWindow", u"Frecuencia M\u00ednima (Hz) | 1 a 1.000", None))
+        self.label_top_info_29.setText(QCoreApplication.translate("MainWindow", u"Frecuencia M\u00ednima (Hz) | 1 a 10.000", None))
 #if QT_CONFIG(tooltip)
         self.minCarrierPSK.setToolTip("")
 #endif // QT_CONFIG(tooltip)

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'helpWindowxdcyvl.ui'
+## Form generated from reading UI file 'helpWindowhrjrOU.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -2722,7 +2722,7 @@ class Ui_helpWindow(object):
         self.carrierFreqInputPSK.valueChanged.connect(self.sliderPSK.setValue)
         self.sliderPSK.valueChanged.connect(self.carrierFreqInputPSK.setValue)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(helpWindow)
@@ -2806,7 +2806,7 @@ class Ui_helpWindow(object):
         self.label_top_info_13.setText(QCoreApplication.translate("helpWindow", u"Resultante", None))
         self.label_top_info_15.setText(QCoreApplication.translate("helpWindow", u"AB =", None))
         self.label_resultFSK_2.setText(QCoreApplication.translate("helpWindow", u"longitudCadena (Hz)", None))
-        self.label.setText(QCoreApplication.translate("helpWindow", u"<html><head/><body><p>La modulaci\u00f3n por desplazamiento de Amplitud es un tipo de modulaci\u00f3n digital que mediante la variaci\u00f3n de amplitud de la se\u00f1al portadora anal\u00f3gica permite transmitir el mensaje contenido en la se\u00f1al moduladora digital.</p><p>Este cambio de amplitud depende del c\u00f3digo binario de entrada y mantiene constante la frecuencia y fase.</p><p>En la simulaci\u00f3n se utiliza una frecuencia de muestreo para la se\u00f1al digital equivalente a 64 veces la portadora para una mayor precisi\u00f3n al momento de calcular.</p><p>El Ancho de Banda (AB) se calcula mediante la siguiente formula:</p><p align=\"center\">AB = 2B con B = (1/2T)</p><p>Siendo T = 1/longitudCadena entonces:</p><p align=\"center\">AB = longitudCadena (Hz)</p></body></html>", None))
+        self.label.setText(QCoreApplication.translate("helpWindow", u"<html><head/><body><p>La modulaci\u00f3n por desplazamiento de Amplitud es un tipo de modulaci\u00f3n digital que mediante la variaci\u00f3n de amplitud de la se\u00f1al portadora anal\u00f3gica permite transmitir el mensaje contenido en la se\u00f1al moduladora digital.</p><p>Este cambio de amplitud depende del c\u00f3digo binario de entrada y mantiene constante la frecuencia y fase.</p><p>En la simulaci\u00f3n se utiliza una frecuencia de muestreo para la se\u00f1al digital equivalente a 64 veces la portadora para una mayor precisi\u00f3n al momento de calcular.</p><p>El Ancho de Banda (AB) se calcula mediante la siguiente formula:</p><p align=\"center\">n = longitud de la cadena</p><p align=\"center\">AB = 2B con B = (1/Ts)</p><p>Siendo Ts = 1/n entonces:</p><p align=\"center\">AB = 2B</p><p align=\"center\">AB = 2n (Hz)</p></body></html>", None))
         self.label_top_info_11.setText(QCoreApplication.translate("helpWindow", u"Resultante", None))
         self.label_top_info_12.setText(QCoreApplication.translate("helpWindow", u"AB =", None))
         self.label_resultFSK.setText(QCoreApplication.translate("helpWindow", u"longitudCadena + \u0394f (Hz)", None))
@@ -2823,7 +2823,8 @@ class Ui_helpWindow(object):
         self.label_title_bar_top_7.setText(QCoreApplication.translate("helpWindow", u"Modulaci\u00f3n por\n"
 "Conmutaci\u00f3n\n"
 "de Frecuencias", None))
-        self.label_2.setText(QCoreApplication.translate("helpWindow", u"<html><head/><body><p>La modulaci\u00f3n por desplazamiento de Frecuencia es un tipo de modulaci\u00f3n digital que utiliza dos se\u00f1ales con frecuencias distintas para enviar el mensaje de la se\u00f1al moduladora digital. Dependiendo del bit de la moduladora se enviara una se\u00f1al u otra.</p><p>Se mantiene constante la amplitud y fase.</p><p>En la simulaci\u00f3n se utiliza una frecuencia de muestreo para la se\u00f1al digital equivalente a 64 veces a la mayor frecuencia entre las se\u00f1ales de entrada para una mayor precisi\u00f3n al momento de hacer los calculos.</p><p>El Ancho de Banda (AB) se calcula mediante la siguiente formula:</p><p align=\"center\">AB = 2B + 2<span style=\" font-weight:400;\">\u0394</span>f </p><p align=\"center\">B = (1/2T) y <span style=\" font-weight:400;\">\u0394</span>f = |f1 - f2|</p><p>Siendo T = 1/longitudCadena entonces:</p><p align=\"center\">AB = longitudCadena + <span style=\" font-weight:400;\">\u0394</span>f (Hz)</p></body></html>", None))
+        self.label_2.setText(QCoreApplication.translate("helpWindow", u"<html><head/><body><p>La modulaci\u00f3n por desplazamiento de Frecuencia es un tipo de modulaci\u00f3n digital que utiliza dos se\u00f1ales con frecuencias distintas para enviar el mensaje de la se\u00f1al moduladora digital. Dependiendo del bit de la moduladora se enviara una se\u00f1al u otra.</p><p>Se mantiene constante la amplitud y fase.</p><p>En la simulaci\u00f3n se utiliza una frecuencia de muestreo para la se\u00f1al digital equivalente a 64 veces a la mayor frecuencia entre las se\u00f1ales de entrada para una mayor precisi\u00f3n al momento de hacer los calculos.</p><p>El Ancho de Banda (AB) se calcula mediante la siguiente formula:</p><p align=\"center\">n = longitud de la cadena</p><p align=\"center\">AB = 2B + 2<span style=\" font-weight:400;\">\u0394</span>f </p><p align=\"center\">B = (1/Ts) y <span style=\" font-weight:400;\">\u0394</span>f = |f1 - f2|/2</p><p>Siendo Ts = 1/n entonces:</p><p align=\"center\">AB = 2B + 2<span style=\" font-weight:400;\">\u0394</span>f </p><p align=\"center\">A"
+                        "B = 2 * (n + |f1 - f2|) (Hz)</p></body></html>", None))
         self.label_title_bar_top_4.setText(QCoreApplication.translate("helpWindow", u"Modulaci\u00f3n por\n"
 "Conmutaci\u00f3n\n"
 "de Fase", None))
@@ -2835,7 +2836,7 @@ class Ui_helpWindow(object):
         self.label_top_info_19.setText(QCoreApplication.translate("helpWindow", u"Resultante", None))
         self.label_top_info_20.setText(QCoreApplication.translate("helpWindow", u"AB =", None))
         self.label_resultFSK_3.setText(QCoreApplication.translate("helpWindow", u"longitudCadena (Hz)", None))
-        self.label_3.setText(QCoreApplication.translate("helpWindow", u"<html><head/><body><p>La modulaci\u00f3n por desplazamiento de Fase es un tipo de modulaci\u00f3n digital que utiliza una se\u00f1al portadora a la que se le aplica defasajes para enviar el mensaje de la se\u00f1al moduladora digital. Dependiendo del bit de la moduladora se enviara una se\u00f1al u otra.</p><p>Se mantiene constante la amplitud y frecuencia.</p><p>En la simulaci\u00f3n se utiliza una frecuencia de muestreo para la se\u00f1al digital equivalente a 64 veces a la frecuencia de la portadora para una mayor precisi\u00f3n al momento de hacer los calculos.</p><p>El Ancho de Banda (AB) se calcula mediante la siguiente formula:</p><p align=\"center\">AB = 2B</p><p align=\"center\">B = (1/2T)</p><p>Siendo T = 1/longitudCadena entonces:</p><p align=\"center\">AB = longitudCadena (Hz)</p></body></html>", None))
+        self.label_3.setText(QCoreApplication.translate("helpWindow", u"<html><head/><body><p>La modulaci\u00f3n por desplazamiento de Fase es un tipo de modulaci\u00f3n digital que utiliza una se\u00f1al portadora a la que se le aplica defasajes para enviar el mensaje de la se\u00f1al moduladora digital. Dependiendo del bit de la moduladora se enviara una se\u00f1al u otra.</p><p>Se mantiene constante la amplitud y frecuencia.</p><p>En la simulaci\u00f3n se utiliza una frecuencia de muestreo para la se\u00f1al digital equivalente a 64 veces a la frecuencia de la portadora para una mayor precisi\u00f3n al momento de hacer los calculos.</p><p align=\"center\">El Ancho de Banda (AB) se calcula mediante la siguiente formula:</p><p align=\"center\">n = longitud de la cadena</p><p align=\"center\">AB = 2B con B = (1/Ts)</p><p>Siendo Ts = 1/n entonces:</p><p align=\"center\">AB = 2B</p><p align=\"center\">AB = 2n (Hz)</p></body></html>", None))
         self.label_top_info_22.setText(QCoreApplication.translate("helpWindow", u"Se\u00f1al 1", None))
         self.label_top_info_23.setText(QCoreApplication.translate("helpWindow", u"<html><head/><body><p>Frecuencia M\u00e1xima (Hz) 1-10.000</p></body></html>", None))
 #if QT_CONFIG(tooltip)
@@ -2851,7 +2852,7 @@ class Ui_helpWindow(object):
         self.label_top_info_27.setText(QCoreApplication.translate("helpWindow", u"Frec M\u00ednima Actual:", None))
         self.label_minASK.setText(QCoreApplication.translate("helpWindow", u"1 Hz", None))
         self.label_title_bar_top_6.setText(QCoreApplication.translate("helpWindow", u"Configuraci\u00f3n", None))
-        self.label_4.setText(QCoreApplication.translate("helpWindow", u"<html><head/><body><p>Desde el menu de Ajustes se puede cambiar los valores m\u00e1ximos y m\u00ednimos de simulaci\u00f3n.</p><p>Los cambios aplicados se mostrar\u00e1n en verde, si se utilizan valores m\u00e1ximos menores a los m\u00ednimos o viceversa no se guardar\u00e1 el cambio.</p></body></html>", None))
+        self.label_4.setText(QCoreApplication.translate("helpWindow", u"<html><head/><body><p>Desde el menu de Ajustes se puede cambiar los valores m\u00e1ximos y m\u00ednimos de simulaci\u00f3n.</p><p>Los cambios aplicados se mostrar\u00e1n en verde, si se utilizan valores m\u00e1ximos menores a los m\u00ednimos o viceversa no se guardar\u00e1 el cambio. </p><p>Una vez aplicados los cambios se guardaran en el archivo settingSIGMA.json y se cargar\u00e1 cada vez que se ejecute el programa.</p></body></html>", None))
         self.label_5.setText(QCoreApplication.translate("helpWindow", u"<html><head/><body><p><img src=\":/20x20/icons/20x20/cil-danger.png\"/><span style=\" color:#ffffff;\"> \u00a1CUIDADO! </span><img src=\":/20x20/icons/20x20/cil-danger.png\"/></p><p><span style=\" color:#e70000;\">LOS VALORES DEMASIADO ALTOS PUEDEN CONGELAR LA APLICACI\u00d3N. SOLO CAMBIAR SI SABE LO QUE HACE.</span></p></body></html>", None))
     # retranslateUi
 

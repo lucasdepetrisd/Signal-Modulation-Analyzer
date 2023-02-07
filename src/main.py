@@ -138,7 +138,7 @@ class MainWindow(QMainWindow):
         # ASK PLOT CONNECTORS
         self.ui.Btn_antialiasASK.clicked.connect(lambda: self.animASK.setAntialising(self.ui.Btn_antialiasASK.isChecked()))
         self.ui.Btn_autoajustadoASK.clicked.connect(lambda: self.animASK.adjustPlot())
-        self.ui.velocidadInputASK.valueChanged.connect(lambda: self.animASK.setSpeed(int(self.ui.velocidadInputASK.text())))
+        self.ui.velocidadInputASK.valueChanged.connect(lambda: self.animASK.speedChanged())
         self.ui.samplesInputASK.valueChanged.connect(lambda: self.animASK.samplesChanged())
 
         # FSK MODULATION CONNECTORS
@@ -152,8 +152,8 @@ class MainWindow(QMainWindow):
         # FSK PLOT CONNECTORS
         self.ui.Btn_antialiasFSK.clicked.connect(lambda: self.animFSK.setAntialising(self.ui.Btn_antialiasFSK.isChecked()))
         self.ui.Btn_autoajustadoFSK.clicked.connect(lambda: self.animFSK.adjustPlot())
-        self.ui.velocidadInputFSK.valueChanged.connect(lambda: self.animFSK.setSpeed(int(self.ui.velocidadInputFSK.text())))
-        self.ui.samplesInputFSK.valueChanged.connect(lambda: self.animFSK.setSamples(int(self.ui.samplesInputFSK.text())))
+        self.ui.velocidadInputFSK.valueChanged.connect(lambda: self.animFSK.speedChanged())
+        self.ui.samplesInputFSK.valueChanged.connect(lambda: self.animFSK.samplesChanged())
 
         # PSK MODULATION CONNECTORS
         self.ui.messageInputPSK.textChanged.connect(lambda: self.modulatePSK())
@@ -165,8 +165,8 @@ class MainWindow(QMainWindow):
         # PSK PLOT CONNECTORS
         self.ui.Btn_antialiasPSK.clicked.connect(lambda: self.animPSK.setAntialising(self.ui.Btn_antialiasPSK.isChecked()))
         self.ui.Btn_autoajustadoPSK.clicked.connect(lambda: self.animPSK.adjustPlot())
-        self.ui.velocidadInputPSK.valueChanged.connect(lambda: self.animPSK.setSpeed(int(self.ui.velocidadInputPSK.text())))
-        self.ui.samplesInputPSK.valueChanged.connect(lambda: self.animPSK.setSamples(int(self.ui.samplesInputPSK.text())))
+        self.ui.velocidadInputPSK.valueChanged.connect(lambda: self.animPSK.speedChanged())
+        self.ui.samplesInputPSK.valueChanged.connect(lambda: self.animPSK.samplesChanged())
 
         self.ui.Btn_helpASK.clicked.connect(lambda: self.helpPage("ask"))
         self.ui.Btn_helpFSK.clicked.connect(lambda: self.helpPage("fsk"))
@@ -650,6 +650,9 @@ class MainWindow(QMainWindow):
     ########################################################################
 
     def animateModulation(self, modt="nofsk"):
+        self.clearASK()
+        self.clearFSK()
+        self.clearPSK()
         if self.animASK.running == True:
             self.animASK.stop()
         if self.animFSK.running == True:

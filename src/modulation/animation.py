@@ -1,10 +1,9 @@
 # ------------------------------------------------------
 # -------------------- animation.py --------------------
 # ------------------------------------------------------
-# PyQt Libraries
+# PyQtGraph Libraries
 import pyqtgraph as pg
 from pyqtgraph.Qt import QtCore, QtWidgets
-from PyQt5 import QtGui, QtCore
 
 #Libraries that do the heavy lifting
 from main import *
@@ -22,9 +21,14 @@ class DynPlotter:
         self.antiAliasing = False
         
         self.step = 1
+        self.speed = 1
+        self.totalSpeed = 1000
+        self.speedPercent = 0
         self.speedBox = speedBox
+
         self.samples = 0
         self.totalSamples = 0
+        self.samplesPercent = 0
         self.samplesBox = samplesBox
 
         self.counter = 0
@@ -41,7 +45,7 @@ class DynPlotter:
         self.lastUpdate = perf_counter()
         self.avgFps = 0.0
 
-        pg.setConfigOptions(antialias = self.antiAliasing)
+        pg.setConfigOptions(antialias = False)
 
         self.win = win
         self.win.clear()
@@ -81,6 +85,7 @@ class DynPlotter:
         self.running = True
         self.counter = 0
         self.axisOffset = 0
+        self.labelInfo.setText("{}Muestras Totales: {} Mostrando: {} | Ejecutando a {:.2f} fps".format(self.warnText, self.totalSamples, self.samples, self.avgFps), color='#ffffff', size='8pt')
         self.timer.start()
 
     def stop(self):
@@ -116,13 +121,18 @@ class DynPlotter:
         fps = 1.0 / (now - self.lastUpdate)
         self.lastUpdate = now
         self.avgFps = self.avgFps * 0.8 + fps * 0.2
-        self.labelInfo.setText("{}Muestras Totales: {} | Ejecutando a {:.2f} fps".format(self.warnText, self.totalSamples, self.avgFps))
+        self.labelInfo.setText("{}Muestras Totales: {} Mostrando: {} | Ejecutando a {:.2f} fps".format(self.warnText, self.totalSamples, self.samples, self.avgFps), color='#ffffff', size='8pt')
         if self.avgFps < 5:
             self.brcount += 1
+        if self.avgFps < 10:
+            self.warnText = "(Desactive Anti-aliasing o disminuya las muestras) | "
+        else: self.warnText = ""
+
         if self.brcount > 10:
             self.stop()
             self.brcount = 0
-            self.labelInfo.setText("Simulación detenida por bajo rendimiento. Reduzca el número de muestras y desactive Anti-aliasing")
+            self.clearPlots()
+            self.labelInfo.setText("¡Simulación detenida por bajo rendimiento! Reduzca el número de muestras y desactive Anti-aliasing", color='r', size='12pt')
 
     ########################################################################
     ## SETTERS METHODS
@@ -134,7 +144,7 @@ class DynPlotter:
     def setSamples(self, ns):
         self.samples = ns
         if (self.samples > int(self.totalSamples/2)) | self.antiAliasing:
-            self.warnText = "(Desactive Anti-aliasing o disminuya las muestras para mejorar el rendimiento) | "
+            self.warnText = "(Desactive Anti-aliasing o disminuya las muestras) | "
         else: self.warnText = ""
         self.updateSamplesBox()
 
@@ -142,20 +152,37 @@ class DynPlotter:
     ## UI METHODS
     ########################################################################
     def setAntialising(self, aa: bool):
-        self.clearPlots()
+        aa = not aa
         self.antiAliasing = aa
-        pg.setConfigOptions(antialias = self.antiAliasing)
-    
+        if pg.getConfigOption("antialias") != self.antiAliasing:
+            self.clearPlots()
+            pg.setConfigOptions(antialias = self.antiAliasing)
+
+    def speedChanged(self):
+        percentage = int(self.speedBox.text()[:-1])
+        if percentage == 0:
+            self.setSpeed(1)
+        elif percentage != self.speedPercent:
+            speed = int((percentage * self.totalSpeed) / 100)
+            self.setSpeed(speed)
+
     def samplesChanged(self):
-        if int(self.samplesBox.text()) != self.samples:
-            self.setSamples(int(self.samplesBox.text()))
+        percentage = int(self.samplesBox.text()[:-1])
+        print(percentage)
+        if percentage != self.samplesPercent:
+            self.samplesPercent = percentage
+            samples = int((percentage * self.totalSamples) / 100)
+            self.setSamples(samples)
 
     def updateSpeedBox(self):
-        self.speedBox.setValue(self.step)
+        self.speedBox.setMaximum(self.totalSpeed)
+        self.speedPercent = int((self.step * 100) / self.totalSpeed)
+        self.speedBox.setValue(self.speedPercent)
 
     def updateSamplesBox(self):
-        self.samplesBox.setMaximum(self.totalSamples)
-        self.samplesBox.setValue(self.samples)
+        # self.samplesBox.setMaximum(100)
+        self.samplesBox.setValue(self.samplesPercent)
+        print(self.samplesPercent)
 
     def adjustPlot(self):
         for ps in self.plotList:
@@ -165,7 +192,7 @@ class DynPlotter:
     
     def clearPlots(self):
         self.stop()
-        self.setSamples(0)
+        # self.setSamples(1)
         for ps in self.plotList:
             ps.clear()
             ps.setAutoVisible(x=True)
@@ -196,9 +223,18 @@ class ASKPlotter(DynPlotter):
         self.dataList.extend(data[:3])
         
         self.totalSamples = len(data[3])
-        if self.totalSamples > 5000:
-            self.setSamples(int(self.totalSamples/2))
-        else: self.setSamples(self.totalSamples)
+        if self.totalSamples > 8000:
+            self.samplesPercent = 25
+            self.samplesBox.setValue(self.samplesPercent)
+        elif self.totalSamples > 5000:
+            self.samplesPercent = 50
+            self.samplesBox.setValue(self.samplesPercent)
+        else: 
+            self.samplesPercent = 100
+            self.samplesBox.setValue(self.samplesPercent)
+        
+        samples = int((self.samplesPercent * self.totalSamples) / 100)
+        self.setSamples(samples)
 
         self.setSpeed(int(len(data[3])/800))
         if self.step < 1: self.setSpeed(1)
@@ -243,10 +279,19 @@ class FSKPlotter(DynPlotter):
         self.dataList[0], self.dataList[2] = self.dataList[2], self.dataList[0]
 
         self.totalSamples = len(data[3])
-        if self.totalSamples > 5000:
-            self.setSamples(int(self.totalSamples/2))
-        else: self.setSamples(self.totalSamples)
+        if self.totalSamples > 8000:
+            self.samplesPercent = 25
+            self.samplesBox.setValue(self.samplesPercent)
+        elif self.totalSamples > 5000:
+            self.samplesPercent = 50
+            self.samplesBox.setValue(self.samplesPercent)
+        else: 
+            self.samplesPercent = 100
+            self.samplesBox.setValue(self.samplesPercent)
         
+        samples = int((self.samplesPercent * self.totalSamples) / 100)
+        self.setSamples(samples)
+
         self.setSpeed(int(len(data[0])/800))
         if self.step < 1: self.setSpeed(1)
 
@@ -297,11 +342,18 @@ class PSKPlotter(DynPlotter):
         if self.step < 1: self.setSpeed(1)
 
         self.totalSamples = len(data[3])
-        if self.totalSamples > 5000:
-            self.setSamples(int(self.totalSamples/2))
-        else: self.setSamples(self.totalSamples)
+        if self.totalSamples > 8000:
+            self.samplesPercent = 25
+            self.samplesBox.setValue(self.samplesPercent)
+        elif self.totalSamples > 5000:
+            self.samplesPercent = 50
+            self.samplesBox.setValue(self.samplesPercent)
+        else: 
+            self.samplesPercent = 100
+            self.samplesBox.setValue(self.samplesPercent)
 
-        self.updateSpeedBox()
+        samples = int((self.samplesPercent * self.totalSamples) / 100)
+        self.setSamples(samples)
 
         self.curveList[0] = self.plotList[0].plot(self.dataList[0], pen=pg.mkPen('#FF0000', width=2))
         self.curveList[1] = self.plotList[1].plot(self.dataList[1], pen=pg.mkPen('#FFFF00', width=2))
