@@ -168,7 +168,7 @@ class DynPlotter:
 
     def samplesChanged(self):
         percentage = int(self.samplesBox.text()[:-1])
-        print(percentage)
+        # print(percentage)
         if percentage != self.samplesPercent:
             self.samplesPercent = percentage
             samples = int((percentage * self.totalSamples) / 100)
@@ -182,7 +182,7 @@ class DynPlotter:
     def updateSamplesBox(self):
         # self.samplesBox.setMaximum(100)
         self.samplesBox.setValue(self.samplesPercent)
-        print(self.samplesPercent)
+        # print(self.samplesPercent)
 
     def adjustPlot(self):
         for ps in self.plotList:

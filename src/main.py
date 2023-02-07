@@ -323,7 +323,7 @@ class MainWindow(QMainWindow):
             # print("No se puede cambiar: MaxAct={0} MaxIng={1}".format())
 
     def saveSettings(self):
-        print("saving")
+        print("Saving")
         settings_json = {'maxASK' : self.ui.maxCarrierASK.value(),
                     'minASK' : self.ui.minCarrierASK.value(),
                     'maxFSK1' : self.ui.maxCarrierFSK1.value(),
@@ -342,9 +342,9 @@ class MainWindow(QMainWindow):
         settingsFile = "./settingSIGMA.json"
         path = Path(settingsFile)
         if path.is_file():
-            print("existe el archivo")
+            print("File Exists")
             if path.stat().st_size != 0:
-                print("cargando archivo...")
+                print("Loading File...")
                 with open(settingsFile,'r') as json_file:
                     settings_json = json.load(json_file)
 
@@ -362,9 +362,9 @@ class MainWindow(QMainWindow):
                 self.ui.btn_AplicarFSK2.click()
                 self.ui.btn_AplicarPSK.click()
             else:
-                print("archivo vacio")
+                print("Empty File")
         else:
-            print("no existe el archivo")
+            print("File Not Found")
         
 
     ## EVENT ==> MOUSE DOUBLE CLICK
