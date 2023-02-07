@@ -35,7 +35,7 @@ def modulateASK(message, Fc):
                 
         ask_signal = carrier_signal * data_signal
 
-        bandWidth = len(message)
+        bandWidth = 2 * len(message)
         return data_signal, carrier_signal, ask_signal, t, Fs, bandWidth
     else: 
         return 0
@@ -72,7 +72,7 @@ def modulateFSK(message, Fc1, Fc2):
         # 2B = 1/(1/bps) = bps
         # 2B = bps Hz
 
-        bandWidth = (len(message))+(2*abs(Fc2-Fc1))
+        bandWidth = 2 * (len(message)) + (abs(Fc2-Fc1))
         return data_signal, carrier_signal_1, carrier_signal_2, fsk_signal, t, Fs, bandWidth
     else: 
         return 0
@@ -95,7 +95,7 @@ def modulatePSK(message, Fc):
 
         psk_signal = data_signal * carrier_signal
 
-        bandWidth = len(message)
+        bandWidth = 2 * len(message)
 
         return data_signal, carrier_signal, psk_signal, t, Fs, bandWidth
     else: 
