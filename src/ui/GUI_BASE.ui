@@ -2856,7 +2856,7 @@ QPushButton:pressed {
                        </size>
                       </property>
                       <property name="currentIndex">
-                       <number>1</number>
+                       <number>0</number>
                       </property>
                       <widget class="QWidget" name="mplask">
                        <layout class="QVBoxLayout" name="verticalLayout_20">
@@ -3236,13 +3236,13 @@ QSpinBox::down-button{
                                  <string>%</string>
                                 </property>
                                 <property name="minimum">
-                                 <number>1</number>
+                                 <number>0</number>
                                 </property>
                                 <property name="maximum">
                                  <number>100</number>
                                 </property>
                                 <property name="value">
-                                 <number>1</number>
+                                 <number>0</number>
                                 </property>
                                </widget>
                               </item>
@@ -3378,7 +3378,7 @@ QSpinBox::down-button{
                                  <number>100</number>
                                 </property>
                                 <property name="value">
-                                 <number>2</number>
+                                 <number>100</number>
                                 </property>
                                </widget>
                               </item>
@@ -4337,7 +4337,7 @@ QPushButton:pressed {
                        </size>
                       </property>
                       <property name="currentIndex">
-                       <number>1</number>
+                       <number>0</number>
                       </property>
                       <widget class="QWidget" name="mplfsk">
                        <layout class="QVBoxLayout" name="verticalLayout_29">
@@ -4706,13 +4706,13 @@ QSpinBox::down-button{
                                  <string>%</string>
                                 </property>
                                 <property name="minimum">
-                                 <number>1</number>
+                                 <number>0</number>
                                 </property>
                                 <property name="maximum">
                                  <number>100</number>
                                 </property>
                                 <property name="value">
-                                 <number>1</number>
+                                 <number>0</number>
                                 </property>
                                </widget>
                               </item>
@@ -4848,7 +4848,7 @@ QSpinBox::down-button{
                                  <number>100</number>
                                 </property>
                                 <property name="value">
-                                 <number>2</number>
+                                 <number>100</number>
                                 </property>
                                </widget>
                               </item>
@@ -5929,13 +5929,13 @@ QSpinBox::down-button{
                                  <string>%</string>
                                 </property>
                                 <property name="minimum">
-                                 <number>1</number>
+                                 <number>0</number>
                                 </property>
                                 <property name="maximum">
                                  <number>100</number>
                                 </property>
                                 <property name="value">
-                                 <number>1</number>
+                                 <number>0</number>
                                 </property>
                                </widget>
                               </item>
@@ -6071,7 +6071,7 @@ QSpinBox::down-button{
                                  <number>100</number>
                                 </property>
                                 <property name="value">
-                                 <number>2</number>
+                                 <number>100</number>
                                 </property>
                                </widget>
                               </item>
@@ -6334,7 +6334,7 @@ border-radius: 5px;</string>
                                      <string notr="true">color: rgb(191, 203, 217)</string>
                                     </property>
                                     <property name="text">
-                                     <string>Frecuencia Máxima (Hz) | 1 a 1.000</string>
+                                     <string>Frecuencia Máxima (Hz) | 1 a 10.000</string>
                                     </property>
                                     <property name="alignment">
                                      <set>Qt::AlignCenter</set>
@@ -6424,7 +6424,7 @@ QSpinBox::down-button{
                                      <number>1</number>
                                     </property>
                                     <property name="maximum">
-                                     <number>1000</number>
+                                     <number>10000</number>
                                     </property>
                                     <property name="value">
                                      <number>200</number>
@@ -6457,7 +6457,7 @@ QSpinBox::down-button{
                                      <string notr="true">color: rgb(191, 203, 217)</string>
                                     </property>
                                     <property name="text">
-                                     <string>Frecuencia Mínima (Hz) | 1 a 1.000</string>
+                                     <string>Frecuencia Mínima (Hz) | 1 a 10.000</string>
                                     </property>
                                     <property name="alignment">
                                      <set>Qt::AlignCenter</set>
@@ -6547,7 +6547,7 @@ QSpinBox::down-button{
                                      <number>1</number>
                                     </property>
                                     <property name="maximum">
-                                     <number>1000</number>
+                                     <number>10000</number>
                                     </property>
                                    </widget>
                                   </item>
@@ -6918,7 +6918,7 @@ border-radius: 5px;</string>
                                      <string notr="true">color: rgb(191, 203, 217)</string>
                                     </property>
                                     <property name="text">
-                                     <string>Frecuencia Máxima (Hz) | 1 a 1.000</string>
+                                     <string>Frecuencia Máxima (Hz) | 1 a 10.000</string>
                                     </property>
                                     <property name="alignment">
                                      <set>Qt::AlignCenter</set>
@@ -7008,7 +7008,7 @@ QSpinBox::down-button{
                                      <number>1</number>
                                     </property>
                                     <property name="maximum">
-                                     <number>1000</number>
+                                     <number>10000</number>
                                     </property>
                                     <property name="value">
                                      <number>200</number>
@@ -7041,7 +7041,7 @@ QSpinBox::down-button{
                                      <string notr="true">color: rgb(191, 203, 217)</string>
                                     </property>
                                     <property name="text">
-                                     <string>Frecuencia Mínima (Hz) | 1 a 1.000</string>
+                                     <string>Frecuencia Mínima (Hz) | 1 a 10.000</string>
                                     </property>
                                     <property name="alignment">
                                      <set>Qt::AlignCenter</set>
@@ -7132,7 +7132,7 @@ QSpinBox::down-button{
                                      <number>1</number>
                                     </property>
                                     <property name="maximum">
-                                     <number>1000</number>
+                                     <number>10000</number>
                                     </property>
                                    </widget>
                                   </item>
@@ -7453,7 +7453,7 @@ border-radius: 5px;</string>
                                      <string notr="true">color: rgb(191, 203, 217)</string>
                                     </property>
                                     <property name="text">
-                                     <string>Frecuencia Máxima (Hz) | 1 a 1.000</string>
+                                     <string>Frecuencia Máxima (Hz) | 1 a 10.000</string>
                                     </property>
                                     <property name="alignment">
                                      <set>Qt::AlignCenter</set>
@@ -7543,7 +7543,7 @@ QSpinBox::down-button{
                                      <number>1</number>
                                     </property>
                                     <property name="maximum">
-                                     <number>1000</number>
+                                     <number>10000</number>
                                     </property>
                                     <property name="value">
                                      <number>200</number>
@@ -7576,7 +7576,7 @@ QSpinBox::down-button{
                                      <string notr="true">color: rgb(191, 203, 217)</string>
                                     </property>
                                     <property name="text">
-                                     <string>Frecuencia Mínima (Hz) | 1 a 1.000</string>
+                                     <string>Frecuencia Mínima (Hz) | 1 a 10.000</string>
                                     </property>
                                     <property name="alignment">
                                      <set>Qt::AlignCenter</set>
@@ -7666,7 +7666,7 @@ QSpinBox::down-button{
                                      <number>1</number>
                                     </property>
                                     <property name="maximum">
-                                     <number>1000</number>
+                                     <number>10000</number>
                                     </property>
                                    </widget>
                                   </item>
@@ -8141,7 +8141,7 @@ border-radius: 5px;</string>
                                      <string notr="true">color: rgb(191, 203, 217)</string>
                                     </property>
                                     <property name="text">
-                                     <string>Frecuencia Máxima (Hz) | 1 a 1.000</string>
+                                     <string>Frecuencia Máxima (Hz) | 1 a 10.000</string>
                                     </property>
                                     <property name="alignment">
                                      <set>Qt::AlignCenter</set>
@@ -8231,7 +8231,7 @@ QSpinBox::down-button{
                                      <number>1</number>
                                     </property>
                                     <property name="maximum">
-                                     <number>1000</number>
+                                     <number>10000</number>
                                     </property>
                                     <property name="value">
                                      <number>200</number>
@@ -8264,7 +8264,7 @@ QSpinBox::down-button{
                                      <string notr="true">color: rgb(191, 203, 217)</string>
                                     </property>
                                     <property name="text">
-                                     <string>Frecuencia Mínima (Hz) | 1 a 1.000</string>
+                                     <string>Frecuencia Mínima (Hz) | 1 a 10.000</string>
                                     </property>
                                     <property name="alignment">
                                      <set>Qt::AlignCenter</set>
@@ -8354,7 +8354,7 @@ QSpinBox::down-button{
                                      <number>1</number>
                                     </property>
                                     <property name="maximum">
-                                     <number>1000</number>
+                                     <number>10000</number>
                                     </property>
                                    </widget>
                                   </item>
