@@ -9,7 +9,7 @@ SigMA o Signal Modulation Analyzer es un conjunto de simuladores creados para la
 ## ⬇ INSTALAR / INSTALL:
 
 > ```sh
-> pip install pyside2==5.15.2 matplotlib scipy numpy
+> pip install pyside2==5.15.2 matplotlib scipy numpy pyqtgraph
 > ```
 > PySide2 y PyQt5 en la versión 5.15.1 **causan problemas** debido a sus actualizaciones.  
 > Utilizar Python 3.9.12 con PySide.  
@@ -27,13 +27,20 @@ SigMA o Signal Modulation Analyzer es un conjunto de simuladores creados para la
 ## ![SigMA logo](./src/ui/icons/16x16/sigma-logo.png) Modulaciones ASK, FSK y PSK
 > ### Simulation of ASK, FSK and PSK.
 <p align="center">
-    <img src="repo/sigma-ask.gif" width="700">
+    <img src="repo/sigma-animation.gif" width="700">
 <p/>
 
 ## ![SigMA logo](./src/ui/icons/16x16/sigma-logo.png) Ajustes de valores máximos y mínimos en la simulación.
 > ### Settings menu for max. and min. values.
 <p align="center">
     <img src="repo/sigma-settings.gif" width="700">
+<p/>
+
+### Ajustes guardados en un archivo compartible.
+> ### Settings saving on shareable file.
+
+<p align="center">
+    <img src="repo/sigma-save.gif" width="700">
 <p/>
 
 ## ![SigMA logo](./src/ui/icons/16x16/sigma-logo.png) Manual de Usuario
@@ -44,11 +51,15 @@ También disponible un [Manual de Usuario](https://github.com/lucasdepetrisd/Sig
 <p/>
 
 Además incluye:
-- Animaciones para cada modulación.
+- Animaciones optimizadas.
+- Animaciones con anti-aliasing.
 - Interfaz gráfica pulida.
+- Guardado de configuraciones.
 - [Manual de Usuario](https://github.com/lucasdepetrisd/Signal-Modulation-Analyzer/blob/main/Manual_de_Usuario_SigMA.pdf).
 
 > Also includes:
-> - Animations for each modulation. 
+> - Optimized animations. 
+> - Anti-aliasing for animations.
 > - Polished UI, look and feel.
+> - Settings saving.
 > - [User Manual](https://github.com/lucasdepetrisd/Signal-Modulation-Analyzer/blob/main/Manual_de_Usuario_SigMA.pdf) (in Spanish).
