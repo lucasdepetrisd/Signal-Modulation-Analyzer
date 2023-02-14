@@ -63,3 +63,7 @@ Además incluye:
 > - Polished UI, look and feel.
 > - Settings saving.
 > - [User Manual](https://github.com/lucasdepetrisd/Signal-Modulation-Analyzer/blob/main/Manual_de_Usuario_SigMA.pdf) (in Spanish).
+
+###TODO:
+- Multilenguaje
+- Señales moduladas de Fase Continua (CPASK, CPFSK y CPPSK)
