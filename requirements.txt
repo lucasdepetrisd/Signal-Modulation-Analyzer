@@ -1,0 +1,51 @@
+altgraph==0.17.3
+certifi==2023.5.7
+cffi==1.15.1
+charset-normalizer==3.2.0
+click==8.1.3
+colorama==0.4.6
+contourpy @ file:///D:/bld/contourpy_1667248269651/work
+cryptography==38.0.4
+cycler @ file:///home/conda/feedstock_root/build_artifacts/cycler_1635519461629/work
+fonttools @ file:///D:/bld/fonttools_1666827219016/work
+future @ file:///home/conda/feedstock_root/build_artifacts/future_1666786049710/work
+idna==3.4
+kiwisolver @ file:///D:/bld/kiwisolver_1666805897768/work
+macholib @ file:///home/conda/feedstock_root/build_artifacts/macholib_1664164200079/work
+matplotlib @ file:///D:/bld/matplotlib-suite_1667505027923/work
+munkres==1.1.4
+Nuitka==1.3
+numpy @ file:///D:/bld/numpy_1668919236047/work
+orderedset==2.0.3
+packaging @ file:///home/conda/feedstock_root/build_artifacts/packaging_1670530880680/work
+pefile @ file:///home/conda/feedstock_root/build_artifacts/pefile_1653943763999/work
+Pillow @ file:///D:/bld/pillow_1680694338064/work
+ply==3.11
+pycparser==2.21
+pyinstaller @ file:///D:/bld/pyinstaller_1670933866018/work
+pyinstaller-hooks-contrib @ file:///home/conda/feedstock_root/build_artifacts/pyinstaller-hooks-contrib_1670179190395/work
+pyparsing @ file:///home/conda/feedstock_root/build_artifacts/pyparsing_1652235407899/work
+PyQt5==5.15.9
+pyqt5-plugins==5.15.9.2.3
+PyQt5-Qt5==5.15.2
+PyQt5-sip @ file:///D:/bld/pyqt-split_1666830111760/work/pyqt_sip
+pyqt5-tools==5.15.9.3.3
+pyqtgraph @ file:///home/conda/feedstock_root/build_artifacts/pyqtgraph_1664817956139/work
+PySide2==5.15.8
+pyside6==6.5.1
+python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/python-dateutil_1626286286081/work
+python-dotenv==1.0.0
+pywin32==304
+pywin32-ctypes @ file:///D:/bld/pywin32-ctypes_1666760865566/work
+qt5-applications==5.15.2.2.3
+qt5-tools==5.15.2.1.3
+requests==2.31.0
+scipy==1.9.3
+shiboken2==5.15.8
+shiboken6==6.5.1
+sip @ file:///D:/bld/sip_1669040051908/work
+six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
+toml @ file:///home/conda/feedstock_root/build_artifacts/toml_1604308577558/work
+tornado @ file:///D:/bld/tornado_1666788767305/work
+unicodedata2 @ file:///D:/bld/unicodedata2_1667240049903/work
+urllib3==2.0.5
